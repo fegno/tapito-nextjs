@@ -98,8 +98,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-6">
-          <button className="btn-premium py-3 px-8 text-sm uppercase tracking-widest font-black">Log in</button>
-          <button className="btn-premium py-3 px-8 text-sm uppercase tracking-widest font-black">
+          <button className="py-3 px-8 text-sm uppercase tracking-widest font-black border-2 border-[#09358c] rounded-full text-[#09358c] font-bold">Log in</button>
+          <button className="bg-[#09358c] text-white py-3 px-8 text-sm uppercase tracking-widest font-black rounded-full font-bold">
             Access Portal
           </button>
         </div>
