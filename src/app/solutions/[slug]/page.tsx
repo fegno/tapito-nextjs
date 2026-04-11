@@ -16,7 +16,10 @@ import {
   Lightbulb,
   Rocket,
   ArrowRight,
-  Image as ImageIcon
+  Sparkles,
+  MapPin,
+  Image as ImageIcon,
+  Layers
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "@/components/Container";
@@ -24,7 +27,10 @@ import { SolutionsHero } from "@/components/solutions/SolutionsHero";
 import CTASection from "@/components/CTASection";
 import ClientStrip from "@/components/ClientStrip";
 import { FeatureShowcase } from "@/components/solutions/FeatureShowcase";
+import { IntegrationSection } from "@/components/solutions/IntegrationSection";
 import { cn } from "@/lib/utils";
+import Capabilities from "@/components/solution-detail/core-capabilities";
+import Impacts from "@/components/solution-detail/impacts";
 
 const solutionDetails: Record<string, any> = {
   "building-materials": {
@@ -35,16 +41,19 @@ const solutionDetails: Record<string, any> = {
         title: "Scale Contractor Loyalty", 
         desc: "Automate rewards based on purchase frequency and bulk volume, ensuring contractors stay committed to your brand.", 
         image: "https://images.unsplash.com/photo-1581094794329-c8112a4e5190?q=80&w=1200&auto=format&fit=crop",
+        icon: Users
       },
       { 
         title: "Dealer Visibility", 
         desc: "Give every dealer a real-time dashboard of their material availability and regional demand trends.", 
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+        icon: Search
       },
       { 
         title: "Order Automation", 
         desc: "Replace slow manual checks with AI-verified order workflows for high-volume material transactions.", 
         image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+        icon: Zap
       }
     ],
     challenges: [
@@ -71,16 +80,19 @@ const solutionDetails: Record<string, any> = {
         title: "Predict Trend Surges", 
         desc: "Analyze social signals and velocity to identify 'viral' items before they stock out in-store.", 
         image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
+        icon: TrendingUp
       },
       { 
         title: "Localized Stock Logic", 
         desc: "Shift inventory between locations dynamically based on local fashion adoption and weather patterns.", 
-        image: "https://images.unsplash.com/photo-1441984961801-496662706fb5?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1441984901-496662706fb5?q=80&w=1200&auto=format&fit=crop",
+        icon: LayoutDashboard
       },
       { 
         title: "Personalized Stylists", 
         desc: "Increase conversion by pairing items based on aesthetic visual compatibility logic.", 
         image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=1200&auto=format&fit=crop",
+        icon: Users
       }
     ],
     challenges: [
@@ -107,16 +119,19 @@ const solutionDetails: Record<string, any> = {
         title: "Attachment Rate Growth", 
         desc: "Automatically suggest the most relevant warranties and accessories during the 'hot' purchase window.", 
         image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop",
+        icon: Target
       },
       { 
         title: "Predictive Upgrade Cycles", 
         desc: "Identify exactly when a customer's tech becomes 'dated' and target them with high-converting trade-in offers.", 
-        image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+        icon: Zap
       },
       { 
         title: "Service Automation", 
         desc: "Deploy AI chatbots to handle technical field support and warranty verification instantly.", 
         image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1200&auto=format&fit=crop",
+        icon: Smartphone
       }
     ],
     challenges: [
@@ -141,9 +156,9 @@ const defaultData = {
   title: "Vertical Growth",
   description: "Tapito transforms your industry-specific data into a strategic growth advantage with tailored AI logic.",
   howWeHelp: [
-    { title: "Predictive Optimization", desc: "Anticipate market shifts and adjust your strategy in real-time.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Operational Clarity", desc: "Remove the fog of raw data with actionable, business-ready insights.", image: "https://images.unsplash.com/photo-1543286386-713bcd549118?q=80&w=1200&auto=format&fit=crop" },
-    { title: "Automated Execution", desc: "Let AI handle the execution of growth strategies without manual friction.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop" }
+    { title: "Predictive Optimization", desc: "Anticipate market shifts and adjust your strategy in real-time.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop", icon: TrendingUp },
+    { title: "Operational Clarity", desc: "Remove the fog of raw data with actionable, business-ready insights.", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop", icon: BarChart3 },
+    { title: "Automated Execution", desc: "Let AI handle the execution of growth strategies without manual friction.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop", icon: Rocket }
   ],
   challenges: [
     { title: "Data Overload", desc: "Too much data, not enough actionable insights to move the needle.", icon: Search },
@@ -238,7 +253,7 @@ export default function SolutionDetailPage() {
 
                 {/* Top Right Icon/Badge */}
                 <div className="absolute top-8 right-8 w-14 h-14 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl flex items-center justify-center text-white scale-0 group-hover:scale-100 transition-transform duration-500">
-                  <Rocket size={24} />
+                  <item.icon size={24} />
                 </div>
               </motion.div>
             ))}
@@ -268,92 +283,10 @@ export default function SolutionDetailPage() {
           </div>
         </Container>
       </section>
-
-      {/* Capabilities / How it Works Section */}
-      <section className="section-padding bg-white">
-        <Container>
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="lg:w-1/2">
-              <span className="text-xs font-black tracking-[0.3em] uppercase text-[#09358c] mb-6 block">CORE CAPABILITIES</span>
-              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight">Advanced Logic for <br /> <span className="text-[#09358c]">Absolute Growth</span></h2>
-
-              <div className="space-y-12 mt-12">
-                {data.features.map((feature: any, i: number) => (
-                  <div key={i} className="flex gap-6 group">
-                    <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#09358c] text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-6 transition-transform">
-                      <feature.icon size={26} />
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-black text-slate-900 mb-2">{feature.title}</h4>
-                      <p className="text-lg text-slate-500 leading-relaxed max-w-md">{feature.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="lg:w-1/2 relative">
-              <div className="aspect-square bg-slate-100 rounded-[3rem] overflow-hidden relative border-4 border-white shadow-2xl">
-                <div className="absolute inset-0 bg-grid opacity-10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-64 h-64 bg-[#05a0ec]/10 blur-[100px] animate-pulse" />
-                </div>
-                {/* Placeholder for an actual screenshot or interactive illustration */}
-                <div className="absolute inset-x-8 top-8 bottom-8 bg-white/80 backdrop-blur shadow-xl rounded-2xl border border-white/50 flex flex-col p-8 overflow-hidden">
-                  <div className="flex justify-between items-center mb-10">
-                    <div className="w-32 h-4 bg-slate-200 rounded-full" />
-                    <div className="w-10 h-10 bg-[#09358c] rounded-lg" />
-                  </div>
-                  <div className="flex-1 space-y-6">
-                    <div className="w-full h-8 bg-slate-100 rounded-lg" />
-                    <div className="w-4/5 h-8 bg-slate-100 rounded-lg" />
-                    <div className="grid grid-cols-2 gap-4 pt-10">
-                      <div className="h-24 bg-blue-50 rounded-xl" />
-                      <div className="h-24 bg-blue-50 rounded-xl" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* Decorative badgets */}
-              <div className="absolute -right-8 top-1/4 bg-white p-6 rounded-2xl shadow-xl flex items-center gap-4 border border-blue-100">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <TrendingUp size={20} />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-400 font-bold uppercase tracking-wider">Revenue Uplift</div>
-                  <div className="text-xl font-black text-slate-900">+14.2%</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Feature Showcase Section */}
+      <Capabilities data={data} />
       <FeatureShowcase />
-
-      {/* Impact / Stats Section */}
-      <section className="py-32 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid opacity-[0.03]" />
-        <Container className="relative z-10">
-          <div className="text-center mb-24">
-            <span className="text-xs font-black tracking-[0.4em] uppercase text-[#09358c] mb-6 block">THE TAPITO IMPACT</span>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8 text-white">Metrics that <span className="text-[#06dcc3]">Matter</span></h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-            {data.impacts.map((impact: any, i: number) => (
-              <div key={i} className="text-center group">
-                <div className="text-6xl md:text-8xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 group-hover:from-[#05a0ec] group-hover:to-[#06dcc3] transition-all duration-700">
-                  {impact.value}
-                </div>
-                <p className="text-xl text-slate-400 font-medium tracking-tight px-8">{impact.label}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
+      <IntegrationSection />
+      {/* <Impacts data={data} /> */}
       {/* CTA Section */}
       <CTASection
         title={<> Ready to solve your <br /> {data.title} challenges?</>}

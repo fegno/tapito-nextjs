@@ -50,7 +50,7 @@ export const FeatureShowcase = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
           
           {/* Left Column: Tabs */}
-          <div className="lg:w-[45%] w-full space-y-4 lg:pr-12">
+          <div className="lg:w-[50%] w-full space-y-4 lg:pr-12">
             {showcaseItems.map((item, index) => (
               <div
                 key={item.id}
@@ -69,7 +69,7 @@ export const FeatureShowcase = () => {
                   <item.icon size={22} className={activeTab === index ? "fill-current" : ""} />
                 </div>
                 <span className={cn(
-                  "text-[19px] font-black leading-tight transition-colors duration-500 tracking-tight",
+                  "text-[19px] lg:text-[22px] 2xl:text-[24px] font-black leading-tight transition-colors duration-500 tracking-tight font-semibold",
                   activeTab === index ? "text-slate-900" : "text-slate-500"
                 )}>
                   {item.title}
@@ -96,10 +96,10 @@ export const FeatureShowcase = () => {
 
                 {/* Text Content */}
                 <div className="max-w-xl">
-                  <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-6 leading-tight tracking-tighter">
+                  <h3 className="text-[22px] lg:text-[26px] xl:text-[32px] font-semibold font-black text-slate-900 mb-6 leading-tight tracking-tighter">
                     {showcaseItems[activeTab].title}
                   </h3>
-                  <p className="text-lg text-slate-500 leading-relaxed font-black opacity-60">
+                  <p className="text-lg text-slate-800 font-medium leading-relaxed font-black opacity-60">
                     {showcaseItems[activeTab].description}
                   </p>
                 </div>
@@ -117,10 +117,14 @@ export const FeatureShowcase = () => {
 
 const AlertsVisual = () => (
   <div className="w-full h-full relative flex flex-col items-center justify-center scale-[0.85] md:scale-100">
-    {/* Flow Badges */}
-    <div className="absolute top-0 flex gap-4 z-20">
-      <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity }} className="px-4 py-1.5 bg-orange-500 text-white rounded-full text-[10px] font-black uppercase shadow-lg shadow-orange-500/20">Real-Time Trigger</motion.div>
-      <motion.div animate={{ y: [0, -5, 0] }} transition={{ duration: 3, delay: 0.2, repeat: Infinity }} className="px-4 py-1.5 bg-orange-600 text-white rounded-full text-[10px] font-black uppercase shadow-lg shadow-orange-600/20">Abandoned Cart</motion.div>
+    {/* Unified Intelligence Status Bar */}
+    <div className="absolute top-0 px-5 py-2.5 bg-[#09358c] rounded-full border border-white/10 shadow-[0_15px_30px_-5px_rgba(9,53,140,0.3)] z-20 flex items-center gap-4 group">
+      <div className="flex gap-1.5">
+        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, repeat: Infinity }} className="w-1.5 h-1.5 rounded-full bg-white" />
+        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, delay: 0.3, repeat: Infinity }} className="w-1.5 h-1.5 rounded-full bg-blue-300" />
+        <motion.div animate={{ opacity: [0.4, 1, 0.4] }} transition={{ duration: 2, delay: 0.6, repeat: Infinity }} className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+      </div>
+      <span className="text-[9px] font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">AI-Logic: Monitoring Patterns</span>
     </div>
 
     {/* Central Hub */}
@@ -161,14 +165,15 @@ const AlertsVisual = () => (
               transition={{ delay: 0.5 }}
               className="w-full bg-white rounded-2xl shadow-xl overflow-hidden"
             >
-              <div className="h-28 bg-slate-100 relative overflow-hidden flex items-center justify-center">
-                 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc4033c8?q=80&w=400&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" />
-                 <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg"><MessageSquare size={12} fill="currentColor" /></div>
+              <div className="h-28 bg-[#09358c] relative overflow-hidden flex items-center justify-center">
+                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=400&auto=format&fit=crop" className="w-full h-full object-cover opacity-60 mix-blend-overlay" />
+                 <div className="absolute inset-0 bg-gradient-to-t from-[#09358c] via-transparent to-transparent" />
+                 <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg"><Zap size={10} fill="currentColor" /></div>
               </div>
               <div className="p-4 space-y-2">
-                 <p className="text-[10px] font-black text-slate-900 leading-tight">Hey Sarah, you've left something behind! 🛒</p>
-                 <p className="text-[8px] font-bold text-slate-400 leading-relaxed italic">"Don't miss out & need to checkout with your faves... ASAP!"</p>
-                 <div className="w-full py-2 bg-slate-900 rounded-lg text-center text-[8px] text-white font-black tracking-widest mt-2">SHOP NOW</div>
+                 <p className="text-[10px] font-black text-slate-900 leading-tight">Investment Alert: Market Surge! 🚀</p>
+                 <p className="text-[8px] font-bold text-slate-400 leading-relaxed italic">"Your portfolio is up 4.2%. Click to see the high-velocity shifts."</p>
+                 <div className="w-full py-2 bg-[#09358c] rounded-lg text-center text-[8px] text-white font-black tracking-widest mt-2">VIEW TRANSACTION</div>
               </div>
             </motion.div>
           </div>
