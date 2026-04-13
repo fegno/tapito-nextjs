@@ -54,14 +54,14 @@ export default function Navbar() {
         </div>
 
         <div className="hidden lg:flex items-center gap-6">
-          <button className="text-sm font-black text-slate-900 uppercase tracking-widest hover:text-blue-600 transition-colors">Log in</button>
+          <button className="btn-premium py-3 px-8 text-sm uppercase tracking-widest font-black">Log in</button>
           <button className="btn-premium py-3 px-8 text-sm uppercase tracking-widest font-black">
-             Access Portal
+            Access Portal
           </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="lg:hidden w-10 h-10 rounded-xl bg-slate-950 text-white flex items-center justify-center transition-transform active:scale-90"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -72,7 +72,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
