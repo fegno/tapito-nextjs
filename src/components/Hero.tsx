@@ -60,7 +60,7 @@ export default function Hero({ keyHighlights }: HeroProps) {
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="w-full lg:max-w-[520px] xl:max-w-[580px] 2xl:max-w-[640px] 3xl:max-w-[700px] 4xl:max-w-[750px] relative lg:block hidden h-[400px] object-contain"
+            className="w-full lg:max-w-[520px] xl:max-w-[580px] 2xl:max-w-[640px] 3xl:max-w-[700px] 4xl:max-w-[750px] relative lg:block hidden h-[450px] object-contain"
           >
             <DashboardPreview keyHighlights={keyHighlights} />
           </motion.div>
