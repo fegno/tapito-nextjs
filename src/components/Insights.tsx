@@ -24,7 +24,7 @@ const Item = ({ icon: Icon, title, desc, delay }: { icon: any, title: string, de
 
 export default function Insights() {
   return (
-    <section className="bg-slate-50 py-32 lg:py-48 relative overflow-hidden">
+    <section className="bg-slate-50 section-padding relative overflow-hidden">
       {/* Background patterns */}
       <div className="absolute inset-0 bg-grid opacity-[0.03]" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-400/5 blur-[100px] rounded-full" />

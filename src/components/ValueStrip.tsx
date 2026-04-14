@@ -89,7 +89,7 @@ export default function ValueStrip() {
   const rightItems = items.filter(item => item.side === 'right');
 
   return (
-    <section className="bg-slate-950 py-24 lg:py-40 border-y border-white/5 overflow-hidden relative">
+    <section className="bg-slate-950 section-padding border-y border-white/5 overflow-hidden relative">
       <Container>
         <div className="flex flex-col items-center">
 

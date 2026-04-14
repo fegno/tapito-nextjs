@@ -23,7 +23,7 @@ export default function AIAssistant() {
   }, []);
 
   return (
-    <section className="bg-slate-900 py-32 lg:py-48 overflow-hidden relative">
+    <section className="bg-slate-900 section-padding overflow-hidden relative">
       {/* Background Glows */}
       <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,_rgba(37,99,235,0.1),transparent)]" />
       <div className="absolute -bottom-48 -right-48 w-[600px] h-[600px] bg-blue-600/10 blur-[120px] rounded-full" />

@@ -6,7 +6,7 @@ import Container from "./Container";
 
 export default function Overview() {
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden">
+    <section className="relative section-padding bg-slate-50 overflow-hidden">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 

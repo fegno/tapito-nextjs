@@ -11,7 +11,7 @@ type HeroProps = {
 
 export default function Hero({ keyHighlights }: HeroProps) {
   return (
-    <section className="relative pt-16 lg:pt-24 pb-20 overflow-hidden bg-[#fafbfc]">
+    <section className="relative section-padding overflow-hidden bg-[#fafbfc]">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center min-h-[85vh]">
           {/* Left Column: Content */}

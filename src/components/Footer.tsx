@@ -6,7 +6,7 @@ import Container from "./Container";
 
 export default function CTASection() {
   return (
-    <section className="bg-white py-24">
+    <section className="bg-white section-padding">
       <Container>
         <div className="bg-slate-900 rounded-[3rem] p-12 lg:p-24 text-center relative overflow-hidden">
           {/* Background effects */}
@@ -37,7 +37,7 @@ export default function CTASection() {
 
 export function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200 pt-24 pb-12">
+    <footer className="bg-slate-50 border-t border-slate-200 pt-[60px] lg:pt-[80px] 2xl:pt-[120px] pb-12">
        <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
              <div className="col-span-1 lg:col-span-1">

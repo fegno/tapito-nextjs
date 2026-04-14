@@ -60,7 +60,7 @@ export default function Home() {
         <AIAssistant />
         <Audience />
         <Metrics />
-        <section className="py-24 bg-white">
+        <section className="section-padding bg-white">
           <Container>
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Precision Control</h2>

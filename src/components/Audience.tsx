@@ -15,7 +15,7 @@ const industries = [
 
 export default function Audience() {
   return (
-    <section className="bg-slate-50 py-24 lg:py-32">
+    <section className="bg-slate-50 section-padding">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-sm font-bold uppercase tracking-widest text-blue-600 mb-4">Target Audience</h2>
