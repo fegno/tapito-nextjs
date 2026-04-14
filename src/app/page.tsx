@@ -51,32 +51,28 @@ const keyHighlights = [
 
 export default function Home() {
   return (
-    <div className="relative w-full overflow-x-hidden">
-      <Navbar />
-      <main className="flex flex-col w-full">
-        <Hero keyHighlights={keyHighlights} />
-        <Process />
-        <Overview />
-        <ValueStrip />
-        <Capabilities />
-        <Insights />
-        <FeaturedVideo />
-        <Automation />
-        <AIAssistant />
-        <Audience />
-        <Metrics />
-        <section className="py-24 bg-white">
-          <Container>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Precision Control</h2>
-              <p className="text-xl text-slate-500 max-w-2xl mx-auto">Experience the depth of our AI engine with interactive real-time data visualization.</p>
-            </div>
-            <InteractiveDashboard />
-          </Container>
-        </section>
-        <CTASection />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex flex-col w-full">
+      <Hero keyHighlights={keyHighlights} />
+      <Process />
+      <Overview />
+      <ValueStrip />
+      <Capabilities />
+      <Insights />
+      <FeaturedVideo />
+      <Automation />
+      <AIAssistant />
+      <Audience />
+      <Metrics />
+      <section className="py-24 bg-white">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">Precision Control</h2>
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto">Experience the depth of our AI engine with interactive real-time data visualization.</p>
+          </div>
+          <InteractiveDashboard />
+        </Container>
+      </section>
+      <CTASection />
+    </main>
   );
 }
