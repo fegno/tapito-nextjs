@@ -328,37 +328,6 @@ export default function FeatureDetailPage() {
           </section>
         )}
 
-        {/* ══ SECTION 8: FINAL CTA ══ */}
-        <section className="py-16 border-y border-slate-100">
-          <Container>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-2">
-                  Ready to activate {feature.title}?
-                </h2>
-                <p className="text-slate-500 font-medium">
-                  See it live with your own data in a personalised demo.
-                </p>
-              </div>
-              <div className="flex items-center gap-4 shrink-0">
-                <Link
-                  href="/enterprise"
-                  className="inline-flex items-center gap-2 bg-[#4112e0] hover:bg-indigo-700 text-white px-7 py-4 rounded-2xl font-black text-base shadow-xl shadow-indigo-500/20 transition-all hover:scale-105 active:scale-95"
-                >
-                  <Play size={16} />
-                  Book a Live Demo
-                </Link>
-                <Link
-                  href="/enterprise"
-                  className="inline-flex items-center gap-2 border border-slate-200 hover:border-slate-900 text-slate-900 px-7 py-4 rounded-2xl font-black text-base transition-all duration-200"
-                >
-                  Talk to Experts
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
-
         {/* ══ SECTION 9: RELATED FEATURES ══ */}
         <section className="py-20">
           <Container>
