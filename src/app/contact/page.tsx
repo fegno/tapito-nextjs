@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import { InteractiveGrid } from "@/components/InteractiveGrid";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
+import ContactReasons from "@/components/contact/ContactReasons";
 import WorldPresence from "@/components/contact/WorldPresence";
 import ContactResources from "@/components/contact/ContactResources";
 
@@ -28,6 +29,9 @@ const ContactPage = () => {
           </div>
         </div>
       </Container>
+
+      {/* ── Reasons Section ──────────────────────────────────── */}
+      <ContactReasons />
 
       {/* ── World Presence ───────────────────────────────────── */}
       <Container className="pt-24 pb-32">

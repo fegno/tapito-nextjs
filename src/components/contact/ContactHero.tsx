@@ -42,13 +42,13 @@ export default function ContactHero() {
         </span>
       </h1>
 
-      <p className="text-xl text-slate-500 font-medium mb-10 leading-relaxed max-w-lg">
+      <p className="text-lg text-slate-500 font-medium mb-10 leading-relaxed max-w-2xl">
         Connect with us to explore how Tapito can help you elevate customer engagement,
         build stronger relationships, and drive business success.
       </p>
 
       {/* Stat pills */}
-      <div className="flex flex-wrap gap-3 mb-12">
+      <div className="grid grid-cols-2 gap-3 mb-16 max-w-md">
         {[
           { icon: Clock,  label: "Response in < 2 hrs",  color: "text-blue-500" },
           { icon: Globe,  label: "16 cities worldwide",   color: "text-sky-500" },
@@ -76,38 +76,6 @@ export default function ContactHero() {
         ))}
       </div>
 
-      {/* Reach out list */}
-      <div className="space-y-8 mb-16">
-        <h3 className="text-lg font-bold text-slate-800 uppercase tracking-widest">Reach out to us for:</h3>
-        <div className="space-y-6">
-          {[
-            { icon: Globe,     text: "Platform details and personal demos", color: "text-blue-500",    bg: "bg-blue-50"    },
-            { icon: Users,     text: "Partnerships",                        color: "text-sky-500",     bg: "bg-sky-50"     },
-            { icon: Megaphone, text: "Press queries",                       color: "text-cyan-500",    bg: "bg-cyan-50"    },
-            { icon: Briefcase, text: "Career opportunities",               color: "text-emerald-500", bg: "bg-emerald-50" },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 + i * 0.1 }}
-              className="flex items-center gap-5 group cursor-default"
-            >
-              <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] shadow-sm", item.bg, item.color)}>
-                <motion.div
-                  animate={{ y: [0, -4, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: i * 0.5 }}
-                >
-                  <item.icon size={22} strokeWidth={2} />
-                </motion.div>
-              </div>
-              <span className="text-lg font-semibold text-slate-600 group-hover:text-[#09358c] group-hover:translate-x-1 transition-all duration-300">
-                {item.text}
-              </span>
-            </motion.div>
-          ))}
-        </div>
-      </div>
 
       {/* Email contacts */}
       <div className="pt-12 border-t border-slate-200">

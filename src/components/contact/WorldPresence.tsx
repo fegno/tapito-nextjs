@@ -97,21 +97,25 @@ export default function WorldPresence() {
             </defs>
 
             {/* Subtle animated connection lines */}
-            {MAP_DOTS.slice(0, 6).map((loc, i) => (
-              <motion.line
-                key={`line-${i}`}
-                x1={loc.x} y1={loc.y}
-                x2={MAP_DOTS[(i + 5) % MAP_DOTS.length].x}
-                y2={MAP_DOTS[(i + 5) % MAP_DOTS.length].y}
-                stroke="url(#lineGrad)"
-                strokeWidth="0.6"
-                strokeDasharray="5 7"
-                initial={{ pathLength: 0, opacity: 0 }}
-                whileInView={{ pathLength: 1, opacity: 0.25 }}
-                viewport={{ once: true }}
-                transition={{ duration: 2, delay: i * 0.2 }}
-              />
-            ))}
+            {MAP_DOTS.map((loc, i) => {
+              const target = MAP_DOTS[(i + 3) % MAP_DOTS.length]; // Connect to a further dot for longer curves
+              const midX = (loc.x + target.x) / 2;
+              const midY = Math.min(loc.y, target.y) - 60; // More pronounced curve
+              return (
+                <motion.path
+                  key={`line-${i}`}
+                  d={`M ${loc.x} ${loc.y} Q ${midX} ${midY} ${target.x} ${target.y}`}
+                  fill="none"
+                  stroke="url(#lineGrad)"
+                  strokeWidth="0.5"
+                  strokeDasharray="3 6"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 0.5 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 3, delay: i * 0.1 }}
+                />
+              );
+            })}
 
             {/* Dots */}
             {MAP_DOTS.map((loc, i) => (

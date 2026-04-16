@@ -46,7 +46,7 @@ export default function ContactForm() {
       className="relative group/form"
       onMouseMove={handleMouseMove}
     >
-      <div className="relative bg-white/70 backdrop-blur-3xl rounded-[2rem] border border-slate-200/60 shadow-[0_32px_80px_-16px_rgba(9,53,140,0.1)] overflow-hidden">
+      <div className="relative bg-white/70 backdrop-blur-3xl rounded-[1.5rem] border border-slate-200/60 shadow-[0_32px_80px_-16px_rgba(9,53,140,0.1)] overflow-hidden">
         {/* Gradient top accent */}
         <div className="h-[2px] w-full bg-gradient-to-r from-[#09358c]/40 via-[#05a0ec]/40 to-transparent" />
 

@@ -124,27 +124,27 @@ export default function ContactResources() {
                 title: "Interactive Demo",
                 desc: "Experience the full power of Tapito AI with our hands-on product walkthrough.",
                 icon: Monitor,
-                accent: "group-hover:bg-violet-600",
-                glow: "group-hover:bg-violet-500/10",
-                tag: "group-hover:border-violet-500/40 group-hover:text-violet-300",
+                accent: "group-hover:bg-[#05a0ec]",
+                glow: "group-hover:bg-[#05a0ec]/10",
+                tag: "group-hover:border-[#05a0ec]/40 group-hover:text-[#05a0ec]",
               },
               {
                 num: "03",
                 title: "Careers",
                 desc: "Join our mission to revolutionize retail with artificial intelligence.",
                 icon: Briefcase,
-                accent: "group-hover:bg-blue-600",
-                glow: "group-hover:bg-blue-500/10",
-                tag: "group-hover:border-blue-500/40 group-hover:text-blue-300",
+                accent: "group-hover:bg-[#05a0ec]",
+                glow: "group-hover:bg-[#05a0ec]/10",
+                tag: "group-hover:border-[#05a0ec]/40 group-hover:text-[#05a0ec]",
               },
               {
                 num: "04",
                 title: "Growth Community",
                 desc: "Connect with 5,000+ retail leaders and share proven growth strategies.",
                 icon: Users,
-                accent: "group-hover:bg-emerald-600",
-                glow: "group-hover:bg-emerald-500/10",
-                tag: "group-hover:border-emerald-500/40 group-hover:text-emerald-300",
+                accent: "group-hover:bg-[#05a0ec]",
+                glow: "group-hover:bg-[#05a0ec]/10",
+                tag: "group-hover:border-[#05a0ec]/40 group-hover:text-[#05a0ec]",
               },
             ].map((r, i) => (
               <motion.a
@@ -156,7 +156,7 @@ export default function ContactResources() {
                 transition={{ delay: 0.1 + i * 0.1, duration: 0.55 }}
                 whileHover={{ y: -5 }}
                 className={cn(
-                  "group relative flex flex-col justify-between p-7 rounded-[1.25rem] border border-slate-200 bg-white overflow-hidden transition-all duration-400 shadow-sm hover:shadow-md",
+                  "group relative flex flex-col justify-between p-7 rounded-[1.5rem] border border-slate-200 bg-white overflow-hidden transition-all duration-400 shadow-sm hover:shadow-md",
                   "hover:border-blue-100 hover:bg-slate-50/50"
                 )}
               >
