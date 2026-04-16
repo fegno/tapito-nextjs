@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import {
   HelpCircle,
   Monitor,
@@ -11,17 +11,31 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import BorderGlow from "@/components/BorderGlow";
 import { cn } from "@/lib/utils";
 import Container from "@/components/Container";
 import Particles from "@/components/Particles";
 
 export default function ContactResources() {
+  // Spotlight effect for featured card
+  const fX = useMotionValue(0);
+  const fY = useMotionValue(0);
+  function handleFMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    fX.set(clientX - left);
+    fY.set(clientY - top);
+  }
+  const fSpotlight = useTransform(
+    [fX, fY],
+    ([x, y]) => `radial-gradient(400px circle at ${x}px ${y}px, rgba(255, 255, 255, 0.15), transparent 80%)`
+  );
+
   return (
-    <section className="py-32 bg-slate-900 overflow-hidden relative">
+    <section className="py-32 bg-[#fafbfc] overflow-hidden relative">
       {/* Background layers */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none"><Particles /></div>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_-10%,rgba(99,102,241,0.2)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
+      <div className="absolute inset-0 opacity-20 pointer-events-none"><Particles /></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_-10%,rgba(9,53,140,0.05)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(9,53,140,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(9,53,140,0.02)_1px,transparent_1px)] bg-[size:48px_48px] pointer-events-none" />
 
       <Container className="relative z-10">
         {/* Section header */}
@@ -33,16 +47,16 @@ export default function ContactResources() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/25 bg-indigo-500/10 mb-5">
-              <Sparkles size={12} className="text-indigo-400" />
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-indigo-300">Resources</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#09358c]/15 bg-[#09358c]/5 mb-5">
+              <Sparkles size={12} className="text-[#09358c]" />
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#09358c]/80">Resources</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 tracking-tight leading-[1.05]">
               Everything you need<br />
-              <span className="gradient-text">to grow with Tapito</span>
+              <span className="text-[#09358c]">to grow with Tapito</span>
             </h2>
           </div>
-          <p className="text-[15px] text-slate-400 font-medium max-w-xs leading-relaxed md:text-right">
+          <p className="text-[15px] text-slate-500 font-medium max-w-xs leading-relaxed md:text-right">
             Discover the tools, demos, and community behind the world&apos;s fastest-growing retail AI platform.
           </p>
         </motion.div>
@@ -57,8 +71,24 @@ export default function ContactResources() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.015 }}
-            className="group lg:col-span-5 relative flex flex-col justify-between p-10 rounded-[1.25rem] bg-gradient-to-br from-indigo-600 to-violet-700 overflow-hidden min-h-[340px]"
+            onMouseMove={handleFMove}
+            className="group lg:col-span-5 relative flex flex-col justify-between p-10 rounded-[2rem] bg-gradient-to-br from-[#09358c] to-[#05a0ec] overflow-hidden min-h-[340px] shadow-[0_32px_64px_-16px_rgba(9,53,140,0.25)]"
           >
+            {/* Spotlight Glow */}
+            <motion.div 
+              className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              style={{ background: fSpotlight }}
+            />
+            
+            {/* Border glow */}
+            <BorderGlow 
+              colorFrom="rgba(255,255,255,0.4)" 
+              colorTo="rgba(255,255,255,0.1)" 
+              borderRadius="2rem" 
+              size={250} 
+              duration={6} 
+              className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            />
             {/* Decorative blobs */}
             <div className="absolute -top-10 -right-10 w-52 h-52 bg-white/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute -bottom-16 -left-10 w-64 h-64 bg-black/20 rounded-full blur-3xl pointer-events-none" />
@@ -80,8 +110,8 @@ export default function ContactResources() {
 
             <div className="relative z-10 flex items-center justify-between mt-10">
               <span className="text-[11px] font-extrabold text-white/60 uppercase tracking-[0.2em]">Explore Now</span>
-              <div className="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-indigo-600 transition-all duration-300">
-                <ArrowRight size={16} className="text-white group-hover:text-indigo-600 group-hover:translate-x-0.5 transition-all duration-300" />
+              <div className="w-10 h-10 rounded-full bg-white/15 border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#05a0ec] transition-all duration-300">
+                <ArrowRight size={16} className="text-white group-hover:text-[#05a0ec] group-hover:translate-x-0.5 transition-all duration-300" />
               </div>
             </div>
           </motion.a>
@@ -126,8 +156,8 @@ export default function ContactResources() {
                 transition={{ delay: 0.1 + i * 0.1, duration: 0.55 }}
                 whileHover={{ y: -5 }}
                 className={cn(
-                  "group relative flex flex-col justify-between p-7 rounded-[1.25rem] border border-slate-700/80 bg-slate-800/40 overflow-hidden transition-all duration-400",
-                  "hover:border-slate-600 hover:bg-slate-800/70"
+                  "group relative flex flex-col justify-between p-7 rounded-[1.25rem] border border-slate-200 bg-white overflow-hidden transition-all duration-400 shadow-sm hover:shadow-md",
+                  "hover:border-blue-100 hover:bg-slate-50/50"
                 )}
               >
                 {/* Corner ambient glow */}
@@ -150,15 +180,15 @@ export default function ContactResources() {
                     <r.icon size={22} strokeWidth={1.5} />
                   </div>
 
-                  <h3 className="text-[17px] font-black text-white mb-2.5 tracking-tight leading-snug">
+                  <h3 className="text-[17px] font-black text-slate-900 mb-2.5 tracking-tight leading-snug">
                     {r.title}
                   </h3>
-                  <p className="text-[13px] text-slate-400 font-medium leading-relaxed">
+                  <p className="text-[14px] text-slate-500 font-medium leading-relaxed">
                     {r.desc}
                   </p>
                 </div>
 
-                <div className="relative z-10 mt-8 flex items-center gap-2 text-[11px] font-extrabold text-slate-500 uppercase tracking-[0.18em] group-hover:text-white transition-colors duration-300">
+                <div className="relative z-10 mt-8 flex items-center gap-2 text-[11px] font-extrabold text-[#05a0ec] uppercase tracking-[0.18em] group-hover:text-[#09358c] transition-colors duration-300">
                   Explore
                   <ArrowRight size={13} className="transition-transform group-hover:translate-x-1 duration-300" />
                 </div>
@@ -173,15 +203,15 @@ export default function ContactResources() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6 rounded-[1.25rem] border border-slate-700/60 bg-slate-800/30"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 px-8 py-6 rounded-[1.25rem] border border-slate-100 bg-white shadow-sm"
         >
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center flex-shrink-0">
-              <Zap size={18} className="text-white" />
+            <div className="w-10 h-10 rounded-xl bg-[#09358c]/5 flex items-center justify-center flex-shrink-0">
+              <Zap size={18} className="text-[#09358c]" />
             </div>
-            <p className="text-[15px] font-semibold text-slate-300">
+            <p className="text-[15px] font-semibold text-slate-600">
               Not sure where to start?{" "}
-              <span className="text-white font-bold">Our team is happy to guide you.</span>
+              <span className="text-[#09358c] font-bold">Our team is happy to guide you.</span>
             </p>
           </div>
           <a

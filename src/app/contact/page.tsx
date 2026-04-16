@@ -1,6 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Container from "@/components/Container";
+import { InteractiveGrid } from "@/components/InteractiveGrid";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactForm from "@/components/contact/ContactForm";
 import WorldPresence from "@/components/contact/WorldPresence";
@@ -10,7 +12,7 @@ const ContactPage = () => {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#fafbfc]">
 
-      {/* ── Background patterns ──────────────────────────────── */}
+      {/* ── Background Patterns ──────────────────────────────── */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_32px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
 
 

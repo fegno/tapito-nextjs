@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-motion";
 import { Send, CheckCircle2, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import BorderGlow from "@/components/BorderGlow";
 
 /* ─── Field wrapper ───────────────────────────────────────── */
 function Field({ children }: { children: React.ReactNode }) {
@@ -19,26 +20,39 @@ export default function ContactForm() {
   const [country, setCountry] = useState("");
   const [reason, setReason] = useState("");
 
+  // Spotlight effect
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  const spotlightBg = useTransform(
+    [mouseX, mouseY],
+    ([x, y]) => `radial-gradient(650px circle at ${x}px ${y}px, rgba(5, 160, 236, 0.1), transparent 80%)`
+  );
+
   const inputCls =
-    "w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-100 focus:bg-white focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300 font-medium text-slate-900 placeholder:font-normal placeholder:text-slate-400";
+    "w-full px-6 py-4 rounded-xl bg-slate-50/50 border border-slate-100/80 focus:bg-white focus:border-[#05a0ec] focus:outline-none focus:ring-4 focus:ring-[#05a0ec]/10 transition-all duration-300 font-medium text-slate-900 placeholder:font-normal placeholder:text-slate-400 backdrop-blur-sm";
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="relative"
+      className="relative group/form"
+      onMouseMove={handleMouseMove}
     >
-      {/* Glow halo */}
-      <div className="absolute -inset-4 bg-gradient-to-br from-indigo-500/10 via-purple-500/10 to-blue-500/10 blur-3xl opacity-50 rounded-[3rem]" />
-
-      <div className="relative bg-white/80 backdrop-blur-2xl rounded-[1.25rem] border border-slate-200 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.08)] overflow-hidden">
-        {/* Gradient top bar */}
-        <div className="h-[3px] w-full bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500" />
+      <div className="relative bg-white/70 backdrop-blur-3xl rounded-[2rem] border border-slate-200/60 shadow-[0_32px_80px_-16px_rgba(9,53,140,0.1)] overflow-hidden">
+        {/* Gradient top accent */}
+        <div className="h-[2px] w-full bg-gradient-to-r from-[#09358c]/40 via-[#05a0ec]/40 to-transparent" />
 
         <div className="p-8 md:p-12">
           {/* Corner decoration */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#05a0ec]/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
           <AnimatePresence mode="wait">
             {!submitted ? (
@@ -119,13 +133,13 @@ export default function ContactForm() {
                 <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-8">
                   <p className="text-[13px] text-slate-500 font-medium leading-relaxed max-w-sm">
                     By submitting this form, I agree to Tapito&apos;s{" "}
-                    <a href="#" className="text-indigo-600 font-bold hover:underline">privacy policy</a>{" "}
+                    <a href="#" className="text-[#05a0ec] font-bold hover:underline">privacy policy</a>{" "}
                     and{" "}
-                    <a href="#" className="text-indigo-600 font-bold hover:underline">terms of service</a>.
+                    <a href="#" className="text-[#05a0ec] font-bold hover:underline">terms of service</a>.
                   </p>
                   <button
                     type="submit"
-                    className="btn-premium whitespace-nowrap min-w-[200px] shadow-indigo-600/30 inline-flex items-center gap-2.5"
+                    className="btn-premium whitespace-nowrap min-w-[200px] shadow-blue-600/30 inline-flex items-center gap-2.5"
                   >
                     <Send size={16} />
                     Send Message
@@ -149,7 +163,7 @@ export default function ContactForm() {
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setCountry(""); setReason(""); }}
-                  className="mt-2 text-sm text-indigo-600 hover:text-indigo-800 font-bold transition-colors"
+                  className="mt-2 text-sm text-[#05a0ec] hover:text-[#09358c] font-bold transition-colors"
                 >
                   ← Send another message
                 </button>

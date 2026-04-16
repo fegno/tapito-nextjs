@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin } from "lucide-react";
 import mapBg from "@/public/assets/images/contact/map-bg-without-dot.svg";
+import BorderGlow from "@/components/BorderGlow";
 
 const OFFICES = [
   { city: "San Francisco",    flag: "🇺🇸", address: "680 California St, Suite 1200, San Francisco, CA 94104, USA" },
@@ -57,13 +58,13 @@ export default function WorldPresence() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-indigo-200/60 bg-indigo-50/80 mb-6">
-            <MapPin size={13} className="text-indigo-500" />
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-indigo-700">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-blue-200/60 bg-blue-50/80 mb-6">
+            <MapPin size={13} className="text-[#05a0ec]" />
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#09358c]">
               Global Presence
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-6 tracking-tight">
             Presence Around the World
           </h2>
           <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto">
@@ -86,12 +87,12 @@ export default function WorldPresence() {
           <svg viewBox="0 0 1000 500" className="absolute inset-0 w-full h-full z-10 overflow-visible">
             <defs>
               <radialGradient id="dotGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#6366f1" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
+                <stop offset="0%" stopColor="#05a0ec" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#05a0ec" stopOpacity="0" />
               </radialGradient>
               <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#6366f1" />
-                <stop offset="100%" stopColor="#a855f7" />
+                <stop offset="0%" stopColor="#09358c" />
+                <stop offset="100%" stopColor="#05a0ec" />
               </linearGradient>
             </defs>
 
@@ -135,7 +136,7 @@ export default function WorldPresence() {
                 {/* Main dot */}
                 <motion.circle
                   cx={loc.x} cy={loc.y} r="5"
-                  className="fill-indigo-600 stroke-white stroke-[2]"
+                  className="fill-[#05a0ec] stroke-white stroke-[2]"
                   whileHover={{ scale: 1.8 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 />
@@ -170,24 +171,32 @@ export default function WorldPresence() {
       {/* Office cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {OFFICES.map((office, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.05 }}
-            whileHover={{ y: -5 }}
-            className="group relative p-6 rounded-[1.25rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-indigo-500/8 transition-all duration-300 overflow-hidden"
-          >
-            {/* Hover glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/0 to-violet-50/0 group-hover:from-indigo-50/60 group-hover:to-violet-50/40 transition-all duration-500 rounded-[1.25rem]" />
-            {/* Top accent line on hover */}
-            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-indigo-500 to-violet-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-t-[1.25rem]" />
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              whileHover={{ y: -8 }}
+              className="group relative p-8 rounded-[1.5rem] bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_32px_64px_-16px_rgba(9,53,140,0.12)] transition-all duration-500 overflow-hidden"
+            >
+              <BorderGlow 
+                colorFrom="#09358c" 
+                colorTo="#05a0ec" 
+                duration={5} 
+                size={180} 
+                borderRadius="1.5rem" 
+                borderWidth={1.5}
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
+              
+              {/* Hover glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-sky-50/0 group-hover:from-blue-50/60 group-hover:to-sky-50/40 transition-all duration-500 rounded-[1.5rem]" />
 
             <div className="relative z-10">
               <div className="flex items-center gap-4 mb-4">
                 <span className="text-2xl">{office.flag}</span>
-                <h4 className="text-xl font-black text-slate-900 group-hover:text-indigo-600 transition-colors uppercase tracking-tight">
+                <h4 className="text-xl font-black text-slate-900 group-hover:text-[#05a0ec] transition-colors uppercase tracking-tight">
                   {office.city}
                 </h4>
               </div>

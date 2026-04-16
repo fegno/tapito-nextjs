@@ -26,13 +26,13 @@ export const CaseStudiesHero = () => {
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2 mb-10 text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-900 bg-gradient-to-r from-indigo-50/90 to-violet-50/90 backdrop-blur-xl rounded-full border border-indigo-200/50 shadow-sm shadow-indigo-100/50"
+              className="inline-flex items-center gap-2.5 px-5 py-2 mb-10 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#09358c] bg-blue-50/80 backdrop-blur-xl rounded-full border border-blue-200/50 shadow-sm shadow-blue-100/50"
             >
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Sparkles size={12} className="text-indigo-600 fill-current" />
+                <Sparkles size={12} className="text-[#05a0ec] fill-current" />
               </motion.div>
               Customer Stories
             </motion.div>
@@ -40,7 +40,7 @@ export const CaseStudiesHero = () => {
             {/* Headline */}
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-10 tracking-tighter leading-[0.95]">
               Real results from <br />
-              <span className="gradient-text">real retailers</span>
+              <span className="text-[#09358c]">real retailers</span>
             </h1>
 
             {/* Subtext */}

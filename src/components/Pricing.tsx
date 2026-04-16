@@ -28,7 +28,7 @@ const plans = [
     cta: "Book a Demo",
     popular: false,
     color: "blue",
-    hue: 220,
+    hue: 210,
   },
   {
     name: "Growth",
@@ -48,8 +48,8 @@ const plans = [
     ],
     cta: "Book a Demo",
     popular: false,
-    color: "violet",
-    hue: 260,
+    color: "sky",
+    hue: 195,
   },
   {
     name: "Elite",
@@ -70,8 +70,8 @@ const plans = [
     ],
     cta: "Book a Demo",
     popular: true,
-    color: "indigo",
-    hue: 240,
+    color: "brand-sky",
+    hue: 200,
   },
   {
     name: "Enterprise",
@@ -91,7 +91,7 @@ const plans = [
     cta: "Contact Sales",
     popular: false,
     color: "slate",
-    hue: 200,
+    hue: 215,
   },
 ];
 
@@ -113,7 +113,7 @@ const SpotlightCard = ({ children, className, popular, hue }: { children: React.
           whileInView={{ opacity: 1, y: 0 }}
           className="absolute -top-3 left-1/2 -translate-x-1/2 z-40"
         >
-          <div className="flex items-center gap-2 px-3 py-1 bg-indigo-600 rounded-full border border-indigo-400 shadow-[0_8px_20px_-4px_rgba(79,70,229,0.4)] whitespace-nowrap">
+          <div className="flex items-center gap-2 px-3 py-1 bg-[#09358c] rounded-full border border-blue-400 shadow-[0_8px_20px_-4px_rgba(9,53,140,0.4)] whitespace-nowrap">
             <div className="w-1.5 h-1.5 bg-white rounded-full" />
             <span className="text-[10px] font-black uppercase tracking-[0.1em] text-white">
               Most Popular
@@ -133,24 +133,24 @@ const SpotlightCard = ({ children, className, popular, hue }: { children: React.
           transition: { duration: 0.3 } 
         }}
         className={cn(
-          "group relative flex flex-col h-full rounded-[1.5rem] border border-slate-200/60 bg-white/70 backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_32px_64px_-16px_rgba(99,102,241,0.12)]",
+          "group relative flex flex-col h-full rounded-[1.5rem] border border-slate-200/60 bg-white/70 backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_32px_64px_-16px_rgba(5,160,236,0.12)]",
           popular 
-            ? "shadow-[0_48px_96px_-24px_rgba(79,70,229,0.22)] border-indigo-500/50 ring-1 ring-indigo-500/20 bg-white/90" 
-            : "hover:border-indigo-300/50 hover:bg-white/90 shadow-sm"
+            ? "shadow-[0_48px_96px_-24px_rgba(9,53,140,0.22)] border-[#05a0ec]/50 ring-1 ring-[#05a0ec]/20 bg-white/90" 
+            : "hover:border-blue-300/50 hover:bg-white/90 shadow-sm"
         )}
       >
         {/* Top reflection flare */}
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
         
         {popular && (
-          <div className="absolute inset-0 rounded-[1.5rem] border border-indigo-500/30 pointer-events-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)]" />
+          <div className="absolute inset-0 rounded-[1.5rem] border border-[#05a0ec]/30 pointer-events-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.7)]" />
         )}
         <motion.div
           className="pointer-events-none absolute -inset-px rounded-[1.5rem] opacity-0 transition duration-500 group-hover:opacity-100"
           style={{
             background: useTransform(
               [mouseX, mouseY],
-              ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(99, 102, 241, 0.06), transparent 40%)`
+              ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(5, 160, 236, 0.06), transparent 40%)`
             ),
           }}
         />
@@ -176,8 +176,8 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
       className={cn(
         "group overflow-hidden transition-all duration-500 rounded-[1rem] border backdrop-blur-xl",
         isOpen 
-          ? "bg-white/80 border-indigo-200/60 shadow-[0_32px_64px_-16px_rgba(30,64,175,0.08)]" 
-          : "bg-white/40 border-white/40 hover:border-indigo-100 hover:bg-white/60 shadow-sm"
+          ? "bg-white/80 border-[#05a0ec]/60 shadow-[0_32px_64px_-16px_rgba(9,53,140,0.08)]" 
+          : "bg-white/40 border-white/40 hover:border-blue-100 hover:bg-white/60 shadow-sm"
       )}
     >
       <button
@@ -189,8 +189,8 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
             className={cn(
               "w-11 h-11 rounded-2xl flex items-center justify-center text-[11px] font-black transition-all duration-500",
               isOpen 
-                ? "bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-200" 
-                : "bg-white/80 text-slate-400 group-hover/btn:text-indigo-600 border border-slate-100 group-hover/btn:border-indigo-100 group-hover/btn:shadow-md group-hover/btn:shadow-indigo-50/50"
+                ? "bg-gradient-to-br from-[#09358c] to-[#05a0ec] text-white shadow-lg shadow-blue-200" 
+                : "bg-white/80 text-slate-400 group-hover/btn:text-[#05a0ec] border border-slate-100 group-hover/btn:border-blue-100 group-hover/btn:shadow-md group-hover/btn:shadow-blue-50/50"
             )}
           >
             {displayIndex}
@@ -198,7 +198,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
           <span
             className={cn(
               "text-[16px] font-black transition-colors duration-500 tracking-tight",
-              isOpen ? "text-slate-900" : "text-slate-600 group-hover/btn:text-indigo-600"
+              isOpen ? "text-slate-900" : "text-slate-600 group-hover/btn:text-[#05a0ec]"
             )}
           >
             {question}
@@ -209,7 +209,7 @@ const FAQItem = ({ question, answer, index }: { question: string; answer: string
             "w-11 h-11 rounded-2xl border flex items-center justify-center transition-all duration-500",
             isOpen
               ? "bg-slate-900 border-slate-900 text-white rotate-180"
-              : "bg-white/80 border-slate-100 text-slate-400 group-hover/btn:border-indigo-100 group-hover/btn:text-indigo-600"
+              : "bg-white/80 border-slate-100 text-slate-400 group-hover/btn:border-blue-100 group-hover/btn:text-[#05a0ec]"
           )}
         >
           <ChevronDown size={18} strokeWidth={2.5} />
@@ -240,29 +240,29 @@ const Pricing = () => {
       
       {/* Dynamic Background */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        {/* Blob 1 — top left, indigo/violet */}
+        {/* Blob 1 — top left, blue */}
         <motion.div
           animate={{ x: [0, 50, -20, 0], y: [0, 40, -30, 0], scale: [1, 1.12, 0.95, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-[25%] -left-[20%] w-[65%] h-[65%] rounded-full bg-gradient-to-br from-indigo-300/35 via-violet-300/25 to-transparent blur-[130px]"
+          className="absolute -top-[25%] -left-[20%] w-[65%] h-[65%] rounded-full bg-gradient-to-br from-[#09358c]/25 via-[#05a0ec]/15 to-transparent blur-[130px]"
         />
-        {/* Blob 2 — bottom right, blue/cyan */}
+        {/* Blob 2 — bottom right, cyan */}
         <motion.div
           animate={{ x: [0, -60, 30, 0], y: [0, -50, 20, 0], scale: [1, 1.18, 0.92, 1] }}
           transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 4 }}
           className="absolute -bottom-[25%] -right-[20%] w-[65%] h-[65%] rounded-full bg-gradient-to-tl from-blue-300/35 via-cyan-200/20 to-transparent blur-[130px]"
         />
-        {/* Blob 3 — center, purple accent */}
+        {/* Blob 3 — center, blue accent */}
         <motion.div
           animate={{ scale: [1, 1.25, 0.88, 1], opacity: [0.12, 0.22, 0.10, 0.12] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[45%] rounded-full bg-gradient-to-br from-violet-400/20 via-indigo-400/15 to-transparent blur-[100px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[45%] h-[45%] rounded-full bg-gradient-to-br from-[#05a0ec]/20 via-[#09358c]/15 to-transparent blur-[100px]"
         />
         {/* Sweeping light beam */}
         <motion.div
           animate={{ x: ["-120%", "220%"] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", repeatDelay: 5 }}
-          className="absolute top-0 left-0 w-[40%] h-full bg-gradient-to-r from-transparent via-indigo-100/20 to-transparent skew-x-[-20deg]"
+          className="absolute top-0 left-0 w-[40%] h-full bg-gradient-to-r from-transparent via-blue-100/20 to-transparent skew-x-[-20deg]"
         />
         {/* Particles layer */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-40">
@@ -283,18 +283,18 @@ const Pricing = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2.5 px-5 py-2 mb-10 text-[11px] font-semibold uppercase tracking-[0.2em] text-indigo-900 bg-gradient-to-r from-indigo-50/90 to-violet-50/90 backdrop-blur-xl rounded-full border border-indigo-200/50 shadow-sm shadow-indigo-100/50"
+              className="inline-flex items-center gap-2.5 px-5 py-2 mb-10 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#09358c] bg-blue-50/80 backdrop-blur-xl rounded-full border border-blue-200/50 shadow-sm shadow-blue-100/50"
             >
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
-                <Zap size={12} className="text-indigo-600 fill-current" />
+                <Zap size={12} className="text-[#05a0ec] fill-current" />
               </motion.div>
               Pricing Plans
             </motion.div>
             <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-10 tracking-tighter leading-[0.95]">
-              Ready to revolutionize <br /> <span className="gradient-text">your retail analytics?</span>
+              Ready to revolutionize <br /> <span className="text-[#09358c]">your retail analytics?</span>
             </h2>
             <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
               Join 500+ leading retailers who use Tapito to make smarter, faster, more profitable decisions every day.
@@ -330,14 +330,14 @@ const Pricing = () => {
                   Everything you need to know about plans, billing, and devices. Can't find your answer? We're happy to help.
                 </p>
 
-                <div className="group relative p-10 rounded-[1.5rem] bg-slate-900 overflow-hidden shadow-2xl shadow-indigo-900/10">
+                <div className="group relative p-10 rounded-[1.5rem] bg-slate-900 overflow-hidden shadow-2xl shadow-blue-900/10">
                   <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700 pointer-events-none">
-                    <Sparkles size={140} className="text-indigo-400" />
+                    <Sparkles size={140} className="text-[#05a0ec]" />
                   </div>
-                  <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-indigo-600/20 blur-[100px] rounded-full" />
+                  <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-[#05a0ec]/20 blur-[100px] rounded-full" />
                   
                   <div className="relative z-10 flex flex-col items-start gap-8">
-                    <div className="w-16 h-16 rounded-[1.5rem] bg-indigo-600 flex items-center justify-center text-white shadow-xl shadow-indigo-600/40 relative">
+                    <div className="w-16 h-16 rounded-[1.5rem] bg-[#05a0ec] flex items-center justify-center text-white shadow-xl shadow-blue-600/40 relative">
                        <Mail size={30} strokeWidth={1.5} />
                        <div className="absolute inset-0 bg-white/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
@@ -345,7 +345,7 @@ const Pricing = () => {
                       <h5 className="font-black text-white text-2xl tracking-tight mb-3">Still have questions?</h5>
                       <p className="text-slate-400 text-[15px] font-medium leading-relaxed">Our strategic team responds within 24 hours.</p>
                     </div>
-                    <button className="w-full mt-4 bg-white text-slate-900 py-5 rounded-2xl font-black text-[13px] uppercase tracking-[0.2em] transition-all hover:bg-indigo-600 hover:text-white shadow-xl shadow-black/20 hover:shadow-indigo-600/30 hover:-translate-y-1">
+                    <button className="w-full mt-4 bg-white text-slate-900 py-5 rounded-2xl font-black text-[13px] uppercase tracking-[0.2em] transition-all hover:bg-[#05a0ec] hover:text-white shadow-xl shadow-black/20 hover:shadow-blue-600/30 hover:-translate-y-1">
                       Contact support
                     </button>
                   </div>
@@ -411,8 +411,8 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
         <div className={cn(
           "w-16 h-16 rounded-[1.25rem] flex items-center justify-center mb-10 relative transition-all duration-500 group-hover:scale-110 group-hover:rotate-3",
           plan.popular 
-            ? "bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-2xl shadow-indigo-600/30" 
-            : "bg-gradient-to-br from-slate-50 to-indigo-50/30 text-slate-900 border border-slate-200/50 shadow-sm"
+            ? "bg-gradient-to-br from-[#09358c] to-[#05a0ec] text-white shadow-2xl shadow-blue-600/30" 
+            : "bg-gradient-to-br from-slate-50 to-blue-50/30 text-slate-900 border border-slate-200/50 shadow-sm"
         )}>
           <Icon size={32} strokeWidth={1.5} />
           {plan.popular && (
@@ -421,10 +421,10 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
         </div>
         
         <h3 className="text-4xl font-bold text-slate-900 mb-4 leading-none tracking-tight">{plan.name}</h3>
-        <div className="h-1.5 w-20 bg-gradient-to-r from-blue-600 via-indigo-600 to-violet-600 rounded-full mb-8 shadow-md shadow-indigo-500/10" />
+        <div className="h-1.5 w-20 bg-gradient-to-r from-[#09358c] via-[#05a0ec] to-[#06dcc3] rounded-full mb-8 shadow-md shadow-blue-500/10" />
         
         <div className="space-y-2">
-          <p className="text-[11px] font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent uppercase tracking-[0.2em]">{plan.description}</p>
+          <p className="text-[11px] font-bold bg-gradient-to-r from-[#09358c] to-[#05a0ec] bg-clip-text text-transparent uppercase tracking-[0.2em]">{plan.description}</p>
           <p className="text-[14px] font-semibold text-slate-500 leading-relaxed pr-2">{plan.idealFor}</p>
         </div>
       </div>
@@ -448,7 +448,7 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
               <div className={cn(
                 "mt-0.5 flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center transition-all duration-500 group-hover/item:scale-125 group-hover/item:rotate-12",
                 plan.popular 
-                  ? "bg-indigo-50 text-indigo-600 group-hover/item:bg-indigo-600 group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-indigo-500/20" 
+                  ? "bg-blue-50 text-[#05a0ec] group-hover/item:bg-[#05a0ec] group-hover/item:text-white group-hover/item:shadow-lg group-hover/item:shadow-blue-500/20" 
                   : "bg-slate-50 text-slate-400 group-hover/item:bg-slate-900 group-hover/item:text-white"
               )}>
                 <Check size={12} strokeWidth={3.5} />

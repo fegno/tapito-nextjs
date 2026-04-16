@@ -21,6 +21,9 @@ import {
   type LucideProps,
 } from "lucide-react";
 
+import { InteractiveGrid } from "@/components/InteractiveGrid";
+import Particles from "@/components/Particles";
+
 /* ─── Icon lookup map ─────────────────────────────────────── */
 const ICON_MAP: Record<string, React.FC<LucideProps>> = {
   TrendingUp,
@@ -48,7 +51,7 @@ function MetricCard({
   const Icon = ICON_MAP[icon] ?? TrendingUp;
   return (
     <div className="flex flex-col items-center justify-center gap-1.5 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm text-center">
-      <Icon size={18} className="text-indigo-500" />
+      <Icon size={18} className="text-[#05a0ec]" />
       <span className="text-2xl font-extrabold text-slate-900 tracking-tight">
         {value}
       </span>
@@ -134,11 +137,17 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
   const related = CASE_STUDIES.filter((c) => c.id !== cs.id).slice(0, 3);
 
   return (
-    <main className="relative bg-[#fafbfc] min-h-screen">
-
+    <main className="relative bg-[#fafbfc] min-h-screen overflow-hidden">
+      {/* ── Background layers ────────────────────────────── */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:32px_48px] opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none">
+        <InteractiveGrid />
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-sky-400/5 blur-[120px] rounded-full pointer-events-none" />
+      </div>
 
       {/* ── Body ────────────────────────────────────────────── */}
-      <Container>
+      <Container className="relative z-10">
         <div className="max-w-4xl mx-auto pt-28 pb-14">
 
           {/* Category + Back */}
@@ -150,13 +159,13 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
           >
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-1.5 text-[12px] font-bold text-slate-400 hover:text-indigo-600 transition-colors"
+              className="inline-flex items-center gap-1.5 text-[12px] font-bold text-slate-400 hover:text-[#05a0ec] transition-colors"
             >
               <ArrowLeft size={13} />
               Back
             </Link>
             <span className="w-px h-4 bg-slate-300" />
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-50 text-[11px] font-extrabold uppercase tracking-[0.12em] text-indigo-600 border border-indigo-100">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-[11px] font-extrabold uppercase tracking-[0.12em] text-[#05a0ec] border border-blue-100">
               {cs.industry}
             </span>
           </motion.div>
@@ -279,7 +288,7 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
             </h2>
             <Link
               href="/case-studies"
-              className="inline-flex items-center gap-1.5 text-[12px] font-bold text-slate-400 hover:text-indigo-600 transition-colors border border-slate-200 rounded-full px-3 py-1 hover:border-indigo-200"
+              className="inline-flex items-center gap-1.5 text-[12px] font-bold text-slate-400 hover:text-[#05a0ec] transition-colors border border-slate-200 rounded-full px-3 py-1 hover:border-blue-200"
             >
               VIEW ALL
               <ArrowRight size={13} />
@@ -318,11 +327,11 @@ export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
                   <span>{rel.readTime}</span>
                 </div>
 
-                <h3 className="text-[15px] font-bold text-slate-800 leading-snug mb-2 group-hover:text-indigo-700 transition-colors">
+                <h3 className="text-[15px] font-bold text-slate-800 leading-snug mb-2 group-hover:text-[#05a0ec] transition-colors">
                   {rel.headline}
                 </h3>
 
-                <span className="mt-auto inline-flex items-center gap-1 text-[12px] font-bold text-indigo-500 group-hover:text-indigo-700 transition-colors">
+                <span className="mt-auto inline-flex items-center gap-1 text-[12px] font-bold text-[#05a0ec] group-hover:text-[#09358c] transition-colors">
                   Read more
                   <ArrowRight
                     size={12}

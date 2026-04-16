@@ -51,7 +51,7 @@ export const CaseStudiesListing = () => {
                   "px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-200",
                   activeIndustry === ind
                     ? "bg-slate-900 text-white shadow-md"
-                    : "bg-white border border-slate-200 text-slate-500 hover:border-indigo-200 hover:text-indigo-600"
+                    : "bg-white border border-slate-200 text-slate-500 hover:border-blue-200 hover:text-[#05a0ec]"
                 )}
               >
                 {ind}
@@ -70,7 +70,7 @@ export const CaseStudiesListing = () => {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search case studies…"
-              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-slate-200 text-[13px] font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-500/15 transition-all duration-200"
+              className="w-full pl-10 pr-4 py-2.5 rounded-full bg-white border border-slate-200 text-[13px] font-medium text-slate-700 placeholder:text-slate-400 focus:outline-none focus:border-[#05a0ec] focus:ring-2 focus:ring-[#05a0ec]/15 transition-all duration-200"
             />
           </div>
         </motion.div>
@@ -131,7 +131,7 @@ export const CaseStudiesListing = () => {
                 </div>
 
                 {/* ── Headline ──────────────────────────── */}
-                <h2 className="text-[18px] font-bold text-slate-900 mb-3 leading-snug tracking-tight group-hover:text-indigo-700 transition-colors duration-300">
+                <h2 className="text-[18px] font-bold text-slate-900 mb-3 leading-snug tracking-tight group-hover:text-[#05a0ec] transition-colors duration-300">
                   {cs.headline}
                 </h2>
 
@@ -141,7 +141,7 @@ export const CaseStudiesListing = () => {
                 </p>
 
                 {/* ── CTA ───────────────────────────────── */}
-                <div className="flex items-center gap-1.5 text-[13px] font-bold text-indigo-600 group-hover:text-indigo-800 transition-colors">
+                <div className="flex items-center gap-1.5 text-[13px] font-bold text-[#05a0ec] group-hover:text-[#09358c] transition-colors">
                   Read Case Study
                   <ArrowRight
                     size={14}
@@ -161,16 +161,16 @@ export const CaseStudiesListing = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-24 relative overflow-hidden rounded-[1.25rem] bg-slate-900 p-12 text-center"
         >
-          <div className="absolute -top-16 -left-16 w-64 h-64 bg-indigo-600/20 blur-[80px] rounded-full pointer-events-none" />
-          <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-violet-600/20 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute -top-16 -left-16 w-64 h-64 bg-[#09358c]/30 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-[#05a0ec]/20 blur-[80px] rounded-full pointer-events-none" />
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <Particles />
           </div>
 
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 mb-6">
-              <Zap size={12} className="text-indigo-400" />
-              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-indigo-300">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
+              <Zap size={12} className="text-[#05a0ec]" />
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-blue-300">
                 Your Brand, Next
               </span>
             </div>
