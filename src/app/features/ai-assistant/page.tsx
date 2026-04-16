@@ -103,7 +103,7 @@ export default function AIAssistantPage() {
                 </motion.div>
                 <motion.div variants={bubbleVariant("left")} className="max-w-[90%] rounded-[2rem] rounded-tl-md bg-white/8 p-6 border border-white/5 shadow-inner">
                   <p className="text-base font-medium leading-relaxed text-slate-200">Top product: <span className="font-black text-white">Silk Cotton Saree</span>.</p>
-                  <p className="mt-1 text-base font-medium text-slate-200 font-inter">Best margin: <span className="font-black text-emerald-400">Indiranagar at 22.4%</span>.</p>
+                  <p className="mt-1 text-base font-medium text-slate-200 font-inter">Best margin: <span className="font-black text-emerald-400">Sector 7 at 22.4%</span>.</p>
                   <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ delay: 1 }} className="mt-6 rounded-2xl border border-white/10 bg-slate-900/80 p-5 group/card hover:bg-slate-800 transition-colors">
                     <p className="text-[10px] font-black uppercase tracking-[0.2em] text-purple-400/80">Contextual Insight Card</p>
                     <div className="mt-4 flex items-center justify-between text-sm font-black text-white">
@@ -119,7 +119,7 @@ export default function AIAssistantPage() {
 
               <motion.div initial={{ y: 20, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} className="mt-8 rounded-3xl border border-white/10 bg-white/5 p-5 relative z-10 transition-colors hover:bg-white/10 cursor-pointer group/mic">
                 <div className="flex items-center justify-between gap-6 px-2">
-                  <span className="text-sm font-bold text-slate-400 group-hover/mic:text-slate-200 transition-colors">"Tell me more about HSR store..."</span>
+                  <span className="text-sm font-bold text-slate-400 group-hover/mic:text-slate-200 transition-colors">"Tell me more about Central Hub store..."</span>
                   <div className="flex items-end gap-1.5 h-6">
                     {[12, 22, 34, 18, 12, 26, 14].map((height, index) => (
                       <motion.span key={index} animate={{ height: [height, height * 1.5, height] }} transition={{ duration: 0.8 + index * 0.1, repeat: Infinity, ease: "easeInOut" }} className="w-1.5 rounded-full bg-purple-500 opacity-60 group-hover/mic:opacity-100 transition-opacity" />
@@ -175,7 +175,7 @@ export default function AIAssistantPage() {
                      <Waves size={22} className="text-purple-400 group-hover/card:scale-110 transition-transform" />
                    </div>
                    <div className="mt-8 px-4 py-5 rounded-2xl bg-white/5 border border-white/5 relative overflow-hidden text-white/90 font-black group-hover/card:border-purple-500/30 transition-colors">
-                     "What changed in HSR?"
+                     "What changed in Central Hub?"
                      <motion.div animate={{ x: ["-100%", "100%"] }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 left-0 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-purple-500 to-transparent" />
                    </div>
                 </motion.div>

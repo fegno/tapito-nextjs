@@ -120,7 +120,7 @@ export default function BusinessIntelligencePage() {
                 <div className="luminous-card-dark alive-panel rounded-[1.5rem] border border-white/12 bg-white/10 p-4">
                   <p className="text-sm font-black text-white">Branch Comparison</p>
                   <div className="mt-4 space-y-4">
-                    {[["Indiranagar", "Rs 14.2L", "100%"], ["Koramangala", "Rs 11.8L", "84%"], ["Whitefield", "Rs 9.4L", "68%"]].map(([name, value, width]) => (
+                    {[["Sector 12", "Rs 14.2L", "100%"], ["Industrial Park", "Rs 11.8L", "84%"], ["Downtown Hub", "Rs 9.4L", "68%"]].map(([name, value, width]) => (
                       <div key={name}>
                         <div className="mb-1 flex items-center justify-between text-xs font-bold text-white/80">
                           <span>{name}</span>
@@ -213,7 +213,7 @@ export default function BusinessIntelligencePage() {
                 <div className="rounded-[1.5rem] border border-purple-100 bg-white p-5 md:col-span-2">
                   <p className="text-sm font-black text-slate-950">Decision board</p>
                   <div className="mt-4 grid gap-3 md:grid-cols-3">
-                    {[["Store focus", "Rework assortment in Whitefield"], ["Category action", "Push Fashion in HSR this weekend"], ["Leadership note", "Margin expansion holding above target"]].map(([label, text], index) => (
+                    {[["Store focus", "Rework assortment in Downtown Hub"], ["Category action", "Push Fashion in Central Hub this weekend"], ["Leadership note", "Margin expansion holding above target"]].map(([label, text], index) => (
                       <motion.div key={label} whileHover={{ scale: 1.05 }} className="luminous-card-dark rounded-2xl border border-slate-200 bg-slate-950 p-4 text-white">
                         <p className="text-[10px] font-black uppercase tracking-[0.16em] text-purple-300">{label}</p>
                         <p className="mt-3 text-sm font-bold leading-6">{text}</p>
