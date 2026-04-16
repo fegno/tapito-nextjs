@@ -222,10 +222,18 @@ const bentoItems: BentoItem[] = [
   }
 ];
 
-export const BentoAnalyticsGrid = () => {
+export const BentoAnalyticsGrid = ({ 
+  items, 
+  title = "Intelligence for Every Vertical", 
+  subtitle = "Multi-Dimensional Analysis" 
+}: { 
+  items?: BentoItem[], 
+  title?: string, 
+  subtitle?: string 
+}) => {
   const [selectedItem, setSelectedItem] = useState<BentoItem | null>(null);
 
-  const orderedItems = [
+  const defaultOrderedItems = [
     bentoItems[0], // Behavior
     bentoItems[1], // User
     bentoItems[4], // User Path (2x1)
@@ -237,16 +245,18 @@ export const BentoAnalyticsGrid = () => {
     bentoItems[8], // Affinity
   ];
 
+  const displayItems = items || defaultOrderedItems;
+
   return (
     <section className="py-24 relative bg-[#fcfcfd]">
       <Container>
-        <div className="mb-16">
+        <div className="mb-16 text-center lg:text-left">
           <motion.p 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-xs font-black uppercase tracking-[0.3em] text-purple-600 mb-4"
           >
-            Multi-Dimensional Analysis
+            {subtitle}
           </motion.p>
           <motion.h2 
             initial={{ opacity: 0, y: 10 }}
@@ -254,12 +264,12 @@ export const BentoAnalyticsGrid = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl lg:text-5xl font-black text-slate-950 tracking-tight"
           >
-            Intelligence for Every Vertical
+            {title}
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {orderedItems.map((item, idx) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-fr">
+          {displayItems.map((item, idx) => (
             <motion.div
               key={item.id}
               onClick={() => setSelectedItem(item)}
@@ -271,7 +281,7 @@ export const BentoAnalyticsGrid = () => {
               className={`
                 ${item.span} ${item.color} rounded-[2.5rem] p-8 md:p-10 border ${item.borderColor}
                 relative overflow-hidden cursor-pointer group transition-all duration-300
-                hover:shadow-[0_45px_110px_-40px_rgba(124,58,237,0.25)]
+                hover:shadow-[0_45px_110px_-40px_rgba(124,58,237,0.25)] flex flex-col
               `}
             >
               <div className="relative z-10 h-full flex flex-col">

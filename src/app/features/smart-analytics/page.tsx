@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 import Container from "@/components/Container";
 import { InteractiveGrid } from "@/components/InteractiveGrid";
-import { BentoAnalyticsGrid } from "@/components/features/BentoAnalyticsGrid";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 40, filter: "blur(10px)" },
@@ -180,8 +179,6 @@ export default function SmartAnalyticsPage() {
           </motion.div>
         </Container>
       </section>
-
-      <BentoAnalyticsGrid />
 
       <section className="bg-gradient-to-br from-purple-50 to-white py-24 px-4 overflow-hidden relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(139,92,246,0.05),transparent_50%)]" />

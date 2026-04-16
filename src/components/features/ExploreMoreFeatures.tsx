@@ -63,7 +63,7 @@ export const ExploreMoreFeatures = ({ currentSlug }: ExploreMoreFeaturesProps) =
           ))}
         </div>
 
-        <motion.div 
+        {/* <motion.div 
           {...fadeUp(0.5)}
           className="mt-20 rounded-[3.5rem] bg-slate-950 p-12 lg:p-16 text-center relative overflow-hidden group"
         >
@@ -83,7 +83,7 @@ export const ExploreMoreFeatures = ({ currentSlug }: ExploreMoreFeaturesProps) =
           >
             Book a Full Platform Demo <ArrowRight size={20} />
           </Link>
-        </motion.div>
+        </motion.div> */}
       </Container>
     </section>
   );

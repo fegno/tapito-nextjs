@@ -188,19 +188,16 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
               className="absolute top-[calc(100%+0.75rem)] left-0 w-full pointer-events-auto"
             >
-              <div className="bg-white rounded-[1rem] p-5 2xl:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 4xl:gap-x-12 4xl:gap-y-12">
+              <div className="bg-white rounded-[1rem] p-5 2xl:p-6 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 2xl:gap-y-3 4xl:gap-x-12 4xl:gap-y-8">
                   {solutionsData.map((solution) => (
-                    <Link 
+                    <Link
                       key={solution.slug}
                       href={`/solutions/${solution.slug}`}
                       onClick={closeMenu}
-                      className="group flex gap-5"
+                      className="group flex gap-4 p-3 rounded-2xl border border-transparent hover:border-purple-100 hover:bg-slate-50/50 transition-all"
                     >
-                      <div className={cn(
-                        "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-slate-600 bg-transparent transition-all duration-500 group-hover:text-white",
-                        `group-hover:bg-gradient-to-br ${solution.color}`
-                      )}>
+                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 border border-slate-50 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600 transition-all duration-500 shadow-sm">
                         <solution.icon size={26} />
                       </div>
 
@@ -208,17 +205,17 @@ export default function Navbar() {
                         <h4 className="text-[17px] font-black text-slate-900 group-hover:text-purple-600 transition-colors mb-2.5">
                           {solution.title}
                         </h4>
-                        
+
                         <div className="relative min-h-[50px]">
                           <p className="text-[13px] text-slate-500 font-medium leading-relaxed group-hover:opacity-0 group-hover:-translate-y-2 transition-all duration-500 absolute inset-0">
                             {solution.desc}
                           </p>
-                          
+
                           <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex flex-col gap-2">
                             {solution.benefits.slice(0, 2).map((point) => (
                               <div key={point} className="flex items-center gap-2.5">
                                 <div className="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0 shadow-[0_0_8px_rgba(147,51,234,0.5)]" />
-                                <span className="text-[14px] font-black text-slate-800 tracking-tight italic uppercase">
+                                <span className="text-[14px] text-slate-800 tracking-tight capitalize font-medium">
                                   {point}
                                 </span>
                               </div>
@@ -232,10 +229,10 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center justify-end pt-2 2xl:pt-8 border-t border-slate-50">
-                  <Link 
-                    href="/solutions" 
+                  <Link
+                    href="/solutions"
                     onClick={closeMenu}
                     className="text-slate-900 font-black text-sm hover:text-purple-600 transition-colors flex items-center gap-2 group/all"
                   >

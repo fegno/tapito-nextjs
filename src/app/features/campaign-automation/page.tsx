@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import Container from "@/components/Container";
 import { InteractiveGrid } from "@/components/InteractiveGrid";
-import { BentoAnalyticsGrid } from "@/components/features/BentoAnalyticsGrid";
 
 import { ExploreMoreFeatures } from "@/components/features/ExploreMoreFeatures";
 
@@ -197,8 +196,6 @@ export default function CampaignAutomationPage() {
           </motion.div>
         </Container>
       </section>
-
-      <BentoAnalyticsGrid />
 
       <section className="bg-gradient-to-br from-purple-50 via-white to-white py-24 px-4 overflow-hidden">
         <Container>

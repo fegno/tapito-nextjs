@@ -36,10 +36,12 @@ export const FeaturesHero = () => {
       <InteractiveGrid />
       
       {/* Floating Elements Rising from the Bottom */}
-      <FloatingBadge icon={Zap} text="Real-time BI" delay={0} left={15} />
-      <FloatingBadge icon={Shield} text="AI-Powered Forecasting" delay={3} left={35} />
-      <FloatingBadge icon={Sparkles} text="Predictive Profitability" delay={6} left={60} />
-      <FloatingBadge icon={Globe} text="Campaign Automation" delay={9} left={80} />
+      <FloatingBadge icon={Zap} text="Real-time BI" delay={0} left={10} />
+      <FloatingBadge icon={Shield} text="AI-Powered Forecasting" delay={3} left={25} />
+      <FloatingBadge icon={Sparkles} text="Predictive Profitability" delay={6} left={40} />
+      <FloatingBadge icon={Globe} text="Campaign Automation" delay={1} left={55} />
+      <FloatingBadge icon={Zap} text="Revenue Hunting" delay={4} left={70} />
+      <FloatingBadge icon={Shield} text="Risk Mitigation" delay={7} left={85} />
 
       <Container className="relative z-10 text-center">
         <motion.div
@@ -51,11 +53,11 @@ export const FeaturesHero = () => {
             initial={{ opacity: 0, scale: 0.9, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-purple-500/20 bg-purple-500/10 mb-8"
+            className="luminous-card inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-purple-500/30 bg-white/80 backdrop-blur-md mb-10 shadow-xl"
           >
-            <Sparkles size={14} className="text-purple-600" />
-            <span className="text-[10px] lg:text-xs font-black tracking-[0.2em] uppercase text-purple-700">
-              Our Capabilities
+            <Sparkles size={16} className="text-purple-600 animate-pulse" />
+            <span className="text-[10px] lg:text-xs font-black tracking-[0.3em] uppercase text-purple-700">
+              Transform Your Capabilities
             </span>
           </motion.div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 4xl:text-8xl font-black text-slate-900 leading-none mb-10 tracking-tight">
