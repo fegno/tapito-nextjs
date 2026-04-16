@@ -32,21 +32,21 @@ export default function Hero({ keyHighlights }: HeroProps) {
               </span>
             </motion.div>
 
-            <h1 className="text-[40px] lg:text-[36px] xl:text-[40px] 2xl:text-[48px] 4xl:text-7xl font-black tracking-tighter text-slate-900 mb-8 leading-[1.1]">
+            <h1 className="text-[40px] lg:text-[36px] xl:text-[40px] 2xl:text-[48px] 4xl:text-7xl font-black tracking-tighter text-slate-900 mb-8 leading-[1.1] font-bold">
               Turn Your Retail Data Into Revenue <br />
               <span className="text-[#09358c] pb-2 px-1 inline-block"> Automatically </span>
             </h1>
 
-            <p className="text-xl lg:text-[18px] xl:text-[20px] 4xl:text-2xl text-slate-500 mb-10 max-w-xl leading-relaxed">
+            <p className="text-xl lg:text-[18px] xl:text-[20px] 4xl:text-2xl text-slate-500 mb-10 max-w-xl leading-relaxed font-normal">
               AI-powered analytics, real-time insights, and fully automated customer engagement —built to grow your revenue without manual effort.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-              <button className="btn-premium flex items-center gap-2 text-lg px-10 py-5 w-full sm:w-auto justify-center">
+              <button className="btn-premium flex items-center gap-2 text-lg px-10 py-5 w-full sm:w-auto justify-center font-normal">
                 Book a Demo
                 <ArrowRight size={20} />
               </button>
-              <button className="btn-secondary px-8 py-3.5 rounded-full flex items-center gap-3 group text-lg w-full sm:w-auto justify-center transition-all bg-white">
+              <button className="btn-secondary px-8 py-3.5 rounded-full flex items-center gap-3 group text-lg w-full sm:w-auto justify-center transition-all bg-white font-normal">
                 <div className="w-10 h-10 rounded-full gradient-bg-anim flex items-center justify-center text-white transition-all shadow-lg shadow-blue-500/10">
                   <Play size={16} className="fill-current ml-1" />
                 </div>
