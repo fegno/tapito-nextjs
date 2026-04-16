@@ -61,15 +61,16 @@ export default function Navbar() {
         "max-w-7xl mx-auto rounded-[2.5rem] transition-all duration-500 px-8 py-5 flex items-center justify-between relative",
         isScrolled ? "bg-white/95 backdrop-blur-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] border border-white/50" : "bg-transparent py-7"
       )}>
-        <Link onClick={closeMenu} href="/" className="flex items-center group">
-          <Image
-            src="/tapito-blue.svg"
-            alt="Tapito Logo"
-            width={130}
-            height={40}
-            priority
-            className="h-10 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
-          />
+        <Link onClick={closeMenu} href="/" className="flex items-center gap-3 group">
+          <div>
+            <div className="relative w-28 h-10 flex items-center justify-center">
+              <img 
+                src="/logo.svg" 
+                alt="Tapito Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -88,7 +89,7 @@ export default function Navbar() {
                   onClick={closeMenu}
                   className={cn(
                     "text-sm font-bold transition-colors uppercase tracking-widest",
-                    isActive || activeMenu === item.label ? "text-purple-600" : "text-slate-600 hover:text-purple-600"
+                    isActive || activeMenu === item.label ? "text-[#05a0ec]" : "text-slate-600 hover:text-[#05a0ec]"
                   )}
                 >
                   {item.label}
@@ -115,7 +116,6 @@ export default function Navbar() {
 
         {/* Desktop Mega Menus */}
         <AnimatePresence>
-          {/* Features Mega Menu */}
           {activeMenu === "Features" && (
             <motion.div
               initial={{ opacity: 0, y: 10, scale: 0.98 }}
@@ -125,39 +125,39 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
               className="absolute top-[calc(100%+0.75rem)] left-0 w-full pointer-events-auto"
             >
-              <div className="bg-white rounded-[1rem] p-5 2xl:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 4xl:gap-x-12 4xl:gap-y-12">
+              <div className="bg-white rounded-[1rem] p-5 2xl:p-6 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 2xl:gap-y-3 4xl:gap-x-12 4xl:gap-y-8">
                   {features.map((feature) => (
-                    <Link 
+                    <Link
                       key={feature.slug}
                       href={`/features/${feature.slug}`}
                       onClick={closeMenu}
-                      className="group flex gap-5"
+                      className="group flex gap-4 p-3 rounded-2xl border border-transparent hover:border-blue-100 hover:bg-slate-50/50 transition-all"
                     >
-                      <div className="shrink-0 w-14 h-14 bg-transparent rounded-2xl flex items-center justify-center text-slate-600 group-hover:bg-purple-600 group-hover:text-white group-hover:border-purple-600 transition-all duration-500">
+                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 border border-slate-50 group-hover:bg-[#05a0ec] group-hover:text-white group-hover:border-[#05a0ec] transition-all duration-500 shadow-sm">
                         <feature.icon size={26} />
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-[17px] font-black text-slate-900 group-hover:text-purple-600 transition-colors mb-2.5">
+                        <h4 className="text-[17px] font-black text-slate-900 group-hover:text-[#05a0ec] transition-colors mb-2.5">
                           {feature.title}
                         </h4>
-                        
+
                         <div className="relative min-h-[50px]">
-                          <p className="text-[13px] text-slate-500 font-medium leading-relaxed group-hover:opacity-0 group-hover:-translate-y-2 transition-all duration-500 absolute inset-0 text-ellipsis overflow-hidden">
+                          <p className="text-[13px] text-slate-500 font-medium leading-relaxed group-hover:opacity-0 group-hover:-translate-y-2 transition-all duration-500 absolute inset-0">
                             {feature.description}
                           </p>
-                          
+
                           <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex flex-col gap-2">
                             {feature.benefits.slice(0, 2).map((point) => (
                               <div key={point} className="flex items-center gap-2.5">
-                                <div className="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0 shadow-[0_0_8px_rgba(147,51,234,0.5)]" />
-                                <span className="text-[14px] font-black text-slate-800 tracking-tight italic uppercase">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#05a0ec] shrink-0 shadow-[0_0_8px_rgba(5,160,236,0.5)]" />
+                                <span className="text-[14px] text-slate-800 tracking-tight capitalize font-medium">
                                   {point}
                                 </span>
                               </div>
                             ))}
-                            <div className="flex items-center gap-2 text-[11px] font-black text-purple-600 uppercase tracking-widest mt-1">
+                            <div className="flex items-center gap-2 text-[11px] font-black text-[#05a0ec] uppercase tracking-widest mt-1">
                               View More <ArrowRight size={14} className="ml-1" />
                             </div>
                           </div>
@@ -166,12 +166,12 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center justify-end pt-2 2xl:pt-8 border-t border-slate-50">
-                  <Link 
-                    href="/features" 
+                  <Link
+                    href="/features"
                     onClick={closeMenu}
-                    className="text-slate-900 font-black text-sm hover:text-purple-600 transition-colors flex items-center gap-2 group/all"
+                    className="text-slate-900 font-black text-sm hover:text-[#05a0ec] transition-colors flex items-center gap-2 group/all"
                   >
                     View All Features <ChevronRight size={18} className="group-hover/all:translate-x-1 transition-transform" />
                   </Link>
@@ -190,42 +190,39 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
               className="absolute top-[calc(100%+0.75rem)] left-0 w-full pointer-events-auto"
             >
-              <div className="bg-white rounded-[1rem] p-5 2xl:p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 4xl:gap-x-12 4xl:gap-y-12">
+              <div className="bg-white rounded-[1rem] p-5 2xl:p-6 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-visible">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 2xl:gap-y-3 4xl:gap-x-12 4xl:gap-y-8">
                   {solutionsData.map((solution) => (
-                    <Link 
+                    <Link
                       key={solution.slug}
                       href={`/solutions/${solution.slug}`}
                       onClick={closeMenu}
-                      className="group flex gap-5"
+                      className="group flex gap-4 p-3 rounded-2xl border border-transparent hover:border-blue-100 hover:bg-slate-50/50 transition-all"
                     >
-                      <div className={cn(
-                        "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-slate-600 bg-transparent transition-all duration-500 group-hover:text-white",
-                        `group-hover:bg-gradient-to-br ${solution.color}`
-                      )}>
+                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 border border-slate-50 group-hover:bg-[#05a0ec] group-hover:text-white group-hover:border-[#05a0ec] transition-all duration-500 shadow-sm">
                         <solution.icon size={26} />
                       </div>
 
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-[17px] font-black text-slate-900 group-hover:text-purple-600 transition-colors mb-2.5">
+                        <h4 className="text-[17px] font-black text-slate-900 group-hover:text-[#05a0ec] transition-colors mb-2.5">
                           {solution.title}
                         </h4>
-                        
+
                         <div className="relative min-h-[50px]">
                           <p className="text-[13px] text-slate-500 font-medium leading-relaxed group-hover:opacity-0 group-hover:-translate-y-2 transition-all duration-500 absolute inset-0">
                             {solution.desc}
                           </p>
-                          
+
                           <div className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 flex flex-col gap-2">
                             {solution.benefits.slice(0, 2).map((point) => (
                               <div key={point} className="flex items-center gap-2.5">
-                                <div className="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0 shadow-[0_0_8px_rgba(147,51,234,0.5)]" />
-                                <span className="text-[14px] font-black text-slate-800 tracking-tight italic uppercase">
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#05a0ec] shrink-0 shadow-[0_0_8px_rgba(5,160,236,0.5)]" />
+                                <span className="text-[14px] text-slate-800 tracking-tight capitalize font-medium">
                                   {point}
                                 </span>
                               </div>
                             ))}
-                            <div className="flex items-center gap-2 text-[11px] font-black text-purple-600 uppercase tracking-widest mt-1">
+                            <div className="flex items-center gap-2 text-[11px] font-black text-[#05a0ec] uppercase tracking-widest mt-1">
                               View Solution <ArrowRight size={14} className="ml-1" />
                             </div>
                           </div>
@@ -234,12 +231,12 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </div>
-                
+
                 <div className="flex items-center justify-end pt-2 2xl:pt-8 border-t border-slate-50">
-                  <Link 
-                    href="/solutions" 
+                  <Link
+                    href="/solutions"
                     onClick={closeMenu}
-                    className="text-slate-900 font-black text-sm hover:text-purple-600 transition-colors flex items-center gap-2 group/all"
+                    className="text-slate-900 font-black text-sm hover:text-[#05a0ec] transition-colors flex items-center gap-2 group/all"
                   >
                     View All Solutions <ChevronRight size={18} className="group-hover/all:translate-x-1 transition-transform" />
                   </Link>
@@ -264,19 +261,19 @@ export default function Navbar() {
                 <div key={item.label} className="border-b border-slate-50 last:border-0 pb-2">
                   {item.label === "Features" ? (
                     <>
-                      <button 
+                      <button
                         onClick={() => setMobileFeaturesOpen(!mobileFeaturesOpen)}
                         className={cn(
-                            "w-full flex items-center justify-between py-4 text-2xl font-black transition-colors",
-                            pathname.startsWith(item.href) || mobileFeaturesOpen ? "text-purple-600" : "text-slate-900"
+                          "w-full flex items-center justify-between py-4 text-2xl font-black transition-colors",
+                          pathname.startsWith(item.href) || mobileFeaturesOpen ? "text-[#05a0ec]" : "text-slate-900"
                         )}
                       >
                         {item.label}
                         <motion.div animate={{ rotate: mobileFeaturesOpen ? 180 : 0 }}>
-                            <ChevronDown size={24} />
+                          <ChevronDown size={24} />
                         </motion.div>
                       </button>
-                      
+
                       <AnimatePresence>
                         {mobileFeaturesOpen && (
                           <motion.div
@@ -299,10 +296,10 @@ export default function Navbar() {
                                   <span className="text-sm font-black text-slate-900">{feature.title}</span>
                                 </Link>
                               ))}
-                              <Link 
+                              <Link
                                 href="/features"
                                 onClick={closeMenu}
-                                className="flex items-center justify-center gap-2 p-4 text-purple-600 font-black text-sm uppercase tracking-widest"
+                                className="flex items-center justify-center gap-2 p-4 text-[#05a0ec] font-black text-sm uppercase tracking-widest"
                               >
                                 View All Features <ArrowRight size={16} />
                               </Link>
@@ -317,7 +314,7 @@ export default function Navbar() {
                         onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
                         className={cn(
                             "w-full flex items-center justify-between py-4 text-2xl font-black transition-colors",
-                            pathname.startsWith(item.href) || mobileSolutionsOpen ? "text-purple-600" : "text-slate-900"
+                            pathname.startsWith(item.href) || mobileSolutionsOpen ? "text-[#05a0ec]" : "text-slate-900"
                         )}
                       >
                         {item.label}
@@ -354,7 +351,7 @@ export default function Navbar() {
                               <Link 
                                 href="/solutions"
                                 onClick={closeMenu}
-                                className="flex items-center justify-center gap-2 p-4 text-purple-600 font-black text-sm uppercase tracking-widest"
+                                className="flex items-center justify-center gap-2 p-4 text-[#05a0ec] font-black text-sm uppercase tracking-widest"
                               >
                                 View All Solutions <ArrowRight size={16} />
                               </Link>
@@ -364,12 +361,12 @@ export default function Navbar() {
                       </AnimatePresence>
                     </>
                   ) : (
-                    <Link 
+                    <Link
                       href={item.href}
                       onClick={closeMenu}
                       className={cn(
                         "block py-4 text-2xl font-black transition-colors",
-                        pathname.startsWith(item.href) ? "text-purple-600" : "text-slate-900"
+                        pathname.startsWith(item.href) ? "text-[#05a0ec]" : "text-slate-900"
                       )}
                     >
                       {item.label}
@@ -377,10 +374,10 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
-              
+
               <div className="mt-6 flex flex-col gap-4">
                 <button className="btn-premium py-5 rounded-2xl font-black uppercase tracking-widest text-[13px]">
-                    Access Portal
+                  Access Portal
                 </button>
               </div>
             </div>

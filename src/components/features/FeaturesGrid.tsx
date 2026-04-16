@@ -27,7 +27,7 @@ export const featuresData = [
     description: "Comprehensive real-time reporting with raw data sync across all your retail outlets.",
     longDescription: "Our BI Dashboard transforms raw retail data into actionable strategy. It integrates directly with your existing POS, e-commerce, and inventory systems to provide a single, unified view of your entire retail performance. Designed for executives who need real-time business intelligence to drive growth across all locations.",
     icon: LayoutDashboard,
-    slug: "business-intelligence-dashboard",
+    slug: "business-intelligence",
     benefits: ["Real-time KPI tracking", "Multi-store synchronization", "Custom report builder", "Predictive maintenance alerts"],
     image: dashboard,
     stats: [
@@ -53,7 +53,7 @@ export const featuresData = [
     description: "Your data starts thinking for you. Identify revenue drivers and customer risks automatically.",
     longDescription: "Harness the power of AI to detect patterns humans might miss. Tapito's Smart Analytics identifies your primary revenue drivers, detects customers at risk of churn, and provides AI-generated recommendations to steer your business toward constant profitability.",
     icon: BrainCircuit,
-    slug: "ai-smart-analytics-engine",
+    slug: "smart-analytics",
     benefits: ["Business Health Score (out of 100)", "Revenue drivers identification", "Customer risk detection", "AI-generated recommendations"],
     image: smartAnalytics,
     stats: [
@@ -105,7 +105,7 @@ export const featuresData = [
     description: "Identify high-value opportunities, identify hidden opportunities in your sales funnel.",
     longDescription: "Pinpoint exactly where your revenue leakage is occurring with laser precision. The Revenue Growth module analyzes your entire sales funnel to identify hidden upsell and cross-sell opportunities. Provides the granularity needed to optimize pricing and maximize margins.",
     icon: TrendingUp,
-    slug: "revenue-growth-insights",
+    slug: "revenue-insights",
     benefits: ["Price optimization", "Bundle effectiveness", "Upsell opportunities", "Customer LTV mapping"],
     image: revenue,
     stats: [
@@ -131,7 +131,7 @@ export const featuresData = [
     description: "Hands-free operational control. Query real-time performance while on the warehouse floor.",
     longDescription: "Command your retail empire using only your voice. The Tapito AI Assistant utilizes natural language processing (NLP) to understand complex operational queries. Get instant answers to complex questions through mobile, removing the need for static reports.",
     icon: Mic,
-    slug: "ai-assistant-voice",
+    slug: "ai-assistant",
     benefits: ["Voice command support", "Intent analysis", "Hands-free operations", "Real-time query execution"],
     image: aiAssistant,
     stats: [
@@ -164,7 +164,7 @@ export const featuresData = [
     description: "Real-time decisions on the go. Get push notifications for inventory alerts and sales milestones.",
     longDescription: "Get the full power of Tapito delivered to your pocket. Our mobile analytics companion app ensures you are never out of the loop, providing a high-level overview formatted perfectly for fast-paced monitoring.",
     icon: Smartphone,
-    slug: "mobile-app-real-time",
+    slug: "mobile-app",
     benefits: ["Push notification alerts", "Mobile-first dashboards", "Instant alert escalation", "Remote store monitoring"],
     stats: [
       { value: "24/7", label: "Access" },
@@ -189,7 +189,7 @@ export const featuresData = [
     description: "Optimize promotional planning. Generate the most profitable discount structures for your goals.",
     longDescription: "Eliminate guesswork in sales planning. Tapito generates and simulates thousands of promotional schemes to find the one that clears inventory fastest while maintaining healthy margins.",
     icon: Sparkles,
-    slug: "smart-scheme-generator",
+    slug: "scheme-generator",
     image: gpAnalysis,
     benefits: ["Profitability simulations", "Automatic scheme generation", "Clearance optimization", "Margin protection"],
     stats: [
@@ -215,7 +215,7 @@ export const featuresData = [
     description: "Forecast future margins with AI. Get bottom-line predictability based on current market trends.",
     longDescription: "Look forward, not backward. By analyzing seasonal volatility, regional market trends, and your own historical performance, Tapito's Predictive Profitability engine builds a future-focused financial outlook. Track Gross Profit (GP) at the staff level and product margin analysis.",
     icon: BarChart3,
-    slug: "predictive-profitability-engine",
+    slug: "profitability-engine",
     benefits: ["Market trend analysis", "Seasonal forecasting", "Margin risk assessment", "Future-proof planning"],
     stats: [
       { value: "95%+", label: "Forecast Accuracy" },
