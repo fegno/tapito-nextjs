@@ -12,7 +12,7 @@ const BASE_LINE_ALPHA = 0.02;
 const ACTIVE_LINE_ALPHA = 0.12;
 const INFLUENCE_RADIUS = 300;
 const LERP_FACTOR = 0.035;
-const COLOR_RGB = "99, 102, 241";
+const COLOR_RGB = "5, 160, 236";
 
 interface LightBeam {
   axis: "h" | "v";
