@@ -151,7 +151,7 @@ function OrbitalHero() {
   });
 
   return (
-    <div className="relative w-full aspect-square max-w-[600px] mx-auto flex items-center justify-center">
+    <div className="relative w-full aspect-square max-w-[500px] 2xl:max-w-[600px] mx-auto flex items-center justify-center">
       {/* SVG layer */}
       <svg
         viewBox="0 0 600 600"
@@ -272,7 +272,7 @@ function OrbitalHero() {
               ))}
               
              <div className="w-full h-full rounded-[2.2rem] md:rounded-[2.8rem] 
-bg-gradient-to-br from-blue-50 via-indigo-50 to-cyan-50 
+bg-gradient-to-br from-blue-50 via-blue-50 to-cyan-50 
 border border-blue-100
 flex items-center justify-center relative z-10 p-4">
                <img 
@@ -302,7 +302,7 @@ flex items-center justify-center relative z-10 p-4">
                   <div
                     className="w-12 h-12 md:w-16 md:h-16 rounded-[1.2rem] md:rounded-[1.6rem] bg-white border border-slate-100 shadow-[0_10px_25px_-8px_rgba(0,0,0,0.06)] flex flex-col items-center justify-center gap-1 transition-all duration-500 group-hover:border-blue-200 group-hover:shadow-[0_12px_35px_-10px_rgba(37,99,235,0.2)] group-hover:scale-110 overflow-hidden relative"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <n.icon
                       size={18}
                       className="relative z-10 transition-colors duration-500 group-hover:text-white md:hidden"
@@ -380,7 +380,10 @@ function IntegrationCard({ icon: Icon, name, desc, bullets, badge, index }: any)
 
 export default function IntegrationsPage() {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const t = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div className="relative min-h-screen overflow-x-hidden bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 font-inter">
@@ -399,9 +402,9 @@ export default function IntegrationsPage() {
                 Integrations
               </motion.div>
 
-              <motion.h1 {...fadeUp(0.08)} className="text-4xl sm:text-6xl lg:text-[5.2rem] font-black  text-slate-950 leading-[0.95] mb-8">
+              <motion.h1 {...fadeUp(0.08)} className="text-4xl sm:text-6xl lg:text-60px 4xl:text-[5.2rem] font-black  text-slate-950 mb-8 leading-[110%] 4xl:leading-[120%]">
                 Bring Every System <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-600 to-cyan-600">
                   Into One Flow
                 </span>
               </motion.h1>
@@ -466,7 +469,7 @@ export default function IntegrationsPage() {
             </motion.div>
             <motion.h2 {...fadeUp(0.08)} className="text-3xl sm:text-4xl md:text-5xl font-black tracking-[-0.05em] text-slate-950 mb-5">
               Connect in clicks,{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-600">
                 not months.
               </span>
             </motion.h2>
@@ -527,7 +530,7 @@ export default function IntegrationsPage() {
               viewport={{ once: true }}
               className="rounded-[2rem] lg:rounded-[3rem] border border-slate-800 bg-slate-950 p-8 lg:p-12 shadow-[0_50px_130px_-60px_rgba(15,23,42,0.95)] relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-indigo-600/10 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-blue-600/10 pointer-events-none" />
 
               {/* Status bar */}
               <div className="flex items-center justify-between mb-8 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
@@ -550,7 +553,7 @@ export default function IntegrationsPage() {
               {/* Connection items */}
               <div className="space-y-4">
                 {[
-                  { icon: Database, name: "SAP ", status: "Syncing", color: "text-indigo-400", ms: "12ms" },
+                  { icon: Database, name: "SAP ", status: "Syncing", color: "text-blue-400", ms: "12ms" },
                   { icon: MessageCircle, name: "WhatsApp API", status: "Active", color: "text-emerald-400", ms: "8ms" },
                   { icon: Cpu, name: "ERP", status: "Active", color: "text-emerald-400", ms: "22ms" },
                   { icon: Mail, name: "Email Gateway", status: "Active", color: "text-emerald-400", ms: "5ms" },
@@ -619,7 +622,7 @@ export default function IntegrationsPage() {
               <motion.h2 {...fadeUp(0.08)} className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.06em] text-white mb-7 leading-[1.05]">
                 Your business tools<br />
                 work better{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">
                   together.
                 </span>
               </motion.h2>
