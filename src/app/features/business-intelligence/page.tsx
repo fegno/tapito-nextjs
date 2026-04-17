@@ -285,7 +285,7 @@ export default function BusinessIntelligencePage() {
           <Container>
             <motion.div
               {...fadeUp(0)}
-              className="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[2.5rem] p-10 md:p-14 lg:p-20 relative overflow-hidden"
+              className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-[2.5rem] p-10 md:p-14 lg:p-20 relative overflow-hidden"
             >
               {/* Decorative blobs */}
               <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 translate-x-1/3 -translate-y-1/3" />
