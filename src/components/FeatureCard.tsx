@@ -37,9 +37,9 @@ export const FeatureCard = ({ title, description, benefits, icon: Icon, index, s
           <div className="relative z-10">
             {/* Top Bar: Icon + Micro-Animation */}
             <div className="flex items-center justify-between mb-8">
-              <motion.div 
-                animate={{ 
-                  y: [0, -6, 0], 
+              <motion.div
+                animate={{
+                  y: [0, -6, 0],
                   rotate: [0, 5, -5, 0],
                   boxShadow: [
                     "0px 0px 0px 0px rgba(37, 99, 235, 0)",
@@ -47,19 +47,19 @@ export const FeatureCard = ({ title, description, benefits, icon: Icon, index, s
                     "0px 0px 0px 0px rgba(37, 99, 235, 0)"
                   ]
                 }}
-                transition={{ 
-                  duration: 3.5, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 3.5,
+                  repeat: Infinity,
                   ease: "easeInOut",
-                  delay: index * 0.15 
+                  delay: index * 0.15
                 }}
-                className="w-16 h-16 flex items-center justify-center rounded-2xl transition-all duration-500 bg-slate-50 text-slate-900 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 shadow-sm border border-slate-100 origin-center"
+                className="w-16 h-16 flex items-center justify-center rounded-2xl transition-all duration-500 bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 shadow-sm border border-slate-100 origin-center"
               >
                 <Icon size={32} className="transition-transform duration-500 group-hover:scale-110" />
               </motion.div>
             </div>
 
-            <h3 className="text-xl md:text-2xl font-black mb-4 tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
+            <h3 className="text-xl md:text-2xl font-black mb-4 tracking-tight text-slate-900 transition-colors">
               {title}
             </h3>
 
@@ -76,7 +76,7 @@ export const FeatureCard = ({ title, description, benefits, icon: Icon, index, s
                       animate={{ scale: [1, 1.15, 1] }}
                       transition={{ duration: 2, repeat: Infinity, delay: (index * 0.1) + (i * 0.3) }}
                     >
-                      <CheckCircle2 size={18} className="text-slate-100 group-hover:text-blue-600 shrink-0 transition-colors duration-500" />
+                      <CheckCircle2 size={18} className="text-blue-200 group-hover:text-blue-600 shrink-0 transition-colors duration-500" />
                     </motion.div>
                     <span className="text-[13px] font-extrabold text-slate-400 group-hover:text-slate-600 transition-colors duration-500">{benefit}</span>
                   </div>
@@ -88,16 +88,16 @@ export const FeatureCard = ({ title, description, benefits, icon: Icon, index, s
           {/* Footer Navigation */}
           <div className="relative z-10 mt-auto pt-6 flex items-center justify-between border-t border-slate-50 group-hover:border-blue-100 transition-colors">
             <div className="flex items-center gap-2">
-              <motion.div 
+              <motion.div
                 animate={{ opacity: [0.3, 1, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-blue-600 transition-colors duration-500" 
+                className="w-1.5 h-1.5 rounded-full bg-slate-200 group-hover:bg-blue-600 transition-colors duration-500"
               />
               <span className="font-black text-[11px] uppercase tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors">
                 explore more
               </span>
             </div>
-            <motion.div 
+            <motion.div
               animate={{ x: [0, 4, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
               className="w-10 h-10 rounded-full border border-slate-100 bg-white flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300 shadow-sm"

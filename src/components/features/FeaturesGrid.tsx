@@ -272,7 +272,7 @@ export const FeaturesGrid = () => {
               Built for Retail Teams
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl 4xl:text-6xl font-black text-slate-900 tracking-tight leading-tight mb-5">
-              Features That Drive Better Decisions
+              Features That Drive <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-600 to-blue-800"> Better Decisions</span>
             </h2>
             <p className="text-slate-600 text-base lg:text-lg font-medium leading-relaxed max-w-xl">
               From analytics to automation, each module is designed to help you act faster, improve margins, and scale your retail business with total confidence.
