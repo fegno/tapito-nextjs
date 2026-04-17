@@ -64,7 +64,7 @@ export default function AboutWhoWeAre() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group p-8 rounded-[2rem] border border-slate-100 bg-[#fafbfc] hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
+              className="group p-8 rounded-[1.5rem] border border-slate-100 bg-[#fafbfc] hover:bg-white hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500"
             >
               <div className={`w-16 h-16 rounded-2xl ${point.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
                 <point.icon className="text-[#09358c]" size={28} />

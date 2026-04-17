@@ -25,7 +25,7 @@ export default function AboutPresence() {
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="group relative aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
+                    <div className="group relative aspect-square md:aspect-[4/3] rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
                         <img 
                             src="/assets/images/about/kochi-office.jpeg" 
                             alt="Kochi Headquarters" 
@@ -46,7 +46,7 @@ export default function AboutPresence() {
                         </div>
                     </div>
                     
-                    <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl group hover:border-[#05a0ec]/30 transition-colors">
+                    <div className="p-8 rounded-[1.5rem] bg-white/[0.03] border border-white/10 backdrop-blur-xl shadow-2xl group hover:border-[#05a0ec]/30 transition-colors">
                         <div className="w-12 h-12 rounded-xl bg-[#05a0ec]/10 flex items-center justify-center mb-6 border border-[#05a0ec]/20">
                             <Globe className="text-[#05a0ec]" size={24} />
                         </div>
@@ -60,7 +60,7 @@ export default function AboutPresence() {
 
             <div className="lg:w-1/2 relative">
                 <div className="absolute -inset-4 bg-[#05a0ec]/20 blur-3xl rounded-full opacity-50" />
-                <div className="w-full aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl z-10">
+                <div className="w-full aspect-[4/3] rounded-[1.5rem] overflow-hidden shadow-2xl z-10">
                     <video 
                         className="w-full h-full object-cover opacity-90"
                         autoPlay 

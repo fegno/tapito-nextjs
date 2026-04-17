@@ -42,7 +42,7 @@ export default function AboutDifferentiators() {
                 </div>
             </div>
 
-            <div className="lg:w-1/2 relative h-full min-h-[400px] lg:min-h-[500px] rounded-[3.5rem] overflow-hidden shadow-[0_32px_84px_-12px_rgba(0,0,0,0.3)] group bg-slate-950">
+            <div className="lg:w-1/2 relative h-full min-h-[400px] lg:min-h-[500px] rounded-[1.5rem] overflow-hidden shadow-[0_32px_84px_-12px_rgba(0,0,0,0.3)] group bg-slate-950">
                 <motion.div 
                     initial={{ scale: 1.1, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
