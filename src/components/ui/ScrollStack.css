@@ -1,0 +1,27 @@
+.scroll-stack-container {
+  width: 100%;
+  position: relative;
+}
+
+.scroll-stack-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20vh; /* Control distance between cards during scroll */
+  padding-bottom: 30vh;
+}
+
+.scroll-stack-card {
+  width: 100%;
+  min-height: 30rem;
+  background: white !important;
+  border-radius: 40px;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.scroll-stack-card:hover {
+  box-shadow: 0 50px 120px -20px rgba(0, 0, 0, 0.12);
+}
