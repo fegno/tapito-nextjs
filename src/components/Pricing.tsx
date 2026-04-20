@@ -586,17 +586,7 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
     <SpotlightCard popular={plan.popular} hue={plan.hue}>
       <div className="flex flex-col lg:flex-row h-full gap-6 lg:gap-10 items-center lg:items-stretch">
         {/* Left Side: Logo & Description */}
-        <div className="lg:w-[40%] flex flex-col h-full pb-6 pt-4">
-          <div className={cn(
-            "w-16 h-16 rounded-[1.5rem] flex items-center justify-center mb-6 relative transition-all duration-500 shadow-xl overflow-hidden",
-            plan.popular 
-              ? "bg-gradient-to-br from-[#09358c] to-[#05a0ec] text-white shadow-blue-500/30" 
-              : "bg-[#09358c] text-white shadow-[#09358c]/20"
-          )}>
-            <Icon size={32} strokeWidth={1.5} />
-            <div className="absolute inset-0 bg-white/10 blur-xl rounded-full opacity-40 translate-x-1/2 translate-y-1/2" />
-          </div>
-          
+        <div className="lg:w-[40%] flex flex-col h-full pb-6 pt-10">
           <div className="mb-8">
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-3 leading-none tracking-tighter">
               {plan.name}
@@ -631,6 +621,8 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
         {/* Right Side: Core Capabilities */}
         <div className="lg:w-[60%] flex flex-col">
           <div className="h-full bg-slate-50/50 rounded-[2rem] p-8 lg:p-12 border border-slate-200/40 relative overflow-hidden flex flex-col justify-center">
+
+
             {/* Subtle background decoration */}
             <div className="absolute top-4 right-4 opacity-[0.03] pointer-events-none">
               <Icon size={160} />
