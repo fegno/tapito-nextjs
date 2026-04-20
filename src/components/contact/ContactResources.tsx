@@ -91,7 +91,7 @@ function ResourceCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className={cn(
-        "group relative flex flex-col justify-between p-9 rounded-[2.5rem] overflow-hidden min-h-[440px] cursor-pointer transition-colors duration-500",
+        "group relative flex flex-col justify-between p-7 sm:p-9 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden min-h-[320px] sm:min-h-[440px] cursor-pointer transition-colors duration-500",
         isActive ? "bg-[#09358c] shadow-2xl shadow-blue-900/20" : "bg-white border border-slate-100 shadow-lg shadow-slate-200/40"
       )}
     >
@@ -237,7 +237,7 @@ export default function ContactResources() {
               <Sparkles size={12} className="text-[#09358c]" />
               <span className="text-[10px] font-extrabold uppercase tracking-[0.25em] text-[#09358c]/80">Resources</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.05]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.05]">
               Growing with Tapito<br />
               <span className="text-[#09358c]">is now effortless</span>
             </h2>
@@ -273,7 +273,7 @@ export default function ContactResources() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-20 flex flex-col sm:flex-row items-center justify-between gap-6 px-10 py-8 rounded-[2.5rem] border border-slate-100 bg-white shadow-xl shadow-slate-200/20"
+          className="mt-12 sm:mt-20 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-6 px-6 sm:px-10 py-8 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 bg-white shadow-xl shadow-slate-200/20"
         >
           <div className="flex items-center gap-5">
             <div className="w-12 h-12 rounded-2xl bg-[#09358c]/5 flex items-center justify-center flex-shrink-0">

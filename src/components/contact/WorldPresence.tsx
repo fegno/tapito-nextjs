@@ -83,23 +83,23 @@ export default function WorldPresence() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-blue-200/60 bg-blue-50/80 mb-6">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-blue-200/60 bg-blue-50/80 mb-6 sm:mb-8">
             <MapPin size={13} className="text-[#05a0ec]" />
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#09358c]">
+            <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-[0.25em] text-[#09358c]">
               Global Presence
             </span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-6 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-black mb-6 tracking-tight">
             Presence Around the World
           </h2>
-          <p className="text-lg text-slate-500 font-medium max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-slate-500 font-medium max-w-2xl mx-auto px-4">
             Get in touch with us for any queries. We are happy to help you!
           </p>
         </motion.div>
       </div>
 
       {/* Map */}
-      <div className="relative mb-32 px-4">
+      <div className="relative mb-16 sm:mb-32 px-4 hidden sm:block">
         <div className="relative aspect-[2.2/1] w-full max-w-[1440px] mx-auto">
           {/* Map background */}
           <div className="absolute inset-0 flex items-center justify-center">
