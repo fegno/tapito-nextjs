@@ -645,7 +645,7 @@ const PricingCard = ({ plan }: { plan: typeof plans[0] }) => {
                 >
                   <div className={cn(
                     "mt-1 flex-shrink-0 w-4.5 h-4.5 rounded-lg text-white flex items-center justify-center shadow-lg transition-transform group-hover/item:scale-110",
-                    plan.popular ? "bg-[#05a0ec] shadow-blue-500/20" : "bg-[#09358c] shadow-blue-900/10"
+                    "bg-[#09358c] shadow-blue-900/10"
                   )}>
                     <Check size={9} strokeWidth={4} />
                   </div>
