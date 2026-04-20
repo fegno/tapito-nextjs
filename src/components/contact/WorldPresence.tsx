@@ -7,43 +7,67 @@ import { MapPin } from "lucide-react";
 import mapBg from "@/public/assets/images/contact/map-bg-without-dot.svg";
 import BorderGlow from "@/components/BorderGlow";
 
-const OFFICES = [
-  { city: "San Francisco",    flag: "🇺🇸", address: "680 California St, Suite 1200, San Francisco, CA 94104, USA" },
-  { city: "New York",         flag: "🇺🇸", address: "43 Manhasset Ave, Brooklyn, New York - 11211" },
-  { city: "Boston",           flag: "🇺🇸", address: "Office #251, 829 Main Street, Ste. 200, Charlestown, Boston, MA 02129, USA" },
-  { city: "Bengaluru",        flag: "🇮🇳", address: "1st Floor, #32, Salarpuria Tower II, Koramangala, Bangalore - 560034, India" },
-  { city: "New Delhi",        flag: "🇮🇳", address: "Platina Tower, Mehrauli-Gurgaon Rd, Sector 28, Gurugram, Haryana 122002" },
-  { city: "Toronto",          flag: "🇨🇦", address: "Suite 2605, 1228 Lakeshore Boulevard West, Toronto, ON M4E 1B1, Canada" },
-  { city: "London",           flag: "🇬🇧", address: "2 Waterhouse Square, 138-142 Holborn, London, EC1N 2SW, United Kingdom" },
-  { city: "Berlin",           flag: "🇩🇪", address: "Kurfürstendamm 11, 10719, Berlin, Germany" },
-  { city: "São Paulo",        flag: "🇧🇷", address: "R. Purpurina, 400 - Vila Madalena, São Paulo - SP, 05433-000, Brazil" },
-  { city: "Singapore",        flag: "🇸🇬", address: "Floor 21, WeWork 9 Battery Rd, Singapore 049910" },
-  { city: "Kuala Lumpur",     flag: "🇲🇾", address: "WeWork HQ Plaza Lot 10.17, Seksyen 57, Jln Sultan Ismail, 50250 Kuala Lumpur" },
-  { city: "Bangkok",          flag: "🇹🇭", address: "WeWork, T-One Building, 8 Sukhumvit 40 Alley, Phra Khanong, Bangkok 10110" },
-  { city: "Jakarta",          flag: "🇮🇩", address: "25th Floor, Revenue Tower, SCBD, Jl. Jend. Sudirman No.52-53, Jakarta 12190" },
-  { city: "Ho Chi Minh City", flag: "🇻🇳", address: "WeWork 18, Town Central, 1 Đoàn Văn Bơ, Phường 12, Quận 4, Hồ Chí Minh" },
-  { city: "Dubai",            flag: "🇦🇪", address: "Media One Hotel, Floor 7, Media II Tower, Al Falak Street, Dubai" },
-  { city: "Sydney",           flag: "🇦🇺", address: "100 Harris Street, Pyrmont, Sydney NSW 2009, Australia" },
+const LOCATIONS = [
+  { 
+    city: "Kochi", 
+    country: "India", 
+    flag: "🇮🇳", 
+    address: "3rd Floor, Noel Focus, Seaport - Airport Road, Kochi, Kerala 682037, India",
+    x: 720, 
+    y: 294 
+  },
+  // { 
+  //   city: "Kannur", 
+  //   country: "India", 
+  //   flag: "🇮🇳", 
+  //   address: "STC Tower, Thana, Kannur, Kerala 670002, India",
+  //   x: 746, 
+  //   y: 308 
+  // },
+  { 
+    city: "Hyderabad", 
+    country: "India", 
+    flag: "🇮🇳", 
+    address: "House No 12-26/D/A/1, NH 44, Shamshabad, Hyderabad, India",
+    x: 694, 
+    y: 270 
+  },
+  { 
+    city: "Dubai", 
+    country: "UAE", 
+    flag: "🇦🇪", 
+    address: "RA08 YA03, Jebel Ali Free Zone North, P.O. Box 263950, Dubai, UAE",
+    x: 635.3, 
+    y: 286.8
+  },
+  { 
+    city: "Doha", 
+    country: "Qatar", 
+    flag: "🇶🇦", 
+    address: "Building No: 371, Zone 56, Street 340, Salwa Road, Doha, Qatar",
+    x: 645, 
+    y: 265
+  },
+  { 
+    city: "Dar es Salaam", 
+    country: "Tanzania", 
+    flag: "🇹🇿", 
+    address: "Plot No 21, Morocco Area, New Bagamoyo Road, Dar es Salaam, Tanzania",
+    x: 583, 
+    y: 341
+  },
+  { 
+    city: "Cardiff", 
+    country: "Australia", 
+    flag: "🇦🇺", 
+    address: "Suite 5/40 Harrison Street, PO Box 298, Cardiff NSW 2285, Australia",
+    x: 910, 
+    y: 415 
+  },
 ];
 
-const MAP_DOTS = [
-  { city: "San Francisco",    x: 140, y: 195 },
-  { city: "New York",         x: 235, y: 190 },
-  { city: "Boston",           x: 250, y: 175 },
-  { city: "Toronto",          x: 220, y: 165 },
-  { city: "London",           x: 475, y: 155 },
-  { city: "Berlin",           x: 515, y: 165 },
-  { city: "São Paulo",        x: 340, y: 395 },
-  { city: "Dubai",            x: 645, y: 255 },
-  { city: "Bengaluru",        x: 742, y: 300 },
-  { city: "New Delhi",        x: 735, y: 245 },
-  { city: "Singapore",        x: 815, y: 335 },
-  { city: "Kuala Lumpur",     x: 810, y: 345 },
-  { city: "Bangkok",          x: 800, y: 315 },
-  { city: "Jakarta",          x: 825, y: 375 },
-  { city: "Ho Chi Minh City", x: 810, y: 325 },
-  { city: "Sydney",           x: 915, y: 445 },
-];
+const OFFICES = LOCATIONS;
+const MAP_DOTS = LOCATIONS;
 
 export default function WorldPresence() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null);
@@ -75,11 +99,11 @@ export default function WorldPresence() {
 
       {/* Map */}
       <div className="relative mb-32 px-4">
-        <div className="relative aspect-[2/1] w-full max-w-5xl mx-auto">
+        <div className="relative aspect-[2.2/1] w-full max-w-[1440px] mx-auto">
           {/* Map background */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-full h-full relative">
-              <Image src={mapBg} alt="Presence Around the World" fill className="object-contain" priority />
+              <Image src={mapBg} alt="Presence Around the World" fill className="object-fill opacity-90" priority />
             </div>
           </div>
 
@@ -131,17 +155,17 @@ export default function WorldPresence() {
               >
                 {/* Pulse ring */}
                 <motion.circle
-                  cx={loc.x} cy={loc.y} r="12"
+                  cx={loc.x} cy={loc.y} r="8"
                   fill="url(#dotGlow)"
-                  animate={{ r: [8, 18, 8], opacity: [0.5, 0, 0.5] }}
+                  animate={{ r: [5, 12, 5], opacity: [0.5, 0, 0.5] }}
                   transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.25 }}
                 />
 
                 {/* Main dot */}
                 <motion.circle
-                  cx={loc.x} cy={loc.y} r="5"
-                  className="fill-[#05a0ec] stroke-white stroke-[2]"
-                  whileHover={{ scale: 1.8 }}
+                  cx={loc.x} cy={loc.y} r="3.5"
+                  className="fill-[#05a0ec] stroke-white stroke-[1.5]"
+                  whileHover={{ scale: 1.6 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 />
 
@@ -160,7 +184,7 @@ export default function WorldPresence() {
                         transition={{ duration: 0.18 }}
                         className="bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest py-1.5 px-3 rounded-lg text-center shadow-xl border border-slate-700 whitespace-nowrap"
                       >
-                        {loc.city}
+                        {loc.city} &ndash; {loc.country}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[4px] border-l-transparent border-r-[4px] border-r-transparent border-t-[4px] border-t-slate-900" />
                       </motion.div>
                     </foreignObject>
