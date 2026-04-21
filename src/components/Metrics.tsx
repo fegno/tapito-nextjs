@@ -81,7 +81,9 @@ export default function Metrics() {
                           <div key={i} className="w-10 h-10 rounded-full border-2 border-[#09358c] bg-slate-200" />
                        ))}
                     </div>
-                    <span className="text-sm font-medium text-blue-100">Joined by 500+ global brands</span>
+                    <span className="text-sm font-medium text-blue-100">
+                      Joined by 100+ global brands
+                    </span>
                  </div>
               </div>
            </div>

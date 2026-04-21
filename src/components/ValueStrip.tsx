@@ -117,10 +117,6 @@ export default function ValueStrip() {
   const leftItems   = items.filter(i => i.side === "left");
   const rightItems  = items.filter(i => i.side === "right");
 
-  const indexMap = [...topItems, ...leftItems, ...rightItems, ...bottomItems].map(
-    item => items.indexOf(item)
-  );
-
   const drawLines = useCallback(() => {
     if (!sectionRef.current || !orbRef.current) return;
 
@@ -132,48 +128,75 @@ export default function ValueStrip() {
     const orbR = orbRect.width / 2.2;
 
     const newLines: ConnectorLine[] = [];
+    
+    // Config for each side group
+    const sideConfigs = [
+      { items: topItems,    side: 'top',    nx: 0,  ny: -1 },
+      { items: leftItems,   side: 'left',   nx: -1, ny: 0 },
+      { items: rightItems,  side: 'right',  nx: 1,  ny: 0 },
+      { items: bottomItems, side: 'bottom', nx: 0,  ny: 1 },
+    ];
 
-    cardRefs.current.forEach((card, i) => {
-      if (!card) return;
-      const cr = card.getBoundingClientRect();
+    // Distance from orb perimeter to the junction point
+    const junctionOffset = 80; 
+    let cardIdx = 0;
 
-      const cardCx = cr.left - secRect.left + cr.width  / 2;
-      const cardCy = cr.top  - secRect.top  + cr.height / 2;
+    sideConfigs.forEach((group, gIdx) => {
+      if (group.items.length === 0) return;
 
-      const dx  = cx - cardCx + 10;
-      const dy  = cy - cardCy;
-      const len = Math.sqrt(dx * dx + dy * dy);
-      if (len === 0) return;
+      // 1. Junction Point (P)
+      const jx = cx + group.nx * (orbR + junctionOffset);
+      const jy = cy + group.ny * (orbR + junctionOffset);
 
-      const nx = dx / len;
-      const ny = dy / len;
+      // 2. End Point on Orb Perimeter (E)
+      const ex = cx + group.nx * orbR;
+      const ey = cy + group.ny * orbR;
 
-      const hw = cr.width  / 2;
-      const hh = cr.height / 1.4;
-      const tx = Math.abs(nx) > 1e-6 ? hw / Math.abs(nx) : Infinity;
-      const ty = Math.abs(ny) > 1e-6 ? hh / Math.abs(ny) : Infinity;
-      const t  = Math.min(tx, ty);
-
-      const sx = cardCx + nx * t;
-      const sy = cardCy + ny * t;
-
-      // ✅ Fixed: end point on the TRUE outer orb surface, not interior
-      const ex = cx - nx * orbR;
-      const ey = cy - ny * orbR;
-
-      const curve = 0;
-      const mx = (sx + ex) / 2 - ny * curve;
-      const my = (sy + ey) / 2 + nx * curve;
-
+      // 3. Line from Junction to Orb
       newLines.push({
-        d: `M${sx.toFixed(1)},${sy.toFixed(1)} Q${mx.toFixed(1)},${my.toFixed(1)} ${ex.toFixed(1)},${ey.toFixed(1)}`,
-        sx, sy, ex, ey,
-        id: indexMap[i] ?? i,
+        d: `M${jx.toFixed(1)},${jy.toFixed(1)} L${ex.toFixed(1)},${ey.toFixed(1)}`,
+        sx: jx, sy: jy, ex, ey,
+        id: 1000 + gIdx,
+      });
+
+      // 4. Lines from each Card to the Junction
+      group.items.forEach((item) => {
+        const card = cardRefs.current[cardIdx++];
+        if (!card) return;
+
+        const cr = card.getBoundingClientRect();
+        const cardCx = cr.left - secRect.left + cr.width  / 2;
+        const cardCy = cr.top  - secRect.top  + cr.height / 2;
+
+        // Determine anchor point on card side facing the orb
+        let ax, ay;
+        if (group.side === 'left') {
+          ax = cr.right - secRect.left;
+          ay = cardCy;
+        } else if (group.side === 'right') {
+          ax = cr.left - secRect.left;
+          ay = cardCy;
+        } else if (group.side === 'top') {
+          ax = cardCx;
+          ay = cr.bottom - secRect.top;
+        } else { // bottom
+          ax = cardCx;
+          ay = cr.top - secRect.top;
+        }
+
+        // Create a direct straight line to the junction
+        const d = `M${ax.toFixed(1)},${ay.toFixed(1)} L${jx.toFixed(1)},${jy.toFixed(1)}`;
+
+        newLines.push({
+          d,
+          sx: ax, sy: ay, ex: jx, ey: jy,
+          id: items.indexOf(item),
+        });
       });
     });
 
     setLines(newLines);
-  }, []);
+  }, [topItems, leftItems, rightItems, bottomItems, items]);
 
   useEffect(() => {
     const t = setTimeout(drawLines, 300);
@@ -234,7 +257,7 @@ export default function ValueStrip() {
                 opacity="0.85"
                 style={{ animationDelay: `${(i * 0.2) % 2}s` }}
               />
-              <circle
+              {/* <circle
                 className="conn-dot-orb"
                 cx={line.ex}
                 cy={line.ey}
@@ -242,7 +265,7 @@ export default function ValueStrip() {
                 fill="#06dcc3"
                 opacity="0.7"
                 style={{ animationDelay: `${(i * 0.2 + 0.9) % 2}s` }}
-              />
+              /> */}
             </g>
           );
         })}
@@ -270,7 +293,7 @@ export default function ValueStrip() {
           </div>
 
           {/* Middle Row */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-24 w-full max-w-[1600px] mb-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-24 w-full max-w-[1600px] mb-12">
             
             {/* Left Side */}
             <div className="flex flex-col gap-5 order-2 lg:order-1">
