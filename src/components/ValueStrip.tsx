@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, forwardRef, useRef, useEffect, useCallback } from "react";
+import React, { useState, forwardRef, useEffect } from "react";
 import {
   LayoutDashboard,
   BrainCircuit,
@@ -16,6 +16,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Container from "./Container";
 import Orb from "./Orb";
+import AnimatedBorderLargeSVG from "./ui/animating-border-large";
 
 const items = [
   { icon: LayoutDashboard, text: "Business Intelligence Dashboard", side: 'top' },
@@ -29,14 +30,6 @@ const items = [
   { icon: Rocket,          text: "Growth Simulator",                side: 'bottom' },
 ];
 
-interface ConnectorLine {
-  d: string;
-  sx: number;
-  sy: number;
-  ex: number;
-  ey: number;
-  id: number;
-}
 
 const FeatureCard = forwardRef<HTMLDivElement, { item: typeof items[0]; index: number }>(({ item, index }, ref) => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -66,7 +59,7 @@ const FeatureCard = forwardRef<HTMLDivElement, { item: typeof items[0]; index: n
       viewport={{ once: true }}
       className={cn(
         "group relative p-6 rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm",
-        "transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10",
+        "transition-all duration-500",
         "cursor-pointer overflow-hidden flex items-center gap-5 w-full min-h-[100px]",
         (isLeft || isRight) && "xl:w-[300px] 2xl:w-[400px]",
         "flex-row text-left hover:bg-white/10"
@@ -107,170 +100,38 @@ const FeatureCard = forwardRef<HTMLDivElement, { item: typeof items[0]; index: n
 FeatureCard.displayName = "FeatureCard";
 
 import ValueStripMobile from "./ValueStripMobile";
-
+import AnimatedBorderLapSVG from "./ui/animating-border-lap";
 export default function ValueStrip() {
-  const sectionRef  = useRef<HTMLDivElement>(null);
-  const orbRef      = useRef<HTMLDivElement>(null);
-  const cardRefs    = useRef<(HTMLDivElement | null)[]>([]);
-  const [lines, setLines] = useState<ConnectorLine[]>([]);
-
   const topItems    = items.filter(i => i.side === "top");
   const bottomItems = items.filter(i => i.side === "bottom");
   const leftItems   = items.filter(i => i.side === "left");
-  const rightItems  = items.filter(i => i.side === "right");
-
-  const drawLines = useCallback(() => {
-    if (!sectionRef.current || !orbRef.current) return;
-
-    const secRect = sectionRef.current.getBoundingClientRect();
-    const orbRect = orbRef.current.getBoundingClientRect();
-
-    if (secRect.width < 1280) return; // Don't draw on mobile/tablet (using xl as breakpoint)
-
-    const cx   = orbRect.left - secRect.left + orbRect.width  / 2;
-    const cy   = orbRect.top  - secRect.top  + orbRect.height / 2;
-    const orbR = orbRect.width / 2.2;
-
-    const newLines: ConnectorLine[] = [];
-    
-    // Config for each side group
-    const sideConfigs = [
-      { items: topItems,    side: 'top',    nx: 0,  ny: -1 },
-      { items: leftItems,   side: 'left',   nx: -1, ny: 0 },
-      { items: rightItems,  side: 'right',  nx: 1,  ny: 0 },
-      { items: bottomItems, side: 'bottom', nx: 0,  ny: 1 },
-    ];
-
-    // Distance from orb perimeter to the junction point
-    const junctionOffset = 80; 
-    let cardIdx = 0;
-
-    sideConfigs.forEach((group, gIdx) => {
-      if (group.items.length === 0) return;
-
-      // 1. Junction Point (P)
-      const jx = cx + group.nx * (orbR + junctionOffset);
-      const jy = cy + group.ny * (orbR + junctionOffset);
-
-      // 2. End Point on Orb Perimeter (E)
-      const ex = cx + group.nx * orbR;
-      const ey = cy + group.ny * orbR;
-
-      // 3. Line from Junction to Orb
-      newLines.push({
-        d: `M${jx.toFixed(1)},${jy.toFixed(1)} L${ex.toFixed(1)},${ey.toFixed(1)}`,
-        sx: jx, sy: jy, ex, ey,
-        id: 1000 + gIdx,
-      });
-
-      // 4. Lines from each Card to the Junction
-      group.items.forEach((item) => {
-        const card = cardRefs.current[cardIdx++];
-        if (!card) return;
-
-        const cr = card.getBoundingClientRect();
-        const cardCx = cr.left - secRect.left + cr.width  / 2;
-        const cardCy = cr.top  - secRect.top  + cr.height / 2;
-
-        // Determine anchor point on card side facing the orb
-        let ax, ay;
-        if (group.side === 'left') {
-          ax = cr.right - secRect.left;
-          ay = cardCy;
-        } else if (group.side === 'right') {
-          ax = cr.left - secRect.left;
-          ay = cardCy;
-        } else if (group.side === 'top') {
-          ax = cardCx;
-          ay = cr.bottom - secRect.top;
-        } else { // bottom
-          ax = cardCx;
-          ay = cr.top - secRect.top;
-        }
-
-        // Create a direct straight line to the junction
-        const d = `M${ax.toFixed(1)},${ay.toFixed(1)} L${jx.toFixed(1)},${jy.toFixed(1)}`;
-
-        newLines.push({
-          d,
-          sx: ax, sy: ay, ex: jx, ey: jy,
-          id: items.indexOf(item),
-        });
-      });
-    });
-
-    setLines(newLines);
-  }, [topItems, leftItems, rightItems, bottomItems]);
+  const rightItems = items.filter(i => i.side === "right");
+  const [ innerWidth , setInnerWidth ] = useState(0);
 
   useEffect(() => {
-    const t = setTimeout(drawLines, 300);
-    window.addEventListener("resize", drawLines);
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("resize", drawLines);
-    };
-  }, [drawLines]);
-
-  const setCardRef = (orderedIndex: number) => (el: HTMLDivElement | null) => {
-    cardRefs.current[orderedIndex] = el;
-    if (el) setTimeout(drawLines, 350);
-  };
-
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setInnerWidth(window.innerWidth);
+      };
+      setInnerWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  },[])
+  
   let orderedIdx = 0;
 
   return (
     <>
       <ValueStripMobile />
       <section
-        ref={sectionRef}
         className="hidden xl:block bg-slate-950 py-[60px] lg:py-[80px] 2xl:py-[100px] 4xl:py-[120px] border-y border-white/5 overflow-hidden relative"
       >
-        <svg
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          style={{ zIndex: 3 }}
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient id="connGrad1" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stopColor="#05a0ec" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#06dcc3" stopOpacity="0.1" />
-            </linearGradient>
-            <linearGradient id="connGrad2" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"   stopColor="#06dcc3" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#05a0ec" stopOpacity="0.1" />
-            </linearGradient>
-          </defs>
-
-          {lines.map((line, i) => {
-            const grad = i % 2 === 0 ? "url(#connGrad1)" : "url(#connGrad2)";
-            return (
-              <g key={line.id}>
-                <path
-                  className="conn-path"
-                  d={line.d}
-                  fill="none"
-                  stroke={grad}
-                  strokeWidth="1.3"
-                  opacity="0.75"
-                  style={{ animationDelay: `${(i * 0.2) % 1.8}s` }}
-                />
-                <circle
-                  className="conn-dot"
-                  cx={line.sx}
-                  cy={line.sy}
-                  r="3"
-                  fill="#05a0ec"
-                  opacity="0.85"
-                  style={{ animationDelay: `${(i * 0.2) % 2}s` }}
-                />
-              </g>
-            );
-          })}
-        </svg>
-
-        <div className="absolute top-0 left-0 w-64 h-64 bg-[#05a0ec]/10 blur-[100px] -z-10" />
-        <div className="absolute bottom-0 right-0 w-64 h-64 bg-[#06dcc3]/10 blur-[100px] -z-10" />
-
+        {innerWidth > 1680 ? (
+          <AnimatedBorderLargeSVG />
+        ) : (
+          <AnimatedBorderLapSVG />
+        )}
         <Container className="relative">
           <div className="flex flex-col items-center">
 
@@ -283,7 +144,6 @@ export default function ValueStrip() {
                     key={i}
                     item={item}
                     index={i}
-                    ref={setCardRef(oi)}
                   />
                 );
               })}
@@ -301,7 +161,6 @@ export default function ValueStrip() {
                       key={i}
                       item={item}
                       index={i + 2}
-                      ref={setCardRef(oi)}
                     />
                   );
                 })}
@@ -320,7 +179,6 @@ export default function ValueStrip() {
                   </div>
 
                   <div
-                    ref={orbRef}
                     className="absolute rounded-full z-10 pointer-events-none"
                     style={{
                       width: 'calc(100% * 1)',
@@ -361,7 +219,6 @@ export default function ValueStrip() {
                       key={i}
                       item={item}
                       index={i + 4}
-                      ref={setCardRef(oi)}
                     />
                   );
                 })}
@@ -377,7 +234,6 @@ export default function ValueStrip() {
                     key={i}
                     item={item}
                     index={i + 7}
-                    ref={setCardRef(oi)}
                   />
                 );
               })}
