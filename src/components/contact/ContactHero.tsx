@@ -43,7 +43,7 @@ export default function ContactHero() {
         {[
           { icon: Clock,  label: "Response in < 2 hrs",  color: "text-blue-500" },
           { icon: Globe,  label: "16 cities worldwide",   color: "text-sky-500" },
-          { icon: Users,  label: "5,000+ retail brands",  color: "text-cyan-500" },
+          { icon: Users,  label: "10+ Business Verticals",  color: "text-cyan-500" },
           { icon: Zap,    label: "24 / 7 support",        color: "text-emerald-500", live: true },
         ].map((s, i) => (
           <motion.div
