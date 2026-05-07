@@ -98,7 +98,7 @@ export default function CampaignAutomationPage() {
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
                 {[
                   { icon: Users, title: "Segmentation", text: "Lapsed VIPs" },
-                  { icon: Target, title: "Trigger", text: "30d Inactive" },
+                  { icon: Target, title: "Trigger", text: "30 days Inactive" },
                   { icon: MessageSquare, title: "Message", text: "Win-back 15%" },
                   { icon: Send, title: "Execution", text: "Multi-Channel" },
                 ].map((item, index) => (

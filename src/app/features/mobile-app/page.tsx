@@ -96,7 +96,7 @@ export default function MobileAppPage() {
                     <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="grid grid-cols-2 gap-4">
                       {[
                         { label: "Bills", value: "124", color: "text-[#09358c]" },
-                        { label: "ABV", value: "Rs 3.4k", color: "text-[#05a0ec]" }
+                        { label: "AOV", value: "Rs 3.4k", color: "text-[#05a0ec]" }
                       ].map((item, idx) => (
                         <motion.div key={item.label} variants={{ initial: { y: 20, opacity: 0 }, whileInView: { y: 0, opacity: 1 } }} className="rounded-4xl border border-slate-100 bg-slate-50 p-4 hover:border-[#09358c]/20 transition-colors">
                           <p className="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">{item.label}</p>

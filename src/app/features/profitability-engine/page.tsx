@@ -59,13 +59,13 @@ export default function ProfitabilityEnginePage() {
           <div className="grid items-center gap-8 lg:gap-16 lg:grid-cols-[0.92fr_1.08fr]">
             <div>
               <motion.div {...fadeUp()} className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#09358c]/10 bg-[#09358c]/5 px-4 py-2 text-xs font-black uppercase tracking-[0.22em] text-[#09358c]">
-                <BarChart3 size={14} /> Forecast intelligence panel
+                <BarChart3 size={14} /> Real-time profit intelligence
               </motion.div>
               <motion.h1 {...fadeUp(0.08)} className="max-w-3xl text-3xl sm:text-4xl md:text-5xl 4xl:text-7xl font-black tracking-[-0.06em] text-slate-950">
-                Predict Profit Before You Invest.
+                Stop Scaling Losses. <span className="text-[#09358c]">Optimize for Net Profit.</span>
               </motion.h1>
               <motion.p {...fadeUp(0.16)} className="mt-6 max-w-4xl text-base md:text-lg 4xl:text-xl font-medium leading-7 md:leading-8 text-slate-600 font-inter">
-                Use forward-looking margin forecasts and scenario comparisons to plan inventory, pricing, and spend before profit risk shows up in the books.
+                Stop discovering margin erosion weeks after the spend. Tapito bridges the gap between your live ad platforms and unit-level margins to identify profit leaks the moment they happen.
               </motion.p>
               <motion.div {...fadeUp(0.24)} className="mt-10 flex flex-wrap items-center gap-4">
                 <Link href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#09358c] to-[#05a0ec] px-8 py-4 text-base font-black text-white shadow-[0_22px_60px_-18px_rgba(9,53,140,0.4)] transition-all hover:scale-[1.05] hover:shadow-[0_25px_70px_-15px_rgba(5,160,236,0.4)]">
@@ -73,8 +73,8 @@ export default function ProfitabilityEnginePage() {
                   Book a Demo
                 </Link>
                 <div className="flex flex-col">
-                  <span className="text-sm font-bold text-slate-500">Forward profit modeling</span>
-                   <span className="text-xs font-black uppercase tracking-widest text-[#05a0ec]">Simulate before spending</span>
+                  <span className="text-sm font-bold text-slate-500">Live margin tracking</span>
+                   <span className="text-xs font-black uppercase tracking-widest text-[#05a0ec]">Protect your bottom line</span>
                 </div>
               </motion.div>
             </div>
@@ -86,10 +86,10 @@ export default function ProfitabilityEnginePage() {
               <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/5 p-8 relative z-10 transition-colors group-hover:bg-white/8 group-hover:border-white/20 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#09358c]/5 to-transparent pointer-events-none" />
                 <div className="flex items-center justify-between text-white relative z-10">
-                  <p className="text-sm font-black">Future margin corridor</p>
+                  <p className="text-sm font-black">Live profit corridor</p>
                   <motion.div animate={{ opacity: [0.5, 1, 0.5] }} transition={{ duration: 2, repeat: Infinity }} className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-[#05a0ec] shadow-[0_0_10px_rgba(5,160,236,0.8)]" />
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">Next 12 weeks</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-white/50">Real-time performance</p>
                   </motion.div>
                 </div>
                 <div className="mt-8 h-56 relative z-10">
@@ -149,7 +149,7 @@ export default function ProfitabilityEnginePage() {
       <section className="border-y border-slate-200 bg-slate-50/80 py-16 4xl:py-24">
         <Container>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 lg:grid-cols-3">
-            {[["Business problem", "Retail teams often discover profit pressure only after the month closes, when it is too late to change the outcome.", "text-rose-500"], ["What Tapito detects", "Tapito detects future margin risk by combining seasonality, cost movement, velocity, and modeling.", "text-[#09358c]"], ["What action it enables", "Leaders can protect profitability earlier and invest with far more confidence.", "text-emerald-600"]].map(([title, text, tone], index) => (
+            {[["Business problem", "Marketing teams scale spend based on ROAS, often unaware that rising costs are eating their entire net profit.", "text-rose-500"], ["What Tapito detects", "Tapito cross-references live spend against dynamic unit costs, identifying SKU-level profit erosion instantly.", "text-[#09358c]"], ["What action it enables", "Pause loss-making campaigns immediately and shift budget to the products that drive your actual bottom line.", "text-emerald-600"]].map(([title, text, tone], index) => (
               <motion.div key={title} {...fadeUp(index * 0.1)} {...cardHover} className={`rounded-[1.5rem] md:rounded-[2.5rem] border bg-white p-10 group transition-all ${index === 1 ? "border-[#09358c]/20 shadow-[0_40px_90px_-50px_rgba(9,53,140,0.2)]" : "border-slate-200 hover:border-[#09358c]/20"}`}>
                 <p className={`text-[11px] font-black uppercase tracking-[0.25em] ${tone}`}>{title}</p>
                 <p className="mt-5 text-xl font-black leading-9 text-slate-950 uppercase tracking-tight">{text}</p>
@@ -164,11 +164,11 @@ export default function ProfitabilityEnginePage() {
         <Container>
           <div className="mb-14 max-w-3xl">
             <motion.p {...fadeUp()} className="text-xs font-black uppercase tracking-[0.22em] text-[#09358c]">How it works</motion.p>
-            <motion.h2 {...fadeUp(0.08)} className="mt-4 text-3xl md:text-4xl 4xl:text-5xl font-black tracking-[-0.05em] text-slate-950">Model futures before you commit budget.</motion.h2>
+            <motion.h2 {...fadeUp(0.08)} className="mt-4 text-3xl md:text-4xl 4xl:text-5xl font-black tracking-[-0.05em] text-slate-950">Stop profit leaks before they scale.</motion.h2>
           </div>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
             <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-6">
-              {[["01", "Learn historical profile", "Studying sales patterns, promos, seasonality, and margin behavior tokens."], ["02", "Model future states", "Different pricing, buying, and cost paths are tested against your reality."], ["03", "Flag profit risk early", "Leaders see target impact before they commit spend or inventory decisions."]].map(([step, title, text], index) => (
+              {[["01", "Sync live margins", "We connect your marketing spend to real-time product costs, shipping, and returns."], ["02", "Compute net profit", "Every click and conversion is measured against actual net contribution, not just ROAS."], ["03", "Alert on erosion", "Automated alerts trigger when a campaign's net margin drops below your target threshold."]].map(([step, title, text], index) => (
                 <motion.div key={step} {...fadeUp(index * 0.15)} {...cardHover} className="rounded-[2rem] border border-slate-200 bg-white p-8 group hover:bg-slate-50 transition-colors h-full">
                   <div className="flex items-start gap-6">
                     <motion.div whileHover={{ scale: 1.1, rotate: 10 }} className="flex h-14 w-14 shrink-0 items-center justify-center rounded-4xl bg-slate-950 text-base font-black text-white group-hover:bg-[#09358c] transition-colors shadow-lg">{step}</motion.div>
@@ -242,7 +242,7 @@ export default function ProfitabilityEnginePage() {
             <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="bg-white p-8 lg:p-12 relative overflow-hidden group">
               <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-400 relative z-10 font-black">Before Tapito Profitability</p>
               <div className="mt-6 lg:mt-12 space-y-4 lg:space-y-8 text-lg lg:text-4xl font-bold text-slate-400 relative z-10 opacity-60">
-                <p>Retroactive P and L cycles</p>
+                <p>Retroactive P & L cycles</p>
                 <p>Quarter-end budget surprises</p>
                 <p>Blind inventory investing</p>
                 <p>Manual scenario spreadsheets</p>

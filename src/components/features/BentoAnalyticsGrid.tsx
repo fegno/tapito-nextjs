@@ -54,10 +54,10 @@ const bentoItems: BentoItem[] = [
     )
   },
   {
-    id: "user",
-    title: "User Analysis",
+    id: "customer",
+    title: "Customer Analysis",
     subtitle: "Insights",
-    description: "Segment users by behavior, demographics, and value. Create high-fidelity personas that drive personalized marketing strategies.",
+    description: "Segment customers by behavior, demographics, and value. Create high-fidelity personas that drive personalized marketing strategies.",
     icon: Users,
     color: "bg-[#f0f7ff]",
     textColor: "text-[#09358c]",
@@ -74,9 +74,9 @@ const bentoItems: BentoItem[] = [
   },
   {
     id: "retention",
-    title: "Retention Analysis",
-    subtitle: "Monitor Customer Longevity",
-    description: "Calculate Churn, LTV, and Cohort health. Understand which features keep users coming back and where they eventually slip away.",
+    title: "Opportunity Detection",
+    subtitle: "Identify Hidden Sales",
+    description: "Never miss a cross-sell again. Tapito highlights hidden revenue opportunities that your sales team might manually overlook during daily operations.",
     icon: Activity,
     color: "bg-[#f0fdf4]",
     textColor: "text-[#166534]",
@@ -93,9 +93,9 @@ const bentoItems: BentoItem[] = [
   },
   {
     id: "funnel",
-    title: "Funnel Analysis",
-    subtitle: "Optimization Every Conversion Step",
-    description: "Visualize the checkout flow, signup process, or any multi-step journey. Find the exact step where you're losing potential revenue.",
+    title: "Conversion Funnel",
+    subtitle: "From Intent to Full Project",
+    description: "Visualize the path from a single-category purchase to full project fulfillment. Find where cross-sell opportunities drop off before billing.",
     icon: Target,
     color: "bg-[#fffbeb]",
     textColor: "text-[#92400e]",
@@ -115,10 +115,10 @@ const bentoItems: BentoItem[] = [
     )
   },
   {
-    id: "user-path",
-    title: "User Path Analysis",
+    id: "customer-path",
+    title: "Customer Path Analysis",
     subtitle: "Non-Linear Journey Mapping",
-    description: "Users don't always follow the straight line. Map the complex, multi-touch relationships between discovery, research, and purchase.",
+    description: "Customers don't always follow the straight line. Map the complex, multi-touch relationships between discovery, research, and purchase.",
     icon: Search,
     color: "bg-[#f2f8ff]",
     textColor: "text-[#09358c]",
@@ -138,9 +138,9 @@ const bentoItems: BentoItem[] = [
   },
   {
     id: "session",
-    title: "Session Analysis",
-    subtitle: "Micro-Interaction Monitoring",
-    description: "Analyze individual sessions to see how time is spent. Catch technical errors, slow loads, or UI confusion in real-time.",
+    title: "Staff Intelligence",
+    subtitle: "Incentive & Performance Mapping",
+    description: "Motivate sales teams by showing real-time incentives earned, cross-category performance, and target progress to drive proactive upselling.",
     icon: Clock,
     color: "bg-[#fff7ed]",
     textColor: "text-[#9a3412]",
@@ -160,9 +160,9 @@ const bentoItems: BentoItem[] = [
   },
   {
     id: "acquisition",
-    title: "Acquisition Analysis",
-    subtitle: "Source & Attribution Logic",
-    description: "Know exactly which channel brought in which customer. Master multi-touch attribution to spend your marketing budget where it works.",
+    title: "Automated Engagement",
+    subtitle: "WhatsApp & SMS Automation",
+    description: "Run behavior-triggered campaigns automatically based on customer intent. Keep customers engaged without requiring constant manual follow-ups.",
     icon: Zap,
     color: "bg-[#fdf2f8]",
     textColor: "text-[#9d174d]",
@@ -178,9 +178,9 @@ const bentoItems: BentoItem[] = [
   },
   {
     id: "uninstallation",
-    title: "Uninstallation Analysis",
-    subtitle: "Understand Why Customers Uninstall",
-    description: "Monitor churn at the app level. Correlate uninstalls with specific feature releases, pricing changes, or service quality drops.",
+    title: "Revenue Leakage",
+    subtitle: "Stop Category Drop-offs",
+    description: "Analyze why customers fulfill only part of their project with you. Eliminate category-level leakage and capture more value from every visit.",
     icon: UserMinus,
     color: "bg-[#fefaf2]",
     textColor: "text-[#8a6423]",
@@ -193,17 +193,17 @@ const bentoItems: BentoItem[] = [
           <UserMinus size={18} className="text-amber-500 opacity-60" />
         </div>
         <div className="space-y-0.5">
-          <p className="text-[9px] font-black text-amber-900/60 uppercase">Churn</p>
-          <p className="text-lg font-black text-amber-700">1.2%</p>
+          <p className="text-[9px] font-black text-amber-900/60 uppercase">Leakage Rate</p>
+          <p className="text-lg font-black text-amber-700">14.2%</p>
         </div>
       </div>
     )
   },
   {
     id: "affinity",
-    title: "Product Affinity",
-    subtitle: "Map Relationships Between Categories",
-    description: "Discover which products are frequently bought together. Use association rules to power cross-sell engines and physical store layouts.",
+    title: "Smart Affinity Logic",
+    subtitle: "Cross-Category Relationship Mapping",
+    description: "Discover which product categories (e.g., Plumbing & Tiles) are frequently connected. Power your recommendation engine with real-world project patterns.",
     icon: ShoppingBag,
     color: "bg-[#f0f9ff]",
     textColor: "text-[#09358c]",

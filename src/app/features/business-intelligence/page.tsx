@@ -196,7 +196,7 @@ export default function BusinessIntelligencePage() {
                 <div className="rounded-xl border border-[#05a0ec]/10 bg-white p-5">
                   <p className="text-sm font-black text-slate-950">KPI grid</p>
                   <div className="mt-4 grid grid-cols-2 gap-3">
-                    {[["Bills", "12.4k"], ["ABV", "Rs 3.4k"], ["GP", "22.1%"], ["Stock", "Healthy"]].map(([label, value]) => (
+                    {[["Bills", "12.4k"], ["AOV", "Rs 3.4k"], ["GP", "22.1%"], ["Stock", "Healthy"]].map(([label, value]) => (
                       <motion.div key={label} whileHover={{ y: -5 }} className="luminous-card luminous-surface-strong soft-shine rounded-xl bg-[#09358c]/5 p-3">
                         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#09358c]">{label}</p>
                         <p className="mt-2 text-lg font-black text-slate-950">{value}</p>

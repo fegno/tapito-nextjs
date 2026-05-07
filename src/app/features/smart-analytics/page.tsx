@@ -204,7 +204,7 @@ export default function SmartAnalyticsPage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(9,53,140,0.1),transparent_70%)]" />
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#05a0ec] relative z-10">After Tapito Intelligence</p>
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-6 lg:mt-12 space-y-3 lg:space-y-7 text-base lg:text-xl font-black relative z-10">
-                {["Evidence-based strategy", "Proactive scaling logic", "Optimized margins & ABV", "Autonomous opportunity scoring"].map((item) => (
+                {["Evidence-based strategy", "Proactive scaling logic", "Optimized margins & AOV", "Autonomous opportunity scoring"].map((item) => (
                   <motion.div key={item} variants={{ initial: { x: 30, opacity: 0 }, whileInView: { x: 0, opacity: 1 } }} className="flex gap-3 lg:gap-5"><CheckCircle2 size={28} className="text-emerald-400 shrink-0" /><span>{item}</span></motion.div>
                 ))}
               </motion.div>

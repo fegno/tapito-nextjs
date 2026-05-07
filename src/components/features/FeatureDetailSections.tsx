@@ -108,10 +108,10 @@ export const FeatureAnalyticsBento = () => {
             </div>
           </div>
 
-          {/* User Analysis */}
+          {/* Customer Analysis */}
           <div className="md:col-span-6 lg:col-span-5 lg:row-span-1 bg-[#daf4e5] rounded-3xl p-6 relative overflow-hidden group border border-[#b2eac7] flex flex-col shadow-sm">
-            <h3 className="text-xl lg:text-2xl font-black text-[#1e5836] mb-1">User Analysis</h3>
-            <p className="text-[#2e7d4d] font-medium text-xs lg:text-sm">Learn Who Your Users Really Are</p>
+            <h3 className="text-xl lg:text-2xl font-black text-[#1e5836] mb-1">Customer Analysis</h3>
+            <p className="text-[#2e7d4d] font-medium text-xs lg:text-sm">Learn Who Your Customers Really Are</p>
             <div className="mt-auto flex flex-wrap gap-2 text-[9px] lg:text-[10px] font-bold text-white uppercase tracking-wider">
                <span className="bg-[#1e5836] px-2 py-1.5 rounded">Demographics</span>
                <span className="bg-[#2e7d4d] px-2 py-1.5 rounded">Age, City, Gender, Income</span>
@@ -155,9 +155,9 @@ export const FeatureAnalyticsBento = () => {
             </div>
           </div>
 
-          {/* User Path Analysis */}
+          {/* Customer Path Analysis */}
           <div className="md:col-span-6 lg:col-span-6 lg:row-span-1 bg-white rounded-3xl p-6 relative overflow-hidden group border border-slate-200 shadow-sm flex flex-col justify-center">
-            <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-1">User Path Analysis</h3>
+            <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-1">Customer Path Analysis</h3>
             <p className="text-slate-500 font-medium text-xs lg:text-sm">Visualize Every Step of Your Customer Journey</p>
             <div className="mt-auto flex flex-col lg:flex-row items-center justify-center pt-4 gap-2 lg:gap-0">
                 <div className="bg-slate-100 flex-1 h-8 lg:rounded-l-full rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-slate-500 shadow-inner w-full">Searched Category</div>
