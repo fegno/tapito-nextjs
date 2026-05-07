@@ -98,31 +98,31 @@ export const FeatureAnalyticsBento = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-4 lg:gap-6 auto-rows-[200px]">
-          {/* Behavior Analysis */}
+          {/* Staff Performance Analysis */}
           <div className="md:col-span-6 lg:col-span-4 lg:row-span-1 bg-[#eff2fe] rounded-3xl p-6 relative overflow-hidden group border border-[#dce3fc] flex flex-col items-start shadow-sm">
-            <h3 className="text-xl lg:text-2xl font-black text-[#2e408d] mb-1">Behavior Analysis</h3>
-            <p className="text-[#5164ad] font-medium text-xs lg:text-sm">Understand How Customers Engage with Your Brand</p>
+            <h3 className="text-xl lg:text-2xl font-black text-[#2e408d] mb-1">Staff Performance</h3>
+            <p className="text-[#5164ad] font-medium text-xs lg:text-sm">Monitor Nudge Effectiveness & Sales Bias</p>
             <div className="mt-auto flex flex-wrap gap-2 text-[11px] font-bold text-[#445baf]">
-              <span className="bg-white/70 px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">Added to Cart</span>
-              <span className="bg-[#fbbf24]/20 px-3 py-1.5 rounded-full shadow-sm text-[#92400e] flex items-center gap-1">Opened Email</span>
+              <span className="bg-white/70 px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">Bias Detected</span>
+              <span className="bg-[#fbbf24]/20 px-3 py-1.5 rounded-full shadow-sm text-[#92400e] flex items-center gap-1">Incentive Triggered</span>
             </div>
           </div>
 
-          {/* User Analysis */}
+          {/* Portfolio Intelligence */}
           <div className="md:col-span-6 lg:col-span-5 lg:row-span-1 bg-[#daf4e5] rounded-3xl p-6 relative overflow-hidden group border border-[#b2eac7] flex flex-col shadow-sm">
-            <h3 className="text-xl lg:text-2xl font-black text-[#1e5836] mb-1">User Analysis</h3>
-            <p className="text-[#2e7d4d] font-medium text-xs lg:text-sm">Learn Who Your Users Really Are</p>
+            <h3 className="text-xl lg:text-2xl font-black text-[#1e5836] mb-1">Portfolio Intelligence</h3>
+            <p className="text-[#2e7d4d] font-medium text-xs lg:text-sm">Map Category Relationships & GP Erosion</p>
             <div className="mt-auto flex flex-wrap gap-2 text-[9px] lg:text-[10px] font-bold text-white uppercase tracking-wider">
-               <span className="bg-[#1e5836] px-2 py-1.5 rounded">Demographics</span>
-               <span className="bg-[#2e7d4d] px-2 py-1.5 rounded">Age, City, Gender, Income</span>
-               <span className="bg-[#419462] px-2 py-1.5 rounded">Preferences</span>
+               <span className="bg-[#1e5836] px-2 py-1.5 rounded">Category Mix</span>
+               <span className="bg-[#2e7d4d] px-2 py-1.5 rounded">Primary vs Secondary</span>
+               <span className="bg-[#419462] px-2 py-1.5 rounded">Margin Guard</span>
             </div>
           </div>
 
           {/* Retention Analysis */}
           <div className="md:col-span-6 lg:col-span-3 lg:row-span-2 bg-[#fdf3df] rounded-3xl p-6 relative overflow-hidden group border border-[#fce6bd] flex flex-col shadow-sm hidden md:flex">
-            <h3 className="text-xl lg:text-2xl font-black text-[#85611f] mb-1">Retention Analysis</h3>
-            <p className="text-[#b18330] font-medium text-xs lg:text-sm mb-6">Understand the Retention Patterns of Your Customers</p>
+            <h3 className="text-xl lg:text-2xl font-black text-[#85611f] mb-1">Loyalty Dynamics</h3>
+            <p className="text-[#b18330] font-medium text-xs lg:text-sm mb-6">Analyze Recurring Salesman Performance</p>
             <div className="mt-auto bg-white/70 rounded-xl p-4 shadow-sm w-full h-32 border border-white flex items-end justify-between px-2 pb-2">
                  <div className="w-[14%] bg-[#fcd34d] h-[90%] rounded-t-sm" />
                  <div className="w-[14%] bg-[#fbbf24] h-[75%] rounded-t-sm" />
@@ -133,56 +133,56 @@ export const FeatureAnalyticsBento = () => {
             </div>
           </div>
 
-          {/* Funnel Analysis */}
+          {/* Conversion Funnel */}
           <div className="md:col-span-6 lg:col-span-3 lg:row-span-2 bg-[#fbe7e7] rounded-3xl p-6 relative overflow-hidden group border border-[#fad2d2] flex flex-col shadow-sm">
-            <h3 className="text-xl lg:text-2xl font-black text-[#7a2e2e] mb-1">Funnel Analysis</h3>
-            <p className="text-[#a44545] font-medium text-xs lg:text-sm mb-6">Identify Friction Points in Your Customer Journey</p>
+            <h3 className="text-xl lg:text-2xl font-black text-[#7a2e2e] mb-1">Incentive Funnel</h3>
+            <p className="text-[#a44545] font-medium text-xs lg:text-sm mb-6">Identify Leakage in Cross-category Payouts</p>
             <div className="mt-auto bg-white/80 rounded-xl p-4 lg:p-5 shadow-sm border border-white flex flex-col gap-3">
                <div className="flex justify-between items-center text-[10px] font-bold text-[#7a2e2e]">
-                 <span>Session Started</span> <span>100%</span>
+                 <span>Intent Logged</span> <span>100%</span>
                </div>
                <div className="w-full bg-slate-100 h-2 rounded-full"><div className="bg-[#fb7185] h-full rounded-full w-full" /></div>
 
                <div className="flex justify-between items-center text-[10px] font-bold text-[#7a2e2e]">
-                 <span>Viewed Product</span> <span>80%</span>
+                 <span>Category Added</span> <span>80%</span>
                </div>
                <div className="w-full bg-slate-100 h-2 rounded-full"><div className="bg-[#fb7185] h-full rounded-full w-4/5" /></div>
 
                <div className="flex justify-between items-center text-[10px] font-bold text-[#7a2e2e]">
-                 <span>Added to Cart</span> <span>40%</span>
+                 <span>Incentive Paid</span> <span>40%</span>
                </div>
                <div className="w-full bg-slate-100 h-2 rounded-full"><div className="bg-[#e11d48] h-full rounded-full w-2/5" /></div>
             </div>
           </div>
 
-          {/* User Path Analysis */}
+          {/* Customer Path Analysis */}
           <div className="md:col-span-6 lg:col-span-6 lg:row-span-1 bg-white rounded-3xl p-6 relative overflow-hidden group border border-slate-200 shadow-sm flex flex-col justify-center">
-            <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-1">User Path Analysis</h3>
-            <p className="text-slate-500 font-medium text-xs lg:text-sm">Visualize Every Step of Your Customer Journey</p>
+            <h3 className="text-xl lg:text-2xl font-black text-slate-800 mb-1">Incentive Journey</h3>
+            <p className="text-slate-500 font-medium text-xs lg:text-sm">Visualize the Path to Bonus Qualification</p>
             <div className="mt-auto flex flex-col lg:flex-row items-center justify-center pt-4 gap-2 lg:gap-0">
-                <div className="bg-slate-100 flex-1 h-8 lg:rounded-l-full rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-slate-500 shadow-inner w-full">Searched Category</div>
+                <div className="bg-slate-100 flex-1 h-8 lg:rounded-l-full rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-slate-500 shadow-inner w-full">Category Interest</div>
                 <ArrowRight className="text-slate-300 mx-2 hidden lg:block" size={16} />
-                <div className="bg-[#09358c]/5 flex-1 h-8 lg:rounded-none rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-[#09358c] shadow-inner w-full">Added to Cart</div>
+                <div className="bg-[#09358c]/5 flex-1 h-8 lg:rounded-none rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-[#09358c] shadow-inner w-full">Secondary Cross-sell</div>
                 <ArrowRight className="text-slate-300 mx-2 hidden lg:block" size={16} />
-                <div className="bg-[#10b981]/5 flex-1 h-8 lg:rounded-r-full rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-[#10b981] shadow-inner w-full">Made Purchase</div>
+                <div className="bg-[#10b981]/5 flex-1 h-8 lg:rounded-r-full rounded-full flex items-center justify-center px-4 text-[10px] font-bold text-[#10b981] shadow-inner w-full">Bonus Released</div>
             </div>
           </div>
 
           {/* Acquisition Analysis */}
           <div className="md:col-span-3 lg:col-span-3 lg:row-span-1 bg-[#eff6ff] rounded-3xl p-6 relative overflow-hidden group border border-[#dbeafe] flex flex-col shadow-sm">
-            <h3 className="text-lg lg:text-xl font-black text-[#1e3a8a] mb-1">Acquisition Analysis</h3>
-            <p className="text-[#1e40af] font-medium text-[11px] lg:text-xs">Measure Effectiveness</p>
+            <h3 className="text-lg lg:text-xl font-black text-[#1e3a8a] mb-1">Nudge Analytics</h3>
+            <p className="text-[#1e40af] font-medium text-[11px] lg:text-xs">Measure Push Effectiveness</p>
             <div className="mt-auto flex flex-col gap-2">
-                <div className="bg-[#2563eb] text-white text-[10px] font-bold py-1 px-3 rounded-full w-3/4">Campaign A</div>
-                <div className="bg-[#3b82f6] text-white text-[10px] font-bold py-1 px-3 rounded-full w-full">Campaign B</div>
-                <div className="bg-[#1d4ed8] text-white text-[10px] font-bold py-1 px-3 rounded-full w-1/2">Campaign C</div>
+                <div className="bg-[#2563eb] text-white text-[10px] font-bold py-1 px-3 rounded-full w-3/4">Push #12</div>
+                <div className="bg-[#3b82f6] text-white text-[10px] font-bold py-1 px-3 rounded-full w-full">Push #14</div>
+                <div className="bg-[#1d4ed8] text-white text-[10px] font-bold py-1 px-3 rounded-full w-1/2">Push #18</div>
             </div>
           </div>
 
           {/* Uninstallation Analysis */}
           <div className="md:col-span-3 lg:col-span-3 lg:row-span-1 bg-[#fdf5e6] rounded-3xl p-6 relative overflow-hidden group border border-[#fbdfb1] flex flex-col shadow-sm">
-            <h3 className="text-lg lg:text-xl font-black text-[#8a6423] mb-1 leading-tight">Drop-off Analysis</h3>
-            <p className="text-[#a87d32] font-medium text-[11px] lg:text-xs mt-1">Understand Attrition</p>
+            <h3 className="text-lg lg:text-xl font-black text-[#8a6423] mb-1 leading-tight">GP Leakage</h3>
+            <p className="text-[#a87d32] font-medium text-[11px] lg:text-xs mt-1">Stop Margin Erosion</p>
             <div className="mt-auto flex justify-between items-end gap-2 h-12 lg:h-16">
                  <div className="w-1/3 bg-[#d97706] h-[60%] rounded-t-md" />
                  <div className="w-1/3 bg-[#b45309] h-full rounded-t-md" />

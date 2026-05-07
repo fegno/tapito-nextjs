@@ -84,15 +84,15 @@ const CARDS = [
     icon: Database,
     name: "SAP Integration",
     badge: "Certified",
-    desc: "Bi-directional sync with your core SAP landscape for finance, operations, and branch visibility.",
-    bullets: ["Billing & inventory sync", "Branch-level snapshots", "Audit-ready data logs"],
+    desc: "Bi-directional sync with your core SAP landscape for finance, operations, and staff incentive payouts.",
+    bullets: ["Billing & inventory sync", "Staff incentive sync", "Audit-ready data logs"],
   },
   {
     icon: Cpu,
     name: "ERP Systems",
     badge: "Native",
-    desc: "Connect legacy or modern ERP systems to unify sales, inventory, and operations in one analytics engine.",
-    bullets: ["Multi-source aggregation", "Custom attribute mapping", "Sub-second sync cycles"],
+    desc: "Connect legacy or modern ERP systems to unify sales performance, staff incentives, and operations in one engine.",
+    bullets: ["Staff-level aggregation", "Incentive attribute mapping", "Sub-second sync cycles"],
   },
   {
     icon: FileSpreadsheet,
@@ -128,7 +128,7 @@ const STEPS = [
     step: "03",
     title: "Activate Intelligence",
     icon: Bot,
-    text: "Our AI engine synthesises cross-platform signals to surface growth opportunities and automate responses.",
+    text: "Our AI engine synthesises cross-platform signals to surface staff performance nudges and automate incentive responses.",
   },
 ];
 
