@@ -268,7 +268,7 @@ export default function ContactResources() {
         </div>
 
         {/* Bottom CTA strip */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -291,7 +291,7 @@ export default function ContactResources() {
             <Send size={15} />
             Talk to an Expert
           </a>
-        </motion.div>
+        </motion.div> */}
       </Container>
     </section>
   );

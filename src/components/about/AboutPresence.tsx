@@ -2,6 +2,7 @@
 
 import Container from "@/components/Container";
 import { MapPin, Globe, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPresence() {
   return (
@@ -17,11 +18,11 @@ export default function AboutPresence() {
                     Global Network
                 </div>
                 <h2 className="text-4xl md:text-6xl font-semibold text-white mb-8 tracking-tighter leading-[1.1]">
-                    Rooted in Kochi, <br /> 
+                    Built for Retail, <br /> 
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#05a0ec] to-sky-300">Scaling Globally.</span>
                 </h2>
                 <p className="text-xl text-slate-400 font-medium mb-10 leading-relaxed">
-                    While our heart and headquarters are located in the vibrant city of Kochi, Kerala, our impact is felt across the globe. We bridge world-class AI technology with local retail expertise.
+                    Our platform is built by retail experts and AI pioneers to transform operations for brands across the globe. We bridge world-class AI technology with deep operational expertise to drive measurable growth.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
