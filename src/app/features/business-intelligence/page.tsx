@@ -142,7 +142,7 @@ export default function BusinessIntelligencePage() {
                 <div className="luminous-card-dark alive-panel rounded-[1.5rem] border border-white/12 bg-white/10 p-4">
                   <p className="text-sm font-black text-white">Category Performance</p>
                   <div className="mt-4 grid grid-cols-2 gap-3 text-sm font-bold text-white">
-                    {[["Fashion", "+18%"], ["Essentials", "+11%"], ["Home", "+9%"], ["Beauty", "+14%"]].map(([name, value], index) => (
+                    {[["Primary Cat", "+18%"], ["Secondary Cat", "+11%"], ["Project Cat", "+9%"], ["Essential Cat", "+14%"]].map(([name, value], index) => (
                       <motion.div key={name} initial={{ opacity: 0, scale: 0.8 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 1.2 + index * 0.1 }} className="luminous-card-dark rounded-4xl border border-white/10 bg-slate-900/80 p-3 hover:bg-slate-800 transition-colors">
                         <p className="text-[11px] uppercase tracking-[0.16em] text-white/60">{name}</p>
                         <p className="mt-2 text-xl text-[#05a0ec]">{value}</p>
@@ -196,7 +196,7 @@ export default function BusinessIntelligencePage() {
                 <div className="rounded-xl border border-[#05a0ec]/10 bg-white p-5">
                   <p className="text-sm font-black text-slate-950">KPI grid</p>
                   <div className="mt-4 grid grid-cols-2 gap-3">
-                    {[["Bills", "12.4k"], ["AOV", "Rs 3.4k"], ["GP", "22.1%"], ["Stock", "Healthy"]].map(([label, value]) => (
+                    {[["Bills", "12.4k"], ["AOV", "$4,200"], ["GP", "22.1%"], ["Stock", "Healthy"]].map(([label, value]) => (
                       <motion.div key={label} whileHover={{ y: -5 }} className="luminous-card luminous-surface-strong soft-shine rounded-xl bg-[#09358c]/5 p-3">
                         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#09358c]">{label}</p>
                         <p className="mt-2 text-lg font-black text-slate-950">{value}</p>
@@ -218,7 +218,7 @@ export default function BusinessIntelligencePage() {
                 <div className="rounded-[1.5rem] border border-[#05a0ec]/10 bg-white p-5 md:col-span-2">
                   <p className="text-sm font-black text-slate-950">Decision board</p>
                   <div className="mt-4 grid gap-3 md:grid-cols-3">
-                    {[["Store focus", "Rework assortment in Downtown Hub"], ["Category action", "Push Fashion in Central Hub this weekend"], ["Leadership note", "Margin expansion holding above target"]].map(([label, text], index) => (
+                    {[["Store focus", "Rework assortment in Downtown Hub"], ["Category action", "Push Secondary Categories in Central Hub"], ["Leadership note", "Margin expansion holding above target"]].map(([label, text], index) => (
                       <motion.div key={label} whileHover={{ scale: 1.05 }} className="luminous-card-dark rounded-xl border border-white/10 bg-slate-950 p-4 text-white">
                         <p className="text-[10px] font-black uppercase tracking-[0.16em] text-[#05a0ec]">{label}</p>
                         <p className="mt-3 text-sm font-bold leading-6">{text}</p>

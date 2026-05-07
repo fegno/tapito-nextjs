@@ -65,7 +65,7 @@ export default function ProfitabilityEnginePage() {
                 Stop Scaling Losses. <span className="text-[#09358c]">Optimize for Net Profit.</span>
               </motion.h1>
               <motion.p {...fadeUp(0.16)} className="mt-6 max-w-4xl text-base md:text-lg 4xl:text-xl font-medium leading-7 md:leading-8 text-slate-600 font-inter">
-                Stop discovering margin erosion weeks after the spend. Tapito bridges the gap between your live ad platforms and unit-level margins to identify profit leaks the moment they happen.
+                Stop discovering margin erosion weeks after the project closing. Tapito bridges the gap between your live sales data, branch overheads, and staff commissions to identify profit leaks the moment they happen.
               </motion.p>
               <motion.div {...fadeUp(0.24)} className="mt-10 flex flex-wrap items-center gap-4">
                 <Link href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#09358c] to-[#05a0ec] px-8 py-4 text-base font-black text-white shadow-[0_22px_60px_-18px_rgba(9,53,140,0.4)] transition-all hover:scale-[1.05] hover:shadow-[0_25px_70px_-15px_rgba(5,160,236,0.4)]">
@@ -149,7 +149,7 @@ export default function ProfitabilityEnginePage() {
       <section className="border-y border-slate-200 bg-slate-50/80 py-16 4xl:py-24">
         <Container>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 lg:grid-cols-3">
-            {[["Business problem", "Marketing teams scale spend based on ROAS, often unaware that rising costs are eating their entire net profit.", "text-rose-500"], ["What Tapito detects", "Tapito cross-references live spend against dynamic unit costs, identifying SKU-level profit erosion instantly.", "text-[#09358c]"], ["What action it enables", "Pause loss-making campaigns immediately and shift budget to the products that drive your actual bottom line.", "text-emerald-600"]].map(([title, text, tone], index) => (
+            {[["Business problem", "Salesmen often focus on single-category volume at deep discounts, unaware that rising branch overheads and low cross-sell rates are eating their net profit.", "text-rose-500"], ["What Tapito detects", "Tapito cross-references live sales against staff performance and branch overheads, identifying staff-level cross-sell leakage instantly.", "text-[#09358c]"], ["What action it enables", "Adjust staff-level incentives immediately and shift focus to multi-category fulfillment that drives your actual bottom line.", "text-emerald-600"]].map(([title, text, tone], index) => (
               <motion.div key={title} {...fadeUp(index * 0.1)} {...cardHover} className={`rounded-[1.5rem] md:rounded-[2.5rem] border bg-white p-10 group transition-all ${index === 1 ? "border-[#09358c]/20 shadow-[0_40px_90px_-50px_rgba(9,53,140,0.2)]" : "border-slate-200 hover:border-[#09358c]/20"}`}>
                 <p className={`text-[11px] font-black uppercase tracking-[0.25em] ${tone}`}>{title}</p>
                 <p className="mt-5 text-xl font-black leading-9 text-slate-950 uppercase tracking-tight">{text}</p>
@@ -168,7 +168,7 @@ export default function ProfitabilityEnginePage() {
           </div>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
             <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-6">
-              {[["01", "Sync live margins", "We connect your marketing spend to real-time product costs, shipping, and returns."], ["02", "Compute net profit", "Every click and conversion is measured against actual net contribution, not just ROAS."], ["03", "Alert on erosion", "Automated alerts trigger when a campaign's net margin drops below your target threshold."]].map(([step, title, text], index) => (
+              {[["01", "Sync live margins", "We connect your branch sales to real-time product costs, overheads, and project commissions."], ["02", "Compute net profit", "Every sale and project fulfillment is measured against actual net contribution, not just gross revenue."], ["03", "Alert on erosion", "Automated alerts trigger when a category's net margin drops below your target threshold due to discounting leaks."]].map(([step, title, text], index) => (
                 <motion.div key={step} {...fadeUp(index * 0.15)} {...cardHover} className="rounded-[2rem] border border-slate-200 bg-white p-8 group hover:bg-slate-50 transition-colors h-full">
                   <div className="flex items-start gap-6">
                     <motion.div whileHover={{ scale: 1.1, rotate: 10 }} className="flex h-14 w-14 shrink-0 items-center justify-center rounded-4xl bg-slate-950 text-base font-black text-white group-hover:bg-[#09358c] transition-colors shadow-lg">{step}</motion.div>
@@ -198,9 +198,9 @@ export default function ProfitabilityEnginePage() {
                 <p className="text-sm font-black text-slate-950">Scenario comparison result</p>
                 <div className="mt-6 space-y-4">
                   {[
-                    ["Price increase +3%", "Expected margin lift of $500/mo", "text-emerald-600"],
-                    ["Supplier cost +6%", "Pressure on Fresh category by Wk 5", "text-rose-600"],
-                    ["Inventory cut -10%", "Safer cash position, 0.4x stock-out risk", "text-[#09358c]"],
+                    ["Project Discount -5%", "Expected margin lift of $500/mo", "text-emerald-600"],
+                    ["Supplier cost +6%", "Pressure on Primary Categories by Wk 5", "text-rose-600"],
+                    ["Staff Incentive +2%", "Higher conversion, 1.2x multi-category mix", "text-[#09358c]"],
                   ].map(([title, note, tone], idx) => (
                     <motion.div key={title} initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.8 + idx * 0.1 }} className="rounded-4xl bg-slate-50 px-6 py-5 border border-transparent hover:border-[#09358c]/20 hover:bg-white transition-all cursor-pointer">
                       <p className="text-base font-black text-slate-900 leading-tight">{title}</p>

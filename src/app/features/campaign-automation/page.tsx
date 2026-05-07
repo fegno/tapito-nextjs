@@ -88,7 +88,7 @@ export default function CampaignAutomationPage() {
               <div className="flex items-center justify-between rounded-4xl border border-white/10 bg-white/5 px-5 py-4">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-[#05a0ec]">Journey builder</p>
-                  <p className="mt-1 text-sm font-bold text-white">Win-back flow active</p>
+                  <p className="mt-1 text-sm font-bold text-white">Staff Nudge Flow active</p>
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-emerald-400/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-300 soft-shine">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> Active
@@ -97,10 +97,10 @@ export default function CampaignAutomationPage() {
 
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-8 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
                 {[
-                  { icon: Users, title: "Segmentation", text: "Lapsed VIPs" },
-                  { icon: Target, title: "Trigger", text: "30 days Inactive" },
-                  { icon: MessageSquare, title: "Message", text: "Win-back 15%" },
-                  { icon: Send, title: "Execution", text: "Multi-Channel" },
+                  { icon: Users, title: "Staff Segment", text: "Single-Category Staff" },
+                  { icon: Target, title: "Trigger", text: "Low cross-sell rate" },
+                  { icon: MessageSquare, title: "Nudge", text: "Incentive Boost 2.5%" },
+                  { icon: Send, title: "Execution", text: "App Push & SMS" },
                 ].map((item, index) => (
                   <motion.div key={item.title} variants={{ initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 } }} className="luminous-card-dark rounded-[1.75rem] border border-white/10 bg-white/5 p-5 group hover:bg-white/10 transition-colors">
                     <motion.div whileHover={{ rotate: 15, scale: 1.1 }} className="flex h-12 w-12 items-center justify-center rounded-4xl bg-[#09358c]/20 text-[#05a0ec] transition-colors group-hover:bg-[#09358c] group-hover:text-white"><item.icon size={22} /></motion.div>
@@ -115,11 +115,11 @@ export default function CampaignAutomationPage() {
                 <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
                   <div>
                     <p className="text-5xl font-black transition-transform group-hover:scale-105">12.5%</p>
-                    <p className="mt-2 text-sm font-bold text-white/80">Win-back conversion rate</p>
+                    <p className="mt-2 text-sm font-bold text-white/80">Cross-sell conversion rate</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-4xl font-black">$3,000 recovered</p>
-                    <p className="mt-1 text-sm font-medium text-white/70 italic">"from one automated intent flow"</p>
+                    <p className="text-4xl font-black">$12,400 Protected</p>
+                    <p className="mt-1 text-sm font-medium text-white/70 italic">"from staff incentive nudges"</p>
                   </div>
                 </div>
               </motion.div>

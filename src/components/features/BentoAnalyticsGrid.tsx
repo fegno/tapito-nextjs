@@ -36,9 +36,9 @@ interface BentoItem {
 const bentoItems: BentoItem[] = [
   {
     id: "behavior",
-    title: "Behavior Analysis",
-    subtitle: "Track Every Digital Clickstream",
-    description: "Deep dive into how users navigate your app. Identify friction points, drop-offs, and high-converting paths using granular event tracking.",
+    title: "Sales Bias Analysis",
+    subtitle: "Detect Single-Category Sales Bias",
+    description: "Deep dive into how salesmen navigate your product mix. Identify staff who focus only on primary categories and miss high-margin secondary sales.",
     icon: MousePointer2,
     color: "bg-[#fdf2f2]",
     textColor: "text-[#991b1b]",
@@ -203,7 +203,7 @@ const bentoItems: BentoItem[] = [
     id: "affinity",
     title: "Smart Affinity Logic",
     subtitle: "Cross-Category Relationship Mapping",
-    description: "Discover which product categories (e.g., Plumbing & Tiles) are frequently connected. Power your recommendation engine with real-world project patterns.",
+    description: "Discover which product categories (e.g., Primary & Secondary) are frequently connected. Power your incentive engine with real-world project patterns.",
     icon: ShoppingBag,
     color: "bg-[#f0f9ff]",
     textColor: "text-[#09358c]",
@@ -353,8 +353,8 @@ export const BentoAnalyticsGrid = ({
 
                     <div className="grid gap-5 md:grid-cols-2">
                       {[
-                        "Granular data collection at the SKU level.",
-                        "AI-driven anomaly detection native built-in.",
+                        "Granular data collection at the Category level.",
+                        "AI-driven bias detection built-in.",
                         "Custom segment exports in one click.",
                         "Direct integration with executive reporting."
                       ].map((benefit, i) => (
