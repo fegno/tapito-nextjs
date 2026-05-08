@@ -73,7 +73,7 @@ const TESTIMONIALS = [
     name: "Sarah Jenkins",
     role: "VP of Strategic Partnerships",
     company: "DataFlow",
-    quote: "Being AI-first means being able to safely and quickly connect agents and MCPs to our retail data. Deploying with Tapito provided the architectural foundation we needed for enterprise velocity.",
+    quote: "Being AI-first means being able to safely and quickly connect agents and MCPs to our retail data. Deploying with Tapito provided the architectural foundation we needed for enterprise momentum.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
     logo: "DataFlow"
   },

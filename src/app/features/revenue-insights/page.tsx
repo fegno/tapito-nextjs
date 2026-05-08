@@ -87,7 +87,7 @@ export default function RevenueInsightsPage() {
                 {[
                   { title: "Under-priced winner", text: "Primary Category priced below market average", impact: "+$3,400/mo", action: "Reprice by 4.2%", theme: "bg-emerald-50 border-emerald-100 text-emerald-700 hover:bg-emerald-100/50" },
                   { title: "Bundle upside", "text": "Primary item buyers primed for Secondary Essentials", impact: "+24% AOV", action: "Launch 'Project Complete' bundle", theme: "bg-[#05a0ec]/5 border-[#05a0ec]/10 text-[#09358c] hover:bg-[#05a0ec]/10" },
-                  { title: "Leak risk", "text": "Branch 04 velocity shows single-category sales bias", impact: "Recover $850", action: "Incentivize cross-category sales", theme: "bg-rose-50 border-rose-100 text-rose-700 hover:bg-rose-100/50" },
+                  { title: "Leak risk", "text": "Branch 04 momentum shows single-category sales bias", impact: "Recover $850", action: "Incentivize cross-category sales", theme: "bg-rose-50 border-rose-100 text-rose-700 hover:bg-rose-100/50" },
                 ].map((item, index) => (
                   <motion.div key={item.title} variants={{ initial: { opacity: 0, x: 20 }, whileInView: { opacity: 1, x: 0 } }} {...cardHover} className={`luminous-card rounded-[2rem] border p-6 transition-all group ${item.theme}`}>
                     <div className="flex items-start justify-between gap-4">

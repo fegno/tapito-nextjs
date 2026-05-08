@@ -6,6 +6,8 @@ import AnimatedLucideIcon from "../AnimatedLucideIcon";
 
 type Props = {
   data: {
+    title?: string;
+    subtitle?: string;
     features: {
       title: string;
       desc: string;
@@ -20,7 +22,10 @@ const Capabilities = ({ data }: Props) => {
         <div className="flex flex-col lg:flex-row gap-20 items-center">
           <div className="lg:w-1/2">
             <span className="text-xs font-black tracking-[0.3em] uppercase text-[#09358c] mb-6 block">CORE CAPABILITIES</span>
-            <h2 className="text-3xl md:text-6xl font-black text-slate-900 mb-8 leading-tight">Advanced Logic for <br /> <span className="text-[#09358c]">Absolute Growth</span></h2>
+            <h2 className="text-3xl md:text-6xl font-black text-slate-900 mb-8 leading-tight">
+              {data.title || "Advanced Logic for"} <br /> 
+              <span className="text-[#09358c]">{data.subtitle || "Absolute Growth"}</span>
+            </h2>
 
             <div className="space-y-16 mt-16 relative">
               {data?.features.map((feature: any, i: number) => (

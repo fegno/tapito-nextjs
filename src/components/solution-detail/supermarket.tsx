@@ -1,13 +1,37 @@
 "use client";
-
+ 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Container from "@/components/Container";
-import { CheckCircle2, Package, Home, PaintBucket, Lightbulb, Bath, Armchair, XCircle, Brain, Zap, MessageSquare, DollarSign, Layers, ShieldCheck, Repeat, UserCheck, BarChart, Users, Search, Target } from "lucide-react";
+import {
+  CheckCircle2,
+  ShoppingBasket,
+  Utensils,
+  Baby,
+  Milk,
+  Apple,
+  Package,
+  Clock,
+  Heart,
+  MessageSquare,
+  DollarSign,
+  Layers,
+  Repeat,
+  UserCheck,
+  BarChart,
+  Users,
+  Search,
+  Target,
+  XCircle,
+  Zap,
+  Coffee,
+  Beef,
+  Cookie
+} from "lucide-react";
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 
-const BuildingMaterial = () => {
+const Supermarket = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,22 +47,23 @@ const BuildingMaterial = () => {
   const scale = useTransform(smoothProgress, [0, 0.2], [0.9, 1]);
 
   const needs = [
-    { icon: Package, label: "Tiles" },
-    { icon: Lightbulb, label: "Electrical" },
-    { icon: PaintBucket, label: "Paints" },
-    { icon: Bath, label: "Sanitaryware" },
-    { icon: Home, label: "Kitchen Fittings" },
-    { icon: Armchair, label: "Interiors" },
+    { icon: Baby, label: "Baby Food" },
+    { icon: Package, label: "Diapers" },
+    { icon: Heart, label: "Personal Care" },
+    { icon: Utensils, label: "Household Essentials" },
+    { icon: Zap, label: "Health Products" },
+    { icon: Cookie, label: "Snacks & Beverages" },
+    { icon: ShoppingBasket, label: "Cleaning Products" },
+    { icon: Clock, label: "Daily Essentials" },
   ];
 
   const consequences = [
-    "Missed cross-selling opportunities",
-    "Lower basket value",
+    "Missed basket expansion opportunities",
+    "Lower repeat visits",
+    "Generic promotional campaigns",
     "Weak customer retention",
     "Unoptimized marketing spend",
-    "Limited customer visibility",
-    "Revenue leakage across categories",
-    "Incomplete customer profiles"
+    "Revenue leakage across categories"
   ];
 
   return (
@@ -62,21 +87,21 @@ const BuildingMaterial = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block"
               >
-                The Real Problem
+                The Retail Gap
               </motion.span>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                Why Building Material <br /> <span className="text-blue-500">Businesses Lose Revenue</span>
+                Why Supermarkets <br /> <span className="text-blue-500">Lose Revenue</span>
               </h2>
               <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                Most sales teams only sell what the customer directly asks for. They miss the broader project intent, leading to significant revenue leakage.
+                Most supermarkets process thousands of transactions daily but fail to understand the deeper customer buying patterns. They miss the total household intent, leaving significant revenue on the table.
               </p>
               
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden group">
-                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Building Material Case Study</div>
+                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Growth Case Study</div>
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                  Plumbing Purchase Intent
+                  The "Single-Category" Purchase Trap
                 </h4>
-                <p className="text-slate-400 mb-8 font-medium">A customer buying plumbing materials for a new home also requires:</p>
+                <p className="text-slate-400 mb-8 font-medium">A customer purchasing baby products inherently needs:</p>
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
                   {needs.map((item, i) => (
@@ -110,27 +135,27 @@ const BuildingMaterial = () => {
               style={{ y: y1 }}
               className="lg:w-1/2 relative"
             >
-              <div className="relative z-10 bg-white rounded-[3.5rem] p-10 lg:p-16 shadow-2xl shadow-blue-950/40 overflow-hidden">
+              <div className="relative z-10 bg-white rounded-[3.5rem] p-10 lg:p-16 shadow-2xl shadow-emerald-950/40 overflow-hidden">
                  <div className="flex items-center gap-3 mb-10">
-                    <div className="w-10 h-10 rounded-xl bg-[#09358c] flex items-center justify-center text-white font-black text-xl italic">T</div>
-                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Intelligence</span>
+                    <div className="w-10 h-10 rounded-xl bg-emerald-900 flex items-center justify-center text-white font-black text-xl italic">T</div>
+                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Basket Logic</span>
                  </div>
 
                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-6 leading-tight">
-                   Connecting Intent with <br /> <span className="text-[#09358c]">Future Needs</span>
+                   The AI Grocery <br /> <span className="text-emerald-900">Growth Engine</span>
                  </h3>
 
                  <p className="text-slate-600 mb-10 leading-relaxed font-medium">
-                   Tapito acts as an AI Sales Intelligence Engine for building materials, automatically generating recommendations and offers that sales staff unintentionally miss.
+                   Tapito continuously analyzes shopping behavior, purchase frequency, and household patterns to predict exactly what customers will need next—from daily essentials to seasonal treats.
                  </p>
 
                  <ul className="space-y-6">
                    {[
-                     "Captures Cross-Selling Automatically",
-                     "Increases Average Basket Value",
-                     "Optimizes Marketing Spend with AI",
-                     "Drives Sales Incentive Motivation",
-                     "Reduces Revenue Leakage"
+                     "Personalized Product Recommendations",
+                     "AI-Based Upsell Suggestions",
+                     "Smart Customer Segmentation",
+                     "Household Replenishment Reminders",
+                     "Loyalty-Based Engagement Flows"
                    ].map((item, i) => (
                      <motion.li 
                        key={i} 
@@ -139,7 +164,7 @@ const BuildingMaterial = () => {
                        transition={{ delay: i * 0.1 }}
                        className="flex items-start gap-4"
                      >
-                       <div className="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 mt-1">
+                       <div className="w-6 h-6 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0 mt-1">
                          <CheckCircle2 size={14} />
                        </div>
                        <span className="text-slate-700 font-bold">{item}</span>
@@ -151,8 +176,9 @@ const BuildingMaterial = () => {
           </div>
         </motion.div>
         </Container>
+
         <Container>
-        {/* AI Sales Intelligence Engine Details */}
+        {/* AI Retail Intelligence Engine Details */}
         <div className="mt-32 pt-32 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
              {/* Tapito Continuously Analyzes Card */}
@@ -161,17 +187,17 @@ const BuildingMaterial = () => {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative p-10 lg:p-14 rounded-[2rem] border border-blue-500/20 overflow-hidden group shadow-2xl shadow-blue-500/5 min-h-[500px]"
+               className="relative p-10 lg:p-14 rounded-[2rem] border border-emerald-500/20 overflow-hidden group shadow-2xl shadow-emerald-500/5 min-h-[500px]"
              >
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Analyzes Background" 
+                    src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Supermarket Analyzes" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-600/20 via-transparent to-transparent" />
                 </div>
 
                 <div className="relative z-10">
@@ -180,17 +206,15 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={ActivityIcon} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">
-                    Tapito Continuously Analyzes
-                  </h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Tapito Basket Analytics</h3>
                   <div className="w-16 h-1 bg-blue-600/50 rounded-full mb-10" />
 
                   <div className="space-y-6">
                     {[
-                      "Building material purchase behavior",
-                      "Project-based product combinations",
-                      "Regional construction demand trends",
-                      "Counter sales staff performance"
+                      "Customer shopping behavior",
+                      "Household purchase frequency",
+                      "Product affinity combinations",
+                      "Staff basket-expansion momentum"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -200,7 +224,7 @@ const BuildingMaterial = () => {
                         transition={{ delay: i * 0.1 }}
                         className="flex items-center gap-4 text-slate-300 font-bold text-lg"
                       >
-                        <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                        <div className="w-7 h-7 rounded-full bg-emerald-600 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(5,150,105,0.4)]">
                            <AnimatedLucideIcon icon={CheckCircle2} size={16} color="white" />
                         </div>
                         {text}
@@ -216,14 +240,14 @@ const BuildingMaterial = () => {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative p-10 lg:p-14 rounded-[2rem] border border-purple-500/20 overflow-hidden group shadow-2xl shadow-purple-500/5 min-h-[500px]"
+               className="relative p-10 lg:p-14 rounded-[2rem] border border-green-500/20 overflow-hidden group shadow-2xl shadow-green-500/5 min-h-[500px]"
              >
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Generates Background" 
+                    src="https://images.unsplash.com/photo-1543083477-4f77cddce962?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Grocery Generates" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-transparent" />
@@ -235,19 +259,19 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={Zap} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">And Automatically Generates</h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Automatically Recommends</h3>
                   <div className="w-24 h-1 bg-purple-600/50 rounded-full mb-10" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                     {[
-                      "Material recommendations",
-                      "Personalized project offers",
-                      "AI-based upsell suggestions",
-                      "Smart customer segmentation",
-                      "Follow-up reminders",
+                      "Personalized product matches",
+                      "AI-based basket cross-selling",
+                      "Smart household segments",
+                      "Inventory replenishment alerts",
+                      "Seasonal grocery promotions",
                       "Cross-category opportunities",
-                      "Automated campaigns",
-                      "Incentive-based motivation"
+                      "Automated engagement flows",
+                      "Incentive-based sales motivation"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -270,9 +294,10 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-blue-50 py-[80px] xl:py-[100px] 2xl:py-[160px] relative">
         <Container>
-        {/* Marketing Cost Reduction Section */}
+        {/* Basket Performance Section */}
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
              {/* Left Content */}
@@ -284,26 +309,26 @@ const BuildingMaterial = () => {
              >
                 {/* Decorative ClipPath Background */}
                 <div 
-                  className="absolute top-0 right-0 w-[70%] h-full bg-blue-50/50 pointer-events-none" 
+                  className="absolute top-0 right-0 w-[70%] h-full bg-emerald-50/50 pointer-events-none" 
                   style={{ clipPath: 'ellipse(100% 100% at 100% 50%)' }}
                 />
 
                 <div className="relative z-10">
-                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-                     Efficiency Gain
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+                     Basket Optimization
                   </div>
                   <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-                    Reduce Marketing <br /> <span className="text-[#09358c]">Costs with AI</span>
+                    Maximize Every <br /> <span className="text-blue-900">Checkout Visit</span>
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium mb-12 max-w-xl">
-                    Traditional marketing in building materials often wastes money by targeting the wrong audience. Tapito ensures every rupee is spent on high-conversion project opportunities.
+                    Tapito transforms your retail operations into an intelligent growth system. No more missed opportunities for household essentials when a customer buys daily basics.
                   </p>
                   
                   <div className="space-y-5">
                     {[
-                      "Eliminating unnecessary broad promotions",
-                      "Identifying high-conversion contractors",
-                      "Improving conversion rates through AI insights"
+                      "Linking daily staples with high-margin items",
+                      "Automating household replenishment follow-ups",
+                      "Real-time basket pairing for store staff"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -328,7 +353,7 @@ const BuildingMaterial = () => {
                 {/* Vertical Line with Flowing Animation */}
                 <div className="absolute left-[23px] lg:left-[39px] top-3 bottom-8 w-[3px] bg-slate-200 rounded-full overflow-hidden">
                    <motion.div 
-                     className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-blue-400 to-transparent"
+                     className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-emerald-400 to-transparent"
                      animate={{ y: ["-160px", "600px"] }}
                      transition={{ 
                         duration: 3, 
@@ -340,10 +365,10 @@ const BuildingMaterial = () => {
 
                 <div className="space-y-16 relative z-10">
                    {[
-                     { title: "Identify High-Conversion", desc: "Focus spend on customers most likely to purchase next for their construction phase.", icon: Target },
-                     { title: "Automate Campaigns", desc: "Reduce manual effort and agency costs with AI-driven triggers.", icon: Zap },
-                     { title: "Personalized Outreach", desc: "Eliminate generic spam with highly relevant project-based offers.", icon: Users },
-                     { title: "Maximize ROI", desc: "Achieve more revenue with significantly lower marketing spend.", icon: BarChart }
+                      { title: "AI Recommendation Engine", desc: "Identify what customers are likely to purchase next based on behavioral patterns.", icon: Apple },
+                      { title: "Smart Basket Intelligence", desc: "Automatically trigger recommendations for complementary essentials during shopping.", icon: ShoppingBasket },
+                      { title: "Automated Engagement", desc: "Run WhatsApp and SMS campaigns based on customer activity and replenishment intent.", icon: MessageSquare },
+                      { title: "Revenue Opportunity Detection", desc: "Monitor hidden revenue opportunities and suggest actions to increase sales.", icon: BarChart }
                    ].map((item, i) => (
                      <motion.div 
                        key={i}
@@ -357,24 +382,24 @@ const BuildingMaterial = () => {
                         <div className="absolute -left-[32px] lg:-left-[48px] top-6 lg:top-8 flex items-center">
                            <motion.div 
                              animate={{ 
-                               scale: [1, 1.5, 1],
-                               backgroundColor: ["#60a5fa", "#2563eb", "#60a5fa"]
+                                scale: [1, 1.5, 1],
+                                backgroundColor: ["#34d399", "#059669", "#34d399"]
                              }}
                              transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-                             className="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" 
+                             className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)]" 
                            />
-                           <div className="w-4 lg:w-6 h-[2px] bg-gradient-to-r from-blue-400 to-blue-200" />
+                           <div className="w-4 lg:w-6 h-[2px] bg-gradient-to-r from-emerald-400 to-emerald-200" />
                         </div>
 
                         {/* Timeline Icon with Pulse */}
                         <motion.div 
                           animate={{ 
-                            boxShadow: ["0 0 0px rgba(37, 99, 235, 0)", "0 0 20px rgba(37, 99, 235, 0.2)", "0 0 0px rgba(37, 99, 235, 0)"]
+                            boxShadow: ["0 0 0px rgba(5, 150, 105, 0)", "0 0 20px rgba(5, 150, 105, 0.2)", "0 0 0px rgba(5, 150, 105, 0)"]
                           }}
                           transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
-                          className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white border border-blue-100 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-500 relative z-20"
+                          className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white border border-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-500 relative z-20"
                         >
-                           <AnimatedLucideIcon icon={item.icon} size={24} color="#09358c" />
+                           <AnimatedLucideIcon icon={item.icon} size={24} color="#1e3a8a" />
                         </motion.div>
                         
                         <div className="pt-1 lg:pt-3">
@@ -389,27 +414,28 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-slate-900 py-[80px] xl:py-[100px] 2xl:py-[160px]">
         <Container>
         <div className="text-center">
-           <motion.div style={{ opacity }}>
+        <motion.div style={{ opacity }}>
               <span className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block">The Result</span>
               <h2 className="text-4xl md:text-6xl font-black text-white mb-20">
                 Business Impact
               </h2>
            </motion.div>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Increase average order value", desc: "Every construction project is maximized through intelligent AI recommendations.", icon: DollarSign },
-                { title: "Improve cross-category sales", desc: "Connect plumbing, tiles, and paints seamlessly within a single customer journey.", icon: Layers },
-                { title: "Reduce missed sales opportunities", desc: "Ensure no revenue leakage occurs due to human memory gaps or missed follow-ups.", icon: Target },
-                { title: "Increase repeat purchases", desc: "Keep customers coming back for every phase of their building project.", icon: Repeat },
-                { title: "Deliver personalized customer offers", desc: "High-conversion offers tailored exactly to what the project needs next.", icon: UserCheck },
-                { title: "Reduce marketing costs", desc: "Eliminate wasteful broad-market spend by targeting high-intent building material buyers.", icon: BarChart },
-                { title: "Motivate sales teams", desc: "Real-time incentive visibility drives better performance and staff retention.", icon: Users },
-                { title: "Automate customer engagement", desc: "24/7 engagement through WhatsApp and SMS without manual staff effort.", icon: MessageSquare },
-                { title: "Gain complete visibility", desc: "Deep insights into every aspect of your customer buying behavior.", icon: Search }
+                { title: "Increase Basket Value", desc: "Maximize revenue per visit through intelligent cross-category recommendations.", icon: DollarSign },
+                { title: "Improve Cross-Category Sales", desc: "Connect groceries, dairy, and household essentials in one journey.", icon: Layers },
+                { title: "Capture Missed Revenue", desc: "Reduce missed sales opportunities with automated AI-driven prompts.", icon: Target },
+                { title: "Increase Repeat Visits", desc: "Keep customers returning through personalized replenishment engagement.", icon: Repeat },
+                { title: "Tailored Customer Offers", desc: "Deliver personalized offers based on specific household interests.", icon: UserCheck },
+                { title: "Lower Marketing Costs", desc: "Eliminate wasteful spend by targeting high-intent grocery buyers.", icon: BarChart },
+                { title: "Empowered Store Staff", desc: "Motivate supermarket teams with real-time incentive visibility.", icon: Users },
+                { title: "Automate Engagement", desc: "24/7 personalized communication via WhatsApp and SMS.", icon: MessageSquare },
+                { title: "Shopping Behavior Insights", desc: "Gain complete visibility into customer behavior and household trends.", icon: Search }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -421,7 +447,7 @@ const BuildingMaterial = () => {
                   className="group flex flex-col items-start gap-6 p-8 rounded-[2.5rem] border border-white/5 bg-white/[0.02] transition-all text-left relative overflow-hidden"
                 >
                    {/* Background Accent */}
-                   <div className="absolute left-0 top-0 w-1 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                   <div className="absolute left-0 top-0 w-1 h-full bg-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                    
                     <div className="flex w-full justify-between items-start">
                        <div className="w-12 h-12 rounded-2xl bg-blue-600/10 flex items-center justify-center shrink-0">
@@ -430,7 +456,7 @@ const BuildingMaterial = () => {
                     </div>
                    
                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-tight">{item.title}</h4>
+                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors leading-tight">{item.title}</h4>
                       <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
                    </div>
                 </motion.div>
@@ -443,4 +469,4 @@ const BuildingMaterial = () => {
   );
 };
 
-export default BuildingMaterial;
+export default Supermarket;

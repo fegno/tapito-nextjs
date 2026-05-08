@@ -172,7 +172,7 @@ const AlertsVisual = () => (
               </div>
               <div className="p-4 space-y-2">
                  <p className="text-[10px] font-black text-slate-900 leading-tight">Investment Alert: Market Surge! 🚀</p>
-                 <p className="text-[8px] font-bold text-slate-400 leading-relaxed italic">"Your portfolio is up 4.2%. Click to see the high-velocity shifts."</p>
+                 <p className="text-[8px] font-bold text-slate-400 leading-relaxed italic">"Your portfolio is up 4.2%. Click to see the high-growth shifts."</p>
                  <div className="w-full py-2 bg-[#09358c] rounded-lg text-center text-[8px] text-white font-black tracking-widest mt-2">VIEW TRANSACTION</div>
               </div>
             </motion.div>
