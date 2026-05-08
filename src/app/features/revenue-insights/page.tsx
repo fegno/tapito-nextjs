@@ -85,9 +85,9 @@ export default function RevenueInsightsPage() {
             
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-6 space-y-4 relative z-10">
                 {[
-                  { title: "Under-priced winner", text: "Organic Almonds priced below market", impact: "+$1,200/mo", action: "Reprice by $0.50", theme: "bg-emerald-50 border-emerald-100 text-emerald-700 hover:bg-emerald-100/50" },
-                  { title: "Bundle upside", "text": "Yoga Mat buyers primed for Foam Rollers", impact: "+18% AOV", action: "Launch 'Yogi Pro' bundle", theme: "bg-[#05a0ec]/5 border-[#05a0ec]/10 text-[#09358c] hover:bg-[#05a0ec]/10" },
-                  { title: "Leak risk", "text": "Branch 04 velocity doesn't match sell-through", impact: "Recover $150", action: "Investigate shrinkage in Fresh", theme: "bg-rose-50 border-rose-100 text-rose-700 hover:bg-rose-100/50" },
+                  { title: "Under-priced winner", text: "Primary Category priced below market average", impact: "+$3,400/mo", action: "Reprice by 4.2%", theme: "bg-emerald-50 border-emerald-100 text-emerald-700 hover:bg-emerald-100/50" },
+                  { title: "Bundle upside", "text": "Primary item buyers primed for Secondary Essentials", impact: "+24% AOV", action: "Launch 'Project Complete' bundle", theme: "bg-[#05a0ec]/5 border-[#05a0ec]/10 text-[#09358c] hover:bg-[#05a0ec]/10" },
+                  { title: "Leak risk", "text": "Branch 04 velocity shows single-category sales bias", impact: "Recover $850", action: "Incentivize cross-category sales", theme: "bg-rose-50 border-rose-100 text-rose-700 hover:bg-rose-100/50" },
                 ].map((item, index) => (
                   <motion.div key={item.title} variants={{ initial: { opacity: 0, x: 20 }, whileInView: { opacity: 1, x: 0 } }} {...cardHover} className={`luminous-card rounded-[2rem] border p-6 transition-all group ${item.theme}`}>
                     <div className="flex items-start justify-between gap-4">
@@ -112,7 +112,7 @@ export default function RevenueInsightsPage() {
       <section className="border-y border-slate-200 bg-slate-50/80 py-16 4xl:py-24">
         <Container>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 lg:grid-cols-3">
-            {[["Business problem", "Revenue leaks often stay invisible because teams only see totals and not where margin is slipping underneath.", "text-rose-500"], ["What Tapito detects", "Tapito detects underpriced winners, weak bundles, leak points, and risk signals at SKU level.", "text-[#09358c]"], ["What action it enables", "Teams can reprice, rebundle, replenish, and escalate the exact move that unlocks revenue.", "text-emerald-600"]].map(([title, text, tone], index) => (
+            {[["Business problem", "Revenue leaks happen because salesmen focus only on one category and ignore cross-sell opportunities.", "text-rose-500"], ["What Tapito detects", "Tapito detects single-category bias, weak bundles, and cross-sell potential at the staff performance level.", "text-[#09358c]"], ["What action it enables", "Teams can launch staff incentives, rebundle items, and replenish categories to maximize project capture.", "text-emerald-600"]].map(([title, text, tone], index) => (
               <motion.div key={title} {...fadeUp(index * 0.12)} {...cardHover} className={`rounded-[2.5rem] border bg-white p-10 group transition-all ${index === 1 ? "border-[#09358c]/20 shadow-[0_40px_80px_-40px_rgba(9,53,140,0.2)]" : "border-slate-200 hover:border-[#09358c]/20"}`}>
                 <p className={`text-[11px] font-black uppercase tracking-[0.22em] ${tone}`}>{title}</p>
                 <p className="mt-4 text-xl font-black leading-8 text-slate-950 group-hover:text-slate-900 transition-colors uppercase tracking-tight">{text}</p>
@@ -162,9 +162,9 @@ export default function RevenueInsightsPage() {
                 <p className="text-sm font-black text-slate-950 uppercase tracking-widest">Opportunity timeline</p>
                 <div className="mt-6 space-y-4">
                   {[
-                    ["09:15", "Top SKU price gap detected"],
-                    ["09:40", "Bundle potential confirmed"],
-                    ["10:05", "Branch leakage escalated"],
+                    ["09:15", "Top category price gap detected"],
+                    ["09:40", "Salesman bias alert in Branch 04"],
+                    ["10:05", "Cross-sell incentive triggered"],
                   ].map(([time, note], idx) => (
                     <motion.div key={time} initial={{ x: -20, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ delay: 0.8 + idx * 0.1 }} className="flex items-center gap-5 rounded-4xl bg-slate-50 px-5 py-4 text-sm font-bold text-slate-700 transition-colors hover:bg-[#09358c]/5 group-hover:border-[#09358c]/20">
                       <span className="rounded-full bg-slate-950 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white shrink-0">{time}</span>
@@ -207,17 +207,16 @@ export default function RevenueInsightsPage() {
               <div className="absolute top-0 left-0 w-full h-full bg-slate-50 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
               <p className="text-xs font-black uppercase tracking-[0.3em] text-slate-400 relative z-10">Before Tapito Revenue Hunting</p>
               <div className="relative z-10 mt-4 sm:mt-6 md:mt-8 lg:mt-12 space-y-6 lg:space-y-8 text-base lg:text-xl font-bold text-slate-400">
-                <p className="flex items-center gap-3 sm:gap-4 opacity-70">Invisible profit leaks</p>
-                <p className="flex items-center gap-3 sm:gap-4 opacity-70">Wasted inventory cycles</p>
+                <p className="flex items-center gap-3 sm:gap-4 opacity-70">Single-category sales focus</p>
                 <p className="flex items-center gap-3 sm:gap-4 opacity-70">Stagnant order values</p>
-                <p className="flex items-center gap-3 sm:gap-4 opacity-70">Reactive SKU management</p>
+                <p className="flex items-center gap-3 sm:gap-4 opacity-70">Reactive staff management</p>
               </div>
             </motion.div>
             <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="bg-slate-950 p-12 lg:p-20 text-white relative h-full">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(9,53,140,0.12),transparent_70%)] pointer-events-none" />
               <p className="text-xs font-black uppercase tracking-[0.3em] text-[#05a0ec] relative z-10">After Tapito Revenue Hunting</p>
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-6 lg:mt-12 space-y-4 lg:space-y-8 text-base lg:text-xl font-black relative z-10">
-                {["Captured growth pockets", "Optimized product mix", "Maximized profit margins", "Sku-level performance focus"].map((item) => (
+                {["Captured cross-sell pockets", "Optimized staff incentives", "Maximized category capture", "Multi-category performance focus"].map((item) => (
                   <motion.div key={item} variants={{ initial: { x: 40, opacity: 0 }, whileInView: { x: 0, opacity: 1 } }} transition={{ duration: 0.6 }} className="flex items-center gap-6 group/item"><CheckCircle2 size={32} className="text-emerald-400 group-hover/item:scale-110 transition-transform" />{item}</motion.div>
                 ))}
               </motion.div>

@@ -11,7 +11,6 @@ import {
   Gem, 
   Utensils, 
   Globe, 
-  Plane,
   ArrowRight 
 } from "lucide-react";
 import Container from "@/components/Container";
@@ -84,12 +83,12 @@ export const solutionsData = [
     benefits: ["Time-based Rewards", "Smart Menus", "Quick-Visit Logic"]
   },
   {
-    title: "Travel & Hospitality",
-    slug: "travel-hospitality",
-    desc: "Improve repeat bookings with predictive destination scoring and personalized itinerary builders.",
-    icon: Plane,
+    title: "Ecommerce",
+    slug: "ecommerce",
+    desc: "Scale your online presence with AI-powered checkout optimizations and personalized storefronts.",
+    icon: Globe,
     color: "from-[#06dcc3] to-[#05a0ec]",
-    benefits: ["Predictive Booking", "Smart Itineraries", "Loyalty Rewind"]
+    benefits: ["Checkout AI", "Storefront Logic", "Digital Loyalty"]
   }
 ];
 

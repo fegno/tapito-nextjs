@@ -80,7 +80,7 @@ export default function SmartAnalyticsPage() {
             <div className="grid items-center gap-6 lg:grid-cols-[0.9fr_0.55fr_0.9fr]">
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-4">
                 {[
-                  { label: "Retail events", value: "12.4M/day", icon: Database },
+                  { label: "Insights Engine", value: "Real-time processing", icon: Database },
                   { label: "Behavior signals", value: "Always streaming", icon: TrendingUp },
                 ].map((item, index) => (
                   <motion.div key={item.label} {...fadeUp(index * 0.1)} {...cardHover} className="luminous-card luminous-surface group rounded-[1.5rem] border border-slate-200 bg-slate-50 p-5">
@@ -109,9 +109,9 @@ export default function SmartAnalyticsPage() {
 
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-4">
                 {[
-                  { label: "Insight", text: "Traffic downtrend is concentrated in premium home buyers", icon: CheckCircle2, tone: "text-emerald-600" },
-                  { label: "Recommendation", text: "Increase bundle visibility for premium home sets this weekend", icon: Sparkles, tone: "text-[#09358c]" },
-                  { label: "Risk alert", text: "3 branches show elevated churn sensitivity", icon: TriangleAlert, tone: "text-rose-600" },
+                  { label: "Insight", text: "Primary Category leads are up 22%, but Secondary Category conversion is lagging by 14% this week.", icon: CheckCircle2, tone: "text-emerald-600" },
+                  { label: "Recommendation", text: "Trigger connected multi-category incentives for all active project leads.", icon: Sparkles, tone: "text-[#09358c]" },
+                  { label: "Risk alert", text: "3 branches show high revenue leakage in the Project Category B.", icon: TriangleAlert, tone: "text-rose-600" },
                 ].map((item, index) => (
                   <motion.div key={item.label} {...fadeUp(0.1 + index * 0.1)} {...cardHover} className="rounded-[1.5rem] border border-slate-200 bg-white p-5 group transition-all hover:border-[#09358c]/20">
                     <div className="flex items-start gap-4">
@@ -151,7 +151,7 @@ export default function SmartAnalyticsPage() {
           <div className="rounded-[2rem] md:rounded-[3rem] border border-slate-200 bg-gradient-to-br from-white to-[#05a0ec]/5 p-4 sm:p-6 lg:p-12 relative">
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#09358c]/5 blur-[100px] pointer-events-none rounded-full" />
             <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-4 relative z-10">
-              {[["01", "Data", "Sales, customers, inventory, pricing"], ["02", "AI scoring", "Patterns ranked by confidence and value"], ["03", "Insights", "What changed, where, and why it matters"], ["04", "Recommendations", "The next move your team should execute"]].map(([step, title, text], index) => (
+              {[["01", "Data", "Sales, customers, inventory, pricing"], ["02", "AI scoring", "Patterns ranked by confidence and value"], ["03", "Insights", "What changed, where, and why it matters"], ["04", "Smart Reminders", "Automated instructions sent to your staff for immediate action"]].map(([step, title, text], index) => (
                 <div key={step} className="relative group">
                   {index < 3 && <div className="connector-line absolute right-[-24px] top-1/2 hidden h-px w-10 lg:block bg-[#09358c]/10" />}
                   <motion.div variants={fadeUp(index * 0.1)} {...cardHover} className="luminous-card luminous-surface-strong h-full rounded-[1.75rem] md:rounded-[2rem] border border-[#09358c]/10 bg-white p-5 md:p-8 group-hover:bg-[#05a0ec]/5 transition-colors">
@@ -166,6 +166,84 @@ export default function SmartAnalyticsPage() {
         </Container>
       </section>
       
+      <section className="py-16 4xl:py-24 relative overflow-hidden bg-slate-950 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_-20%,rgba(9,53,140,0.3),transparent_70%)] pointer-events-none" />
+        <Container>
+          <div className="grid gap-16 lg:grid-cols-2 items-center">
+            <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }}>
+              <motion.p {...fadeUp()} className="text-xs font-black uppercase tracking-[0.22em] text-[#05a0ec]">Portfolio Intelligence</motion.p>
+              <motion.h2 {...fadeUp(0.08)} className="mt-4 text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.05em] leading-[1.1]">The Pulse of Your Retail Health.</motion.h2>
+              <motion.p {...fadeUp(0.16)} className="mt-8 text-lg font-medium leading-relaxed text-slate-400">
+                Tapito aggregates thousands of signals into a single, unified Health Score. Instantly see which branches are thriving and which need immediate operational intervention.
+              </motion.p>
+
+              <div className="mt-12 space-y-6">
+                {[
+                  { label: "Margin Protection", value: "92/100", color: "bg-emerald-500" },
+                  { label: "Stock Velocity", value: "78/100", color: "bg-[#05a0ec]" },
+                  { label: "Staff Performance", value: "64/100", color: "bg-rose-500" },
+                ].map((item, idx) => (
+                  <motion.div key={item.label} {...fadeUp(0.2 + idx * 0.1)} className="space-y-3">
+                    <div className="flex justify-between text-sm font-black uppercase tracking-widest">
+                      <span>{item.label}</span>
+                      <span className="text-white">{item.value}</span>
+                    </div>
+                    <div className="h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: item.value.split("/")[0] + "%" }}
+                        transition={{ duration: 1.5, delay: 0.5 + idx * 0.1, ease: "circOut" }}
+                        className={`h-full rounded-full ${item.color}`} 
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div variants={revealVariant} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="relative">
+              <div className="relative mx-auto flex h-[350px] w-[350px] sm:h-[450px] sm:w-[450px] items-center justify-center rounded-full border border-white/10 bg-white/5 backdrop-blur-3xl shadow-[0_0_100px_rgba(9,53,140,0.3)]">
+                <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,#09358c,#05a0ec,#09358c)] opacity-20 blur-2xl" />
+                
+                <div className="text-center relative z-10">
+                  <motion.p 
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="text-8xl md:text-9xl font-black tracking-tighter text-white"
+                  >
+                    84
+                  </motion.p>
+                  <p className="mt-2 text-xs font-black uppercase tracking-[0.4em] text-[#05a0ec]">Overall Health Score</p>
+                  <div className="mt-6 flex items-center gap-2 rounded-full bg-emerald-500/10 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400">
+                    <TrendingUp size={14} /> +4% from last week
+                  </div>
+                </div>
+
+                {/* Floating Signal Cards */}
+                {[
+                  { label: "Branch 04", score: "Critical", tone: "bg-rose-500", pos: "top-0 -left-10" },
+                  { label: "Inventory", score: "Optimal", tone: "bg-emerald-500", pos: "bottom-10 -right-10" },
+                ].map((card, i) => (
+                  <motion.div 
+                    key={card.label}
+                    initial={{ opacity: 0, x: i === 0 ? -20 : 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1 + i * 0.2 }}
+                    className={`absolute ${card.pos} rounded-2xl border border-white/10 bg-white/10 p-4 backdrop-blur-xl`}
+                  >
+                    <p className="text-[10px] font-black uppercase tracking-widest text-white/40">{card.label}</p>
+                    <div className="mt-2 flex items-center gap-3">
+                      <div className={`h-2 w-2 rounded-full ${card.tone} shadow-[0_0_10px_inherit]`} />
+                      <p className="text-sm font-black">{card.score}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
+
       <section className="py-16 4xl:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(9,53,140,0.02),transparent_70%)] pointer-events-none" />
         <Container>
@@ -204,7 +282,7 @@ export default function SmartAnalyticsPage() {
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(9,53,140,0.1),transparent_70%)]" />
               <p className="text-xs font-black uppercase tracking-[0.25em] text-[#05a0ec] relative z-10">After Tapito Intelligence</p>
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-6 lg:mt-12 space-y-3 lg:space-y-7 text-base lg:text-xl font-black relative z-10">
-                {["Evidence-based strategy", "Proactive scaling logic", "Optimized margins & ABV", "Autonomous opportunity scoring"].map((item) => (
+                {["Evidence-based strategy", "Proactive scaling logic", "Optimized margins & AOV", "Autonomous opportunity scoring"].map((item) => (
                   <motion.div key={item} variants={{ initial: { x: 30, opacity: 0 }, whileInView: { x: 0, opacity: 1 } }} className="flex gap-3 lg:gap-5"><CheckCircle2 size={28} className="text-emerald-400 shrink-0" /><span>{item}</span></motion.div>
                 ))}
               </motion.div>

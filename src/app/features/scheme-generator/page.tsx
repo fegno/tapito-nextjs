@@ -61,10 +61,10 @@ export default function SchemeGeneratorPage() {
                 <SlidersHorizontal size={14} className="animate-pulse" /> Offer creation engine
               </motion.div>
               <motion.h1 {...fadeUp(0.08)} className="max-w-3xl text-3xl sm:text-4xl md:text-5xl 4xl:text-7xl font-black tracking-[-0.06em] text-slate-950">
-                Create <span className="text-[#09358c]">Smarter Offers</span> Automatically.
+                Turn Every Purchase Into <span className="text-[#09358c]">Multiple Opportunities</span>.
               </motion.h1>
               <motion.p {...fadeUp(0.16)} className="mt-6 max-w-4xl text-base md:text-lg 4xl:text-xl font-medium leading-7 md:leading-8 text-slate-600 font-inter">
-                Generate margin-safe promotional schemes with simulation-led recommendations that balance stock clearance, customer appeal, and profitability.
+                Generate AI-powered schemes that automatically identify connected purchase opportunities. When a salesman closes a primary category sale, Tapito predicts the next logical category and triggers the right staff incentive to convert the full project.
               </motion.p>
               <motion.div {...fadeUp(0.24)} className="mt-10 flex flex-wrap items-center gap-4">
                 <Link href="/contact" className="group inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#09358c] to-[#05a0ec] px-8 py-4 text-base font-black text-white shadow-[0_22px_60px_-18px_rgba(9,53,140,0.4)] transition-all hover:scale-[1.05] hover:shadow-[0_25px_70px_-15px_rgba(5,160,236,0.4)]">
@@ -82,8 +82,8 @@ export default function SchemeGeneratorPage() {
               
               <div className="flex items-center justify-between rounded-4xl border border-[#09358c]/10 bg-[#09358c]/5 px-6 py-4 relative z-10 transition-colors hover:bg-[#09358c]/10">
                 <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#09358c]">Dynamic offer simulator</p>
-                  <p className="mt-1 text-sm font-black text-slate-950">Premium Bedding Campaign</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#09358c]">Salesman Incentive Simulator</p>
+                  <p className="mt-1 text-sm font-black text-slate-950">Single-Category to Multi-Category Conversion</p>
                 </div>
                 <div className="flex items-center gap-2 rounded-full bg-slate-950 px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em] text-white soft-shine">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" /> AI ranked
@@ -92,12 +92,12 @@ export default function SchemeGeneratorPage() {
 
               <div className="mt-8 space-y-7 relative z-10 px-2 lg:px-4">
                 {[
-                   { label: "Discount depth", value: "25%", width: "25%" },
-                   { label: "Clearance target", value: "60%", width: "60%" },
+                   { label: "Incentive depth", value: "25%", width: "25%" },
+                   { label: "Target fulfillment", value: "60%", width: "60%" },
                 ].map((item, index) => (
                   <div key={item.label} className="group/slider">
                     <div className="mb-3 flex items-center justify-between text-xs font-black text-slate-500 uppercase tracking-widest group-hover/slider:text-[#09358c] transition-colors">
-                      <span>{item.label}</span>
+                      <span>Cross-sell depth</span>
                       <span className="text-[#09358c] text-sm">{item.value}</span>
                     </div>
                     <div className="relative h-3.5 rounded-full bg-slate-100 shadow-inner overflow-hidden">
@@ -111,12 +111,12 @@ export default function SchemeGeneratorPage() {
 
               <div className="mt-10 grid gap-6 md:grid-cols-2 relative z-10">
                 <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.8 }} className="rounded-[2rem] border border-slate-100 bg-white p-6 shadow-sm hover:shadow-md transition-shadow group/list">
-                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">Alternative structure stack</p>
+                  <p className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400">Scheme structure stack</p>
                   <div className="mt-5 space-y-3">
                     {[
-                      "Buy 2 Get 1 (BOGO)",
-                      "Tiered 15% + 20% bundle",
-                      "Premium combo with credit"
+                      "Multi-Category Fulfillment Credit",
+                      "Secondary Category Staff Bonus",
+                      "Total Project Completion Incentive"
                     ].map((item, index) => (
                       <motion.div key={item} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 1 + index * 0.1 }} className="luminous-card luminous-surface-strong rounded-4xl bg-slate-50 px-5 py-4 text-sm font-bold text-slate-700 border border-transparent hover:border-[#09358c]/20 hover:bg-[#09358c]/5 transition-all cursor-default flex items-center gap-3">
                          <span className="flex h-1.5 w-1.5 rounded-full bg-[#05a0ec]" /> {item}
@@ -126,9 +126,9 @@ export default function SchemeGeneratorPage() {
                 </motion.div>
                 <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 1.2 }} className="luminous-card-dark soft-shine rounded-[2rem] bg-slate-950 p-6 text-white shadow-[0_30px_90px_-30px_rgba(9,53,140,0.4)] relative overflow-hidden group/winner">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#09358c]/20 blur-[50px] rounded-full pointer-events-none" />
-                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#05a0ec]">AI RECOMMENDED WINNER</p>
-                  <p className="mt-4 text-3xl font-black text-white group-hover/winner:text-[#05a0ec] transition-colors tracking-tight">Buy 2 Get 1</p>
-                  <p className="mt-4 text-sm font-medium leading-relaxed text-slate-400 italic">"Clears stock 18% faster than flat 30% discount while protecting 5% more margin."</p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.25em] text-[#05a0ec]">AI RECOMMENDED SCHEME</p>
+                  <p className="mt-4 text-3xl font-black text-white group-hover/winner:text-[#05a0ec] transition-colors tracking-tight">Cross-Sell Bonus</p>
+                  <p className="mt-4 text-sm font-medium leading-relaxed text-slate-400 italic">"Grants salesman 5% additional commission if a secondary category is added to a primary order. Reduces single-category sales bias by 38%."</p>
                   <motion.p initial={{ opacity: 0.6 }} animate={{ opacity: [0.6, 1, 0.6] }} transition={{ duration: 2, repeat: Infinity }} className="mt-6 text-xs font-black text-emerald-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={14} /> Ready for POS approval</motion.p>
                 </motion.div>
               </div>
@@ -140,7 +140,7 @@ export default function SchemeGeneratorPage() {
       <section className="border-y border-slate-200 bg-slate-50/80 py-16 4xl:py-24">
         <Container>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 lg:grid-cols-3">
-            {[["Business problem", "Discounts often move stock at the expense of margin because teams cannot test enough scenarios before launch.", "text-rose-500"], ["What Tapito detects", "Tapito detects highest-yield structures by simulating depth, stock urgency, and behavior together.", "text-[#09358c]"], ["What action it enables", "Teams can deploy the offer most likely to clear inventory without sacrificing the bottom line.", "text-emerald-600"]].map(([title, text, tone], index) => (
+            {[["Business problem", "Building material businesses lose revenue because sales teams miss cross-selling intent across categories.", "text-rose-500"], ["What Tapito detects", "Tapito detects connected purchase patterns and predicts what a customer needs in their next project stage.", "text-[#09358c]"], ["What action it enables", "Teams can automatically deploy personalized incentives that capture the entire project budget, not just one sale.", "text-emerald-600"]].map(([title, text, tone], index) => (
               <motion.div key={title} {...fadeUp(index * 0.12)} {...cardHover} className={`rounded-[1.5rem] md:rounded-[2.5rem] border bg-white p-10 group transition-all ${index === 1 ? "border-[#09358c]/20 shadow-[0_45px_100px_-50px_rgba(9,53,140,0.3)]" : "border-slate-200 hover:border-[#09358c]/20"}`}>
                 <p className={`text-[11px] font-black uppercase tracking-[0.25em] ${tone}`}>{title}</p>
                 <p className="mt-5 text-xl font-black leading-9 text-slate-950 uppercase tracking-tight">{text}</p>
@@ -159,7 +159,7 @@ export default function SchemeGeneratorPage() {
           </div>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] items-center">
             <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="space-y-6">
-              {[["01", "Set goals and floors", "Define stock pressure, target clearance, and margin floor before AI begins simulation."], ["02", "Simulate 1000s of paths", "Flat discounts, bundles, and tiered BOGO structures are tested against context."], ["03", "Deploy the safest winner", "The best-performing structure comes with confidence, rationale, and expected impact tokens."]].map(([step, title, text], index) => (
+              {[["01", "Detect Sales Bias", "Tapito analyzes staff performance to identify salesmen who only focus on one category (e.g. only selling Category A)."], ["02", "Simulate Cross-Incentives", "Test various commission structures to find the one that best motivates staff to push connected categories."], ["03", "Automate Staff Nudges", "Trigger real-time notifications to salesman phones when a cross-sell opportunity is detected in a live order."]].map(([step, title, text], index) => (
                 <motion.div key={step} {...fadeUp(index * 0.15)} {...cardHover} className="rounded-[2.2rem] border border-slate-200 bg-white p-8 group hover:bg-slate-50 transition-colors h-full flex items-start gap-7">
                   <motion.div whileHover={{ scale: 1.1, rotate: 10 }} className="flex h-14 w-14 shrink-0 items-center justify-center rounded-4xl bg-slate-950 text-base font-black text-white group-hover:bg-[#09358c] transition-colors shadow-lg">{step}</motion.div>
                   <div>
@@ -187,10 +187,10 @@ export default function SchemeGeneratorPage() {
                  <p className="text-sm font-black text-slate-800 uppercase tracking-widest">Offer production output</p>
                  <div className="mt-6 grid gap-4 md:grid-cols-2">
                     {[
-                      { label: "Selected scheme", value: "Buy 2 Get 1 (BOGO)", theme: "bg-[#09358c]/5 text-[#09358c]" },
-                      { label: "Margin status", value: "Within floor limits", theme: "bg-emerald-50 text-emerald-700" },
-                      { label: "Stock velocity", value: "+18% projected", theme: "bg-[#09358c]/5 text-[#09358c]" },
-                      { label: "Approval path", value: "POS Direct Sync", theme: "bg-slate-50 text-slate-700" }
+                      { label: "Selected scheme", value: "Staff Cross-Sell Bonus", theme: "bg-[#09358c]/5 text-[#09358c]" },
+                      { label: "Commission status", value: "Within budget limits", theme: "bg-emerald-50 text-emerald-700" },
+                      { label: "Staff productivity", value: "+18% projected", theme: "bg-[#09358c]/5 text-[#09358c]" },
+                      { label: "Payout path", value: "Payroll Direct Sync", theme: "bg-slate-50 text-slate-700" }
                     ].map(out => (
                       <div key={out.label} className={`rounded-4xl p-4 border border-transparent hover:border-black/5 transition-all ${out.theme}`}>
                         <p className="text-[10px] font-black uppercase tracking-widest opacity-60">{out.label}</p>
@@ -209,10 +209,10 @@ export default function SchemeGeneratorPage() {
         <Container>
           <div className="mb-14 text-center">
             <motion.p {...fadeUp()} className="text-xs font-black uppercase tracking-[0.22em] text-[#09358c]">Business impact</motion.p>
-            <motion.h2 {...fadeUp(0.08)} className="mt-4 text-3xl md:text-4xl font-black tracking-[-0.05em] text-slate-950">Promotions that clear stock without destroying profit.</motion.h2>
+            <motion.h2 {...fadeUp(0.08)} className="mt-4 text-3xl md:text-4xl font-black tracking-[-0.05em] text-slate-950">Stop revenue leakage across categories.</motion.h2>
           </div>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[["+15%", "Margin preserved", "Average margin saved vs flat discounting"], ["+45%", "Stock clearance", "Increase in velocity for slow-moving categories"], ["-70%", "Planning time", "Consolidated simulation instead of manual Excel testing"]].map(([value, label, note], index) => (
+            {[["+24%", "Basket value", "Increase in average order value through cross-category bundles"], ["+42%", "Customer retention", "Customers stay for the entire project journey instead of one-off buys"], ["-80%", "Marketing waste", "Eliminate generic promotions and target only high-intent customers"]].map(([value, label, note], index) => (
               <motion.div key={label} {...fadeUp(index * 0.15)} {...cardHover} className={`rounded-[2.5rem] md:rounded-[3rem] border border-slate-200 bg-white p-8 lg:p-12 text-center group hover:bg-[#09358c]/5 transition-all shadow-sm ${index === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
                 <motion.p animate={{ scale: [1, 1.08, 1] }} transition={{ duration: 3.5, repeat: Infinity }} className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#09358c] transition-transform group-hover:scale-110">{value}</motion.p>
                 <p className="mt-6 text-xl lg:text-2xl font-black text-slate-950 uppercase tracking-tighter break-words">{label}</p>
@@ -232,17 +232,17 @@ export default function SchemeGeneratorPage() {
             <motion.div initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="bg-white p-8 lg:p-12 relative overflow-hidden group">
               <p className="text-xs font-black uppercase tracking-[0.4em] text-slate-400 relative z-10">Before Tapito Schemes</p>
               <div className="mt-6 lg:mt-12 space-y-4 lg:space-y-9 text-lg lg:text-3xl font-bold text-slate-400 relative z-10 opacity-60">
-                <p>Random discount structures</p>
-                <p>Unseen margin erosion</p>
-                <p>Persistent dead stock</p>
-                <p>Excel-based offer guessing</p>
+                <p>Missed cross-selling opportunities</p>
+                <p>Revenue leakage to competitors</p>
+                <p>Generic, wasteful discounts</p>
+                <p>Limited visibility into intent</p>
               </div>
             </motion.div>
             <motion.div initial={{ x: 100, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1 }} className="bg-slate-950 p-8 lg:p-12 text-white relative h-full group">
                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(9,53,140,0.15),transparent_70%)] pointer-events-none" />
               <p className="text-xs font-black uppercase tracking-[0.4em] text-[#05a0ec] relative z-10">After Tapito Schemes</p>
               <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" className="mt-6 lg:mt-12 space-y-4 lg:space-y-9 text-lg lg:text-3xl font-black relative z-10">
-                {["Simulated profit-safe schemes", "Protected margin discipline", "Optimized stock clearance", "One-click POS deployment"].map((item) => (
+                {["Connected purchase intelligence", "Project-aware personalized schemes", "Maximized category capture", "Automated intent-based triggers"].map((item) => (
                   <motion.div key={item} variants={{ initial: { x: 40, opacity: 0 }, whileInView: { x: 0, opacity: 1 } }} transition={{ duration: 0.6 }} className="flex items-center gap-7 group hover:translate-x-3 transition-transform cursor-default"><CheckCircle2 size={34} className="text-emerald-400 shrink-0" />{item}</motion.div>
                 ))}
               </motion.div>

@@ -230,22 +230,53 @@ export default function Navbar() {
             >
               <div className="max-w-7xl mx-auto p-10">
                 <div className="grid grid-cols-3 gap-8">
-                  {features.map((feature) => (
-                    <Link
-                      key={feature.slug}
-                      href={`/features/${feature.slug}`}
-                      onClick={closeMenu}
-                      className="group flex gap-5 p-5 rounded-3xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
-                    >
-                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 group-hover:bg-[#09358c] group-hover:text-white transition-colors shadow-sm">
-                        <feature.icon size={26} />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-black text-slate-900 group-hover:text-[#09358c] transition-colors mb-2">{feature.title}</h4>
-                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{feature.description}</p>
-                      </div>
-                    </Link>
-                  ))}
+                  {features.map((feature) => {
+                    const isActive = pathname === `/features/${feature.slug}`;
+                    return (
+                      <Link
+                        key={feature.slug}
+                        href={`/features/${feature.slug}`}
+                        onClick={closeMenu}
+                        className={cn(
+                          "group flex gap-5 p-5 rounded-3xl transition-all border shadow-sm",
+                          isActive 
+                            ? "bg-slate-50 border-slate-200" 
+                            : "bg-white border-transparent hover:bg-slate-50 hover:border-slate-100"
+                        )}
+                      >
+                        <motion.div 
+                          initial="initial"
+                          whileHover="hover"
+                          className="flex gap-5 w-full"
+                        >
+                          <div className={cn(
+                            "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-colors shadow-sm",
+                            isActive ? "bg-[#09358c] text-white" : "bg-slate-50 text-slate-900 group-hover:bg-[#09358c] group-hover:text-white"
+                          )}>
+                            <feature.icon size={26} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className={cn(
+                              "text-lg font-black transition-colors mb-1",
+                              isActive ? "text-[#09358c]" : "text-slate-900 group-hover:text-[#09358c]"
+                            )}>{feature.title}</h4>
+                            <motion.div 
+                              variants={{
+                                initial: { height: 20 },
+                                hover: { height: "auto" }
+                              }}
+                              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                              className="relative overflow-hidden"
+                            >
+                              <p className="text-sm text-slate-500 font-medium leading-relaxed truncate group-hover:whitespace-normal">
+                                {feature.description}
+                              </p>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
@@ -262,22 +293,53 @@ export default function Navbar() {
             >
               <div className="max-w-7xl mx-auto p-10">
                 <div className="grid grid-cols-3 gap-8">
-                  {solutionsData.map((solution) => (
-                    <Link
-                      key={solution.slug}
-                      href={`/solutions/${solution.slug}`}
-                      onClick={closeMenu}
-                      className="group flex gap-5 p-5 rounded-3xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
-                    >
-                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 group-hover:bg-[#09358c] group-hover:text-white transition-colors shadow-sm">
-                        <solution.icon size={26} />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-black text-slate-900 group-hover:text-[#09358c] transition-colors mb-2">{solution.title}</h4>
-                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{solution.desc}</p>
-                      </div>
-                    </Link>
-                  ))}
+                  {solutionsData.map((solution) => {
+                    const isActive = pathname === `/solutions/${solution.slug}`;
+                    return (
+                      <Link
+                        key={solution.slug}
+                        href={`/solutions/${solution.slug}`}
+                        onClick={closeMenu}
+                        className={cn(
+                          "group flex gap-5 p-5 rounded-3xl transition-all border shadow-sm hover:shadow-md",
+                          isActive 
+                            ? "bg-slate-50 border-slate-200" 
+                            : "bg-white border-transparent hover:bg-slate-50 hover:border-slate-100"
+                        )}
+                      >
+                        <motion.div 
+                          initial="initial"
+                          whileHover="hover"
+                          className="flex gap-5 w-full"
+                        >
+                          <div className={cn(
+                            "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-colors shadow-sm",
+                            isActive ? "bg-[#09358c] text-white" : "bg-slate-50 text-slate-900 group-hover:bg-[#09358c] group-hover:text-white"
+                          )}>
+                            <solution.icon size={26} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className={cn(
+                              "text-lg font-black transition-colors mb-1",
+                              isActive ? "text-[#09358c]" : "text-slate-900 group-hover:text-[#09358c]"
+                            )}>{solution.title}</h4>
+                            <motion.div 
+                              variants={{
+                                initial: { height: 20 },
+                                hover: { height: "auto" }
+                              }}
+                              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                              className="relative overflow-hidden"
+                            >
+                              <p className="text-sm text-slate-500 font-medium leading-relaxed truncate group-hover:whitespace-normal">
+                                {solution.desc}
+                              </p>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
@@ -294,22 +356,53 @@ export default function Navbar() {
             >
               <div className="max-w-7xl mx-auto px-10 py-8">
                 <div className="grid grid-cols-3 gap-6">
-                  {companyLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      onClick={closeMenu}
-                      className="group flex gap-5 p-5 rounded-3xl hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100"
-                    >
-                      <div className="shrink-0 w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-900 group-hover:bg-[#09358c] group-hover:text-white transition-colors shadow-sm">
-                        <link.icon size={24} />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-black text-slate-900 group-hover:text-[#09358c] transition-colors mb-2">{link.label}</h4>
-                        <p className="text-sm text-slate-500 font-medium leading-relaxed">{link.description}</p>
-                      </div>
-                    </Link>
-                  ))}
+                  {companyLinks.map((link) => {
+                    const isActive = pathname === link.href;
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={closeMenu}
+                        className={cn(
+                          "group flex gap-5 p-5 rounded-3xl transition-all border shadow-sm hover:shadow-md",
+                          isActive 
+                            ? "bg-slate-50 border-slate-200" 
+                            : "bg-white border-transparent hover:bg-slate-50 hover:border-slate-100"
+                        )}
+                      >
+                        <motion.div 
+                          initial="initial"
+                          whileHover="hover"
+                          className="flex gap-5 w-full"
+                        >
+                          <div className={cn(
+                            "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center transition-colors shadow-sm",
+                            isActive ? "bg-[#09358c] text-white" : "bg-slate-50 text-slate-900 group-hover:bg-[#09358c] group-hover:text-white"
+                          )}>
+                            <link.icon size={26} />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className={cn(
+                              "text-lg font-black transition-colors mb-1",
+                              isActive ? "text-[#09358c]" : "text-slate-900 group-hover:text-[#09358c]"
+                            )}>{link.label}</h4>
+                            <motion.div 
+                              variants={{
+                                initial: { height: 20 },
+                                hover: { height: "auto" }
+                              }}
+                              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+                              className="relative overflow-hidden"
+                            >
+                              <p className="text-sm text-slate-500 font-medium leading-relaxed truncate group-hover:whitespace-normal">
+                                {link.description}
+                              </p>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>
