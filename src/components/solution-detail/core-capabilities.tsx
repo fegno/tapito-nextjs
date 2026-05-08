@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../Container";
 import { motion } from "framer-motion";
 import { Layers, TrendingUp, Zap } from "lucide-react";
+import AnimatedLucideIcon from "../AnimatedLucideIcon";
 
 type Props = {
   data: {
@@ -26,7 +27,7 @@ const Capabilities = ({ data }: Props) => {
                 <div key={i} className="flex gap-4 lg:gap-8 group relative z-10">
                   <div className="relative">
                     <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#09358c] text-white flex items-center justify-center shadow-lg shadow-blue-500/20 group-hover:rotate-6 transition-transform relative z-10">
-                      <feature.icon size={26} />
+                      <AnimatedLucideIcon icon={feature.icon} size={26} />
                     </div>
                     {/* Step Number Badge */}
                     <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border border-slate-200 text-[10px] font-black flex items-center justify-center text-[#09358c] shadow-sm z-20">
@@ -59,7 +60,7 @@ const Capabilities = ({ data }: Props) => {
               >
                 <div className="flex items-center gap-6">
                   <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Layers size={28} />
+                    <AnimatedLucideIcon icon={Layers} size={28} />
                   </div>
                   <div>
                     <div className="text-[10px] font-black text-blue-600 uppercase tracking-widest mb-1">Step 01: Ingestion</div>
@@ -86,7 +87,7 @@ const Capabilities = ({ data }: Props) => {
                   <motion.div
                     className="w-20 h-20 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white mb-6"
                   >
-                    <Zap size={40} />
+                    <AnimatedLucideIcon icon={Zap} size={40} />
                   </motion.div>
                   <div className="text-[10px] font-black text-blue-300 uppercase tracking-widest mb-2">The Engine</div>
                   <h4 className="text-2xl font-black text-white mb-4">Tapito AI Logic</h4>
@@ -110,7 +111,7 @@ const Capabilities = ({ data }: Props) => {
               >
                 <div className="flex items-center gap-6">
                   <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <TrendingUp size={28} />
+                    <AnimatedLucideIcon icon={TrendingUp} size={28} />
                   </div>
                   <div>
                     <div className="text-[10px] font-black text-emerald-600 uppercase tracking-widest mb-1">Step 03: Output</div>

@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/Container";
+import { InteractiveGrid } from "../InteractiveGrid";
+import AnimatedLucideIcon from "../AnimatedLucideIcon";
 
 interface ChallengesProps {
   data: {
@@ -21,6 +22,7 @@ const Challenges = ({ data }: ChallengesProps) => {
       id="challenges"
       className="section-padding bg-slate-50 relative overflow-hidden"
     >
+      <InteractiveGrid />
       {/* Animated Moving Line Border */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-slate-200 opacity-50" />
       <motion.div
@@ -46,7 +48,7 @@ const Challenges = ({ data }: ChallengesProps) => {
               className="bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100 relative group"
             >
               <div className="w-14 h-14 rounded-2xl bg-rose-50 text-rose-500 mb-8 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <challenge.icon size={28} />
+                <AnimatedLucideIcon icon={challenge.icon} size={28} />
               </div>
               <h4 className="text-[22px] lg:text-[26px] 2xl:text-2xl font-black text-slate-900 mb-4">
                 {challenge.title}

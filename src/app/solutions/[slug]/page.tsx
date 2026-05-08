@@ -9,17 +9,14 @@ import {
   Zap,
   Smartphone,
   LayoutDashboard,
-  PieChart,
   Users,
   Target,
   Rocket,
   Brain,
-  MessageSquare,
-  Package,
+  MessageSquareDashed,
   Award,
   DollarSign,
 } from "lucide-react";
-import Container from "@/components/Container";
 import { SolutionsHero } from "@/components/solutions/SolutionsHero";
 import ClientStrip from "@/components/ClientStrip";
 import { FeatureShowcase } from "@/components/solution-detail/feature-showcase";
@@ -31,7 +28,14 @@ import Challenges from "@/components/solution-detail/challenges";
 import CTASection from "@/components/CTA-card";
 import { FAQ } from "@/components/solutions/FAQ";
 import { motion, AnimatePresence } from "framer-motion";
-import IndustryExample from "@/components/solution-detail/industry-example";
+import BuildingMaterial from "@/components/solution-detail/building-material";
+import HomeFurnishing from "@/components/solution-detail/home-furnishing";
+import aisales from '@/public/assets/images/ai-slaes.png';
+import predictiveprofit from '@/public/assets/images/predictive.png';
+import empoyeeincentives from '@/public/assets/images/Staff-Incentive.png';
+import strategicmirror from '@/public/assets/images/StrategicBusinessMirror.png';
+import marketingcost from '@/public/assets/images/MarketingCostOptimization.png';
+import staffconversion from '@/public/assets/images/Automated-Conversion.png';
 
 const solutionDetails: Record<string, any> = {
   "building-materials": {
@@ -41,37 +45,37 @@ const solutionDetails: Record<string, any> = {
       { 
         title: "AI Sales Intelligence Engine", 
         desc: "Tapito continuously analyzes purchase behavior, journey patterns, and product combinations to identify connected opportunities that sales teams often overlook.", 
-        image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=1200&auto=format&fit=crop",
+        image: aisales.src,
         icon: Brain
       },
       { 
         title: "Predictive Opportunity Logic", 
-        desc: "When a customer purchases one product, Tapito predicts what they are likely to need next across categories like plumbing, tiles, and electricals.", 
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
+        desc: "When a customer purchases one product, Tapito predicts what they are likely need to purchase next across categories like plumbing, tiles, and electricals.", 
+        image:predictiveprofit.src,
         icon: Zap
       },
       { 
         title: "Automated Conversion & Engagement", 
         desc: "Automatically helps your business recommend, engage, and convert customers through smart follow-up reminders and automated campaigns.", 
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-        icon: MessageSquare
+        image: staffconversion.src,
+        icon: MessageSquareDashed
       },
       { 
-        title: "Staff Incentive Intelligence", 
+        title: "Sales Incentive Engine", 
         desc: "Motivate your sales force by providing real-time visibility into earned incentives and cross-category performance achievements.", 
-        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop",
+        image:empoyeeincentives.src,
         icon: Award
       },
       { 
         title: "Strategic Business Mirror", 
         desc: "Tapito acts as a mirror to your business, delivering deep behavioral insights and tailored recommendations for continuous success.", 
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
+        image: strategicmirror.src,
         icon: LayoutDashboard
       },
       { 
         title: "Marketing Cost Optimization", 
         desc: "Eliminate wasteful spend by identifying high-conversion customers and automating highly targeted project-based campaigns.", 
-        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1200&auto=format&fit=crop",
+        image:marketingcost.src,
         icon: DollarSign
       }
     ],
@@ -141,6 +145,69 @@ const solutionDetails: Record<string, any> = {
       { value: "3.5x", label: "Faster Inventory Turnover" },
       { value: "22%", label: "Average Order Value Increase" },
       { value: "12%", label: "Reduction in End-of-Season Markdown" }
+    ]
+  },
+  "home-furnishing": {
+    title: "Home Furnishing",
+    description: "Maximize every showroom visit by turning single item interest into complete room transformations. Tapito helps you sell the lifestyle, not just the furniture.",
+    howWeHelp: [
+      { 
+        title: "AI Aesthetic Pairing Engine", 
+        desc: "Tapito analyzes visual styles and product compatibility to identify complete room setup opportunities that customers often overlook.", 
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1200",
+        icon: Brain
+      },
+      { 
+        title: "Predictive Lifestyle Logic", 
+        desc: "When a customer buys a sofa, Tapito predicts the matching rugs, teapoys, and lighting they'll need to complete the space.", 
+        image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1200",
+        icon: Zap
+      },
+      { 
+        title: "Automated Lookbook Engagement", 
+        desc: "Automatically send AI-curated room lookbooks and personalized decor offers via WhatsApp to keep customers inspired.", 
+        image: "https://images.unsplash.com/photo-1616489953149-755e37829219?auto=format&fit=crop&q=80&w=1200",
+        icon: MessageSquareDashed
+      },
+      { 
+        title: "Designer Incentive Engine", 
+        desc: "Empower your showroom staff by showing real-time earnings from cross-category sales and lifestyle bundle achievements.", 
+        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+        icon: Award
+      },
+      { 
+        title: "Strategic Inventory Mirror", 
+        desc: "Gain deep visibility into which lifestyle trends are driving revenue and optimize your collection accordingly.", 
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+        icon: LayoutDashboard
+      },
+      { 
+        title: "Marketing ROI Optimization", 
+        desc: "Eliminate wasteful ad spend by identifying high-intent project buyers and automating targeted lifestyle campaigns.", 
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200",
+        icon: DollarSign
+      }
+    ],
+    challenges: [
+      { title: "The 'Sofa-Only' Trap", desc: "Sales teams often sell only what is requested, leaving teapoys, mats, and lighting revenue on the table.", icon: ShieldAlert },
+      { title: "Missing Room-View Data", desc: "Inability to connect customer purchases with their overall room-completion journey leads to missed upsells.", icon: BarChart3 },
+      { title: "Low Lifestyle Bundling", desc: "Generic marketing fails to inspire customers to complete their interior projects, slowing down inventory turnover.", icon: Rocket }
+    ],
+    features: [
+      { title: "Lifestyle Cross-Sell Logic", desc: "Capture revenue opportunities by automatically suggesting matching accessories like teapoys and rugs for every primary furniture sale.", icon: Zap },
+      { title: "Staff Performance Insights", desc: "Motivate teams with real-time visibility into their contribution to lifestyle bundle growth and earned commissions.", icon: Award },
+      { title: "Aesthetic Intent Detection", desc: "Identify high-potential interior projects early by monitoring customer behavior and suggesting relevant style pairings.", icon: TrendingUp }
+    ],
+    faqs: [
+      { question: "How does Tapito suggest matching decor?", answer: "Our AI analyzes visual style data and purchase patterns to predict which teapoys, rugs, and lighting fixtures best complement a customer's primary furniture selection." },
+      { question: "Can we automate room-completion offers?", answer: "Yes. Tapito triggers personalized lookbooks and offers via WhatsApp or SMS based on the aesthetic profile of the items a customer has already purchased." },
+      { question: "How does it help our showroom staff?", answer: "It provides floor teams with real-time cross-selling prompts and visual pairing suggestions, making it easier to convince customers to buy a complete set." },
+      { question: "Does it support project-based tracking?", answer: "Absolutely. Tapito tracks a customer's journey across multiple showroom visits, ensuring you stay relevant as they furnish their home phase by phase." }
+    ],
+    impacts: [
+      { value: "40%", label: "Increase in Lifestyle Bundling" },
+      { value: "28%", label: "Growth in Average Order Value" },
+      { value: "35%", label: "Improvement in Sales Efficiency" }
     ]
   },
   "electronics": {
@@ -244,7 +311,8 @@ export default function SolutionDetailPage() {
         />
         <ClientStrip />
         <StrategicAdvantage data={data} />
-        {slug === "building-materials" && <IndustryExample />}
+        {slug === "building-materials" && <BuildingMaterial />}
+        {slug === "home-furnishing" && <HomeFurnishing />}
         <Challenges data={data} />
         <Capabilities data={data} />
         <FeatureShowcase />

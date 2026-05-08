@@ -30,14 +30,6 @@ export default function Overview() {
               Tapito isn't just a dashboard. It's a comprehensive AI layer that sits on top of your existing retail stack,
               synthesizing every transaction into a strategic advantage.
             </p>
-        
-            {/* <div className="grid grid-cols-2 gap-6 pb-10">
-              <div className="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
-                <TrendingUp className="text-blue-600 mb-4" />
-                <h4 className="font-bold text-lg mb-1">24.2%</h4>
-                <p className="text-xs text-slate-400 uppercase font-black">Average ROI Gain</p>
-              </div>
-            </div> */}
             <div>
               <Link
                 href="/integrations"

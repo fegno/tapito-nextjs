@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Noto_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import FloatingCTA from "@/components/about/FloatingCTA";
 import ScrollToTop from "@/components/ScrollToTop";
+import { cn } from "@/lib/utils";
 
-const notoSans = Noto_Sans({ 
-  subsets: ["latin"], 
-  variable: "--font-sans",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Tapito | AI-Powered Customer Engagement Platform",
@@ -28,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${notoSans.variable} font-sans antialiased text-slate-900`}>
+    <html lang="en" className={cn("scroll-smooth", "font-sans", geist.variable)}>
+      <body className={`${geist.variable} font-sans antialiased text-slate-900`}>
         <Suspense fallback={null}>
           <ScrollToTop />
         </Suspense>

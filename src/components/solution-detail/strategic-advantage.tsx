@@ -1,9 +1,9 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import Container from "@/components/Container";
 import { ArrowRight } from "lucide-react";
+import AnimatedLucideIcon from "../AnimatedLucideIcon";
 
 interface StrategicAdvantageProps {
   data: {
@@ -65,7 +65,7 @@ const StrategicAdvantage = ({ data }: StrategicAdvantageProps) => {
                  {/* Floating Icon Badge */}
                 <div className="mt-6 space-y-4">
                    <div className="w-12 h-12 rounded-2xl bg-[#09358c] shadow-xl shadow-blue-500/20 flex items-center justify-center text-white transform transition-transform duration-500 group-hover:scale-110 bg-white/10">
-                    <item.icon size={28} />
+                    <AnimatedLucideIcon icon={item.icon} size={28} />
                  </div>
                     <h3 className="text-2xl lg:text-3xl font-black text-white leading-tight">
                       {item.title}
@@ -74,20 +74,9 @@ const StrategicAdvantage = ({ data }: StrategicAdvantageProps) => {
                       {item.desc}
                     </p>
                  </div>
-
-                 {/* <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-                    <span className="text-[10px] font-black text-white uppercase tracking-[0.2em] opacity-60">Strategic Advantage 0{i+1}</span>
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#09358c] shadow-lg transition-all duration-500 group-hover:translate-x-2">
-                       <ArrowRight size={18} />
-                    </div>
-                 </div> */}
               </div>
-
-              {/* Top Right Decorative Badge */}
-              <div className="absolute top-8 right-8 px-4 py-4 bg-white backdrop-blur-md rounded-full border border-white text-white text-[9px] fon t-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 ">
-                  {/* <div className="absolute -top-8 left-8 w-16 h-16 rounded-2xl bg-[#09358c] shadow-xl shadow-blue-500/20 flex items-center justify-center text-white transform transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"> */}
-                     <ArrowRight size={18} color="black" />
-                 {/* </div> */}
+              <div className="absolute top-8 right-8 px-4 py-4 bg-white backdrop-blur-md rounded-full border border-white text-white text-[9px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 ">
+                  <ArrowRight size={18} color="black" />
               </div>
             </motion.div>
           ))}

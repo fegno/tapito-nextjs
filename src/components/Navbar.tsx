@@ -196,9 +196,9 @@ export default function Navbar() {
             </nav>
             <div className="flex justify-end gap-4 items-center">
               <div className="hidden lg:flex items-center gap-4">
-                <button className="border-2 border-[#09358c] text-[#09358c] py-2.5 px-7 text-[12px] uppercase tracking-widest font-black rounded-full hover:shadow-lg hover:text-white hover:bg-[#09358c] transition-all duration-300">
+                {/* <button className="border-2 border-[#09358c] text-[#09358c] py-2.5 px-7 text-[12px] uppercase tracking-widest font-black rounded-full hover:shadow-lg hover:text-white hover:bg-[#09358c] transition-all duration-300">
                   Login
-                </button>
+                </button> */}
               </div>
               {/* CTA's */}
               <div className="hidden lg:flex items-center gap-4">
