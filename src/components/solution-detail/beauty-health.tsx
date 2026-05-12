@@ -1,13 +1,39 @@
 "use client";
-
+ 
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Container from "@/components/Container";
-import { CheckCircle2, Package, Home, PaintBucket, Lightbulb, Bath, Armchair, XCircle, Brain, Zap, MessageSquare, DollarSign, Layers, ShieldCheck, Repeat, UserCheck, BarChart, Users, Search, Target } from "lucide-react";
+import {
+  CheckCircle2,
+  Heart,
+  Sparkles,
+  Zap,
+  MessageSquare,
+  DollarSign,
+  Layers,
+  Repeat,
+  UserCheck,
+  BarChart,
+  Users,
+  Search,
+  Target,
+  XCircle,
+  Brain,
+  LayoutDashboard,
+  Award,
+  TrendingUp,
+  Stethoscope,
+  Smile,
+  Flame,
+  Droplets,
+  Wind,
+  Clock,
+  Dumbbell
+} from "lucide-react";
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 
-const BuildingMaterial = () => {
+const BeautyHealth = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,22 +49,23 @@ const BuildingMaterial = () => {
   const scale = useTransform(smoothProgress, [0, 0.2], [0.9, 1]);
 
   const needs = [
-    { icon: Package, label: "Tiles" },
-    { icon: Lightbulb, label: "Electrical" },
-    { icon: PaintBucket, label: "Paints" },
-    { icon: Bath, label: "Sanitaryware" },
-    { icon: Home, label: "Kitchen Fittings" },
-    { icon: Armchair, label: "Interiors" },
+    { icon: Droplets, label: "Skincare" },
+    { icon: Sparkles, label: "Cosmetics" },
+    { icon: Dumbbell, label: "Gym & Fitness" },
+    { icon: Stethoscope, label: "Medicines" },
+    { icon: Heart, label: "Wellness" },
+    { icon: Flame, label: "Supplements" },
+    { icon: Smile, label: "Personal Care" },
+    { icon: Wind, label: "Healthcare Essentials" },
   ];
 
   const consequences = [
-    "Missed cross-selling opportunities",
-    "Lower basket value",
+    "Missed repeat purchase opportunities",
     "Weak customer retention",
+    "Generic promotional campaigns",
+    "Lower customer engagement",
     "Unoptimized marketing spend",
-    "Limited customer visibility",
-    "Revenue leakage across categories",
-    "Incomplete customer profiles"
+    "Revenue leakage across categories"
   ];
 
   return (
@@ -62,33 +89,33 @@ const BuildingMaterial = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block"
               >
-                The Real Problem
+                The Wellness Gap
               </motion.span>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                Why Building Material <br /> <span className="text-blue-500">Businesses Lose Revenue</span>
+                Why Beauty & Health  <span className="text-blue-500"> Lose Revenue</span>
               </h2>
               <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                Most sales teams only sell what the customer directly asks for. They miss the broader project intent, leading to significant revenue leakage.
+                Most beauty stores, gyms, and pharmacies only focus on the customer’s current purchase instead of understanding their long-term wellness, fitness goals, and repeat care needs.
               </p>
               
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden group">
-                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Building Material Case Study</div>
+                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Wellness Case Study</div>
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                  Plumbing Purchase Intent
+                  The Care Continuity Trap
                 </h4>
-                <p className="text-slate-400 mb-8 font-medium">A customer buying plumbing materials for a new home also requires:</p>
+                <p className="text-slate-400 mb-8 font-medium">A customer purchasing skincare inherently needs:</p>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
                   {needs.map((item, i) => (
                     <motion.div 
                       key={i}
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-blue-600/20 transition-all"
+                      className="flex flex-col items-center gap-3 bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-blue-600/20 transition-all text-center"
                     >
-                      <AnimatedLucideIcon icon={item.icon} size={18} color="white" />
-                      <span className="text-sm font-bold text-slate-300">{item.label}</span>
+                      <AnimatedLucideIcon icon={item.icon} size={20} color="white" />
+                      <span className="text-[10px] font-black uppercase tracking-tighter text-slate-300 leading-tight">{item.label}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -113,24 +140,24 @@ const BuildingMaterial = () => {
               <div className="relative z-10 bg-white rounded-[3.5rem] p-10 lg:p-16 shadow-2xl shadow-blue-950/40 overflow-hidden">
                  <div className="flex items-center gap-3 mb-10">
                     <div className="w-10 h-10 rounded-xl bg-[#09358c] flex items-center justify-center text-white font-black text-xl italic">T</div>
-                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Intelligence</span>
+                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Care Logic</span>
                  </div>
 
                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-6 leading-tight">
-                   Connecting Intent with <br /> <span className="text-[#09358c]">Future Needs</span>
+                   The AI Wellness <br /> <span className="text-[#09358c]">Intelligence Engine</span>
                  </h3>
 
                  <p className="text-slate-600 mb-10 leading-relaxed font-medium">
-                   Tapito acts as an AI Sales Intelligence Engine for building materials, automatically generating recommendations and offers that sales staff unintentionally miss.
+                   Tapito continuously analyzes beauty preferences, recurring health needs, and purchase cycles to identify connected growth opportunities that staff often overlook.
                  </p>
 
                  <ul className="space-y-6">
                    {[
                      "Captures Cross-Selling Automatically",
                      "Increases Average Basket Value",
-                     "Optimizes Marketing Spend with AI",
+                     "Automates Medicine Refill Reminders",
                      "Drives Sales Incentive Motivation",
-                     "Reduces Revenue Leakage"
+                     "Reduces Wellness Revenue Leakage"
                    ].map((item, i) => (
                      <motion.li 
                        key={i} 
@@ -151,8 +178,9 @@ const BuildingMaterial = () => {
           </div>
         </motion.div>
         </Container>
+
         <Container>
-        {/* AI Sales Intelligence Engine Details */}
+        {/* AI Wellness Intelligence Engine Details */}
         <div className="mt-32 pt-32 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
              {/* Tapito Continuously Analyzes Card */}
@@ -167,8 +195,8 @@ const BuildingMaterial = () => {
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Analyzes Background" 
+                    src="https://images.unsplash.com/photo-1512432368975-f2d3c1eb3012?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Beauty Analyzes" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent" />
@@ -180,17 +208,15 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={ActivityIcon} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">
-                    Tapito Continuously Analyzes
-                  </h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Tapito Wellness Analytics</h3>
                   <div className="w-16 h-1 bg-blue-600/50 rounded-full mb-10" />
 
                   <div className="space-y-6">
                     {[
-                      "Building material purchase behavior",
-                      "Project-based product combinations",
-                      "Regional construction demand trends",
-                      "Counter sales staff performance"
+                      "Beauty & Health",
+                      "Recurring wellness purchase frequency",
+                      "Skincare & Gym affinity combinations",
+                      "Pharmacy & Membership renewal cycles"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -222,8 +248,8 @@ const BuildingMaterial = () => {
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Generates Background" 
+                    src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Wellness Generates" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-transparent" />
@@ -235,19 +261,19 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={Zap} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">And Automatically Generates</h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Automatically Recommends</h3>
                   <div className="w-24 h-1 bg-purple-600/50 rounded-full mb-10" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                     {[
-                      "Material recommendations",
-                      "Personalized project offers",
-                      "AI-based upsell suggestions",
-                      "Smart customer segmentation",
-                      "Follow-up reminders",
+                      "Personalized beauty matches",
+                      "AI-based wellness cross-selling",
+                      "Smart care-based segments",
+                      "Medicine refill reminders",
+                      "Wellness-driven promotions",
                       "Cross-category opportunities",
-                      "Automated campaigns",
-                      "Incentive-based motivation"
+                      "Automated engagement flows",
+                      "Incentive-based sales motivation"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -270,9 +296,10 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-blue-50 py-[80px] xl:py-[100px] 2xl:py-[160px] relative">
         <Container>
-        {/* Marketing Cost Reduction Section */}
+        {/* Wellness Sales Performance Section */}
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
              {/* Left Content */}
@@ -290,20 +317,20 @@ const BuildingMaterial = () => {
 
                 <div className="relative z-10">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-                     Efficiency Gain
+                     Care Optimization
                   </div>
                   <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-                    Reduce Marketing <br /> <span className="text-[#09358c]">Costs with AI</span>
+                    Maximize Every <br /> <span className="text-[#09358c]">Health & Fitness Visit</span>
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium mb-12 max-w-xl">
-                    Traditional marketing in building materials often wastes money by targeting the wrong audience. Tapito ensures every rupee is spent on high-conversion project opportunities.
+                    Tapito transforms your pharmacy, gym, or beauty showroom into an intelligent wellness advisory center. No more missed opportunities for supplements or membership renewals when a basic product is sold.
                   </p>
                   
                   <div className="space-y-5">
                     {[
-                      "Eliminating unnecessary broad promotions",
-                      "Identifying high-conversion contractors",
-                      "Improving conversion rates through AI insights"
+                      "Linking beauty items with essential care",
+                      "Automating recurring refill reminders",
+                      "Real-time wellness pairing for staff"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -340,10 +367,10 @@ const BuildingMaterial = () => {
 
                 <div className="space-y-16 relative z-10">
                    {[
-                     { title: "Identify High-Conversion", desc: "Focus spend on customers most likely to purchase next for their construction phase.", icon: Target },
-                     { title: "Automate Campaigns", desc: "Reduce manual effort and agency costs with AI-driven triggers.", icon: Zap },
-                     { title: "Personalized Outreach", desc: "Eliminate generic spam with highly relevant project-based offers.", icon: Users },
-                     { title: "Maximize ROI", desc: "Achieve more revenue with significantly lower marketing spend.", icon: BarChart }
+                      { title: "AI Recommendation Engine", desc: "Identify what customers are likely to purchase next based on wellness and fitness patterns.", icon: Droplets },
+                      { title: "Smart Care Logic", desc: "Automatically trigger recommendations for complementary fitness products during sales.", icon: Dumbbell },
+                      { title: "Automated Engagement", desc: "Run WhatsApp and SMS campaigns based on replenishment and gym intent.", icon: MessageSquare },
+                      { title: "Revenue Opportunity Detection", desc: "Monitor hidden revenue opportunities and suggest actions to increase sales.", icon: BarChart }
                    ].map((item, i) => (
                      <motion.div 
                        key={i}
@@ -357,8 +384,8 @@ const BuildingMaterial = () => {
                         <div className="absolute -left-[32px] lg:-left-[48px] top-6 lg:top-8 flex items-center">
                            <motion.div 
                              animate={{ 
-                               scale: [1, 1.5, 1],
-                               backgroundColor: ["#60a5fa", "#2563eb", "#60a5fa"]
+                                scale: [1, 1.5, 1],
+                                backgroundColor: ["#60a5fa", "#2563eb", "#60a5fa"]
                              }}
                              transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
                              className="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" 
@@ -389,27 +416,30 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-slate-900 py-[80px] xl:py-[100px] 2xl:py-[160px]">
         <Container>
         <div className="text-center">
-           <motion.div style={{ opacity }}>
+        <motion.div style={{ opacity }}>
               <span className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block">The Result</span>
               <h2 className="text-4xl md:text-6xl font-black text-white mb-20">
                 Business Impact
               </h2>
            </motion.div>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Increase average order value", desc: "Every construction project is maximized through intelligent AI recommendations.", icon: DollarSign },
-                { title: "Improve cross-category sales", desc: "Connect plumbing, tiles, and paints seamlessly within a single customer journey.", icon: Layers },
-                { title: "Reduce missed sales opportunities", desc: "Ensure no revenue leakage occurs due to human memory gaps or missed follow-ups.", icon: Target },
-                { title: "Increase repeat purchases", desc: "Keep customers coming back for every phase of their building project.", icon: Repeat },
-                { title: "Deliver personalized customer offers", desc: "High-conversion offers tailored exactly to what the project needs next.", icon: UserCheck },
-                { title: "Reduce marketing costs", desc: "Eliminate wasteful broad-market spend by targeting high-intent building material buyers.", icon: BarChart },
-                { title: "Motivate sales teams", desc: "Real-time incentive visibility drives better performance and staff retention.", icon: Users },
-                { title: "Automate customer engagement", desc: "24/7 engagement through WhatsApp and SMS without manual staff effort.", icon: MessageSquare },
-                { title: "Gain complete visibility", desc: "Deep insights into every aspect of your customer buying behavior.", icon: Search }
+                { title: "Increase Repeat Purchases", desc: "Maximize wellness revenue through intelligent refill and beauty reminders.", icon: Repeat },
+                { title: "Improve Cross-Category Sales", desc: "Connect skincare, supplements, and pharmacy in one customer journey.", icon: Layers },
+                { title: "Reduce Missed Sales Opportunities", desc: "Zero revenue leakage through automated AI-driven prompts for care items.", icon: Target },
+                { title: "Deliver Personalized Customer Offers", desc: "Tailored wellness offers based on individual beauty and health goals.", icon: UserCheck },
+                { title: "Promote Wellness Products Intelligently", desc: "Suggest supplements and care items based on specific health patterns.", icon: Sparkles },
+                { title: "Reduce Marketing Costs", desc: "Eliminate wasteful spend by targeting high-intent wellness buyers.", icon: BarChart },
+                { title: "Improve Customer Retention", desc: "Build lasting care relationships with automated follow-ups and renewal alerts.", icon: Heart },
+                { title: "Automate Medicine & Membership", desc: "Ensure chronic care and fitness continuity with automated refill and renewal reminders.", icon: Clock },
+                { title: "Motivate Sales & Gym Teams", desc: "Real-time incentive visibility drives better care and fitness advisory performance.", icon: Users },
+                { title: "Automate Customer Engagement", desc: "24/7 personalized care and gym communication via WhatsApp and SMS.", icon: MessageSquare },
+                { title: "Gain Complete Visibility", desc: "Deep insights into customer wellness, beauty and fitness preferences.", icon: Search }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -443,4 +473,4 @@ const BuildingMaterial = () => {
   );
 };
 
-export default BuildingMaterial;
+export default BeautyHealth;

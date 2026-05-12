@@ -3,11 +3,32 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Container from "@/components/Container";
-import { CheckCircle2, Package, Home, PaintBucket, Lightbulb, Bath, Armchair, XCircle, Brain, Zap, MessageSquare, DollarSign, Layers, ShieldCheck, Repeat, UserCheck, BarChart, Users, Search, Target } from "lucide-react";
+import {
+  CheckCircle2,
+  Heart,
+  MessageSquare,
+  DollarSign,
+  Layers,
+  Repeat,
+  UserCheck,
+  BarChart,
+  Users,
+  Search,
+  Target,
+  XCircle,
+  Zap,
+  ShoppingBag,
+  Star,
+  Sparkles,
+  Shirt,
+  Watch,
+  Palette,
+  Gem
+} from "lucide-react";
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 
-const BuildingMaterial = () => {
+const Fashion = () => {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -23,22 +44,23 @@ const BuildingMaterial = () => {
   const scale = useTransform(smoothProgress, [0, 0.2], [0.9, 1]);
 
   const needs = [
-    { icon: Package, label: "Tiles" },
-    { icon: Lightbulb, label: "Electrical" },
-    { icon: PaintBucket, label: "Paints" },
-    { icon: Bath, label: "Sanitaryware" },
-    { icon: Home, label: "Kitchen Fittings" },
-    { icon: Armchair, label: "Interiors" },
+    { icon: Shirt, label: "New Casuals" },
+    { icon: Sparkles, label: "Seasonal Arrivals" },
+    { icon: ShoppingBag, label: "Matching Footwear" },
+    { icon: Watch, label: "Jackets & Accessories" },
+    { icon: Star, label: "Trending Outfits" },
+    { icon: Gem, label: "Festive Collections" },
+    { icon: Heart, label: "Beauty Products" },
+    { icon: Palette, label: "Ethnic Wear" },
   ];
 
   const consequences = [
-    "Missed cross-selling opportunities",
-    "Lower basket value",
-    "Weak customer retention",
+    "Missed repeat purchase opportunities",
+    "Lower customer retention",
+    "Generic marketing campaigns",
+    "Weak customer engagement",
     "Unoptimized marketing spend",
-    "Limited customer visibility",
-    "Revenue leakage across categories",
-    "Incomplete customer profiles"
+    "Revenue leakage across categories"
   ];
 
   return (
@@ -62,21 +84,21 @@ const BuildingMaterial = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block"
               >
-                The Real Problem
+                The Style Gap
               </motion.span>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                Why Building Material <br /> <span className="text-blue-500">Businesses Lose Revenue</span>
+                Why Fashion <br /> <span className="text-blue-500">Businesses Lose Revenue</span>
               </h2>
               <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                Most sales teams only sell what the customer directly asks for. They miss the broader project intent, leading to significant revenue leakage.
+                Most fashion stores focus only on the current transaction instead of understanding long-term style profiles. They miss seasonal intent and outfit pairings, leaving significant revenue on the table.
               </p>
               
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden group">
-                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Building Material Case Study</div>
+                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Growth Case Study</div>
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                  Plumbing Purchase Intent
+                  The "Style-Blind" Transaction Trap
                 </h4>
-                <p className="text-slate-400 mb-8 font-medium">A customer buying plumbing materials for a new home also requires:</p>
+                <p className="text-slate-400 mb-8 font-medium">A customer purchasing casual wear inherently needs:</p>
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
                   {needs.map((item, i) => (
@@ -112,25 +134,25 @@ const BuildingMaterial = () => {
             >
               <div className="relative z-10 bg-white rounded-[3.5rem] p-10 lg:p-16 shadow-2xl shadow-blue-950/40 overflow-hidden">
                  <div className="flex items-center gap-3 mb-10">
-                    <div className="w-10 h-10 rounded-xl bg-[#09358c] flex items-center justify-center text-white font-black text-xl italic">T</div>
-                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Intelligence</span>
+                    <div className="w-10 h-10 rounded-xl bg-blue-900 flex items-center justify-center text-white font-black text-xl italic">T</div>
+                    <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Outfit Logic</span>
                  </div>
 
                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-6 leading-tight">
-                   Connecting Intent with <br /> <span className="text-[#09358c]">Future Needs</span>
+                   The AI Fashion <br /> <span className="text-blue-900">Intelligence Engine</span>
                  </h3>
 
                  <p className="text-slate-600 mb-10 leading-relaxed font-medium">
-                   Tapito acts as an AI Sales Intelligence Engine for building materials, automatically generating recommendations and offers that sales staff unintentionally miss.
+                   Tapito continuously analyzes fashion preferences, brand interests, and trend behavior to predict exactly what customers will need next—from matching footwear to new seasonal collections.
                  </p>
 
                  <ul className="space-y-6">
                    {[
-                     "Captures Cross-Selling Automatically",
-                     "Increases Average Basket Value",
-                     "Optimizes Marketing Spend with AI",
-                     "Drives Sales Incentive Motivation",
-                     "Reduces Revenue Leakage"
+                     "Personalized Style Recommendations",
+                     "AI-Based Outfit Pairing Suggestions",
+                     "Smart Customer Style Segmentation",
+                     "Seasonal New Stock Arrival Alerts",
+                     "Festive & Vacation Engagement Flows"
                    ].map((item, i) => (
                      <motion.li 
                        key={i} 
@@ -151,8 +173,9 @@ const BuildingMaterial = () => {
           </div>
         </motion.div>
         </Container>
+
         <Container>
-        {/* AI Sales Intelligence Engine Details */}
+        {/* AI Fashion Intelligence Engine Details */}
         <div className="mt-32 pt-32 border-t border-white/10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
              {/* Tapito Continuously Analyzes Card */}
@@ -167,8 +190,8 @@ const BuildingMaterial = () => {
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Analyzes Background" 
+                    src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Fashion Analyzes" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-transparent to-transparent" />
@@ -180,17 +203,15 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={ActivityIcon} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">
-                    Tapito Continuously Analyzes
-                  </h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Tapito Style Analytics</h3>
                   <div className="w-16 h-1 bg-blue-600/50 rounded-full mb-10" />
 
                   <div className="space-y-6">
                     {[
-                      "Building material purchase behavior",
-                      "Project-based product combinations",
-                      "Regional construction demand trends",
-                      "Counter sales staff performance"
+                      "Customer fashion preferences",
+                      "Seasonal shopping patterns",
+                      "Product pairing combinations",
+                      "Staff outfit-sales momentum"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -216,14 +237,14 @@ const BuildingMaterial = () => {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative p-10 lg:p-14 rounded-[2rem] border border-purple-500/20 overflow-hidden group shadow-2xl shadow-purple-500/5 min-h-[500px]"
+              className="relative p-10 lg:p-14 rounded-[2rem] border border-purple-500/20 overflow-hidden group shadow-2xl shadow-purple-500/5 min-h-[500px]"
              >
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Generates Background" 
+                    src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Fashion Generates" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-transparent" />
@@ -235,19 +256,19 @@ const BuildingMaterial = () => {
                     <AnimatedLucideIcon icon={Zap} size={32} className="group-hover:text-white" />
                   </div>
                   
-                  <h3 className="text-3xl font-black text-white mb-4">And Automatically Generates</h3>
+                  <h3 className="text-3xl font-black text-white mb-4">Automatically Recommends</h3>
                   <div className="w-24 h-1 bg-purple-600/50 rounded-full mb-10" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                     {[
-                      "Material recommendations",
-                      "Personalized project offers",
-                      "AI-based upsell suggestions",
-                      "Smart customer segmentation",
-                      "Follow-up reminders",
+                      "Personalized style matches",
+                      "AI-based outfit cross-selling",
+                      "Smart style-based segments",
+                      "Seasonal lookbook alerts",
+                      "Trend-driven promotions",
                       "Cross-category opportunities",
-                      "Automated campaigns",
-                      "Incentive-based motivation"
+                      "Automated engagement flows",
+                      "Incentive-based sales motivation"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -270,9 +291,10 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-blue-50 py-[80px] xl:py-[100px] 2xl:py-[160px] relative">
         <Container>
-        {/* Marketing Cost Reduction Section */}
+        {/* Style Performance Section */}
         <div className="">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
              {/* Left Content */}
@@ -290,20 +312,20 @@ const BuildingMaterial = () => {
 
                 <div className="relative z-10">
                   <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-                     Efficiency Gain
+                     Outfit Optimization
                   </div>
                   <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
-                    Reduce Marketing <br /> <span className="text-[#09358c]">Costs with AI</span>
+                    Maximize Every <br /> <span className="text-blue-900">Style Interaction</span>
                   </h2>
                   <p className="text-lg text-slate-500 leading-relaxed font-medium mb-12 max-w-xl">
-                    Traditional marketing in building materials often wastes money by targeting the wrong audience. Tapito ensures every rupee is spent on high-conversion project opportunities.
+                    Tapito transforms your fashion showroom into an intelligent style advisory system. No more missed opportunities for accessories or footwear when an outfit is sold.
                   </p>
                   
                   <div className="space-y-5">
                     {[
-                      "Eliminating unnecessary broad promotions",
-                      "Identifying high-conversion contractors",
-                      "Improving conversion rates through AI insights"
+                      "Linking outfits with matching accessories",
+                      "Automating seasonal collection follow-ups",
+                      "Real-time style pairing for floor staff"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -340,10 +362,10 @@ const BuildingMaterial = () => {
 
                 <div className="space-y-16 relative z-10">
                    {[
-                     { title: "Identify High-Conversion", desc: "Focus spend on customers most likely to purchase next for their construction phase.", icon: Target },
-                     { title: "Automate Campaigns", desc: "Reduce manual effort and agency costs with AI-driven triggers.", icon: Zap },
-                     { title: "Personalized Outreach", desc: "Eliminate generic spam with highly relevant project-based offers.", icon: Users },
-                     { title: "Maximize ROI", desc: "Achieve more revenue with significantly lower marketing spend.", icon: BarChart }
+                      { title: "AI Style Match Engine", desc: "Identify what customers are likely to purchase next based on style profiles.", icon: Shirt },
+                      { title: "Smart Outfit Pairing", desc: "Automatically trigger recommendations for matching items during sales.", icon: ShoppingBag },
+                      { title: "Automated Engagement", desc: "Run WhatsApp and SMS campaigns based on seasonal intent and trend cycles.", icon: MessageSquare },
+                      { title: "Revenue Opportunity Detection", desc: "Monitor hidden revenue opportunities and suggest actions to increase sales.", icon: BarChart }
                    ].map((item, i) => (
                      <motion.div 
                        key={i}
@@ -357,11 +379,11 @@ const BuildingMaterial = () => {
                         <div className="absolute -left-[32px] lg:-left-[48px] top-6 lg:top-8 flex items-center">
                            <motion.div 
                              animate={{ 
-                               scale: [1, 1.5, 1],
-                               backgroundColor: ["#60a5fa", "#2563eb", "#60a5fa"]
+                                scale: [1, 1.5, 1],
+                                backgroundColor: ["#60a5fa", "#2563eb", "#60a5fa"]
                              }}
                              transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
-                             className="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" 
+                             className="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_10px_rgba(96,165,244,0.5)]" 
                            />
                            <div className="w-4 lg:w-6 h-[2px] bg-gradient-to-r from-blue-400 to-blue-200" />
                         </div>
@@ -374,7 +396,7 @@ const BuildingMaterial = () => {
                           transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
                           className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white border border-blue-100 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-500 relative z-20"
                         >
-                           <AnimatedLucideIcon icon={item.icon} size={24} color="#09358c" />
+                           <AnimatedLucideIcon icon={item.icon} size={24} color="#1e3a8a" />
                         </motion.div>
                         
                         <div className="pt-1 lg:pt-3">
@@ -389,27 +411,28 @@ const BuildingMaterial = () => {
         </div>
         </Container>
       </div>
+
       <div className="bg-slate-900 py-[80px] xl:py-[100px] 2xl:py-[160px]">
         <Container>
         <div className="text-center">
-           <motion.div style={{ opacity }}>
+        <motion.div style={{ opacity }}>
               <span className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block">The Result</span>
               <h2 className="text-4xl md:text-6xl font-black text-white mb-20">
                 Business Impact
               </h2>
            </motion.div>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Increase average order value", desc: "Every construction project is maximized through intelligent AI recommendations.", icon: DollarSign },
-                { title: "Improve cross-category sales", desc: "Connect plumbing, tiles, and paints seamlessly within a single customer journey.", icon: Layers },
-                { title: "Reduce missed sales opportunities", desc: "Ensure no revenue leakage occurs due to human memory gaps or missed follow-ups.", icon: Target },
-                { title: "Increase repeat purchases", desc: "Keep customers coming back for every phase of their building project.", icon: Repeat },
-                { title: "Deliver personalized customer offers", desc: "High-conversion offers tailored exactly to what the project needs next.", icon: UserCheck },
-                { title: "Reduce marketing costs", desc: "Eliminate wasteful broad-market spend by targeting high-intent building material buyers.", icon: BarChart },
-                { title: "Motivate sales teams", desc: "Real-time incentive visibility drives better performance and staff retention.", icon: Users },
-                { title: "Automate customer engagement", desc: "24/7 engagement through WhatsApp and SMS without manual staff effort.", icon: MessageSquare },
-                { title: "Gain complete visibility", desc: "Deep insights into every aspect of your customer buying behavior.", icon: Search }
+                { title: "Increase Cart Value", desc: "Maximize revenue per visit through intelligent outfit pairings.", icon: DollarSign },
+                { title: "Improve Cross-Category Sales", desc: "Connect apparel, footwear, and accessories in one journey.", icon: Layers },
+                { title: "Capture Missed Revenue", desc: "Reduce missed upsell opportunities with automated AI-driven prompts.", icon: Target },
+                { title: "Increase Repeat Purchases", desc: "Keep customers returning through personalized seasonal engagement.", icon: Repeat },
+                { title: "Tailored Style Offers", desc: "Deliver personalized offers based on specific fashion aesthetics.", icon: UserCheck },
+                { title: "Lower Marketing Costs", desc: "Eliminate wasteful spend by targeting high-intent fashion buyers.", icon: BarChart },
+                { title: "Empowered Showroom Staff", desc: "Motivate fashion teams with real-time incentive visibility.", icon: Users },
+                { title: "Automate Engagement", desc: "24/7 personalized communication via WhatsApp and SMS.", icon: MessageSquare },
+                { title: "Style Profile Insights", desc: "Gain complete visibility into customer behavior and style trends.", icon: Search }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -443,4 +466,4 @@ const BuildingMaterial = () => {
   );
 };
 
-export default BuildingMaterial;
+export default Fashion;

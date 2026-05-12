@@ -40,7 +40,7 @@ const AnimatedLucideIcon = ({
       if (animatedRef.current?.startAnimation) {
         animatedRef.current.startAnimation();
       }
-    }, 1000 + Math.random() * 1000); 
+    }, 1000 + Math.random() * 5000); 
     return () => clearInterval(interval);
   }, [resolvedName]);
 

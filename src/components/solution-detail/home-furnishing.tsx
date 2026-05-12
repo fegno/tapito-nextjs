@@ -3,7 +3,27 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Container from "@/components/Container";
-import { CheckCircle2, Package, Home, PaintBucket, Lightbulb, Bath, Armchair, XCircle, Brain, Zap, MessageSquare, DollarSign, Layers, ShieldCheck, Repeat, UserCheck, BarChart, Users, Search, Target, Sofa, Lamp, Palette, Layout } from "lucide-react";
+import {
+  CheckCircle2,
+  Package,
+  Home,
+  Armchair,
+  XCircle,
+  Zap,
+  MessageSquare,
+  DollarSign,
+  Layers,
+  Repeat,
+  UserCheck,
+  BarChart,
+  Users,
+  Search,
+  Target,
+  Sofa,
+  Lamp,
+  Palette,
+  Layout
+} from "lucide-react";
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 
@@ -23,22 +43,23 @@ const HomeFurnishing = () => {
   const scale = useTransform(smoothProgress, [0, 0.2], [0.9, 1]);
 
   const needs = [
-    { icon: Layout, label: "Teapoys" },
-    { icon: Palette, label: "Rugs & Mats" },
-    { icon: Armchair, label: "Cushions" },
+    { icon: Layout, label: "Coffee Tables" },
+    { icon: Palette, label: "Carpets" },
+    { icon: Armchair, label: "Interior Accessories" },
     { icon: Lamp, label: "Lighting" },
     { icon: Home, label: "Wall Decor" },
     { icon: Package, label: "Curtains" },
+    { icon: Sofa, label: "Dining Furniture" },
+    { icon: Layout, label: "Storage Units" },
   ];
 
   const consequences = [
-    "Incomplete lifestyle selling",
-    "Single-category purchase leakage",
-    "Missed interior project opportunities",
-    "Weak customer 'room-view' data",
-    "Traditional static inventory pushing",
-    "Lower average order value (AOV)",
-    "Fragile customer loyalty"
+    "Missed cross-selling opportunities",
+    "Lower repeat purchases",
+    "Generic customer engagement",
+    "Weak customer retention",
+    "Unoptimized marketing spend",
+    "Poor visibility into customer preferences"
   ];
 
   return (
@@ -47,11 +68,11 @@ const HomeFurnishing = () => {
       <div className="bg-slate-900 py-[80px] xl:py-[100px] 2xl:py-[160px]">
         <motion.div 
           style={{ y: y1, opacity: 0.4 }}
-          className="absolute top-0 left-0 w-[500px] h-[500px] bg-indigo-600/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" 
+          className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-600/20 blur-[120px] rounded-full -translate-x-1/2 -translate-y-1/2" 
         />
         <motion.div 
           style={{ y: y2, opacity: 0.3 }}
-          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 blur-[150px] rounded-full translate-x-1/4 translate-y-1/4" 
+          className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full translate-x-1/4 translate-y-1/4" 
         />
       <Container>
         <motion.div style={{ opacity, scale }}>
@@ -60,19 +81,19 @@ const HomeFurnishing = () => {
               <motion.span 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                className="text-xs font-black tracking-[0.3em] uppercase text-indigo-400 mb-6 block"
+                className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block"
               >
                 The Retail Gap
               </motion.span>
               <h2 className="text-3xl md:text-5xl font-black text-white mb-8 leading-tight">
-                Why Home Furnishing <br /> <span className="text-indigo-500">Sales Stay Stagnant</span>
+                Why Home Furnishing <br /> <span className="text-blue-500">Businesses Lose Revenue</span>
               </h2>
               <p className="text-lg text-slate-400 mb-10 leading-relaxed">
-                Most customers walk in for a specific item like a sofa. Without intelligent prompts, sales teams fail to sell the complete lifestyle vision, leaving 60% of the potential project revenue on the table.
+                Most furniture and furnishing businesses focus only on the customer's current purchase. They miss the broader interior intent, leaving significant revenue on the table due to disconnected systems.
               </p>
               
               <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 lg:p-12 relative overflow-hidden group">
-                 <div className="text-sm font-bold mb-3 text-indigo-500 uppercase tracking-widest">Furnishing Case Study</div>
+                 <div className="text-sm font-bold mb-3 text-blue-500 uppercase tracking-widest">Furnishing Case Study</div>
                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
                   The "Sofa-Only" Purchase Trap
                 </h4>
@@ -85,7 +106,7 @@ const HomeFurnishing = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.05 }}
-                      className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-indigo-600/20 transition-all"
+                      className="flex items-center gap-3 bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-blue-600/20 transition-all"
                     >
                       <AnimatedLucideIcon icon={item.icon} size={18} color="white" />
                       <span className="text-sm font-bold text-slate-300">{item.label}</span>
@@ -117,20 +138,20 @@ const HomeFurnishing = () => {
                  </div>
 
                  <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-6 leading-tight">
-                   From Single Items to <br /> <span className="text-indigo-900">Curated Spaces</span>
+                   The AI Interior <br /> <span className="text-indigo-900">Commerce Engine</span>
                  </h3>
 
                  <p className="text-slate-600 mb-10 leading-relaxed font-medium">
-                   Tapito uses AI to understand visual compatibility and project intent. When a sofa is sold, it automatically suggests the perfect teapoy and rug based on aesthetic data.
+                   Tapito continuously analyzes customer preferences, purchase behavior, and seasonal patterns to predict exactly what they'll need next—from storage solutions to dining sets.
                  </p>
 
                  <ul className="space-y-6">
                    {[
-                     "Automated Aesthetic Recommendations",
-                     "Increases Lifestyle Bundle Sales",
-                     "Predictive Room-Completion Triggers",
-                     "Real-time Cross-Selling for Staff",
-                     "Hyper-Personalized Decor Campaigns"
+                     "Personalized Product Recommendations",
+                     "AI-Based Upsell Suggestions",
+                     "Interior Styling Recommendations",
+                     "Customer Follow-up Reminders",
+                     "Cross-Category Sales Triggers"
                    ].map((item, i) => (
                      <motion.li 
                        key={i} 
@@ -139,7 +160,7 @@ const HomeFurnishing = () => {
                        transition={{ delay: i * 0.1 }}
                        className="flex items-start gap-4"
                      >
-                       <div className="w-6 h-6 rounded-full bg-indigo-500/10 text-indigo-500 flex items-center justify-center shrink-0 mt-1">
+                       <div className="w-6 h-6 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0 mt-1">
                          <CheckCircle2 size={14} />
                        </div>
                        <span className="text-slate-700 font-bold">{item}</span>
@@ -168,7 +189,7 @@ const HomeFurnishing = () => {
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1000" 
+                    src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=1000" 
                     alt="Living Room Analyzes" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
@@ -186,10 +207,10 @@ const HomeFurnishing = () => {
 
                   <div className="space-y-6">
                     {[
-                      "Home furnishing visual pairings",
-                      "Lifestyle-based category logic",
-                      "Customer interior design intent",
-                      "Floor staff conversion velocity"
+                      "Customer lifestyle preferences",
+                      "Seasonal buying patterns",
+                      "Product category combinations",
+                      "Staff sales performance momentum"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -215,38 +236,38 @@ const HomeFurnishing = () => {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.8 }}
-               className="relative p-10 lg:p-14 rounded-[2rem] border border-pink-500/20 overflow-hidden group shadow-2xl shadow-pink-500/5 min-h-[500px]"
+               className="relative p-10 lg:p-14 rounded-[2rem] border border-purple-500/20 overflow-hidden group shadow-2xl shadow-purple-500/5 min-h-[500px]"
              >
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0">
                   <div className="absolute inset-0 bg-slate-950" />
                   <img 
-                    src="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Interior Design Generates" 
+                    src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=1000" 
+                    alt="Furnishing Generates" 
                     className="w-full h-full object-cover opacity-40 mix-blend-overlay group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-pink-600/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-transparent" />
                 </div>
 
                 <div className="relative z-10">
                   {/* Top Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-pink-600/10 flex items-center justify-center text-pink-500 mb-8 border border-pink-500/20  transition-all duration-500">
+                  <div className="w-16 h-16 rounded-2xl bg-purple-600/10 flex items-center justify-center text-purple-500 mb-8 border border-purple-500/20  transition-all duration-500">
                     <AnimatedLucideIcon icon={Zap} size={32} className="group-hover:text-white" />
                   </div>
                   
                   <h3 className="text-3xl font-black text-white mb-4">Automatically Recommends</h3>
-                  <div className="w-24 h-1 bg-pink-600/50 rounded-full mb-10" />
+                  <div className="w-24 h-1 bg-purple-600/50 rounded-full mb-10" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                     {[
-                      "Perfect Teapoy matches",
-                      "Visual rug compatibility",
-                      "Coordinated cushion sets",
-                      "Wall art pairings",
-                      "Project-based decor offers",
-                      "Lifestyle upgrade triggers",
-                      "AI-curated room lookbooks",
-                      "Incentive-driven cross-sales"
+                      "Personalized style matches",
+                      "AI-based interior cross-selling",
+                      "Smart style-based segments",
+                      "Lookbook replenishment alerts",
+                      "Style-driven promotions",
+                      "Cross-category opportunities",
+                      "Automated engagement flows",
+                      "Incentive-based sales motivation"
                     ].map((text, i) => (
                       <motion.div 
                         key={i} 
@@ -256,7 +277,7 @@ const HomeFurnishing = () => {
                         transition={{ delay: i * 0.05 }}
                         className="flex items-center gap-4 text-slate-300 font-bold text-[15px]"
                       >
-                        <div className="w-6 h-6 rounded-full bg-pink-600 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(219,39,119,0.4)]">
+                        <div className="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(147,51,234,0.4)]">
                            <CheckCircle2 size={14} className="text-white" />
                         </div>
                         {text}
@@ -328,7 +349,7 @@ const HomeFurnishing = () => {
                 {/* Vertical Line with Flowing Animation */}
                 <div className="absolute left-[23px] lg:left-[39px] top-3 bottom-8 w-[3px] bg-slate-200 rounded-full overflow-hidden">
                    <motion.div 
-                     className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-indigo-400 to-transparent"
+                     className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-blue-400 to-transparent"
                      animate={{ y: ["-160px", "600px"] }}
                      transition={{ 
                         duration: 3, 
@@ -340,10 +361,10 @@ const HomeFurnishing = () => {
 
                 <div className="space-y-16 relative z-10">
                    {[
-                     { title: "Identify Lifestyle Intent", desc: "Understand if they are furnishing a room or just buying a single replacement.", icon: Sofa },
-                     { title: "Smart Teapoy Pairing", desc: "Suggest tables and mats that visually match the primary furniture selection.", icon: Layout },
-                     { title: "Automate Room-View", desc: "Send personalized lookbooks of matching decor to their WhatsApp instantly.", icon: MessageSquare },
-                     { title: "Measure Staff Upsell", desc: "Track which staff members are successfully selling the complete lifestyle.", icon: BarChart }
+                      { title: "AI Recommendation Engine", desc: "Identify what customers are likely to purchase next based on behavioral patterns.", icon: Sofa },
+                      { title: "Smart Cross-Selling Logic", desc: "Automatically trigger recommendations for complementary accessories during sales.", icon: Layout },
+                      { title: "Automated Engagement", desc: "Run WhatsApp and SMS campaigns based on customer activity and buying intent.", icon: MessageSquare },
+                      { title: "Revenue Opportunity Detection", desc: "Monitor hidden revenue opportunities and suggest actions to increase sales.", icon: BarChart }
                    ].map((item, i) => (
                      <motion.div 
                        key={i}
@@ -369,16 +390,16 @@ const HomeFurnishing = () => {
                         {/* Timeline Icon with Pulse */}
                         <motion.div 
                           animate={{ 
-                            boxShadow: ["0 0 0px rgba(79, 70, 229, 0)", "0 0 20px rgba(79, 70, 229, 0.2)", "0 0 0px rgba(79, 70, 229, 0)"]
+                            boxShadow: ["0 0 0px rgba(37, 99, 235, 0)", "0 0 20px rgba(37, 99, 235, 0.2)", "0 0 0px rgba(37, 99, 235, 0)"]
                           }}
                           transition={{ duration: 3, repeat: Infinity, delay: i * 0.8 }}
-                          className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white border border-indigo-100 flex items-center justify-center text-indigo-600 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-500 relative z-20"
+                          className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-white border border-blue-100 flex items-center justify-center text-blue-600 shadow-sm shrink-0 group-hover:scale-110 transition-transform duration-500 relative z-20"
                         >
-                           <AnimatedLucideIcon icon={item.icon} size={24} color="#312e81" />
+                           <AnimatedLucideIcon icon={item.icon} size={24} color="#1e3a8a" />
                         </motion.div>
                         
                         <div className="pt-1 lg:pt-3">
-                           <h4 className="text-xl font-black text-slate-900 mb-2 group-hover:text-indigo-600 transition-colors">{item.title}</h4>
+                           <h4 className="text-xl font-black text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">{item.title}</h4>
                            <p className="text-slate-500 font-medium leading-relaxed max-w-sm">{item.desc}</p>
                         </div>
                      </motion.div>
@@ -394,23 +415,23 @@ const HomeFurnishing = () => {
         <Container>
         <div className="text-center">
         <motion.div style={{ opacity }}>
-              <span className="text-xs font-black tracking-[0.3em] uppercase text-indigo-400 mb-6 block">The Result</span>
+              <span className="text-xs font-black tracking-[0.3em] uppercase text-blue-400 mb-6 block">The Result</span>
               <h2 className="text-4xl md:text-6xl font-black text-white mb-20">
-                Lifestyle Impact
+                Business Impact
               </h2>
            </motion.div>
            
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { title: "Higher Average Basket", desc: "Every sofa sale becomes a living room project sale through AI curation.", icon: DollarSign },
-                { title: "Visual Style Alignment", desc: "Tapito ensures suggested accessories match the visual aesthetic automatically.", icon: Layers },
-                { title: "Improved Showroom ROI", desc: "Maximize the revenue potential of every walk-in customer with logic.", icon: Target },
-                { title: "Deeper Customer Retention", desc: "Customers return to complete their room as Tapito triggers future needs.", icon: Repeat },
-                { title: "Curated Style Recommendations", desc: "Automated lookbooks sent via WhatsApp for high-conversion engagement.", icon: UserCheck },
-                { title: "Lower Customer Acquisition", desc: "Increase revenue from existing visitors instead of buying more ads.", icon: BarChart },
-                { title: "Empowered Sales Staff", desc: "Equip floor teams with AI designers to help close complex bundle deals.", icon: Users },
-                { title: "24/7 Lifestyle Engagement", desc: "Automated project follow-ups via WhatsApp, SMS and AI voice calls.", icon: MessageSquare },
-                { title: "Style Performance Data", desc: "Understand which aesthetic trends are driving the most revenue.", icon: Search }
+                { title: "Higher Average Basket", desc: "Increase average order value through intelligent cross-category recommendations.", icon: DollarSign },
+                { title: "Improve Cross-Category Sales", desc: "Connect furniture, curtains, and lighting seamlessly in one journey.", icon: Layers },
+                { title: "Capture Missed Revenue", desc: "Reduce missed sales opportunities with automated AI-driven prompts.", icon: Target },
+                { title: "Increase Repeat Purchases", desc: "Keep customers returning through personalized lifecycle engagement.", icon: Repeat },
+                { title: "Tailored Customer Offers", desc: "Deliver personalized offers based on specific furnishing interests.", icon: UserCheck },
+                { title: "Lower Marketing Costs", desc: "Eliminate wasteful spend by targeting high-intent project buyers.", icon: BarChart },
+                { title: "Empowered Sales Staff", desc: "Motivate showroom teams with real-time incentive visibility.", icon: Users },
+                { title: "Automate Engagement", desc: "24/7 personalized communication via WhatsApp and SMS.", icon: MessageSquare },
+                { title: "Customer Preference Insights", desc: "Gain complete visibility into customer behavior and style trends.", icon: Search }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -422,16 +443,16 @@ const HomeFurnishing = () => {
                   className="group flex flex-col items-start gap-6 p-8 rounded-[2.5rem] border border-white/5 bg-white/[0.02] transition-all text-left relative overflow-hidden"
                 >
                    {/* Background Accent */}
-                   <div className="absolute left-0 top-0 w-1 h-full bg-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                   <div className="absolute left-0 top-0 w-1 h-full bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                    
-                   <div className="flex w-full justify-between items-start">
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-600/10 flex items-center justify-center shrink-0">
-                         <item.icon className="text-indigo-500 group-hover:scale-110 transition-transform" size={24} />
-                      </div>
-                   </div>
+                    <div className="flex w-full justify-between items-start">
+                       <div className="w-12 h-12 rounded-2xl bg-blue-600/10 flex items-center justify-center shrink-0">
+                          <AnimatedLucideIcon icon={item.icon} size={24} color="#3b82f6" className="group-hover:scale-110 transition-transform" />
+                       </div>
+                    </div>
                    
                    <div>
-                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors leading-tight">{item.title}</h4>
+                      <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-tight">{item.title}</h4>
                       <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
                    </div>
                 </motion.div>

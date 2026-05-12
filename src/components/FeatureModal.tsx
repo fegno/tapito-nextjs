@@ -258,7 +258,7 @@ const FeatureGraphic = ({ slug, icon: Icon }: { slug: string; icon: LucideIcon }
         return (
           <div className="w-full space-y-5 px-4">
             <div className="bg-white p-6 rounded-[2.5rem] shadow-2xl border border-slate-50 relative overflow-hidden group">
-              <div className="text-[9px] font-black text-slate-400 mb-2 uppercase tracking-[0.2em]">Growth Velocity</div>
+              <div className="text-[9px] font-black text-slate-400 mb-2 uppercase tracking-[0.2em]">Growth Momentum</div>
               <div className="flex items-baseline gap-2 mb-4">
                 <div className="text-5xl font-black text-emerald-500 tracking-tighter">+25.4%</div>
                 <TrendingUp size={24} className="text-emerald-500 animate-bounce" />

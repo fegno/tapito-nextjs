@@ -196,7 +196,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     readTime: "9 min read",
     image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop",
     headline: "Unifying Omni-Channel Data for Furniture Retailers",
-    summary: "NestWell consolidated every showroom and online touchpoint into one high-velocity growth engine.",
+    summary: "NestWell consolidated every showroom and online touchpoint into one high-growth growth engine.",
     author: "Robert Miller",
     overview: "High-ticket items like furniture require multi-touch attribution and deep customer profiling to close sales over time.",
     tag: "Omni-Channel",

@@ -402,7 +402,7 @@ export const featureDetails: Record<FeatureSlug, FeatureDetail> = {
     problem:
       "Retail teams often discover profit pressure only after the month closes, when it is too late to change the outcome.",
     insight:
-      "Tapito detects future margin risk by combining seasonality, cost movement, sales velocity, and scenario modeling.",
+      "Tapito detects future margin risk by combining seasonality, cost movement, sales momentum, and scenario modeling.",
     outcome:
       "Leaders protect profitability earlier and invest with far more confidence.",
     layoutType: "forecast-panel",

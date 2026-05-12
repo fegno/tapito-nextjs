@@ -180,7 +180,7 @@ export default function SmartAnalyticsPage() {
               <div className="mt-12 space-y-6">
                 {[
                   { label: "Margin Protection", value: "92/100", color: "bg-emerald-500" },
-                  { label: "Stock Velocity", value: "78/100", color: "bg-[#05a0ec]" },
+                  { label: "Stock Momentum", value: "78/100", color: "bg-[#05a0ec]" },
                   { label: "Staff Performance", value: "64/100", color: "bg-rose-500" },
                 ].map((item, idx) => (
                   <motion.div key={item.label} {...fadeUp(0.2 + idx * 0.1)} className="space-y-3">

@@ -237,7 +237,7 @@ export default function GrowthSimulatorPage() {
             <motion.h2 {...fadeUp(0.08)} className="mt-4 text-3xl md:text-4xl font-black tracking-[-0.05em] text-slate-950 uppercase tracking-tight">Growth bets become testable beforehand.</motion.h2>
           </div>
           <motion.div variants={staggerContainer} initial="initial" whileInView="whileInView" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[["3x confidence", "Launch precision", "Projected vs actual rollout accuracy"], ["+40% speed", "Execution velocity", "Time saved in scenario justification"], ["Risk-Zero", "Strategy de-risking", "Modeled tradeoffs before budget deployment"]].map(([value, label, note], index) => (
+            {[["3x confidence", "Launch precision", "Projected vs actual rollout accuracy"], ["+40% speed", "Execution momentum", "Time saved in scenario justification"], ["Risk-Zero", "Strategy de-risking", "Modeled tradeoffs before budget deployment"]].map(([value, label, note], index) => (
               <motion.div key={label} {...fadeUp(index * 0.15)} {...cardHover} className={`rounded-[2rem] md:rounded-[3.5rem] border border-slate-200 bg-white p-8 lg:p-14 text-center group hover:bg-[#09358c]/5 transition-all shadow-sm ${index === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}>
                 <motion.p animate={{ y: [0, -8, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#09358c] transition-transform group-hover:scale-110">{value.split(' ')[0]}</motion.p>
                 <p className="mt-6 text-xl lg:text-2xl font-black text-slate-950 uppercase tracking-tighter break-words">{label}</p>
