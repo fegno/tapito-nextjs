@@ -2,33 +2,12 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Database,
-  Building2,
-  FileSpreadsheet,
-  ClipboardList,
-  ShoppingCart,
-  BarChart3,
-  Settings,
-  FileText,
-  CheckCircle,
-  Table,
-  LayoutGrid,
-  Banknote,
-  Wallet,
-  Box,
-  Network,
-  TrendingUp,
-  Zap,
-  PieChart,
-  UserCheck,
-  Bell
-} from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { cn } from "@/lib/utils";
 
 // Types for the components
 interface ItemBoxProps {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   color: string;
   className?: string;
@@ -48,19 +27,19 @@ const ItemBox = ({ icon, title, color, className, delay = 0 }: ItemBoxProps) => 
     style={{ borderColor: color }}
   >
     <div className="p-2 rounded-md" style={{ color: color, backgroundColor: `${color}10` }}>
-      {React.isValidElement(icon) ? React.cloneElement(icon as React.ReactElement<any>, { size: 20, strokeWidth: 2.5 }) : icon}
+      <AnimatedLucideIcon name={icon} size={20} strokeWidth={2.5} />
     </div>
     <span className="font-bold text-slate-800 text-[14px] sm:text-[16px] xl:text-[18px] tracking-tight">{title}</span>
   </motion.div>
 );
 
-const GroupIcon = ({ label, icons, colorClass = "text-blue-500" }: { label: string, icons: React.ReactNode[], colorClass?: string }) => (
+const GroupIcon = ({ label, icons, colorClass = "text-blue-500" }: { label: string, icons: string[], colorClass?: string }) => (
   <div className="flex flex-col items-start 2xl:items-center gap-2">
     <div className="relative w-20 h-20 rounded-3xl flex items-center justify-center bg-slate-50/50 p-3 overflow-hidden group transition-colors">
       <div className="grid grid-cols-2 gap-2">
         {icons.map((icon, i) => (
           <div key={i} className={cn("transition-colors", colorClass)}>
-            {React.isValidElement(icon) ? React.cloneElement(icon as React.ReactElement<any>, { size: 16 }) : icon}
+            <AnimatedLucideIcon name={icon} size={16} />
           </div>
         ))}
       </div>
@@ -69,10 +48,10 @@ const GroupIcon = ({ label, icons, colorClass = "text-blue-500" }: { label: stri
   </div>
 );
 
-const RightItem = ({ icon: Icon, label, colorClass = "text-blue-500" }: { icon: any, label: string, colorClass?: string }) => (
+const RightItem = ({ icon, label, colorClass = "text-blue-500" }: { icon: string, label: string, colorClass?: string }) => (
   <div className="flex flex-col items-end lg:items-center gap-2 group cursor-pointer">
     <div className={cn("w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center transition-all duration-300 group-hover:bg-blue-50 group-hover:border-blue-100 group-hover:scale-110 shadow-sm", colorClass)}>
-      <Icon size={24} />
+      <AnimatedLucideIcon name={icon} size={24} />
     </div>
     <span className="text-[10px] font-black text-slate-700 uppercase tracking-tight text-center max-w-[80px] group-hover:text-slate-900 transition-colors leading-tight">
       {label}
@@ -160,22 +139,22 @@ export default function OverViewCard() {
           <GroupIcon
             label="ERP / CRM"
             colorClass="text-[#09358c]"
-            icons={[<Building2 key="1" />, <Box key="2" />, <Database key="3" />, <Network key="4" />]}
+            icons={["Building2", "Box", "Database", "Network"]}
           />
           <GroupIcon
             label="Process / SOP"
             colorClass="text-emerald-600"
-            icons={[<ClipboardList key="1" />, <Settings key="2" />, <FileText key="3" />, <CheckCircle key="4" />]}
+            icons={["ClipboardList", "Settings", "FileText", "CheckCircle"]}
           />
           <GroupIcon
             label="Excel / CSV"
             colorClass="text-amber-600"
-            icons={[<FileSpreadsheet key="1" />, <Table key="2" />, <LayoutGrid key="3" />, <FileText key="4" />]}
+            icons={["FileSpreadsheet", "Table", "LayoutGrid", "FileText"]}
           />
           <GroupIcon
             label="Sales / POS"
             colorClass="text-rose-600"
-            icons={[<ShoppingCart key="1" />, <Banknote key="2" />, <Wallet key="3" />, <PieChart key="4" />]}
+            icons={["ShoppingCart", "Banknote", "Wallet", "PieChart"]}
           />
         </div>
 
@@ -195,10 +174,10 @@ export default function OverViewCard() {
               </div>
 
               <div className="w-full flex flex-col gap-4 w-[230px]">
-                <ItemBox icon={<Network />} title="Data Integration" color="#06dcc3" delay={0.1} />
-                <ItemBox icon={<Zap />} title="Campaign Automation" color="#05a0ec" delay={0.2} />
-                <ItemBox icon={<TrendingUp />} title="Live Analytics" color="#09358c" delay={0.3} />
-                <ItemBox icon={<UserCheck />} title="Decision Support" color="#05a0ec" delay={0.4} />
+                <ItemBox icon="Network" title="Data Integration" color="#06dcc3" delay={0.1} />
+                <ItemBox icon="Zap" title="Campaign Automation" color="#05a0ec" delay={0.2} />
+                <ItemBox icon="TrendingUp" title="Live Analytics" color="#09358c" delay={0.3} />
+                <ItemBox icon="UserCheck" title="Decision Support" color="#05a0ec" delay={0.4} />
               </div>
             </div>
           </motion.div>
@@ -206,13 +185,13 @@ export default function OverViewCard() {
 
         {/* Right Column: Key Outputs - Colorful */}
         <div className="flex flex-col gap-12 items-center">
-          <RightItem icon={BarChart3} label="CEO View" colorClass="text-[#09358c]" />
-          <RightItem icon={PieChart} label="Reports" colorClass="text-[#05a0ec]" />
-          <RightItem icon={Bell} label="Alerts" colorClass="text-[#06dcc3]" />
-          <RightItem icon={FileSpreadsheet} label="Exports" colorClass="text-emerald-600" />
+          <RightItem icon="BarChart3" label="CEO View" colorClass="text-[#09358c]" />
+          <RightItem icon="PieChart" label="Reports" colorClass="text-[#05a0ec]" />
+          <RightItem icon="Bell" label="Alerts" colorClass="text-[#06dcc3]" />
+          <RightItem icon="FileSpreadsheet" label="Exports" colorClass="text-emerald-600" />
         </div>
 
       </div>
     </div>
   );
-}
+}

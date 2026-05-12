@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Mail, MessageSquare, Phone, Repeat, Clock, Bell, Gift, MessageCircle, Database, CreditCard } from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import Container from "./Container";
 
 const workflows = [
-  { icon: Mail, title: "Lapsed Customer Win-back", trigger: "Customer hasn't purchased in 60 days", action: "Send personalized discount via Email" },
-  { icon: MessageSquare, title: "High Value Alert", trigger: "Purchase over $500", action: "Trigger WhatsApp concierge welcome" },
-  { icon: Repeat, title: "Subscription Upsell", trigger: "3rd repeat purchase", action: "Offer subscription discount" },
+  { icon: "Mail", title: "Lapsed Customer Win-back", trigger: "Customer hasn't purchased in 60 days", action: "Send personalized discount via Email" },
+  { icon: "MessageSquare", title: "High Value Alert", trigger: "Purchase over $500", action: "Trigger WhatsApp concierge welcome" },
+  { icon: "Repeat", title: "Subscription Upsell", trigger: "3rd repeat purchase", action: "Offer subscription discount" },
 ];
 
 export default function Automation() {
@@ -35,18 +35,18 @@ export default function Automation() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                    <flow.icon size={20} />
+                    <AnimatedLucideIcon name={flow.icon} size={20} />
                   </div>
                   <h4 className="text-xl font-bold text-slate-900">{flow.title}</h4>
                 </div>
                 <div className="flex flex-col gap-3">
                    <div className="flex items-center gap-2 text-sm text-slate-500">
-                      <Clock size={14} />
+                      <AnimatedLucideIcon name="Clock" size={14} />
                       <span className="font-semibold uppercase text-[10px] tracking-wider text-slate-400">Trigger:</span>
                       {flow.trigger}
                    </div>
                    <div className="flex items-center gap-2 text-sm font-medium text-blue-600">
-                      <Zap size={14} className="fill-blue-600" />
+                      <AnimatedLucideIcon name="Zap" size={14} className="fill-blue-600" />
                       <span className="font-semibold uppercase text-[10px] tracking-wider text-blue-400">Action:</span>
                       {flow.action}
                    </div>
@@ -59,34 +59,34 @@ export default function Automation() {
             <div className="aspect-square bg-white rounded-[30px] shadow-2xl overflow-hidden border border-slate-100 flex items-center justify-center p-[10px]">
                <div className="w-full h-full relative">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-blue-600 shadow-lg flex items-center justify-center text-white z-10">
-                     <Zap size={32} />
+                     <AnimatedLucideIcon name="Zap" size={32} />
                   </div>
                   <div className="absolute top-16 left-1/2 -translate-x-1/2 w-0.5 h-full bg-slate-100" />
                   
                   <div className="absolute top-1/4 left-0 w-full flex justify-between px-12">
                      <div className="w-12 h-12 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center justify-center animate-bounce" style={{ animationDuration: "3s" }}>
-                        <Mail className="text-blue-500" />
+                        <AnimatedLucideIcon name="Mail" className="text-blue-500" />
                      </div>
                      <div className="w-12 h-12 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center justify-center animate-bounce" style={{ animationDuration: "2.5s", animationDelay: "0.5s" }}>
-                        <Bell className="text-amber-500" />
+                        <AnimatedLucideIcon name="Bell" className="text-amber-500" />
                      </div>
                   </div>
 
                   <div className="absolute top-1/2 left-0 w-full flex justify-around px-8">
                      <div className="w-10 h-10 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center animate-pulse" style={{ animationDuration: "2s" }}>
-                        <Database className="text-slate-800" size={18} />
+                        <AnimatedLucideIcon name="Database" className="text-slate-800" size={18} />
                      </div>
                      <div className="w-12 h-12 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center justify-center animate-bounce" style={{ animationDuration: "2.8s", animationDelay: "0.7s" }}>
-                        <MessageSquare className="text-blue-500" />
+                        <AnimatedLucideIcon name="MessageSquare" className="text-blue-500" />
                      </div>
                      <div className="w-10 h-10 rounded-xl bg-white shadow-md border border-slate-100 flex items-center justify-center animate-pulse" style={{ animationDuration: "2.2s", animationDelay: "0.3s" }}>
-                        <CreditCard className="text-emerald-500" size={18} />
+                        <AnimatedLucideIcon name="CreditCard" className="text-emerald-500" size={18} />
                      </div>
                   </div>
 
                   <div className="absolute top-[70%] left-0 w-full flex justify-center px-4">
                      <div className="w-14 h-14 rounded-2xl bg-white shadow-xl border-2 border-emerald-50 flex items-center justify-center animate-bounce" style={{ animationDuration: "2.4s", animationDelay: "0.4s" }}>
-                        <MessageCircle className="text-emerald-600" size={28} />
+                        <AnimatedLucideIcon name="MessageCircle" className="text-emerald-600" size={28} />
                         <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-500 rounded-full border-2 border-white" />
                      </div>
                   </div>
@@ -103,3 +103,4 @@ export default function Automation() {
     </section>
   );
 }
+

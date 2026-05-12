@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useState, forwardRef, useEffect } from "react";
-import {
-  LayoutDashboard,
-  BrainCircuit,
-  Zap,
-  TrendingUp,
-  Bot,
-  Smartphone,
-  Sparkles,
-  Gem,
-  Rocket
-} from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Container from "./Container";
@@ -19,15 +9,15 @@ import Orb from "./Orb";
 import AnimatedBorderLargeSVG from "./ui/animating-border-large";
 
 const items = [
-  { icon: LayoutDashboard, text: "Business Intelligence Dashboard", side: 'top' },
-  { icon: BrainCircuit,    text: "AI Smart Analytics Engine",       side: 'top' },
-  { icon: Zap,             text: "Campaign Automation",             side: 'left' },
-  { icon: TrendingUp,      text: "Revenue Growth Insights",         side: 'left' },
-  { icon: Bot,             text: "AI Assistant with Voice Commands", side: 'right' },
-  { icon: Smartphone,      text: "Mobile App for Real-Time Decisions", side: 'right' },
-  { icon: Sparkles,        text: "Smart Scheme Generator",          side: 'right' },
-  { icon: Gem,             text: "Predictive Profitability Engine",  side: 'bottom' },
-  { icon: Rocket,          text: "Growth Simulator",                side: 'bottom' },
+  { icon: "LayoutDashboard", text: "Business Intelligence Dashboard", side: 'top' },
+  { icon: "BrainCircuit",    text: "AI Smart Analytics Engine",       side: 'top' },
+  { icon: "Zap",             text: "Campaign Automation",             side: 'left' },
+  { icon: "TrendingUp",      text: "Revenue Growth Insights",         side: 'left' },
+  { icon: "Bot",             text: "AI Assistant with Voice Commands", side: 'right' },
+  { icon: "Smartphone",      text: "Mobile App for Real-Time Decisions", side: 'right' },
+  { icon: "Sparkles",        text: "Smart Scheme Generator",          side: 'right' },
+  { icon: "Gem",             text: "Predictive Profitability Engine",  side: 'bottom' },
+  { icon: "Rocket",          text: "Growth Simulator",                side: 'bottom' },
 ];
 
 
@@ -76,15 +66,16 @@ const FeatureCard = forwardRef<HTMLDivElement, { item: typeof items[0]; index: n
       <div
         className={cn(
           "w-12 h-12 shrink-0 rounded-lg bg-white/5 border border-white/10",
-          "flex items-center justify-center transition-colors duration-500",
+          "flex items-center justify-center transition-colors duration-500 text-white",
           isLeft || isTop
             ? "group-hover:text-[#05a0ec]"
             : "group-hover:text-[#06dcc3]"
         )}
       >
-        <item.icon
+        <AnimatedLucideIcon
+          name={item.icon}
           size={22}
-          className="text-slate-400 group-hover:text-inherit transition-colors"
+          className="text-white transition-colors"
         />
       </div>
 
@@ -96,6 +87,7 @@ const FeatureCard = forwardRef<HTMLDivElement, { item: typeof items[0]; index: n
     </motion.div>
   );
 });
+
 
 FeatureCard.displayName = "FeatureCard";
 

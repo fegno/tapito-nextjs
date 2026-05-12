@@ -1,16 +1,16 @@
 "use client";
 
-import { Building2, ShoppingCart, Shirt, Utensils, Laptop, Sparkles, ArrowRight } from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { motion } from "framer-motion";
 import Container from "./Container";
 
 const industries = [
-  { icon: Building2, name: "Retail Chains", desc: "Consolidate data across 100+ locations." },
-  { icon: ShoppingCart, name: "Supermarkets", desc: "Optimize inventory and basket value." },
-  { icon: Shirt, name: "Fashion & Apparel", desc: "Trend forecasting and loyalty tracking." },
-  { icon: Utensils, name: "F&B Chains", desc: "Time-of-day analytics and menu optimization." },
-  { icon: Laptop, name: "Electronics", desc: "Track high-value item lifecycles." },
-  { icon: Sparkles, name: "Beauty & Wellness", desc: "Personalized replenishment reminders." },
+  { icon: "Building2", name: "Retail Chains", desc: "Consolidate data across 100+ locations." },
+  { icon: "ShoppingCart", name: "Supermarkets", desc: "Optimize inventory and basket value." },
+  { icon: "Shirt", name: "Fashion & Apparel", desc: "Trend forecasting and loyalty tracking." },
+  { icon: "Utensils", name: "F&B Chains", desc: "Time-of-day analytics and menu optimization." },
+  { icon: "Laptop", name: "Electronics", desc: "Track high-value item lifecycles." },
+  { icon: "Sparkles", name: "Beauty & Wellness", desc: "Personalized replenishment reminders." },
 ];
 
 export default function Audience() {
@@ -36,7 +36,7 @@ export default function Audience() {
               className="bg-white p-8 rounded-3xl border border-slate-100 hover:border-blue-200 transition-all hover:shadow-lg group"
             >
               <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all flex items-center justify-center mb-6">
-                <item.icon size={28} />
+                <AnimatedLucideIcon name={item.icon} size={28} />
               </div>
               <h4 className="text-2xl font-bold text-slate-900 mb-2">{item.name}</h4>
               <p className="text-slate-500 leading-relaxed">{item.desc}</p>
@@ -55,10 +55,11 @@ export default function Audience() {
             className="btn-premium px-12 py-5 text-lg group flex items-center gap-3"
           >
             View More Solutions
-            <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform duration-300" />
+            <AnimatedLucideIcon name="ArrowRight" size={20} className="group-hover:translate-x-2 transition-transform duration-300" />
           </motion.a>
         </div>
       </Container>
     </section>
   );
 }
+

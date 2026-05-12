@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BarChart3, TrendingUp, Zap, ArrowRight } from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import Link from "next/link";
 import Container from "./Container";
 import OverViewCard from "./overview-card";
@@ -19,7 +19,7 @@ export default function Overview() {
             className="space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100  text-xs font-bold uppercase tracking-widest text-[#09358c]">
-              <BarChart3 size={14} color="#09358c" />
+              <AnimatedLucideIcon name="BarChart3" size={14} color="#09358c" />
               PLATFORM OVERVIEW
             </div>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
@@ -37,7 +37,7 @@ export default function Overview() {
               >
                 <span>Explore More</span>
                 <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#09358c] transition-all duration-300">
-                  <ArrowRight size={14} />
+                  <AnimatedLucideIcon name="ArrowRight" size={14} />
                 </div>
               </Link>
             </div>
@@ -57,3 +57,4 @@ export default function Overview() {
     </section>
   );
 }
+

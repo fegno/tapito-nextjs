@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Bot, Search, ChevronRight, Sparkles, Wand2, Database, Zap, TrendingUp, Users, Package } from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { useState, useEffect } from "react";
 import Container from "./Container";
 import { cn } from "@/lib/utils";
@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const queries = [
   { 
     text: "What was my revenue this month?", 
-    icon: Database,
+    icon: "Database",
     result: {
       label: "Total Revenue",
       value: "$142,500",
@@ -21,7 +21,7 @@ const queries = [
   },
   { 
     text: "Which store is underperforming?", 
-    icon: Search,
+    icon: "Search",
     result: {
       label: "Lowest Efficiency",
       value: "Downtown Wing",
@@ -33,7 +33,7 @@ const queries = [
   },
   { 
     text: "Who are my top 1% customers?", 
-    icon: Users,
+    icon: "Users",
     result: {
       label: "Loyalty Segment",
       value: "842 Patrons",
@@ -45,7 +45,7 @@ const queries = [
   },
   { 
     text: "Predict next week's inventory.", 
-    icon: Package,
+    icon: "Package",
     result: {
       label: "Stock Forecast",
       value: "+15% Needed",
@@ -89,7 +89,7 @@ export default function AIAssistant() {
                 viewport={{ once: true }}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 border border-blue-200/50 text-[#09358c] text-sm font-bold mb-8"
               >
-                <Sparkles size={16} />
+                <AnimatedLucideIcon name="Sparkles" size={16} />
                 ARTIFICIAL INTELLIGENCE
               </motion.div>
               
@@ -114,12 +114,12 @@ export default function AIAssistant() {
                     onClick={() => setCurrentQuery(i)}
                    >
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all ${i === currentQuery ? 'bg-blue-600 text-white' : 'bg-white/5 text-slate-500 group-hover:text-white'}`}>
-                         <q.icon size={24} />
+                         <AnimatedLucideIcon name={q.icon} size={24} />
                       </div>
                       <span className={`text-lg font-bold ${i === currentQuery ? 'text-white' : 'text-slate-400 group-hover:text-white'}`}>{q.text}</span>
                       {i === currentQuery && (
                         <motion.div layoutId="arrow" className="ml-auto">
-                          <ChevronRight className="text-blue-500" />
+                          <AnimatedLucideIcon name="ChevronRight" className="text-blue-500" />
                         </motion.div>
                       )}
                    </motion.button>
@@ -141,7 +141,7 @@ export default function AIAssistant() {
                   <div className="bg-white/5 p-6 border-b border-white/5 flex items-center justify-between">
                      <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-white shadow-lg shadow-blue-600/20">
-                           <Bot size={22} />
+                           <AnimatedLucideIcon name="Bot" size={22} />
                         </div>
                         <div>
                            <span className="text-white font-bold block">Tapito Engine</span>
@@ -181,7 +181,7 @@ export default function AIAssistant() {
                               className="flex gap-4"
                            >
                               <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white shadow-lg shrink-0">
-                                 <Bot size={18} />
+                                 <AnimatedLucideIcon name="Bot" size={18} />
                               </div>
                               <div className="bg-white/5 border border-white/10 p-6 rounded-3xl rounded-tl-none shadow-2xl backdrop-blur-xl w-full">
                                  <div className="space-y-4">
@@ -193,7 +193,7 @@ export default function AIAssistant() {
                                              <span className="text-2xl font-black text-white">{activeResult.value}</span>
                                           </div>
                                           <div className={cn("text-sm font-bold flex items-center gap-1", activeResult.isPositive ? "text-emerald-400" : "text-rose-400")}>
-                                             {activeResult.isPositive ? <Zap size={14} /> : <TrendingUp className="rotate-180" size={14} />}
+                                             {activeResult.isPositive ? <AnimatedLucideIcon name="Zap" size={14} /> : <AnimatedLucideIcon name="TrendingUp" className="rotate-180" size={14} />}
                                              {activeResult.trend}
                                           </div>
                                        </div>
@@ -336,7 +336,7 @@ export default function AIAssistant() {
                >
                   <div className="flex items-center gap-4">
                      <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                        <Zap size={24} />
+                        <AnimatedLucideIcon name="Zap" size={24} />
                      </div>
                      <div>
                         <span className="text-slate-400 text-xs font-bold block mb-1 uppercase tracking-widest">Growth Detected</span>
@@ -351,3 +351,4 @@ export default function AIAssistant() {
     </>
   );
 }
+

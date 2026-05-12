@@ -120,6 +120,8 @@ export default function Navbar() {
   // Check if any company sub-link is active
   const isCompanyActive = companyLinks.some((l) => pathname.startsWith(l.href));
 
+  const isHomePage = pathname === "/";
+
   return (
     <>
       <header
@@ -133,7 +135,7 @@ export default function Navbar() {
         <div
           className={cn(
             "w-full transition-all duration-500 ease-in-out py-3 lg:py-4 2xl:py-6",
-            isScrolled
+            isScrolled || !isHomePage
               ? "bg-white/80 backdrop-blur-xl shadow-md"
               : "bg-transparent"
           )}
@@ -145,7 +147,9 @@ export default function Navbar() {
                 <img
                   src="/logo.svg"
                   alt="Tapito Logo"
-                  className="w-full h-full object-contain"
+                  className={cn(
+                    "w-full h-full object-contain transition-all duration-500",
+                  )}
                 />
               </div>
             </Link>
@@ -153,7 +157,7 @@ export default function Navbar() {
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-10">
               <ul className="flex items-center gap-8 xl:gap-12">
-                {navLinks.map((item) => {
+                {navLinks?.map((item) => {
                   const isActive =
                     item.label === "Company"
                       ? isCompanyActive
@@ -177,7 +181,9 @@ export default function Navbar() {
                           "text-[14px] lg:text-[18px] font-semibold transition-colors flex items-center gap-1.5",
                           isActive || activeMenu === item.label
                             ? "text-[#09358c]"
-                            : "text-slate-600 hover:text-[#09358c]"
+                            : isScrolled || activeMenu || !isHomePage
+                            ? "text-slate-900 hover:text-[#09358c]"
+                            : "text-white/80 hover:text-[#09358c]"
                         )}
                       >
                         {item.label}

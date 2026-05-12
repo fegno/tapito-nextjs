@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LineChart, PieChart, Send, ShieldCheck, DollarSign, Users, ShoppingBag, Layers, BarChart, TrendingUp, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { cn } from "@/lib/utils";
 import Container from "./Container";
 import Image from "next/image";
@@ -10,21 +11,21 @@ const coreCapabilities = [
   {
     title: "Executive Dashboard",
     desc: "A high-fidelity vantage point for your entire operation. Real-time metrics presented with uncompromising clarity.",
-    icon: LineChart,
+    icon: "ChartSpline",
     color: "from-[#09358c] to-[#05a0ec]",
     delay: 0
   },
   {
     title: "Smart Analytics",
     desc: "Deep neural networks analyzing millions of data points to predict your next multi-million dollar opportunity.",
-    icon: PieChart,
+    icon: "ChartPie",
     color: "from-[#05a0ec] to-[#06dcc3]",
     delay: 0.1
   },
   {
     title: "Auto-Engagement",
     desc: "A tireless workforce that personalizes every interaction, turning first-time buyers into lifelong advocates.",
-    icon: Send,
+    icon: "Send",
     color: "from-[#06dcc3] to-[#09358c]",
     delay: 0.2
   }
@@ -45,17 +46,25 @@ export default function Capabilities() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-[#09358c] text-xs font-bold mb-6"
              >
-              <Sparkles size={14} color="#09358c" />
+              <AnimatedLucideIcon name="Sparkles" size={14} color="#09358c" />
                CORE CAPABILITIES
              </motion.div>
              <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1]">
                The Architecture of <br /> <span className="text-[#09358c]">Retail Dominance</span>
              </h2>
           </div>
-          <div className="max-w-full lg:max-w-[453px]">
-              <p className="text-[16px] lg:text-[18px] 2xl:text-xl text-slate-500 leading-relaxed italic">
-                &ldquo;We don't just provide tools. We provide the intelligence that separates market leaders from everyone else.&rdquo;
+          <div className="max-w-full lg:max-w-[500px]">
+             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="relative p-8  "
+             >
+                <AnimatedLucideIcon name="Quote" className="absolute left-0 text-[#09358c]/10" size={24} />
+                <p className="text-xl md:text-2xl text-slate-800 leading-relaxed font-medium italic relative z-10">
+                  We don't just provide tools. We provide the intelligence that <span className="text-[#09358c] font-bold">separates market leaders</span> from everyone else.
               </p>
+             </motion.div>
           </div>
         </div>
 
@@ -69,8 +78,8 @@ export default function Capabilities() {
               viewport={{ once: true }}
               className="glass-card p-[20px] md:p-[30px] xl:p-10 group"
             >
-              <div className={cn("w-16 h-16 rounded-[20px] flex items-center justify-center mb-10 bg-gradient-to-br shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6", cap.color)}>
-                <cap.icon className="text-white" size={32} />
+              <div className={cn("w-16 h-16 rounded-[20px] flex items-center justify-center mb-10 bg-gradient-to-br shadow-lg transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 text-white", cap.color)}>
+                <AnimatedLucideIcon name={cap.icon} className="text-white" size={32} />
               </div>
               <h4 className="text-2xl font-bold mb-6 group-hover:text-[#05a0ec] transition-colors">{cap.title}</h4>
               <p className="text-slate-500 text-lg leading-relaxed mb-10">{cap.desc}</p>
@@ -88,7 +97,7 @@ export default function Capabilities() {
               <div className="pt-6 border-t border-slate-100 flex items-center justify-between group-hover:border-blue-100 transition-colors">
                  <span className="text-sm font-bold text-[#000] md:text-slate-400 uppercase tracking-widest group-hover:text-[#000]">Learn More</span>
                  <div className="w-8 h-8 rounded-full bg-[#05a0ec] md:bg-slate-50 flex items-center justify-center text-white md:text-slate-400 group-hover:bg-[#05a0ec] group-hover:text-white transition-all">
-                    <ArrowRight size={16} />
+                    <AnimatedLucideIcon name="ArrowRight" size={16} />
                  </div>
               </div>
             </motion.div>
@@ -99,10 +108,3 @@ export default function Capabilities() {
   );
 }
 
-function ArrowRight({ size }: { size: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-    </svg>
-  );
-}

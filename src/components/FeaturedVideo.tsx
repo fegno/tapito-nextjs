@@ -1,7 +1,7 @@
 "use client";
 
+import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { motion } from "framer-motion";
-import { Play, Sparkles } from "lucide-react";
 import Container from "./Container";
 import Image from "next/image";
 
@@ -18,7 +18,7 @@ export default function FeaturedVideo() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[#05a0ec] text-xs font-bold mb-6"
           >
-            <Sparkles size={14} color="#09358c" />
+            <AnimatedLucideIcon name="Sparkles" size={14} color="#09358c" />
             SEE IT IN ACTION
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
@@ -45,7 +45,7 @@ export default function FeaturedVideo() {
           />
           <div className="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/20 transition-colors duration-500 flex items-center justify-center">
              <div className="w-24 h-24 rounded-full bg-[#09358c] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                <Play size={40} className="fill-current ml-2" />
+                <AnimatedLucideIcon name="Play" size={40} className="fill-current ml-2" />
              </div>
           </div>
           
@@ -58,3 +58,4 @@ export default function FeaturedVideo() {
     </section>
   );
 }
+

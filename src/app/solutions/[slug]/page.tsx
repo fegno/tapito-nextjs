@@ -61,7 +61,7 @@ export default function SolutionDetailPage() {
         }} />
         <FeatureShowcase items={data.showcaseItems} industry={slug} />
         <IntegrationSection />
-        <SolutionTestimonials />
+        {/* <SolutionTestimonials /> */}
         <FAQ items={data.faqs} />
         <CTASection
           title="Ready to solve your challenges?"
@@ -69,6 +69,7 @@ export default function SolutionDetailPage() {
           badge="READY TO TRANSFORM?"
           image="/assets/images/about/ready-to-tranform.png"
           isAbout={false}
+          showTalkButton={false}
         />
       </motion.main>
     </AnimatePresence>
