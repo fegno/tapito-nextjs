@@ -111,8 +111,10 @@ const BuildingMaterial = () => {
               className="lg:w-1/2 relative"
             >
               <div className="relative z-10 bg-white rounded-[3.5rem] p-10 lg:p-16 shadow-2xl shadow-blue-950/40 overflow-hidden">
-                 <div className="flex items-center gap-3 mb-10">
-                    <div className="w-10 h-10 rounded-xl bg-[#09358c] flex items-center justify-center text-white font-black text-xl italic">T</div>
+                  <div className="flex items-center gap-3 mb-10">
+                    <div className="flex items-center gap-3 px-4 py-2 bg-slate-50 rounded-full border border-slate-100 shadow-sm">
+                      <img src="/logo.svg" alt="Tapito" className="h-4 w-auto" />
+                    </div>
                     <span className="text-xl font-black text-slate-900 tracking-tight">Tapito Intelligence</span>
                  </div>
 

@@ -9,14 +9,11 @@ import pause from "@/public/assets/images/pause.svg";
 import { ArrowRightIcon } from "lucide-animated";
 
 const slides = [
-  { src: "/videos/ai.webm", title: "AI-Powered Predictive Analysis" },
-  {
-    src: "/videos/business-intellegence.mp4",
-    title: "Real-Time Business Intelligence",
-  },
+  { src: "/videos/mob-ai.webm", title: "Voice-Powered AI Command Center" },
+  {src: "/videos/business-intellegence.mp4",title: "Real-Time Business Intelligence"},
   { src: "/videos/growth-simulator.mp4", title: "Advanced Growth Simulator" },
-  { src: "/videos/mob-ai.webm", title: "Mobile-First Customer Engagement" },
-  { src: "/videos/dashboard-flow.mp4", title: "Unified Command Center" },
+  { src: "/videos/ai.webm", title: "Smart Scheme Generator" },
+
 ];
 
 export default function Hero() {
@@ -111,7 +108,7 @@ export default function Hero() {
                   className={`absolute inset-0 flex flex-col ${isMobileVideo ? "justify-end" : "justify-center"} items-center`}
                 >
                   <div
-                    className={`relative w-full ${isMobileVideo ? "2xl:h-[68%] 3xl:h-[70%] 4xl:h-[80%] " : "h-full"} overflow-hidden flex items-center justify-center`}
+                    className={`relative w-full ${isMobileVideo ? "2xl:h-[68%] 3xl:h-[70%] 4xl:h-[79%] " : "h-full"} overflow-hidden flex items-center justify-center`}
                   >
                     {/* Floating Title */}
                     <motion.div

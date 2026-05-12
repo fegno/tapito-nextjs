@@ -45,7 +45,7 @@ export default function AboutPresence() {
                             className="space-y-6 mb-12"
                         >
                             <p className="text-lg text-slate-400 font-medium leading-relaxed">
-                                <span className="text-white font-bold">Tapito</span> is an advanced AI-powered business intelligence and customer engagement platform developed by <a href="https://fegno.com" target="_blank" className="text-[#05a0ec] hover:underline decoration-2 underline-offset-4 font-black">Fegno Technologies</a>, a leading technology company headquartered in <span className="text-white font-bold">Kochi</span> with expertise in digital transformation, enterprise solutions, artificial intelligence, and scalable software platforms.
+                                <span className="text-white font-bold">Tapito</span> is an advanced AI-powered business intelligence and customer engagement platform developed by <a href="https://fegno.com" target="_blank" className="text-[#05a0ec] hover:underline decoration-2 underline-offset-4 font-black">Fegno Technologies</a>, a leading technology company expertise in digital transformation, enterprise solutions, artificial intelligence, and scalable software platforms.
                             </p>
                             <p className="text-lg text-slate-500 font-medium leading-relaxed">
                                 Designed for modern retail and distribution businesses, Tapito enables organizations to transform operational and customer data into actionable insights, intelligent automation, and sustainable revenue growth through AI-driven analytics.
@@ -94,7 +94,7 @@ export default function AboutPresence() {
                                     </div>
                                     <h4 className="text-2xl font-black text-white mb-3 tracking-tight">Global Footprint</h4>
                                     <p className="text-sm text-slate-500 font-medium leading-relaxed">
-                                        Deploying strategic intelligence solutions across <span className="text-slate-300">USA, Europe, and Middle East</span> markets.
+                                        Deploying strategic intelligence solutions across <span className="text-slate-300">Australia, Africa, and Middle East</span> markets.
                                     </p>
                                 </div>
                             </motion.div>

@@ -22,8 +22,8 @@ export default function Automation() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
+        <div className="flex lg:flex-row flex-col gap-12 items-center">
+          <div className="space-y-4 max-w-[650px] w-full">
             {workflows.map((flow, i) => (
               <motion.div 
                 key={i}
@@ -56,8 +56,16 @@ export default function Automation() {
           </div>
 
           <div className="relative">
-            <div className="aspect-square bg-white rounded-[30px] shadow-2xl overflow-hidden border border-slate-100 flex items-center justify-center p-[10px]">
-               <div className="w-full h-full relative">
+                 <div className="aspect-square bg-white rounded-[30px] shadow-2xl overflow-hidden border border-slate-100 flex items-center justify-center p-[10px] ">
+                  <video
+                     src="/videos/dashboard.mp4"
+                     autoPlay
+                     muted
+                     loop
+                     playsInline
+                     className="w-full h-full object-cover"
+                  />
+               {/* <div className="w-full h-full relative">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-blue-600 shadow-lg flex items-center justify-center text-white z-10">
                      <AnimatedLucideIcon name="Zap" size={32} />
                   </div>
@@ -95,7 +103,7 @@ export default function Automation() {
                      <span className="text-xs font-bold block mb-1">Conversion Rate</span>
                      <span className="text-2xl font-bold text-emerald-400">+48.4%</span>
                   </div>
-               </div>
+               </div> */}
             </div>
           </div>
         </div>

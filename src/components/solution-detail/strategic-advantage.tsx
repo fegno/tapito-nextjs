@@ -31,8 +31,6 @@ const StrategicAdvantage = ({ data }: StrategicAdvantageProps) => {
             viewport={{ once: true }}
             className="flex items-center gap-3 px-4 py-2 bg-slate-50 rounded-full border border-slate-100 shadow-sm"
           >
-            <img src="/logo.svg" alt="Tapito" className="h-4 w-auto" />
-            <div className="w-[1px] h-3 bg-slate-300" />
             <span className="text-[10px] font-black tracking-[0.2em] uppercase text-[#09358c]">
               Strategic Advantage
             </span>
@@ -91,7 +89,7 @@ const StrategicAdvantage = ({ data }: StrategicAdvantageProps) => {
                 )} />
                 
                 {/* Header: Icon + Title */}
-                <div className="flex items-center gap-5 mb-6 relative z-10">
+                <div className="flex flex-col items-start gap-5 mb-6 relative z-10">
                   <div className={cn(
                     "shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center text-white shadow-xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 bg-gradient-to-br shadow-blue-500/10",
                     theme.icon
@@ -111,11 +109,11 @@ const StrategicAdvantage = ({ data }: StrategicAdvantageProps) => {
                 </div>
 
                 {/* Bottom Redirection Arrow */}
-                <div className="relative z-10 flex justify-end">
+                {/* <div className="relative z-10 flex justify-end">
                   <div className="w-12 h-12 rounded-xl bg-white/80 backdrop-blur-md border border-white shadow-lg flex items-center justify-center text-slate-400 transition-all duration-500 group-hover:bg-[#09358c] group-hover:text-white group-hover:translate-x-1">
                     <ArrowRight size={20} />
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             );
           })}
