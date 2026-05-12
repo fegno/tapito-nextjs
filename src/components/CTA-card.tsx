@@ -26,7 +26,7 @@ export default function CTASection({ title, description, badge, image, subtitle,
                     alt={title} 
                     className="w-full h-full object-cover object-left"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-black via-black/20 to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-4xl text-left">
