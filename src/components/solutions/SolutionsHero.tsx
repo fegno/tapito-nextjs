@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { InteractiveGrid } from "@/components/InteractiveGrid";
 import Container from "@/components/Container";
 import Link from "next/link";
 import { ChevronDown, Network, Target, BarChart3, Zap } from "lucide-react";
+import AnimatedLines from "../ui/animated-lines";
 
 const FloatingBadge = ({ icon: Icon, text, delay, left }: any) => {
   return (
@@ -51,7 +51,7 @@ export const SolutionsHero = ({
 }: SolutionsHeroProps) => {
   return (
     <section className="relative min-h-svh flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden">
-      <InteractiveGrid />
+      <AnimatedLines />
       {/* Floating Elements Rising from the Bottom */}
       {floatingBadges.map((badge, index) => (
         <FloatingBadge

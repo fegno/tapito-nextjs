@@ -12,7 +12,46 @@ const workflows = [
 
 export default function Automation() {
   return (
-    <section className="bg-slate-50 section-padding">
+    <section className="bg-slate-50 section-padding relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="none" className="opacity-10">
+          <path id="path1" d="M-50 200 C 150 200, 300 100, 450 100 S 600 300, 750 300 S 900 150, 1250 150" stroke="#09358c" strokeWidth="1" fill="none" strokeDasharray="8 8" />
+          <circle r="4" fill="#09358c">
+            <animateMotion dur="8s" repeatCount="indefinite">
+              <mpath href="#path1" />
+            </animateMotion>
+          </circle>
+
+          <path id="path2" d="M-50 600 C 100 600, 250 700, 400 700 S 550 500, 700 500 S 850 650, 1250 650" stroke="#05a0ec" strokeWidth="1.5" fill="none" strokeDasharray="10 10" />
+          <circle r="4" fill="#05a0ec">
+            <animateMotion dur="12s" repeatCount="indefinite">
+              <mpath href="#path2" />
+            </animateMotion>
+          </circle>
+
+          <path id="path3" d="M200 -50 V250 C 200 350, 300 350, 300 450 V850" stroke="#06dcc3" strokeWidth="1" fill="none" strokeDasharray="5 5" />
+          <circle r="3" fill="#06dcc3">
+            <animateMotion dur="10s" repeatCount="indefinite">
+              <mpath href="#path3" />
+            </animateMotion>
+          </circle>
+          
+          <path id="path4" d="M900 -50 V250 C 900 350, 800 350, 800 450 V850" stroke="#09358c" strokeWidth="1" fill="none" strokeDasharray="5 5" />
+          <circle r="3" fill="#09358c">
+            <animateMotion dur="15s" repeatCount="indefinite">
+              <mpath href="#path4" />
+            </animateMotion>
+          </circle>
+        </svg>
+
+        {/* Subtle Grid Backdrop */}
+        <div className="absolute inset-0 opacity-[0.03]" 
+             style={{ 
+               backgroundImage: 'linear-gradient(#09358c 1px, transparent 1px), linear-gradient(90deg, #09358c 1px, transparent 1px)',
+               backgroundSize: '80px 80px'
+             }} 
+        />
+      </div>
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-sm font-bold uppercase tracking-widest text-[#09358c] mb-4">Automation Engine</h2>
@@ -31,7 +70,7 @@ export default function Automation() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group"
+                className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group "
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">

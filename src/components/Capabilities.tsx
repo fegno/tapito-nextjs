@@ -50,21 +50,77 @@ export default function Capabilities() {
                CORE CAPABILITIES
              </motion.div>
              <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1]">
-               The Architecture of <br /> <span className="text-[#09358c]">Retail Dominance</span>
-             </h2>
-          </div>
-          <div className="max-w-full lg:max-w-[500px]">
-             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative p-8  "
-             >
-                <AnimatedLucideIcon name="Quote" className="absolute left-0 text-[#09358c]/10" size={24} />
-                <p className="text-xl md:text-2xl text-slate-800 leading-relaxed font-medium italic relative z-10">
-                  We don't just provide tools. We provide the intelligence that <span className="text-[#09358c] font-bold">separates market leaders</span> from everyone else.
+               The Architecture of <br /> <span className="text-[#09358c]">Retail Dominance.</span>
+            </h2>
+             <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-slate-800 leading-relaxed font-normal relative z-10 max-w-[550px] pt-8">
+                  We don't just provide tools. We provide the intelligence that separates market leaders from everyone else.
               </p>
-             </motion.div>
+          </div>
+
+          {/* Data Architecture Ornament */}
+          <div className="hidden lg:flex flex-1 justify-end items-center relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 0.5, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5 }}
+              className="relative w-[320px] h-[320px] 2xl:w-[450px] 2xl:h-[450px]"
+            >
+              {/* Main Rotating Architecture Grid */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  {/* Hexagonal Core Pattern */}
+                  <path d="M100 40 L152 70 L152 130 L100 160 L48 130 L48 70 Z" stroke="#09358c" strokeWidth="0.5" strokeDasharray="4 2" />
+                  <circle cx="100" cy="100" r="90" stroke="#05a0ec" strokeWidth="0.4" strokeDasharray="1 4" />
+                  
+                  {/* Node Connections */}
+                  <g className="opacity-40">
+                    <line x1="100" y1="40" x2="100" y2="160" stroke="#09358c" strokeWidth="0.3" />
+                    <line x1="48" y1="70" x2="152" y2="130" stroke="#09358c" strokeWidth="0.3" />
+                    <line x1="152" y1="70" x2="48" y2="130" stroke="#09358c" strokeWidth="0.3" />
+                  </g>
+
+                  {/* Interconnected Nodes */}
+                  {[
+                    { cx: 100, cy: 40 }, { cx: 152, cy: 70 }, { cx: 152, cy: 130 },
+                    { cx: 100, cy: 160 }, { cx: 48, cy: 130 }, { cx: 48, cy: 70 }
+                  ].map((node, i) => (
+                    <circle key={i} cx={node.cx} cy={node.cy} r="3" fill="white" stroke="#09358c" strokeWidth="1" />
+                  ))}
+                </svg>
+              </motion.div>
+              
+              {/* Orbital Data Packets */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0"
+              >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-[#06dcc3] to-[#05a0ec] rounded-lg shadow-lg rotate-45 flex items-center justify-center">
+                   <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-gradient-to-br from-[#09358c] to-[#05a0ec] rounded-full shadow-lg" />
+              </motion.div>
+
+              {/* Central Engine Core */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                 <div className="relative w-16 h-16 2xl:w-24 2xl:h-24">
+                    <div className="absolute inset-0 bg-[#09358c]/5 rounded-full animate-ping" />
+                    <div className="absolute inset-4 bg-gradient-to-br from-[#09358c] to-[#05a0ec] rounded-2xl rotate-45 shadow-2xl flex items-center justify-center overflow-hidden">
+                       <motion.div 
+                        animate={{ opacity: [0.4, 1, 0.4] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="w-full h-full bg-white/20 backdrop-blur-sm"
+                       />
+                       <AnimatedLucideIcon name="Cpu" className="absolute text-white" size={24} />
+                    </div>
+                 </div>
+              </div>
+            </motion.div>
           </div>
         </div>
 

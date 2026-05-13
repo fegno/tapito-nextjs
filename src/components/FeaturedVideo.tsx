@@ -22,7 +22,7 @@ export default function FeaturedVideo() {
             SEE IT IN ACTION
           </motion.div>
           <h2 className="text-4xl md:text-6xl font-black text-white mb-8">
-            Experience the <span className="text-[#09358c]">Tapito Workflow</span>
+            Experience the <span className="text-[#09358c]">Tapito Workflow.</span>
           </h2>
           <p className="text-xl text-slate-400">
             A 2-minute walkthrough of how we transform complex retail data into simple, actionable growth strategies.

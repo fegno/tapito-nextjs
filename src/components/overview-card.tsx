@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import AnimatedLucideIcon from "./AnimatedLucideIcon";
 import { cn } from "@/lib/utils";
@@ -21,7 +20,7 @@ const ItemBox = ({ icon, title, color, className, delay = 0 }: ItemBoxProps) => 
     transition={{ delay, duration: 0.5 }}
     whileHover={{ y: -1, scale: 1.01, boxShadow: "0 8px 20px -5px rgba(0,0,0,0.05)" }}
     className={cn(
-      "flex items-center gap-2 px-4 py-3 rounded-xl border-2 bg-white transition-all duration-300 max-w-[180px] sm:max-w-full lg:max-w-[220px] xl:max-w-[260px] w-full mx-auto justify-center",
+      "flex items-center justify-start gap-2 px-3 py-3 rounded-xl border-2 bg-white transition-all duration-300 max-w-[180px] sm:max-w-full lg:max-w-[220px] xl:max-w-[260px] w-full mx-auto",
       className
     )}
     style={{ borderColor: color }}
@@ -29,7 +28,7 @@ const ItemBox = ({ icon, title, color, className, delay = 0 }: ItemBoxProps) => 
     <div className="p-2 rounded-md" style={{ color: color, backgroundColor: `${color}10` }}>
       <AnimatedLucideIcon name={icon} size={20} strokeWidth={2.5} />
     </div>
-    <span className="font-bold text-slate-800 text-[14px] sm:text-[16px] xl:text-[18px] tracking-tight">{title}</span>
+    <span className="font-bold text-slate-800 text-[14px] sm:text-[16px] xl:text-[16px] tracking-tight">{title}</span>
   </motion.div>
 );
 
@@ -44,7 +43,7 @@ const GroupIcon = ({ label, icons, colorClass = "text-blue-500" }: { label: stri
         ))}
       </div>
     </div>
-    <span className="text-[10px] 2xl:text-[12px] font-black text-slate-700 uppercase tracking-[0.2em]">{label}</span>
+    <span className="text-[10px] 2xl:text-[12px] font-black text-slate-700 uppercase tracking-[0.2em] text-center max-w-[120px]">{label}</span>
   </div>
 );
 
@@ -139,12 +138,12 @@ export default function OverViewCard() {
           <GroupIcon
             label="ERP / CRM"
             colorClass="text-[#09358c]"
-            icons={["Building2", "Box", "Database", "Network"]}
+            icons={["Building2", "Box", "Users", "Network"]}
           />
           <GroupIcon
-            label="Process / SOP"
+            label="Databases"
             colorClass="text-emerald-600"
-            icons={["ClipboardList", "Settings", "FileText", "CheckCircle"]}
+            icons={["Database", "Server", "HardDrive", "Layers"]}
           />
           <GroupIcon
             label="Excel / CSV"
@@ -152,7 +151,7 @@ export default function OverViewCard() {
             icons={["FileSpreadsheet", "Table", "LayoutGrid", "FileText"]}
           />
           <GroupIcon
-            label="Sales / POS"
+            label="eCommerce / POS"
             colorClass="text-rose-600"
             icons={["ShoppingCart", "Banknote", "Wallet", "PieChart"]}
           />
@@ -177,21 +176,21 @@ export default function OverViewCard() {
                 <ItemBox icon="Network" title="Data Integration" color="#06dcc3" delay={0.1} />
                 <ItemBox icon="Zap" title="Campaign Automation" color="#05a0ec" delay={0.2} />
                 <ItemBox icon="TrendingUp" title="Live Analytics" color="#09358c" delay={0.3} />
-                <ItemBox icon="UserCheck" title="Decision Support" color="#05a0ec" delay={0.4} />
+                <ItemBox icon="UserCheck" title="AI Recommandations" color="#05a0ec" delay={0.4} />
               </div>
             </div>
           </motion.div>
         </div>
 
         {/* Right Column: Key Outputs - Colorful */}
-        <div className="flex flex-col gap-12 items-center">
+        <div className="flex flex-col gap-8 items-center">
           <RightItem icon="BarChart3" label="CEO View" colorClass="text-[#09358c]" />
+          <RightItem icon="Smartphone" label="Ai Assistance" colorClass="text-emerald-600" />
+          <RightItem icon="FileSpreadsheet" label="Exports" colorClass="text-emerald-600" />
           <RightItem icon="PieChart" label="Reports" colorClass="text-[#05a0ec]" />
           <RightItem icon="Bell" label="Alerts" colorClass="text-[#06dcc3]" />
-          <RightItem icon="FileSpreadsheet" label="Exports" colorClass="text-emerald-600" />
         </div>
-
       </div>
     </div>
   );
-}
+}
