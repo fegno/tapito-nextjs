@@ -5,10 +5,12 @@ import AboutClients from "@/components/about/AboutClients";
 import AboutWhoWeAre from "@/components/about/AboutWhoWeAre";
 import AboutWhatWeDo from "@/components/about/AboutWhatWeDo";
 import AboutTeam from "@/components/about/AboutTeam";
-import AboutPresence from "@/components/about/AboutPresence";
+import WorldPresence from "@/components/contact/WorldPresence";
 import AboutDifferentiators from "@/components/about/AboutDifferentiators";
 import AboutCTA from "@/components/about/AboutCTA";
 import CTASection from "@/components/CTA-card";
+import { motion } from "framer-motion";
+import AboutPresence from "@/components/about/AboutPresence";
 
 export const metadata = {
   title: "About Us | Tapito - Next-Gen AI Engagement Platform",
@@ -33,11 +35,17 @@ export default function AboutPage() {
         
         <AboutWhatWeDo />
         
-        <AboutDifferentiators />
+        {/* Hidden as requested: AboutDifferentiators (Our Edge) */}
+        {/* <AboutDifferentiators /> */}
 
         {/* <AboutTeam /> */}
-        
         <AboutPresence />
+        <section className="py-24 lg:py-32">
+          <Container>
+            <WorldPresence showCards={false} />
+          </Container>
+        </section>
+      
         <CTASection
           title="Unlock Your Growth Potential"
           description="Join hundreds of retail brands that are scaling with zero manual effort. See the difference AI can make in your revenue growth."

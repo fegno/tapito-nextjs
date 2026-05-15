@@ -27,7 +27,7 @@ export default function AboutHero() {
             >
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-[#09358c] bg-white/80 backdrop-blur-xl rounded-full border border-blue-100 shadow-sm">
                 <Sparkles size={12} className="text-[#05a0ec] animate-pulse" />
-                About Tapito
+                About Us
               </div>
             </motion.div>
 
@@ -37,10 +37,10 @@ export default function AboutHero() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-4"
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[60px] 2xl:text-[72px] 4xl:text-8xl font-bold text-slate-900 leading-[1.05] sm:leading-[0.95] tracking-tighter text-balance">
-                Grow your data, <br className="hidden sm:block" />
-                <span className="text-slate-800">harvest the</span> <br className="hidden sm:block" />
-                <span className="text-[#09358c]">results.</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-[48px] xl:text-[60px] 2xl:text-[72px] 4xl:text-8xl font-bold text-slate-900 leading-[1.05] sm:leading-[0.95] tracking-normal capitalize text-balance">
+                Innovating<br className="hidden sm:block" />
+                <span className="text-slate-800">beyond</span> <br className="hidden sm:block" />
+                <span className="text-[#09358c]">transformation.</span>
               </h1>
             </motion.div>
 
@@ -56,12 +56,12 @@ export default function AboutHero() {
                 and anchor a true intelligence culture at the heart of your strategy.
               </p>
 
-              <div className="flex lg:justify-start mt-6 sm:mt-8 px-4 sm:px-0">
+              {/* <div className="flex lg:justify-start mt-6 sm:mt-8 px-4 sm:px-0">
                 <button className="btn-premium flex items-center gap-2 text-base sm:text-lg px-10 py-5 w-full sm:w-auto justify-center font-normal shadow-xl shadow-blue-900/10">
                   Know more
                   <ArrowRight size={20} />
                 </button>
-              </div>
+              </div> */}
             </motion.div>
           </div>
 

@@ -4,6 +4,7 @@ import AnimatedLucideIcon from "@/components/AnimatedLucideIcon";
 import { motion } from "framer-motion";
 import Container from "@/components/Container";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface CTASectionProps {
     title: string;
@@ -50,7 +51,10 @@ export default function CTASection({ title, description, badge, image, subtitle,
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="text-3xl md:text-6xl lg:text-7xl font-semibold text-white mb-8 tracking-tight leading-[1.05]"
+                    className={cn(
+                        "text-3xl md:text-6xl lg:text-7xl font-semibold text-white mb-8 leading-[1.05]",
+                        isAbout ? "tracking-normal uppercase" : "tracking-tight"
+                    )}
                 >
                     {title} <br />
                     <span className="text-white">{subtitle}</span>

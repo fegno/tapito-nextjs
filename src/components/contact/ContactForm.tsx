@@ -112,7 +112,7 @@ export default function ContactForm() {
                         required
                       >
                         <option value="" disabled>Contact Reason *</option>
-                        <option value="demo">Request a Demo</option>
+                        <option value="demo">Book Demo</option>
                         <option value="partner">Partnership Inquiry</option>
                         <option value="support">Technical Support</option>
                         <option value="press">Press &amp; Media</option>

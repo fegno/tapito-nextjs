@@ -94,7 +94,7 @@ export default function AboutPresence() {
                                     </div>
                                     <h4 className="text-2xl font-black text-white mb-3 tracking-tight">Global Footprint</h4>
                                     <p className="text-sm text-slate-500 font-medium leading-relaxed">
-                                        Deploying strategic intelligence solutions across <span className="text-slate-300">Australia, Africa, and Middle East</span> markets.
+                                        Deploying strategic intelligence solutions across <span className="text-slate-300">India, Australia, Africa, and Middle East</span> markets.
                                     </p>
                                 </div>
                             </motion.div>

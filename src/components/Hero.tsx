@@ -10,8 +10,8 @@ import { ArrowRightIcon } from "lucide-animated";
 
 const slides = [
   { src: "/videos/mob-ai.webm", title: "Voice-Powered AI Command Center" },
-  {src: "/videos/business-intellegence.mp4",title: "Real-Time Business Intelligence"},
-  { src: "/videos/growth-simulator.mp4", title: "Advanced Growth Simulator" },
+  {src: "/videos/smart-business.webm",title: "Real-Time Business Intelligence"},
+  { src: "/videos/simulator.webm", title: "Advanced Growth Simulator" },
   { src: "/videos/ai.webm", title: "Smart Scheme Generator" },
 
 ];
@@ -28,8 +28,7 @@ export default function Hero() {
   }, []);
 
   const currentSlide = slides[currentVideoIndex];
-  const isMobileVideo =
-    currentSlide?.src.includes("ai") || currentSlide?.src.includes("mob-ai");
+  const isMobileVideo = currentSlide?.src.includes("ai") || currentSlide?.src.includes("mob-ai");
 
   return (
     <section className="relative min-h-screen flex items-center justify-center">
@@ -79,7 +78,7 @@ export default function Hero() {
                 className="btn-premium flex items-center gap-2 text-lg px-10 py-5 w-full sm:w-auto justify-center font-normal"
                 onClick={() => router.push("/contact")}
               >
-                Book a Demo
+                Book Demo
                 <ArrowRightIcon color="#017DC0C4" size={20} />
               </button>
               <button className="px-8 py-3.5 rounded-full flex items-center gap-3 group text-lg w-full sm:w-auto justify-center transition-all bg-none border-1 border-[#017DC0C4] font-normal text-white text-[20px]">
@@ -105,13 +104,13 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.8 }}
-                  className={`absolute inset-0 flex flex-col ${isMobileVideo ? "justify-end" : "justify-center"} items-center`}
+                  className={`absolute inset-0 flex flex-col justify-end items-center`}
                 >
                   <div
-                    className={`relative w-full ${isMobileVideo ? "2xl:h-[68%] 3xl:h-[70%] 4xl:h-[79%] " : "h-full"} overflow-hidden flex items-center justify-center`}
+                    className={`relative w-full 2xl:h-[68%] 3xl:h-[70%] 4xl:h-[79%] overflow-hidden flex items-center justify-center`}
                   >
                     {/* Floating Title */}
-                    <motion.div
+                    <motion.div 
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.6 }}

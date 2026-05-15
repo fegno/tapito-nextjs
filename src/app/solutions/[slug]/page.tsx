@@ -6,7 +6,6 @@ import { SolutionsHero } from "@/components/solutions/SolutionsHero";
 import ClientStrip from "@/components/ClientStrip";
 import { FeatureShowcase } from "@/components/solution-detail/feature-showcase";
 import { IntegrationSection } from "@/components/solutions/IntegrationSection";
-import { SolutionTestimonials } from "@/components/solutions/SolutionTestimonials";
 import Capabilities from "@/components/solution-detail/core-capabilities";
 import StrategicAdvantage from "@/components/solution-detail/strategic-advantage";
 import Challenges from "@/components/solution-detail/challenges";
@@ -37,13 +36,13 @@ export default function SolutionDetailPage() {
         transition={{ duration: 0.4, ease: "easeOut" }}
         className="min-h-screen bg-white"
       >
-        <SolutionsHero 
+        <SolutionsHero
           badge="VERTICAL SOLUTION"
           titlePrimary={data.title}
           description={data.description}
         />
         <ClientStrip />
-        <StrategicAdvantage data={data} />
+        <StrategicAdvantage data={data.howWeHelp} />
         {slug === "building-materials" && <BuildingMaterial />}
         {slug === "home-furnishing" && <HomeFurnishing />}
         {slug === "electronics" && <Electronics />}
