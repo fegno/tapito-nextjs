@@ -17,38 +17,51 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
-    const isDevelopment = process.env.NODE_ENV === 'development';
+    const isDevelopment = process.env.NODE_ENV === "development";
+
+    const csp = [
+      "default-src 'none'",
+      // unsafe-inline is required: Next.js App Router emits inline RSC flight-data
+      // scripts (self.__next_f.push) that cannot be hashed or nonced without disabling PPR.
+      // unsafe-eval is only needed in dev for React's enhanced error stacks.
+      isDevelopment
+        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com https://www.gstatic.com"
+        : "script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com",
+      "style-src 'self' 'unsafe-inline'",
+      // blob: required for Next.js image optimisation; data: for inline SVG/base64 sources.
+      "img-src 'self' blob: data: https://images.unsplash.com https://flagcdn.com",
+      "font-src 'self'",
+      "object-src 'none'",
+      "media-src 'self' blob:",
+      // ws: required for Next.js HMR websocket in development.
+      isDevelopment
+        ? "connect-src 'self' ws://localhost:* wss://localhost:* https://www.google.com"
+        : "connect-src 'self' https://www.google.com",
+      "frame-src https://www.google.com",
+      "worker-src blob:",
+      "manifest-src 'self'",
+      "frame-ancestors 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "upgrade-insecure-requests",
+    ].join("; ");
 
     return [
       {
-        source: "/:path*",
+        source: "/(.*)",
         headers: [
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "X-XSS-Protection", value: "1; mode=block" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+          {
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+          },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'none'",
-              isDevelopment
-                ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
-                : "script-src 'self' 'unsafe-inline'",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: https://images.unsplash.com",
-              "font-src 'self' data:",
-              "media-src 'self' blob:",
-              isDevelopment
-                ? "connect-src 'self' ws://localhost:*"
-                : "connect-src 'self'",
-              "worker-src blob:",
-              "manifest-src 'self'",
-              "frame-ancestors 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              "upgrade-insecure-requests",
-            ].join("; "),
+            value: csp,
           },
           // { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
           { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
@@ -61,4 +74,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-
