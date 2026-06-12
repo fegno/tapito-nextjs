@@ -5,9 +5,9 @@ import { buildMetadata, collectionPageSchema, breadcrumbSchema, SITE } from "@/l
 import JsonLd from "@/components/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "Case Studies | Tapito",
+  title: "Retail AI Success Stories & Case Studies | Tapito",
   description:
-    "Discover how 500+ retail brands use Tapito AI to grow revenue, retain customers, and make smarter decisions.",
+    "Discover how retail businesses use Tapito's AI-powered retail intelligence platform to improve revenue and customer retention.",
   path: "/case-studies",
 });
 

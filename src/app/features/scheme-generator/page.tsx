@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Smart Scheme Generator | Tapito",
+  title: "Retail Promotion Management Software | Tapito",
   description:
-    "AI-driven staff incentives that turn single purchases into multi-category revenue. Generate and simulate staff-level incentive schemes automatically.",
+    "Create, optimize, and manage retail offers, promotions, and incentive programs using AI-powered retail software.",
   path: "/features/scheme-generator",
 });
 

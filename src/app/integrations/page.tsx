@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import IntegrationsPageContent from "./IntegrationsPageContent";
 
 export const metadata = buildMetadata({
-  title: "Integrations | Tapito",
+  title: "Retail Software Integrations | Tapito",
   description:
-    "Connect Tapito with your existing POS, ERP, CRM, and e-commerce platforms. Seamless integrations for a unified retail data ecosystem.",
+    "Connect POS, CRM, ecommerce, ERP, and retail systems with Tapito's AI-powered retail intelligence platform.",
   path: "/integrations",
 });
 

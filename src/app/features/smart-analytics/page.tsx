@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "AI Smart Analytics Engine | Tapito",
+  title: "Predictive Retail Analytics Platform | Tapito",
   description:
-    "Your data starts thinking for you. Identify revenue drivers and customer risks automatically with Tapito's AI Smart Analytics.",
+    "Forecast demand, analyze customer behavior, and identify growth opportunities using AI-powered predictive retail analytics.",
   path: "/features/smart-analytics",
 });
 

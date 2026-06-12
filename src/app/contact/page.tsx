@@ -11,7 +11,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata = buildMetadata({
   title: "Contact Us | Tapito - Retail AI Platform",
   description:
-    "Get in touch with our team to explore how Tapito AI can elevate your retail business with automated orchestration and multi-location tracking.",
+    "Talk to our experts and discover how Tapito's AI retail platform can improve revenue, customer retention, and business performance.",
   path: "/contact",
 });
 
