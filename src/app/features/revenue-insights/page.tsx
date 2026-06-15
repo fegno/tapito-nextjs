@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Revenue Growth Insights | Tapito",
+  title: "Retail Revenue Optimization Software | Tapito",
   description:
-    "Identify hidden revenue opportunities and stop sales funnel leakage. Tapito's Revenue Insights pinpoints where your revenue is being lost.",
+    "Turn retail data into actionable revenue opportunities with AI-powered revenue analytics and optimization tools.",
   path: "/features/revenue-insights",
 });
 

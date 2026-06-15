@@ -12,22 +12,22 @@ import predictive_inventory from "@/public/assets/images/predictive_inventory.av
 
 const coreCapabilities = [
   {
-    title: "Executive Dashboard",
-    desc: "A high-fidelity vantage point for your entire operation. Real-time metrics presented with uncompromising clarity.",
+    title: "Retail Business Intelligence Dashboard",
+    desc: "Gain a complete view of store performance, sales trends, customer behavior, and operational metrics through a centralized retail intelligence dashboard with real-time reporting.",
     icon: "ChartSpline",
     color: "from-[#09358c] to-[#05a0ec]",
     delay: 0
   },
   {
-    title: "Smart Analytics",
-    desc: "Deep neural networks analyzing millions of data points to predict your next multi-million dollar opportunity.",
+    title: "Predictive Retail Analytics",
+    desc: "Use AI-powered predictive analytics to analyze customer behavior, forecast demand, identify growth opportunities, and make data-driven decisions that increase revenue.",
     icon: "ChartPie",
     color: "from-[#05a0ec] to-[#06dcc3]",
     delay: 0.1
   },
   {
-    title: "Auto-Engagement",
-    desc: "A tireless workforce that personalizes every interaction, turning first-time buyers into lifelong advocates.",
+    title: "Automated Customer Engagement",
+    desc: "Automate personalized customer interactions, retention campaigns, loyalty programs, and targeted promotions to improve customer lifetime value and increase repeat purchases.",
     icon: "Send",
     color: "from-[#06dcc3] to-[#09358c]",
     delay: 0.2
@@ -53,10 +53,10 @@ export default function Capabilities() {
                CORE CAPABILITIES
              </motion.div>
              <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-[1.1]">
-               The Architecture of <br /> <span className="text-[#09358c]">Retail Dominance.</span>
+               AI-Powered Retail Intelligence <br /> <span className="text-[#09358c]">Platform for Revenue Growth</span>
             </h2>
              <p className="text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px] text-slate-800 leading-relaxed font-normal relative z-10 max-w-[550px] pt-8">
-                  We don't just provide tools. We provide the intelligence that separates market leaders from everyone else.
+                  Tapito combines retail business intelligence, predictive analytics, and automated customer engagement to help retail businesses identify revenue opportunities, optimize operations, and improve customer retention.
               </p>
           </div>
 

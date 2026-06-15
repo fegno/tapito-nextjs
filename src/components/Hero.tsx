@@ -68,23 +68,24 @@ export default function Hero() {
               className="mb-8 px-[14px] py-[6px] 2xl:py-[8px] rounded-full border border-[#BFBFBF] flex items-center gap-2"
             >
               <span className="text-[12px] lg:text-[13px] 2xl:text-[16px] font-normal text-[#AFAFAF] uppercase tracking-wide leading-normal">
-                THE FUTURE OF RETAIL AI
+                AI RETAIL PLATFORM
               </span>
             </motion.div>
 
             <h1 className={`${isMobile ? "text-[34px]" : "text-[40px]"} lg:text-[44px] 3xl:text-[58px] 2xl:text-[58px] font-bold xl:leading-[50px] 2xl:leading-[60px] 4xl:leading-[75px] text-white font-satoshi`}>
-              Turn Your Retail Data Into Revenue
+              AI Revenue Intelligence Platform
               <br />
               <span className="pb-2 px-1 inline-block bg-clip-text text-transparent bg-[linear-gradient(90deg,#09358C_0%,#FFFFFF_100%)]">
                 {" "}
-                Automatically{" "}
+                for Retail Businesses{" "}
               </span>
             </h1>
 
             <p className="text-[16px] lg:text-[18px] xl:text-[20px] 4xl:text-[22px] mb-[30px] lg:mb-[40px] 2xl:mb-[60px] leading-relaxed font-normal text-[#BEBEBE]">
-              AI-powered analytics, real-time insights, and fully automated
-              customer engagement —built to grow your revenue without manual
-              effort.
+              Tapito is an AI-powered retail intelligence platform that helps
+              retail businesses analyze customer behavior, identify revenue
+              opportunities, automate customer engagement, and improve business
+              performance across stores, channels, and product categories.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto px-1.5 sm:px-2 md:px-[2px]">

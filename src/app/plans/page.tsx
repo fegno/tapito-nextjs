@@ -6,9 +6,9 @@ import { buildMetadata, webPageSchema, breadcrumbSchema, SITE } from "@/lib/seo"
 import JsonLd from "@/components/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "Pricing Plans | Tapito - Retail AI Platform",
+  title: "AI Retail Platform Pricing & Plans | Tapito",
   description:
-    "Choose the right plan for your retail growth. From startups to enterprise retailers, scale your customer engagement with AI-powered automation.",
+    "Explore flexible pricing plans for Tapito's AI retail intelligence and revenue optimization platform.",
   path: "/plans",
 });
 

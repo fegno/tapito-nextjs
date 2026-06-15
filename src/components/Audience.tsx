@@ -13,47 +13,47 @@ import supermarket from '@/public/assets/images/home/supermarket.png';
 import beauty from '@/public/assets/images/home/beauti.png';
 
 const industries = [
-  { 
-    id: "01", 
-    icon: "Building2", 
-    name: "Retail Chains", 
-    desc: "Centralize operations across multiple stores and boost performance at every location.",
+  {
+    id: "01",
+    icon: "Building2",
+    name: "Retail Chains",
+    desc: "Centralize retail operations, monitor store performance, analyze customer behavior, and improve decision-making across multiple locations through a unified retail intelligence platform.",
     img: store
   },
-  { 
-    id: "02", 
-    icon: "ShoppingCart", 
-    name: "Supermarkets", 
-    desc: "Optimize inventory, reduce wastage, and ensure the right products are always in stock.",
-    img: supermarket 
+  {
+    id: "02",
+    icon: "ShoppingCart",
+    name: "Supermarkets",
+    desc: "Improve inventory planning, customer retention, promotional effectiveness, and revenue growth using predictive retail analytics and AI-powered business intelligence.",
+    img: supermarket
   },
-  { 
-    id: "03", 
-    icon: "Shirt", 
-    name: "Fashion & Apparel", 
-    desc: "Track trends, manage collections, and improve sell-through rates with AI insights.",
-    img: fashion 
+  {
+    id: "03",
+    icon: "Shirt",
+    name: "Fashion & Apparel",
+    desc: "Analyze customer purchasing behavior, optimize merchandising strategies, improve sell-through rates, and automate personalized customer engagement.",
+    img: fashion
   },
-  { 
-    id: "04", 
-    icon: "Utensils", 
-    name: "F&B Chains", 
-    desc: "Optimize menu performance, control costs, and deliver great customer experiences consistently.",
-    img: food 
+  {
+    id: "04",
+    icon: "Utensils",
+    name: "F&B Retail",
+    desc: "Increase customer retention, optimize menu performance, identify revenue opportunities, and improve customer engagement through AI-powered retail analytics.",
+    img: food
   },
-  { 
-    id: "05", 
-    icon: "Laptop", 
-    name: "Electronics", 
-    desc: "Track high-value inventory, analyze demand, and maximize sales opportunities.",
-    img: electronics 
+  {
+    id: "05",
+    icon: "Laptop",
+    name: "Electronics Retail",
+    desc: "Track product performance, understand customer demand, identify cross-selling opportunities, and maximize revenue through predictive analytics.",
+    img: electronics
   },
-  { 
-    id: "06", 
-    icon: "Sparkles", 
-    name: "Beauty & Wellness", 
-    desc: "Personalize customer experiences and boost loyalty with smart AI recommendations.",
-    img: beauty 
+  {
+    id: "06",
+    icon: "Sparkles",
+    name: "Beauty & Wellness",
+    desc: "Deliver personalized customer experiences, improve loyalty, and increase repeat purchases using customer intelligence and automated engagement.",
+    img: beauty
   },
 ];
 
@@ -75,10 +75,10 @@ export default function Audience() {
             TARGET AUDIENCE
           </motion.div>
           <h3 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
-            Designed for Every <br /> <span className="text-[#09358c]">Retail Model.</span>
+            Built for Every <br /> <span className="text-[#09358c]">Retail Business</span>
           </h3>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Whether you run a luxury flagship or a national supermarket chain, Tapito scales with your ambitions.
+            Tapito helps retail businesses transform customer data into revenue growth through AI-powered retail intelligence, predictive analytics, customer engagement automation, and business intelligence tools.
           </p>
         </div>
 
@@ -139,8 +139,8 @@ export default function Audience() {
               <AnimatedLucideIcon name="Sparkles" size={32} className="text-[#09358c]" color="#09358c" />
             </div>
             <div>
-              <h5 className="text-xl font-bold text-[#09358c]">One Dashboard. Every Industry.</h5>
-              <p className="text-sm text-slate-500">Different needs. Same goal—smarter sales, better decisions, bigger growth.</p>
+              <h5 className="text-xl font-bold text-[#09358c]">One Retail Intelligence Platform. Multiple Industries.</h5>
+              <p className="text-sm text-slate-500">One AI retail platform for smarter decisions, stronger growth.</p>
             </div>
           </div>
 

@@ -71,20 +71,23 @@ export default function ContactHero() {
       {/* Email contacts */}
       <div className="pt-10 sm:pt-12 border-t border-slate-200">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
-          {[
-            { title: "Media & Press",  email: "press@tapito.ai",  icon: Mail },
-            { title: "Other Queries",  email: "hello@tapito.ai",  icon: MessageSquare },
-          ].map((c, i) => (
-            <div key={i}>
-              <h4 className="text-lg sm:text-xl font-black text-slate-900 mb-3 sm:mb-4">{c.title}</h4>
-              <p className="text-slate-500 font-medium leading-relaxed text-[14px] sm:text-[15px]">
-                Write to us at{" "}
-                <a href={`mailto:${c.email}`} className="text-[#05a0ec] font-bold hover:underline break-all sm:break-normal">
-                  {c.email}
-                </a>
-              </p>
-            </div>
-          ))}
+          <div>
+            <h4 className="text-lg sm:text-xl font-black text-slate-900 mb-3 sm:mb-4">Tapito</h4>
+            <p className="text-slate-500 font-medium leading-relaxed text-[14px] sm:text-[15px]">
+              <a href="tel:+918848506600" className="text-brand-sky font-bold hover:underline">
+                +91 88485 06600
+              </a>
+            </p>
+          </div>
+          <div>
+            <h4 className="text-lg sm:text-xl font-black text-slate-900 mb-3 sm:mb-4">Other Queries</h4>
+            <p className="text-slate-500 font-medium leading-relaxed text-[14px] sm:text-[15px]">
+              Write to us at{" "}
+              <a href="mailto:hello@tapito.ai" className="text-brand-sky font-bold hover:underline break-all sm:break-normal">
+                hello@tapito.ai
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </motion.div>

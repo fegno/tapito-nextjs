@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Business Intelligence Dashboard | Tapito",
+  title: "Retail Business Intelligence Software | Tapito",
   description:
-    "Comprehensive real-time reporting with raw data sync across all your retail outlets. One live command center for revenue, branch performance, and category momentum.",
+    "Monitor store performance, customer behavior, and operational metrics with AI-powered retail business intelligence software.",
   path: "/features/business-intelligence",
 });
 

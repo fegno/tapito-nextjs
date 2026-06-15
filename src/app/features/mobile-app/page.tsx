@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Voice-Powered AI Mobile App | Tapito",
+  title: "Mobile Retail Management App | Tapito",
   description:
-    "Command your retail empire hands-free with real-time voice and chat decisions. Get instant answers to business queries anywhere, anytime.",
+    "Access real-time retail intelligence, business analytics, and revenue insights from anywhere with the Tapito mobile app.",
   path: "/features/mobile-app",
 });
 

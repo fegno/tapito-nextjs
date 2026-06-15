@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const data = solutionDetails[slug] || defaultData;
   return buildMetadata({
-    title: `${data.title} | Tapito - Next-Gen AI Engagement Platform`,
-    description: data.description,
+    title: data.metaTitle ?? `${data.title} | Tapito`,
+    description: data.metaDescription ?? data.description,
     path: `/solutions/${slug}`,
   });
 }

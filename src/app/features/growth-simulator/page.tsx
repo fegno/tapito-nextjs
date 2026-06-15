@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Growth Simulator | Tapito",
+  title: "Retail Growth Forecasting Software | Tapito",
   description:
-    "Model customer growth carefully with AI. Predict mounting changes, avert migrations, and run high-stakes what-if scenarios with your store's Digital Twin.",
+    "Simulate growth scenarios, forecast revenue, and make smarter investment decisions with predictive retail analytics.",
   path: "/features/growth-simulator",
 });
 

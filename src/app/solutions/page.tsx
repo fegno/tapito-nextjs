@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import SolutionsPageContent from "./SolutionsPageContent";
 
 export const metadata = buildMetadata({
-  title: "Industry Solutions | Tapito",
+  title: "AI Retail Solutions Platform | Tapito",
   description:
-    "Tapito delivers tailored AI-powered retail solutions for fashion, electronics, supermarkets, jewelry, home furnishing, and more.",
+    "Discover AI-powered retail solutions designed to improve customer retention, revenue growth, and business performance.",
   path: "/solutions",
 });
 

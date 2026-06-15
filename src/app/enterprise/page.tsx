@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import EnterprisePageContent from "./EnterprisePageContent";
 
 export const metadata = buildMetadata({
-  title: "Enterprise | Tapito - AI Platform for Large Retail",
+  title: "Enterprise Retail Intelligence Platform | Tapito",
   description:
-    "Tapito Enterprise delivers scalable AI-powered retail intelligence for multi-location chains, large format stores, and enterprise retail groups.",
+    "Scalable AI-powered retail intelligence, predictive analytics, and customer engagement automation for enterprise retailers.",
   path: "/enterprise",
 });
 
