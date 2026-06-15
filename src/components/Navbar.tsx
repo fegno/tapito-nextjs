@@ -3,7 +3,17 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, Users, BookOpen, Mail, Shield, ArrowRight, Globe } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Users,
+  BookOpen,
+  Mail,
+  Shield,
+  ArrowRight,
+  Globe,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { features } from "@/components/features/FeaturesGrid";
@@ -15,21 +25,23 @@ import campaignautomation from "@/public/assets/images/features/Campaign Automat
 import revanuegrowth from "@/public/assets/images/features/Revenue Growth Insights.png";
 import voicepowered from "@/public/assets/images/features/Voice-Powered AI Command Center.png";
 import smartscheme from "@/public/assets/images/features/Smart Scheme Generator.png";
-
+import Image from "next/image";
 
 const companyLinks = [
   {
     label: "About Us",
     href: "/about",
     icon: Users,
-    description: "Our story, mission, and the team behind Tapito's retail intelligence platform.",
+    description:
+      "Our story, mission, and the team behind Tapito's retail intelligence platform.",
   },
   {
     label: "Case Studies",
     href: "/case-studies",
     icon: BookOpen,
-    description: "Real-world results from retailers who transformed their operations with Tapito.",
-  }
+    description:
+      "Real-world results from retailers who transformed their operations with Tapito.",
+  },
 ];
 
 const navLinks = [
@@ -50,7 +62,6 @@ const FeatureSlider = () => {
     { src: AIsmartanaliticsengine.src, title: "AI Smart Analytics Engine" },
     { src: campaignautomation.src, title: "Campaign Automation" },
     { src: revanuegrowth.src, title: "Revenue Growth Insights" },
-
   ];
 
   useEffect(() => {
@@ -72,8 +83,14 @@ const FeatureSlider = () => {
           className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center"
         >
           <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-110" />
-          <img src={slides[index].src} alt={slides[index].title} className="w-60 h-auto drop-shadow-2xl mb-4" />
-          <span className="text-sm font-semibold font-black text-slate-900/40 uppercase tracking-normal">{slides[index].title}</span>
+          <img
+            src={slides[index].src}
+            alt={slides[index].title}
+            className="w-60 h-auto drop-shadow-2xl mb-4"
+          />
+          <span className="text-sm font-semibold font-black text-slate-900/40 uppercase tracking-normal">
+            {slides[index].title}
+          </span>
         </motion.div>
       </AnimatePresence>
     </div>
@@ -107,13 +124,25 @@ const SolutionSlider = () => {
           className="absolute inset-0 flex flex-col items-center justify-center text-center"
         >
           <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-110" />
-          <img src={slides[index].src} alt={slides[index].title} className="w-full h-auto drop-shadow-2xl mb-4" />
-          <span className="text-sm font-black text-slate-900/40 uppercase tracking-[0.2em]">{slides[index].title}</span>
+          <img
+            src={slides[index].src}
+            alt={slides[index].title}
+            className="w-full h-auto drop-shadow-2xl mb-4"
+          />
+          <span className="text-sm font-black text-slate-900/40 uppercase tracking-[0.2em]">
+            {slides[index].title}
+          </span>
         </motion.div>
       </AnimatePresence>
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {slides.map((_, i) => (
-          <div key={i} className={cn("w-1.5 h-1.5 rounded-full transition-all duration-300", i === index ? "bg-[#09358c] w-4" : "bg-slate-200")} />
+          <div
+            key={i}
+            className={cn(
+              "w-1.5 h-1.5 rounded-full transition-all duration-300",
+              i === index ? "bg-[#09358c] w-4" : "bg-slate-200"
+            )}
+          />
         ))}
       </div>
     </div>
@@ -222,13 +251,17 @@ export default function Navbar() {
         >
           <div className="max-w-360 mx-auto px-6 md:px-10 flex items-center justify-between">
             {/* Logo */}
-            <Link onClick={closeMenu} href="/" className="flex items-center gap-3 group shrink-0">
+            <Link
+              onClick={closeMenu}
+              href="/"
+              className="flex items-center gap-3 group shrink-0"
+            >
               <div className="relative w-28 h-10 lg:w-36 lg:h-12 flex items-center justify-center">
                 <img
                   src="/logo.svg"
                   alt="Tapito Logo"
                   className={cn(
-                    "w-full h-full object-contain transition-all duration-500",
+                    "w-full h-full object-contain transition-all duration-500"
                   )}
                 />
               </div>
@@ -250,26 +283,34 @@ export default function Navbar() {
                   return (
                     <li
                       key={item.label}
-                      onMouseEnter={() => hasDropdown && handleMouseEnter(item.label)}
+                      onMouseEnter={() =>
+                        hasDropdown && handleMouseEnter(item.label)
+                      }
                       onMouseLeave={handleMouseLeave}
                       className="relative py-2"
                     >
                       <Link
                         href={item.href}
-                        onClick={item.label === "Company" ? (e) => e.preventDefault() : closeMenu}
+                        onClick={
+                          item.label === "Company"
+                            ? (e) => e.preventDefault()
+                            : closeMenu
+                        }
                         className={cn(
                           "text-[14px] lg:text-[18px] font-semibold transition-colors flex items-center gap-1.5",
                           isActive || activeMenu === item.label
                             ? "text-[#09358c]"
                             : isScrolled || !isHomePage
-                            ? "text-slate-900 hover:text-[#09358c]"
-                            : "text-white/80 hover:text-[#09358c]"
+                              ? "text-slate-900 hover:text-[#09358c]"
+                              : "text-white/80 hover:text-[#09358c]"
                         )}
                       >
                         {item.label}
                         {hasDropdown && (
                           <motion.span
-                            animate={{ rotate: activeMenu === item.label ? 180 : 0 }}
+                            animate={{
+                              rotate: activeMenu === item.label ? 180 : 0,
+                            }}
                             transition={{ duration: 0.2 }}
                           >
                             <ChevronDown size={14} />
@@ -289,7 +330,10 @@ export default function Navbar() {
               </div>
               {/* CTA's */}
               <div className="hidden lg:flex items-center gap-4">
-                <Link href="/contact" className="bg-[#09358c] text-white py-3 px-7 text-[12px] uppercase tracking-widest font-black rounded-full hover:shadow-lg hover:bg-[#09358c] transition-all duration-300">
+                <Link
+                  href="/contact"
+                  className="bg-[#09358c] text-white py-3 px-7 text-[12px] uppercase tracking-widest font-black rounded-full hover:shadow-lg hover:bg-[#09358c] transition-all duration-300"
+                >
                   Book Demo
                 </Link>
               </div>
@@ -320,11 +364,27 @@ export default function Navbar() {
                 {/* Left: Featured Image/CTA */}
                 <div className="w-[380px] bg-slate-50 p-12 border-r border-slate-100 flex flex-col justify-between">
                   <div>
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[#09358c] text-[10px] font-black uppercase tracking-widest mb-6">Latest Update</span>
-                    <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight">AI Voice <br />Command Center</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed font-medium mb-8">Manage your entire retail operation using simple natural language voice commands.</p>
-                    <Link href="/features/mobile-app" onClick={closeMenu} className="inline-flex items-center gap-2 text-[#09358c] font-black text-xs uppercase tracking-widest group/btn">
-                      Explore Module <ChevronDown className="-rotate-90 group-hover:translate-x-1 transition-transform" size={14} />
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[#09358c] text-[10px] font-black uppercase tracking-widest mb-6">
+                      Latest Update
+                    </span>
+                    <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight">
+                      AI Voice <br />
+                      Command Center
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed font-medium mb-8">
+                      Manage your entire retail operation using simple natural
+                      language voice commands.
+                    </p>
+                    <Link
+                      href="/features/mobile-app"
+                      onClick={closeMenu}
+                      className="inline-flex items-center gap-2 text-[#09358c] font-black text-xs uppercase tracking-widest group/btn"
+                    >
+                      Explore Module{" "}
+                      <ChevronDown
+                        className="-rotate-90 group-hover:translate-x-1 transition-transform"
+                        size={14}
+                      />
                     </Link>
                   </div>
                   <FeatureSlider />
@@ -341,10 +401,12 @@ export default function Navbar() {
                         className="group flex gap-5"
                       >
                         <div className="shrink-0 w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#09358c] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#09358c]/20 transition-all duration-300">
-                        <AnimatedLucideIcon icon={feature.icon} size={24} />
+                          <AnimatedLucideIcon icon={feature.icon} size={24} />
                         </div>
                         <div>
-                          <h4 className="text-[17px] font-extrabold text-slate-900 mb-1.5 group-hover:text-[#09358c] transition-colors">{feature.title}</h4>
+                          <h4 className="text-[17px] font-extrabold text-slate-900 mb-1.5 group-hover:text-[#09358c] transition-colors">
+                            {feature.title}
+                          </h4>
                           <motion.div
                             initial={{ height: "40px" }}
                             whileHover={{ height: "auto" }}
@@ -360,19 +422,34 @@ export default function Navbar() {
                   </div>
 
                   <div className="mt-16 pt-10 border-t border-slate-100 flex items-center justify-between">
-                     <div className="flex items-center gap-6">
-                        <div className="flex -space-x-3">
-                           {[1,2,3,4].map(i => (
-                             <div key={i} className="w-9 h-9 rounded-full border-2 border-white bg-slate-100 overflow-hidden shadow-sm">
-                               <img src={`https://i.pravatar.cc/100?u=${i+10}`} alt="user" />
-                             </div>
-                           ))}
-                        </div>
-                        <p className="text-xs font-bold text-slate-400">Join <span className="text-slate-900">2,500+</span> retailers scaling with AI.</p>
-                     </div>
-                     <Link href="/features" onClick={closeMenu} className="px-8 py-3 rounded-full bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#09358c] transition-colors shadow-xl shadow-slate-900/10">
-                        View All Capabilities
-                     </Link>
+                    <div className="flex items-center gap-6">
+                      <div className="flex -space-x-3">
+                        {[1, 2, 3, 4].map((i) => (
+                          <div
+                            key={i}
+                            className="w-9 h-9 rounded-full border-2 border-white bg-slate-100 overflow-hidden shadow-sm"
+                          >
+                            <Image
+                              width={36}
+                              height={36}
+                              src={`https://i.pravatar.cc/100?u=${i + 10}`}
+                              alt="user"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      <p className="text-xs font-bold text-slate-400">
+                        Join <span className="text-slate-900">2,500+</span>{" "}
+                        retailers scaling with AI.
+                      </p>
+                    </div>
+                    <Link
+                      href="/features"
+                      onClick={closeMenu}
+                      className="px-8 py-3 rounded-full bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#09358c] transition-colors shadow-xl shadow-slate-900/10"
+                    >
+                      View All Capabilities
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -393,11 +470,27 @@ export default function Navbar() {
                 {/* Left: Featured Image/CTA */}
                 <div className="w-[380px] bg-slate-50 p-12 border-r border-slate-100 flex flex-col justify-between">
                   <div>
-                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[#09358c] text-[10px] font-black uppercase tracking-widest mb-6">Industry Focus</span>
-                    <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight">Retail Innovation <br />Framework</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed font-medium mb-8">Tailored AI solutions designed specifically for the unique challenges of modern physical retail.</p>
-                    <Link href="/solutions" onClick={closeMenu} className="inline-flex items-center gap-2 text-[#09358c] font-black text-xs uppercase tracking-widest group/btn">
-                      Explore All Verticals <ChevronDown className="-rotate-90 group-hover:translate-x-1 transition-transform" size={14} />
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-[#09358c] text-[10px] font-black uppercase tracking-widest mb-6">
+                      Industry Focus
+                    </span>
+                    <h3 className="text-3xl font-black text-slate-900 mb-4 leading-tight">
+                      Retail Innovation <br />
+                      Framework
+                    </h3>
+                    <p className="text-sm text-slate-500 leading-relaxed font-medium mb-8">
+                      Tailored AI solutions designed specifically for the unique
+                      challenges of modern physical retail.
+                    </p>
+                    <Link
+                      href="/solutions"
+                      onClick={closeMenu}
+                      className="inline-flex items-center gap-2 text-[#09358c] font-black text-xs uppercase tracking-widest group/btn"
+                    >
+                      Explore All Verticals{" "}
+                      <ChevronDown
+                        className="-rotate-90 group-hover:translate-x-1 transition-transform"
+                        size={14}
+                      />
                     </Link>
                   </div>
                   <SolutionSlider />
@@ -414,10 +507,12 @@ export default function Navbar() {
                         className="group flex gap-5"
                       >
                         <div className="shrink-0 w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-[#09358c] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#09358c]/20 transition-all duration-300">
-                        <AnimatedLucideIcon icon={solution.icon} size={24} />
+                          <AnimatedLucideIcon icon={solution.icon} size={24} />
                         </div>
                         <div>
-                          <h4 className="text-[17px] font-extrabold text-slate-900 mb-1.5 group-hover:text-[#09358c] transition-colors">{solution.title}</h4>
+                          <h4 className="text-[17px] font-extrabold text-slate-900 mb-1.5 group-hover:text-[#09358c] transition-colors">
+                            {solution.title}
+                          </h4>
                           <motion.div
                             initial={{ height: "40px" }}
                             whileHover={{ height: "auto" }}
@@ -433,15 +528,23 @@ export default function Navbar() {
                   </div>
 
                   <div className="mt-16 pt-10 border-t border-slate-100 flex items-center justify-between">
-                     <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-[#09358c]/5 flex items-center justify-center text-[#09358c]">
-                           <Shield size={20} />
-                        </div>
-                        <p className="text-xs font-bold text-slate-400">Enterprise-grade security and <span className="text-slate-900">GDPR compliance</span> for all retail data.</p>
-                     </div>
-                     <Link href="/contact" onClick={closeMenu} className="px-8 py-3 rounded-full bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#09358c] transition-colors shadow-xl shadow-slate-900/10">
-                        Request Customized Solution
-                     </Link>
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-[#09358c]/5 flex items-center justify-center text-[#09358c]">
+                        <Shield size={20} />
+                      </div>
+                      <p className="text-xs font-bold text-slate-400">
+                        Enterprise-grade security and{" "}
+                        <span className="text-slate-900">GDPR compliance</span>{" "}
+                        for all retail data.
+                      </p>
+                    </div>
+                    <Link
+                      href="/contact"
+                      onClick={closeMenu}
+                      className="px-8 py-3 rounded-full bg-slate-900 text-white text-[11px] font-black uppercase tracking-widest hover:bg-[#09358c] transition-colors shadow-xl shadow-slate-900/10"
+                    >
+                      Request Customized Solution
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -463,16 +566,28 @@ export default function Navbar() {
                 <div className="w-[350px] bg-slate-900 p-12 text-white flex flex-col justify-between relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[60px] rounded-full -mr-10 -mt-10" />
                   <div className="relative z-10">
-                    <span className="text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 block">Our Mission</span>
-                    <h3 className="text-2xl font-black mb-4">Empowering <br />Retail Growth</h3>
-                    <p className="text-sm text-slate-400 leading-relaxed font-medium mb-8">We build the intelligence layer that powers the next generation of physical retail stores.</p>
+                    <span className="text-blue-400 text-[10px] font-black uppercase tracking-widest mb-6 block">
+                      Our Mission
+                    </span>
+                    <h3 className="text-2xl font-black mb-4">
+                      Empowering <br />
+                      Retail Growth
+                    </h3>
+                    <p className="text-sm text-slate-400 leading-relaxed font-medium mb-8">
+                      We build the intelligence layer that powers the next
+                      generation of physical retail stores.
+                    </p>
                   </div>
                   <div className="relative z-10 pt-8 border-t border-white/10">
-                     <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Global HQ</p>
-                     <div className="flex items-center gap-3">
-                        <Globe size={16} className="text-blue-400" />
-                        <span className="text-xs font-bold">Kochi • Dubai • London</span>
-                     </div>
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+                      Global HQ
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <Globe size={16} className="text-blue-400" />
+                      <span className="text-xs font-bold">
+                        Kochi • Dubai • London
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -490,8 +605,12 @@ export default function Navbar() {
                           <link.icon size={26} />
                         </div>
                         <div>
-                          <h4 className="text-lg font-extrabold text-slate-900 mb-1 group-hover:text-[#09358c] transition-colors">{link.label}</h4>
-                          <p className="text-sm text-slate-500 leading-relaxed font-medium">{link.description}</p>
+                          <h4 className="text-lg font-extrabold text-slate-900 mb-1 group-hover:text-[#09358c] transition-colors">
+                            {link.label}
+                          </h4>
+                          <p className="text-sm text-slate-500 leading-relaxed font-medium">
+                            {link.description}
+                          </p>
                         </div>
                       </Link>
                     ))}
@@ -557,26 +676,37 @@ export default function Navbar() {
                             href={item.label === "Company" ? "#" : item.href}
                             onClick={
                               item.label === "Company"
-                                ? (e) => { e.preventDefault(); setMobileCompanyOpen(!mobileCompanyOpen); }
+                                ? (e) => {
+                                    e.preventDefault();
+                                    setMobileCompanyOpen(!mobileCompanyOpen);
+                                  }
                                 : closeMenu
                             }
                             className="text-[22px] font-black text-slate-900 hover:text-[#09358c] transition-colors flex items-center gap-4"
                           >
-                            <span className="text-xs font-bold text-slate-400 tabular-nums">0{idx + 1}</span>
+                            <span className="text-xs font-bold text-slate-400 tabular-nums">
+                              0{idx + 1}
+                            </span>
                             {item.label}
                           </Link>
                           {hasDropdown && (
                             <button
                               onClick={() => {
-                                if (item.label === "Features") setMobileFeaturesOpen(!mobileFeaturesOpen);
-                                if (item.label === "Solutions") setMobileSolutionsOpen(!mobileSolutionsOpen);
-                                if (item.label === "Company") setMobileCompanyOpen(!mobileCompanyOpen);
+                                if (item.label === "Features")
+                                  setMobileFeaturesOpen(!mobileFeaturesOpen);
+                                if (item.label === "Solutions")
+                                  setMobileSolutionsOpen(!mobileSolutionsOpen);
+                                if (item.label === "Company")
+                                  setMobileCompanyOpen(!mobileCompanyOpen);
                               }}
                               className="p-2"
                             >
                               <ChevronDown
                                 size={22}
-                                className={cn("transition-transform duration-300", isExpanded && "rotate-180 text-[#09358c]")}
+                                className={cn(
+                                  "transition-transform duration-300",
+                                  isExpanded && "rotate-180 text-[#09358c]"
+                                )}
                               />
                             </button>
                           )}
@@ -591,32 +721,52 @@ export default function Navbar() {
                               className="mt-6 pl-8 grid grid-cols-1 gap-3 overflow-hidden"
                             >
                               {features.map((f) => (
-                                <Link key={f.slug} href={`/features/${f.slug}`} onClick={closeMenu} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors">
+                                <Link
+                                  key={f.slug}
+                                  href={`/features/${f.slug}`}
+                                  onClick={closeMenu}
+                                  className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors"
+                                >
                                   <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-[#09358c] shadow-sm">
                                     <f.icon size={14} color="#09358c" />
                                   </div>
-                                  <span className="text-[14px] font-bold text-slate-700">{f.title}</span>
+                                  <span className="text-[14px] font-bold text-slate-700">
+                                    {f.title}
+                                  </span>
                                 </Link>
                               ))}
                             </motion.div>
                           )}
-                          {item.label === "Solutions" && mobileSolutionsOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              className="mt-6 pl-8 grid grid-cols-1 gap-3 overflow-hidden"
-                            >
-                              {solutionsData.map((s) => (
-                                <Link key={s.slug} href={`/solutions/${s.slug}`} onClick={closeMenu} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors">
-                                  <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center text-white shadow-sm", s.color)}>
-                                    <s.icon size={14} color="#09358c"/>
-                                  </div>
-                                  <span className="text-[14px] font-bold text-slate-700">{s.title}</span>
-                                </Link>
-                              ))}
-                            </motion.div>
-                          )}
+                          {item.label === "Solutions" &&
+                            mobileSolutionsOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: "auto", opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                className="mt-6 pl-8 grid grid-cols-1 gap-3 overflow-hidden"
+                              >
+                                {solutionsData.map((s) => (
+                                  <Link
+                                    key={s.slug}
+                                    href={`/solutions/${s.slug}`}
+                                    onClick={closeMenu}
+                                    className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors"
+                                  >
+                                    <div
+                                      className={cn(
+                                        "w-8 h-8 rounded-lg flex items-center justify-center text-white shadow-sm",
+                                        s.color
+                                      )}
+                                    >
+                                      <s.icon size={14} color="#09358c" />
+                                    </div>
+                                    <span className="text-[14px] font-bold text-slate-700">
+                                      {s.title}
+                                    </span>
+                                  </Link>
+                                ))}
+                              </motion.div>
+                            )}
                           {item.label === "Company" && mobileCompanyOpen && (
                             <motion.div
                               initial={{ height: 0, opacity: 0 }}
@@ -625,11 +775,18 @@ export default function Navbar() {
                               className="mt-6 pl-8 flex flex-col gap-3 overflow-hidden"
                             >
                               {companyLinks.map((l) => (
-                                <Link key={l.href} href={l.href} onClick={closeMenu} className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors">
+                                <Link
+                                  key={l.href}
+                                  href={l.href}
+                                  onClick={closeMenu}
+                                  className="flex items-center gap-3 p-3 rounded-xl bg-slate-50/50 hover:bg-slate-100 transition-colors"
+                                >
                                   <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-slate-400 shadow-sm">
                                     <l.icon size={14} />
                                   </div>
-                                  <span className="text-[14px] font-bold text-slate-700">{l.label}</span>
+                                  <span className="text-[14px] font-bold text-slate-700">
+                                    {l.label}
+                                  </span>
                                 </Link>
                               ))}
                             </motion.div>
@@ -642,11 +799,17 @@ export default function Navbar() {
               </div>
 
               <div className="p-8 border-t border-slate-50 bg-slate-50/50">
-                <Link href="/contact" onClick={closeMenu} className="w-full bg-[#09358c] text-white py-5 rounded-2xl font-black uppercase tracking-widest text-[13px] shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3">
+                <Link
+                  href="/contact"
+                  onClick={closeMenu}
+                  className="w-full bg-[#09358c] text-white py-5 rounded-2xl font-black uppercase tracking-widest text-[13px] shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-3"
+                >
                   Book Demo <ArrowRight size={16} />
                 </Link>
                 <div className="mt-8 flex gap-6 grayscale opacity-50">
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-400">Follow us</span>
+                  <span className="text-xs font-black uppercase tracking-widest text-slate-400">
+                    Follow us
+                  </span>
                   <div className="h-px flex-1 bg-slate-200 self-center" />
                 </div>
               </div>
