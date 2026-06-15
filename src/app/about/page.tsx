@@ -12,9 +12,9 @@ import { buildMetadata, orgSchema, webPageSchema, breadcrumbSchema, SITE } from 
 import JsonLd from "@/components/JsonLd";
 
 export const metadata = buildMetadata({
-  title: "About Us | Tapito - Next-Gen AI Engagement Platform",
+  title: "About Tapito | AI Retail Intelligence Platform",
   description:
-    "Learn more about Tapito, the AI-powered platform by Fegno Technologies that empowers retail businesses through data automation and intelligent engagement.",
+    "Learn how Tapito helps retail businesses grow through AI-powered retail intelligence, predictive analytics, and customer engagement automation.",
   path: "/about",
 });
 

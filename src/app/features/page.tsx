@@ -3,7 +3,7 @@ import JsonLd from "@/components/JsonLd";
 import FeaturesPageContent from "./FeaturesPageContent";
 
 export const metadata = buildMetadata({
-  title: "Features | Tapito AI Platform",
+  title: "Tapito AI Features | Retail Intelligence, Analytics & Automation",
   description:
     "Explore Tapito's full suite of retail AI features — from business intelligence dashboards to campaign automation, revenue insights, and more.",
   path: "/features",

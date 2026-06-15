@@ -37,9 +37,9 @@ export default function Metrics() {
            <div>
               <h2 className="text-sm font-bold uppercase tracking-widest text-[#09358c] mb-4">Business Impact</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Real Results. <span className="text-[#09358c]">Proven Scale.</span></h3>
+              Measurable Business Growth <span className="text-[#09358c]">Powered by AI</span></h3>
               <p className="text-lg text-slate-600 mb-10">
-                Companies using Tapito see an immediate impact on their bottom line through automated intelligence and better decision making.
+                Retail businesses using Tapito improve revenue, customer retention, operational efficiency, and decision-making through AI-powered retail intelligence, predictive analytics, and automation.
               </p>
               
               <div className="grid grid-cols-1 gap-6">
@@ -88,7 +88,7 @@ export default function Metrics() {
                  </p>
                  
                  <ul className="space-y-4">
-                    {["Predictive Inventory Leveling", "Cross-Channel Persona Mapping", "AI-Driven Dynamic Pricing"].map((item, i) => (
+                    {["Predictive Retail Analytics", "Inventory Optimization", "Customer Intelligence & Personalization", "Revenue Optimization"].map((item, i) => (
                        <li key={i} className="flex items-center gap-3">
                           <div className="w-5 h-5 rounded-full bg-blue-400/30 flex items-center justify-center">
                              <div className="w-1.5 h-1.5 rounded-full bg-white transition-all scale-100" />

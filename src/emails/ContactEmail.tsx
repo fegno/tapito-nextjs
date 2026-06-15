@@ -61,7 +61,7 @@ export default function ContactEmail({
         <Container style={{ maxWidth: "600px", margin: "0 auto" }}>
 
           {/* ── Header ─────────────────────────────────────── */}
-          <Section style={{ background: "linear-gradient(135deg,#09358c 0%,#05a0ec 100%)", borderRadius: "12px 12px 0 0", padding: "32px 40px" }}>
+          <Section style={{ backgroundColor: "#09358c", borderRadius: "12px 12px 0 0", padding: "32px 40px" }}>
             <Heading style={{ color: "#ffffff", fontSize: "20px", fontWeight: 700, margin: "0 0 6px" }}>
               New Contact Form Submission
             </Heading>

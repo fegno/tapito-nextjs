@@ -84,30 +84,30 @@ export default function Insights() {
             </motion.div>
 
             <h3 className="text-4xl md:text-7xl font-black text-slate-900 mb-6 lg:mb-8 leading-[1]">
-              Operational <br /> <span className="text-[#09358c]">Excellence.</span>
+              AI-Powered <br /> <span className="text-[#09358c]">Retail Analytics</span>
             </h3>
 
             <p className="text-[16px] lg:text-[18px] 2xl:text-xl text-slate-500 mb-12 leading-relaxed max-w-xl">
-              Understand the DNA of your business. We provide the granular insights needed to optimize every shift, every product, and every dollar.
+              Tapito's predictive retail analytics platform helps retail businesses monitor operational performance, forecast future growth, optimize resources, and identify revenue opportunities using AI-powered business intelligence and real-time retail data.
             </p>
 
             <div className="grid grid-cols-1 gap-4">
               <Item
                 icon="Activity"
-                title="Health Score"
-                desc="A composite index monitoring the operational vitality of your stores, from inventory flow to personnel efficiency."
+                title="Health Score Dashboard"
+                desc="Track operational health, inventory efficiency, employee productivity, and store performance in real time."
                 delay={0}
               />
               <Item
                 icon="TrendingUp"
-                title="Growth Simulation"
-                desc="Predictive forecasting that models expansion scenarios, allowing you to visualize ROI before a single dollar is spent."
+                title="Growth Forecasting Engine"
+                desc="Simulate growth opportunities, predict future demand, and forecast revenue performance using AI-powered analytics."
                 delay={0.1}
               />
               <Item
                 icon="Sparkles"
-                title="Incentive Stimulation"
-                desc="Neural-network driven rewards that automatically identify and motivate high-impact behaviors across your network."
+                title="Incentive Intelligence"
+                desc="Optimize workforce performance by identifying high-impact sales activities and rewarding behaviors that drive customer retention and revenue growth."
                 delay={0.2}
               />
             </div>

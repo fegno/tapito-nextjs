@@ -6,19 +6,19 @@ import Container from "./Container";
 
 const steps = [
   {
-    title: "Clear business insights",
+    title: "Clear Business Insights",
     desc: "Instantly visualize performance across all stores and channels without manual reporting or messy spreadsheets.",
     icon: "Database",
     color: "bg-[#05a0ec1a] text-[#05a0ec]"
   },
   {
-    title: "Identified growth opportunities",
+    title: "Revenue Opportunities",
     desc: "Tap into AI that highlights underlying trends and pinpoints exactly where your next revenue boost is hiding.",
     icon: "Lightbulb",
     color: "bg-[#06dcc31a] text-[#06dcc3]"
   },
   {
-    title: "Automated actions",
+    title: "Automated Growth Strategies",
     desc: "Let our engine trigger high-performing campaigns and operational tasks automatically based on real-time data.",
     icon: "Zap",
     color: "bg-[#09358c1a] text-[#09358c]"
@@ -113,10 +113,10 @@ export default function Process() {
               </div>
             </motion.div>
           <h3 className="text-3xl lg:text-5xl 3xl:text-7xl font-black text-slate-900 mb-10 leading-[1.05] tracking-tight">
-            From Data to Decisions<br /><span className="text-[#09358c]">— In Seconds.</span>
+            Transforms Retail Data Into<br /><span className="text-[#09358c]">Revenue Growth</span>
           </h3>
           <p className="text-md lg:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto opacity-80">
-            Precision-engineered analytics that transform raw retail data into actionable growth strategies.
+            Tapito helps retail businesses convert data into actionable insights, revenue opportunities, and automated growth strategies through AI-powered analytics and retail intelligence.
           </p>
         </div>
 
