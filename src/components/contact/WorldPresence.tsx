@@ -249,8 +249,10 @@ export default function WorldPresence({ showCards = true }: { showCards?: boolea
                   <h4 className="text-xl font-black text-slate-900 group-hover:text-[#05a0ec] transition-colors uppercase tracking-normal">
                     {office.city}
                   </h4>
-                  <img 
+                  <Image 
                     src={`https://flagcdn.com/w80/${office.countryCode}.png`} 
+                    width={32}
+                    height={32}
                     alt={office.country}
                     className="w-8 h-auto rounded-sm shadow-sm border border-slate-100" 
                   />
