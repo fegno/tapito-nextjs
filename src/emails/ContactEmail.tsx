@@ -133,7 +133,7 @@ export default function ContactEmail({
           <Section style={{ backgroundColor: "#f8fafc", borderRadius: "0 0 12px 12px", padding: "16px 40px", borderTop: "1px solid #e2e8f0" }}>
             <Text style={{ color: "#94a3b8", fontSize: "12px", margin: 0 }}>
               Submitted via the contact form at{" "}
-              <Link href="https://tapito.ai/contact" style={{ color: "#94a3b8" }}>
+              <Link href="https://www.tapito.ai/contact" style={{ color: "#94a3b8" }}>
                 tapito.ai/contact
               </Link>
             </Text>
