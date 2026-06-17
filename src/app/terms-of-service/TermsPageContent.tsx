@@ -104,7 +104,7 @@ const TermsPage = () => {
                 <ul className="list-disc pl-6 space-y-3">
                   <li>Provide accurate, complete, and updated information during account registration.</li>
                   <li>Maintain the confidentiality of your account credentials and restrict access to unauthorized users.</li>
-                  <li>Promptly notify support@tapito.ai of any suspected security breaches or unauthorized account activity.</li>
+                  <li>Promptly notify hello@tapito.ai of any suspected security breaches or unauthorized account activity.</li>
                 </ul>
               </div>
             </section>
@@ -187,7 +187,7 @@ const TermsPage = () => {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-black mb-1">Email Support</p>
-                      <p className="font-black text-lg">support@tapito.ai</p>
+                      <p className="font-black text-lg">hello@tapito.ai</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -196,7 +196,7 @@ const TermsPage = () => {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.2em] opacity-60 font-black mb-1">Official Website</p>
-                      <p className="font-black text-lg">https://tapito.ai</p>
+                      <p className="font-black text-lg">https://www.tapito.ai</p>
                     </div>
                   </div>
                 </div>
