@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PartnersPageContent from "./PartnersPageContent";
 
 export const metadata = buildMetadata({
-  title: "Partners | Tapito",
+  title: "Retail Technology Partner Program | Tapito",
   description:
-    "Partner with Tapito to bring AI-powered retail intelligence to your clients. Explore reseller, technology, and implementation partnerships.",
+    "Partner with Tapito and help retail businesses unlock growth through AI-powered retail intelligence and automation.",
   path: "/partners",
 });
 

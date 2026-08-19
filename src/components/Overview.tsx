@@ -23,12 +23,11 @@ export default function Overview() {
               PLATFORM OVERVIEW
             </div>
             <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-black text-slate-900 leading-tight">
-              One Unified Engine. <br />
-              <span className="text-[#09358c]">Infinite Integrations.</span>
+              One Unified <br />
+              <span className="text-[#09358c]">Retail Intelligence Engine</span>
             </h2>
             <p className="text-[16px] xl:text-xl text-slate-500 leading-relaxed max-w-xl">
-              Tapito isn't just a dashboard. It's a comprehensive AI layer that sits on top of your existing retail stack,
-              synthesizing every transaction into a strategic advantage.
+              Connect every retail system into a centralized AI Retail Platform that transforms raw data into actionable business decisions.
             </p>
             <div>
               <Link

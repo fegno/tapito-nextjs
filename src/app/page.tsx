@@ -57,9 +57,9 @@ const keyHighlights = [
 ];
 
 export const metadata = buildMetadata({
-  title: "Tapito | AI-Powered Customer Engagement Platform",
+  title: "AI Retail Platform for Customer Intelligence & Revenue Growth | Tapito",
   description:
-    "Turn your retail data into revenue automatically with Tapito's AI-powered analytics, real-time insights, and automated engagement.",
+    "Transform customer data into revenue opportunities with Tapito's AI retail revenue intelligence platform. Improve customer retention, automate engagement, optimize performance, and accelerate retail growth.",
   path: "",
 });
 
@@ -94,10 +94,10 @@ export default function Home() {
         <Audience />
         <Metrics />
         <CTASection
-          title="Stop Guessing."
-          subtitle="Start Growing."
-          description="Join hundreds of retail giants who have transformed their data into a revenue engine with Tapito."
-          badge="READY TO TRANSFORM?"
+          title="Start Growing With an"
+          subtitle="AI Revenue Intelligence Platform"
+          description="Transform customer data into revenue opportunities with Tapito's AI revenue intelligence platform. Improve customer retention, optimize business performance, and accelerate revenue growth with AI-powered insights and automation."
+          badge="GET STARTED"
           image="/assets/images/about/ready-to-tranform.png"
           isAbout={false}
         />

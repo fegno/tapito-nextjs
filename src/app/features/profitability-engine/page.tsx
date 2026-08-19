@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Real-Time Profitability Engine | Tapito",
+  title: "Retail Profitability Analytics Software | Tapito",
   description:
-    "Stop scaling losses. Identify and block profit leaks while spend is active with Tapito's live margin-protection intelligence and real-time profitability tracking.",
+    "Improve profitability with AI-powered analytics, revenue optimization, and retail performance insights.",
   path: "/features/profitability-engine",
 });
 

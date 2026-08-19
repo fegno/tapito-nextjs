@@ -34,6 +34,8 @@ import staffconversion from '@/public/assets/images/Automated-Conversion.png';
 export const solutionDetails: Record<string, any> = {
   "building-materials": {
     title: "Building Materials",
+    metaTitle: "AI Software for Building Material Retailers | Tapito",
+    metaDescription: "Increase revenue, improve customer retention, and identify cross-selling opportunities with AI-powered retail intelligence.",
     description: "Turn Every Material Purchase Into Multiple Revenue Opportunities. Tapito helps building material businesses understand what customers are really trying to achieve, not just what they buy today.",
     howWeHelp: [
       {
@@ -122,6 +124,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "home-furnishing": {
     title: "Home Furnishing",
+    metaTitle: "AI Software for Home Furnishing Retailers | Tapito",
+    metaDescription: "Optimize customer engagement, improve revenue, and gain actionable retail insights for home furnishing businesses.",
     description: "Transform Customer Preferences Into Higher Value Sales. Tapito helps home furnishing businesses understand customer lifestyle preferences, interior interests, and buying behavior — not just the products they purchase today.",
     howWeHelp: [
       {
@@ -210,6 +214,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "electronics": {
     title: "Electronics",
+    metaTitle: "AI Software for Electronics Retailers | Tapito",
+    metaDescription: "Understand customer demand, forecast sales, and improve revenue performance with AI-powered retail analytics.",
     description: "Turn Every Customer Purchase Into Smarter Upselling Opportunities. Tapito helps electronics businesses understand customer buying intent, technology preferences, and upgrade behavior — not just the product they purchase today.",
     howWeHelp: [
       {
@@ -298,6 +304,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "supermarkets": {
     title: "Supermarket",
+    metaTitle: "AI Software for Supermarkets | Tapito",
+    metaDescription: "Improve inventory planning, customer retention, and revenue growth with AI-powered supermarket analytics software.",
     description: "Turn Everyday Shopping Data Into Higher Customer Spending. Tapito helps supermarkets understand customer buying behavior, shopping patterns, and household preferences — not just the products customers purchase today.",
     howWeHelp: [
       {
@@ -386,6 +394,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "fashion": {
     title: "Fashion",
+    metaTitle: "AI Software for Fashion Retailers | Tapito",
+    metaDescription: "Analyze customer behavior, improve merchandising, and increase revenue with AI-powered fashion retail analytics.",
     description: "Turn Customer Style Preferences Into Smarter Fashion Selling. Tapito helps fashion businesses understand customer style preferences, shopping behavior, and seasonal buying patterns — not just the products customers purchase today.",
     howWeHelp: [
       {
@@ -474,6 +484,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "beauty-health": {
     title: "Beauty & Health",
+    metaTitle: "AI Software for Beauty & Wellness Retailers | Tapito",
+    metaDescription: "Improve loyalty, personalize customer experiences, and increase repeat purchases with AI-powered retail intelligence.",
     description: "Transform Customer Wellness, Beauty & Fitness Preferences Into Long-Term Engagement. Tapito helps beauty, wellness, pharmacy, gyms, and healthcare businesses understand customer preferences, purchase behavior, and recurring wellness needs.",
     howWeHelp: [
       {
@@ -562,6 +574,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "jewelry": {
     title: "Jewelry",
+    metaTitle: "AI Software for Jewelry Retailers | Tapito",
+    metaDescription: "Understand customer preferences, optimize sales performance, and improve revenue growth with retail analytics.",
     description: "Turn Customer Purchase Behavior Into High-Value Relationship Selling. Tapito helps jewelry businesses understand customer preferences, buying behavior, and lifecycle purchasing patterns — not just the products customers purchase today.",
     howWeHelp: [
       {
@@ -650,6 +664,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "fb-retail": {
     title: "F&B Retail",
+    metaTitle: "AI Software for F&B Retail Businesses | Tapito",
+    metaDescription: "Improve customer retention, optimize menu performance, and increase revenue with AI-powered retail analytics.",
     description: "Turn Customer Food Preferences Into Repeat Visits & Higher Spending. Tapito helps food and beverage retail businesses understand customer taste preferences, ordering behavior, and purchase patterns — not just the products customers purchase today.",
     howWeHelp: [
       {
@@ -738,6 +754,8 @@ export const solutionDetails: Record<string, any> = {
   },
   "ecommerce": {
     title: "eCommerce",
+    metaTitle: "Ecommerce Revenue Intelligence Platform | Tapito",
+    metaDescription: "Transform ecommerce customer data into revenue opportunities using AI-powered analytics and automation.",
     description: "Turn Customer Browsing Behavior Into Higher Conversions & Repeat Sales. Tapito helps eCommerce businesses understand customer interests, browsing behavior, shopping intent, and purchase patterns — not just the products customers buy today.",
     howWeHelp: [
       {

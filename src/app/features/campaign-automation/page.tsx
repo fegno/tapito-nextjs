@@ -3,9 +3,9 @@ import JsonLd from "@/components/JsonLd";
 import PageContent from "./PageContent";
 
 export const metadata = buildMetadata({
-  title: "Campaign Automation | Tapito",
+  title: "Retail Marketing Automation Software | Tapito",
   description:
-    "Set once. Run forever. Fully automated customer engagement across WhatsApp, SMS, and Email that scales with your retail business.",
+    "Automate customer engagement, retention campaigns, and personalized promotions with AI-powered retail marketing automation.",
   path: "/features/campaign-automation",
 });
 
