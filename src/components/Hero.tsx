@@ -72,7 +72,7 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            <h1 className={`${isMobile ? "text-[34px]" : "text-[40px]"} lg:text-[44px] 3xl:text-[58px] 2xl:text-[58px] font-bold xl:leading-[50px] 2xl:leading-[60px] 4xl:leading-[75px] text-white font-satoshi`}>
+            <h1 className={`${isMobile ? "text-[34px]" : "text-[40px]"} lg:text-[38px] 3xl:text-[58px] 2xl:text-[58px] font-bold lg:leading-[44px] 2xl:leading-[60px] 4xl:leading-[75px] text-white font-satoshi`}>
               AI Revenue Intelligence Platform
               <br />
               <span className="pb-2 px-1 inline-block bg-clip-text text-transparent bg-[linear-gradient(90deg,#09358C_0%,#FFFFFF_100%)]">
