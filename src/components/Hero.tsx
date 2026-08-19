@@ -10,7 +10,7 @@ import { ArrowRightIcon } from "lucide-animated";
 
 const slides = [
   { src: "/videos/mob-ai.webm", title: "Voice-Powered AI Command Center" },
-  {src: "/videos/smart-business.webm",title: "Real-Time Business Intelligence"},
+  { src: "/videos/smart-business.webm", title: "Real-Time Business Intelligence" },
   { src: "/videos/simulator.webm", title: "Advanced Growth Simulator" },
   { src: "/videos/ai.webm", title: "Smart Scheme Generator" },
 
@@ -22,7 +22,7 @@ export default function Hero() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    if(window?.innerWidth === undefined) return;
+    if (window?.innerWidth === undefined) return;
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 400);
     };
@@ -95,7 +95,7 @@ export default function Hero() {
                 Book Demo
                 <ArrowRightIcon color="#017DC0C4" size={20} />
               </button>
-              <button 
+              <button
                 className="px-8 py-3.5 rounded-full flex items-center gap-3 group text-lg w-full sm:w-auto justify-center transition-all bg-none border-1 border-[#017DC0C4] font-normal text-white text-[16px] lg:text-[18px] 3xl:text-[22px]"
                 onClick={() => {
                   document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
@@ -103,8 +103,8 @@ export default function Hero() {
               >
                 <div className="w-10 h-10 rounded-full gradient-bg-anim flex items-center justify-center text-white transition-all shadow-lg shadow-blue-500/10">
                   <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="fill-current ml-1" aria-hidden="true">
-                    <path d="M0 10.5807V1.30649C0 0.301562 1.08846 -0.325997 1.95815 0.177507L10.3491 5.03541C11.2373 5.54965 11.2113 6.84078 10.303 7.3188L1.91212 11.7351C1.04341 12.1923 0 11.5623 0 10.5807Z" fill="currentColor"/>
-                  </svg> 
+                    <path d="M0 10.5807V1.30649C0 0.301562 1.08846 -0.325997 1.95815 0.177507L10.3491 5.03541C11.2373 5.54965 11.2113 6.84078 10.303 7.3188L1.91212 11.7351C1.04341 12.1923 0 11.5623 0 10.5807Z" fill="currentColor" />
+                  </svg>
                 </div>
                 See How It Works
               </button>
@@ -127,7 +127,7 @@ export default function Hero() {
                     className={`relative w-full 2xl:h-[68%] 3xl:h-[70%] 4xl:h-[79%] overflow-hidden flex items-center justify-center`}
                   >
                     {/* Floating Title */}
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.3, duration: 0.6 }}
