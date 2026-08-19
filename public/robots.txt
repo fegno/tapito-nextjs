@@ -1,13 +1,6 @@
-# Robots.txt
-
 User-agent: *
 Allow: /
 
-# Crawl-delay (optional, prevents aggressive crawling)
 Crawl-delay: 1
 
-# Security disclosure
-# See /.well-known/security.txt for responsible security reporting
-
-# Sitemap location
 Sitemap: https://tapito.ai/sitemap.xml
