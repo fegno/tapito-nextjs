@@ -88,7 +88,7 @@ export default function Home() {
         <ValueStrip />
         <Capabilities />
         <Insights />
-        <FeaturedVideo />
+        {/* <FeaturedVideo /> */}
         <Automation />
         <AIAssistant />
         <Audience />
