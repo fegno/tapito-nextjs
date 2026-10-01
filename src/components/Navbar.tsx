@@ -100,9 +100,15 @@ const FeatureSlider = () => {
 const SolutionSlider = () => {
   const [index, setIndex] = useState(0);
   const slides = [
-    { src: "/assets/images/home/retail.png", title: "Smart Retail" },
-    { src: "/assets/images/home/supermarket.png", title: "Supermarket AI" },
-    { src: "/assets/images/home/fashion.png", title: "Fashion Tech" },
+    { src: "/assets/images/solutions/analyzes-supermarket.jpg", title: "Supermarket AI" },
+    { src: "/assets/images/solutions/analyzes-fashion.jpg", title: "Fashion Tech" },
+    { src: "/assets/images/solutions/analyzes-electronics.jpg", title: "Electronics Retail" },
+    { src: "/assets/images/solutions/analyzes-beauty-health.jpg", title: "Beauty & Health" },
+    { src: "/assets/images/solutions/analyzes-building-material.jpg", title: "Building Materials" },
+    { src: "/assets/images/solutions/analyzes-ecommerce.jpg", title: "E-Commerce" },
+    { src: "/assets/images/solutions/analyzes-home-furnishing.jpg", title: "Home Furnishing" },
+    { src: "/assets/images/solutions/analyzes-jewelry.jpg", title: "Jewelry Retail" },
+    { src: "/assets/images/solutions/analyzes-fb-retail.jpg", title: "F&B Retail" },
   ];
 
   useEffect(() => {
@@ -121,30 +127,19 @@ const SolutionSlider = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: -20 }}
           transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center"
+          className="absolute inset-0 flex flex-col items-center justify-center p-3 text-center"
         >
           <div className="absolute inset-0 bg-blue-500/5 blur-3xl rounded-full scale-110" />
           <img
             src={slides[index].src}
             alt={slides[index].title}
-            className="w-full h-auto drop-shadow-2xl mb-4"
+            className="w-60 h-auto drop-shadow-2xl mb-4"
           />
-          <span className="text-sm font-black text-slate-900/40 uppercase tracking-[0.2em]">
+          <span className="text-sm font-semibold font-black text-slate-900/40 uppercase tracking-normal">
             {slides[index].title}
           </span>
         </motion.div>
       </AnimatePresence>
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {slides.map((_, i) => (
-          <div
-            key={i}
-            className={cn(
-              "w-1.5 h-1.5 rounded-full transition-all duration-300",
-              i === index ? "bg-[#09358c] w-4" : "bg-slate-200"
-            )}
-          />
-        ))}
-      </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { z } from "zod";
 import { Resend } from "resend";
 import { render } from "react-email";
 import ContactEmail from "@/emails/ContactEmail";
+import { sendOutlookEmail } from "@/lib/outlook";
 
 const schema = z.object({
   firstName: z.string().min(1).max(100).trim(),
@@ -12,7 +13,7 @@ const schema = z.object({
   country:   z.string().min(1).max(100),
   reason:    z.enum(["demo", "partner", "support", "press", "careers"]),
   message:        z.string().min(10).max(5000).trim(),
-  recaptchaToken: z.string().min(1),
+  recaptchaToken: z.string().optional().default(""),
 });
 
 const REASON_LABELS: Record<string, string> = {
@@ -70,15 +71,21 @@ export async function POST(req: NextRequest) {
   const { firstName, lastName, email, company, country, reason, message, recaptchaToken } = result.data;
   const reasonLabel = REASON_LABELS[reason];
 
-  // Verify reCAPTCHA token
-  const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
-  });
-  const verifyData = await verifyRes.json() as { success: boolean; score: number };
-  if (!verifyData.success || verifyData.score < 0.5) {
-    return NextResponse.json({ error: "Bot check failed. Please try again." }, { status: 400 });
+  // Verify reCAPTCHA token if key is configured
+  if (process.env.RECAPTCHA_SECRET_KEY && recaptchaToken) {
+    try {
+      const verifyRes = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+      });
+      const verifyData = (await verifyRes.json()) as { success: boolean; score: number };
+      if (!verifyData.success || verifyData.score < 0.5) {
+        return NextResponse.json({ error: "Bot check failed. Please try again." }, { status: 400 });
+      }
+    } catch (err) {
+      console.warn("[contact API] reCAPTCHA verification error:", err);
+    }
   }
 
   // Render email template
@@ -86,25 +93,45 @@ export async function POST(req: NextRequest) {
   const html = await render(<ContactEmail {...props} />);
   const text = await render(<ContactEmail {...props} />, { plainText: true });
 
-  // Send via Resend
-  try {
-    const resend = new Resend(process.env.RESEND_API_KEY);
+  const recipient = process.env.OUTLOOK_RECIPIENT_EMAIL || "hello@tapito.ai,anoop.g@fegno.com,loyaltymgr@fegno.com";
 
-    await resend.emails.send({
-      from: "hello@tapito.ai",
-      to: "hello@tapito.ai",
-      replyTo: email,
-      subject: `[Contact] ${reasonLabel} — ${firstName} ${lastName}`,
-      html,
-      text,
-    });
-  } catch (err) {
-    console.error("[contact] Resend error:", err);
+  // Send via Outlook Microsoft Graph API (or Resend fallback)
+  try {
+    if (process.env.AZURE_CLIENT_ID && process.env.AZURE_CLIENT_SECRET && process.env.AZURE_TENANT_ID) {
+      await sendOutlookEmail({
+        to: recipient,
+        subject: `[Contact Inquiry] ${reasonLabel} — ${firstName} ${lastName}`,
+        html,
+        text,
+        replyTo: email,
+      });
+    } else if (process.env.RESEND_API_KEY) {
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      await resend.emails.send({
+        from: "hello@tapito.ai",
+        to: recipient,
+        replyTo: email,
+        subject: `[Contact Inquiry] ${reasonLabel} — ${firstName} ${lastName}`,
+        html,
+        text,
+      });
+    } else {
+      console.warn("[contact API] No email credentials configured in environment.");
+      return NextResponse.json(
+        { error: "Email service not configured. Please restart the dev server to reload .env.local" },
+        { status: 500 }
+      );
+    }
+  } catch (err: unknown) {
+    const errorDetails = err instanceof Error ? err.message : String(err);
+    console.error("[contact API] Email send error:", errorDetails);
     return NextResponse.json(
-      { error: "Failed to send message. Please try again." },
+      { error: `Email Delivery Error: ${errorDetails}` },
       { status: 500 }
     );
   }
 
   return NextResponse.json({ success: true });
 }
+
+

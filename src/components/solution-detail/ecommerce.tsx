@@ -39,8 +39,8 @@ import {
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 import Image from "next/image";
-// import analyzesBg from "@/public/assets/images/solutions/analyzes-ecommerce.jpg";
-// import generatesBg from "@/public/assets/images/solutions/generates-ecommerce.jpg";
+import analyzesBg from "@/public/assets/images/solutions/analyzes-ecommerce.jpg";
+import generatesBg from "@/public/assets/images/solutions/generates-ecommerce.jpg";
 
 const Ecommerce = () => {
   const containerRef = useRef<HTMLElement>(null);

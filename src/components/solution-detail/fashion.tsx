@@ -28,8 +28,8 @@ import {
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 import Image from "next/image";
-// import analyzesBg from "@/public/assets/images/solutions/analyzes-fashion.jpg";
-// import generatesBg from "@/public/assets/images/solutions/generates-fashion.jpg";
+import analyzesBg from "@/public/assets/images/solutions/analyzes-fashion.jpg";
+import generatesBg from "@/public/assets/images/solutions/generates-fashion.jpg";
 
 const Fashion = () => {
   const containerRef = useRef<HTMLElement>(null);

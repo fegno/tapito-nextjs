@@ -29,8 +29,8 @@ import {
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 import Image from "next/image";
-// import analyzesBg from "@/public/assets/images/solutions/analyzes-electronics.jpg";
-// import generatesBg from "@/public/assets/images/solutions/generates-electronics.jpg";
+import analyzesBg from "@/public/assets/images/solutions/analyzes-electronics.jpg";
+import generatesBg from "@/public/assets/images/solutions/generates-electronics.jpg";
 
 const Electronics = () => {
   const containerRef = useRef<HTMLElement>(null);

@@ -33,8 +33,8 @@ import {
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 import Image from "next/image";
-// import analyzesBg from "@/public/assets/images/solutions/analyzes-beauty-health.jpg";
-// import generatesBg from "@/public/assets/images/solutions/generates-beauty-health.jpg";
+import analyzesBg from "@/public/assets/images/solutions/analyzes-beauty-health.jpg";
+import generatesBg from "@/public/assets/images/solutions/generates-beauty-health.jpg";
 
 const BeautyHealth = () => {
   const containerRef = useRef<HTMLElement>(null);

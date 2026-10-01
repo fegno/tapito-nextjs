@@ -7,6 +7,7 @@ import { motion, AnimatePresence, useMotionValue, useTransform } from "framer-mo
 import { Send, CheckCircle2, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import BorderGlow from "@/components/BorderGlow";
+import { COUNTRIES } from "@/lib/countries";
 
 /* ─── Field wrapper ───────────────────────────────────────── */
 function Field({ children }: { children: React.ReactNode }) {
@@ -79,14 +80,17 @@ export default function ContactForm() {
                     setErrorMsg("Message must be at least 10 characters.");
                     return;
                   }
-                  if (!executeRecaptcha) {
-                    setErrorMsg("reCAPTCHA not ready. Please refresh and try again.");
-                    return;
-                  }
                   setLoading(true);
                   setErrorMsg("");
                   try {
-                    const recaptchaToken = await executeRecaptcha("contact");
+                    let recaptchaToken = "";
+                    if (executeRecaptcha) {
+                      try {
+                        recaptchaToken = await executeRecaptcha("contact");
+                      } catch (err) {
+                        console.warn("reCAPTCHA execution skipped:", err);
+                      }
+                    }
                     const res = await fetch("/api/contact", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -135,13 +139,11 @@ export default function ContactForm() {
                         required
                       >
                         <option value="" disabled>Country *</option>
-                        <option value="US">United States</option>
-                        <option value="UK">United Kingdom</option>
-                        <option value="IN">India</option>
-                        <option value="CA">Canada</option>
-                        <option value="AU">Australia</option>
-                        <option value="SG">Singapore</option>
-                        <option value="AE">UAE</option>
+                        {COUNTRIES.map((c) => (
+                          <option key={c.code} value={c.name} className="text-slate-900 bg-white">
+                            {c.name}
+                          </option>
+                        ))}
                       </select>
                       <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400" />
                     </div>

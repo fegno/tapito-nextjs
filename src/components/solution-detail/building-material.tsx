@@ -7,8 +7,8 @@ import { CheckCircle2, Package, Home, PaintBucket, Lightbulb, Bath, Armchair, XC
 import AnimatedLucideIcon from "../AnimatedLucideIcon";
 import { ActivityIcon } from "lucide-animated";
 import Image from "next/image";
-// import analyzesBg from "@/public/assets/images/solutions/analyzes-building-material.jpg";
-// import generatesBg from "@/public/assets/images/solutions/generates-building-material.jpg";
+import analyzesBg from "@/public/assets/images/solutions/analyzes-building-material.jpg";
+import generatesBg from "@/public/assets/images/solutions/generates-building-material.jpg";
 import logo from '@/public/assets/images/tapito_o.avif';
 
 const BuildingMaterial = () => {
